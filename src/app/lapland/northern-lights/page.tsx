@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import CityScoreCard from '@/components/CityScoreCard';
+import LuxuryNavigation from '@/components/LuxuryNavigation';
 
 export const metadata: Metadata = {
   title: 'Northern Lights in Lapland - Live Aurora Conditions',
@@ -71,15 +72,22 @@ export default function LaplandPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-black">
+        {/* Luxury Navigation */}
+        <LuxuryNavigation />
+        
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
-          <div className="max-w-4xl mx-auto px-6">
+        <div className="bg-gradient-to-br from-black via-slate-900 to-gray-900 py-24 pt-32">
+          <div className="max-w-6xl mx-auto px-12">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Conditions</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-thin text-white mb-8">
                 Northern Lights in Lapland
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-white/60 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
                 Live aurora conditions for Lapland cities. Real-time scoring based on 
                 space weather, cloud cover, and darkness levels.
               </p>
@@ -88,13 +96,18 @@ export default function LaplandPage() {
         </div>
         
         {/* Live City Scores */}
-        <div className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Live Aurora Conditions
-            </h2>
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-7xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-thin text-white mb-6">
+                Live Aurora Conditions
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
+                Real-time aurora scores for all Lapland cities
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {cities.map((city) => (
                 <CityScoreCard
                   key={city.slug}
@@ -108,53 +121,58 @@ export default function LaplandPage() {
         </div>
         
         {/* Lapland Facts */}
-        <div className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Why Lapland is Perfect for Aurora Viewing
-            </h2>
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-thin text-white mb-6">
+                Why Lapland is Perfect for Aurora Viewing
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
+                Discover what makes Finnish Lapland the ultimate destination for aurora hunting
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">1</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <span className="text-cyan-300 font-light text-lg">1</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-white mb-3">
                       Arctic Circle Location
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-white/70 font-light leading-relaxed">
                       All Lapland cities are located above the Arctic Circle, 
                       providing optimal positioning for aurora viewing.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">2</span>
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <span className="text-cyan-300 font-light text-lg">2</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-white mb-3">
                       Minimal Light Pollution
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-white/70 font-light leading-relaxed">
                       Sparse population and wilderness areas provide dark skies 
                       essential for clear aurora observation.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">3</span>
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <span className="text-cyan-300 font-light text-lg">3</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-white mb-3">
                       Long Winter Nights
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-white/70 font-light leading-relaxed">
                       Polar night provides extended darkness from November to January, 
                       maximizing aurora viewing opportunities.
                     </p>
@@ -162,46 +180,46 @@ export default function LaplandPage() {
                 </div>
               </div>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">4</span>
+              <div className="space-y-8">
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <span className="text-cyan-300 font-light text-lg">4</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-white mb-3">
                       Clear Mountain Air
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-white/70 font-light leading-relaxed">
                       High altitude locations like Levi and Saariselkä offer 
                       clearer skies and better visibility.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">5</span>
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <span className="text-cyan-300 font-light text-lg">5</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-white mb-3">
                       Aurora Infrastructure
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-white/70 font-light leading-relaxed">
                       Well-developed tourism infrastructure with aurora tours, 
                       photography workshops, and viewing platforms.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">6</span>
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <span className="text-cyan-300 font-light text-lg">6</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-white mb-3">
                       Cultural Experience
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-white/70 font-light leading-relaxed">
                       Combine aurora viewing with Sámi culture, reindeer experiences, 
                       and authentic Arctic lifestyle.
                     </p>
@@ -213,27 +231,35 @@ export default function LaplandPage() {
         </div>
         
         {/* Quick Links */}
-        <div className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Explore Lapland Cities
-            </h2>
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-thin text-white mb-6">
+                Explore Lapland Cities
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
+                Discover detailed aurora conditions for each Lapland destination
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {cities.map((city) => (
                 <Link
                   key={city.slug}
                   href={`/finland/lapland/${city.slug}/aurora`}
-                  className="block bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+                  className="group block bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105"
                 >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-light text-white mb-3 group-hover:text-cyan-300 transition-colors">
                     {city.name}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-white/70 mb-6 font-light">
                     {city.description}
                   </p>
-                  <div className="text-blue-600 font-medium">
-                    View live conditions →
+                  <div className="text-cyan-300 font-light flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-300">
+                    View live conditions
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </Link>
               ))}
@@ -242,10 +268,10 @@ export default function LaplandPage() {
         </div>
         
         {/* Attribution Footer */}
-        <div className="py-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6">
-            <p className="text-sm text-gray-500 text-center">
-              Data from NOAA SWPC (OVATION), Open-Meteo, OpenWeather. Times in local timezone. 
+        <div className="py-12 bg-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <p className="text-sm text-white/40 text-center font-light">
+              Data from NOAA SWPC (OVATION), FMI, Open-Meteo. Times in local timezone. 
               Scores are indicative and depend on weather & darkness.
             </p>
           </div>

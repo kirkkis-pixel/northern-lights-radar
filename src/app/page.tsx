@@ -50,20 +50,21 @@ export default function HomePage() {
         {/* Main Content */}
         <div className="relative z-10 max-w-8xl mx-auto px-12 text-center">
           {/* Main Headline */}
-          <div className="mb-24">
-            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-12">
-              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Aurora Forecast</span>
+          <div className="mb-20">
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Forecast</span>
             </div>
-            <h1 className="text-7xl md:text-9xl font-thin text-white mb-12 tracking-tight leading-none">
+            <h1 className="text-5xl md:text-6xl font-thin text-white mb-8 tracking-tight leading-tight">
               Northern Lights
-              <span className="block text-6xl md:text-7xl font-extralight text-cyan-300/90 mt-6 bg-gradient-to-r from-cyan-300/80 to-blue-400/80 bg-clip-text text-transparent">
+              <span className="block text-4xl md:text-5xl font-extralight text-cyan-300/80 mt-3 bg-gradient-to-r from-cyan-300/70 to-blue-400/70 bg-clip-text text-transparent">
                 Radar
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-white/60 font-light max-w-5xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
               Experience the magic of Finnish Lapland with real-time aurora predictions.
             </p>
-            <p className="text-lg text-white/40 font-extralight tracking-wide">
+            <p className="text-base text-white/40 font-extralight tracking-wide">
               Where science meets wonder
             </p>
           </div>
@@ -74,26 +75,26 @@ export default function HomePage() {
           </div>
           
           {/* Luxury Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 max-w-5xl mx-auto">
             <div className="group text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 rounded-3xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/5 group-hover:scale-110 transition-all duration-500">
-                <span className="text-4xl font-thin text-cyan-300/80">7</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/5 group-hover:scale-105 transition-all duration-300">
+                <span className="text-2xl font-thin text-cyan-300/70">7</span>
               </div>
-              <div className="text-white/80 font-light text-xl mb-2">Lapland Cities</div>
+              <div className="text-white/80 font-light text-lg mb-1">Lapland Cities</div>
               <div className="text-white/40 text-sm font-extralight tracking-wide">Premium Locations</div>
             </div>
             <div className="group text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-green-400/10 to-emerald-500/10 rounded-3xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/5 group-hover:scale-110 transition-all duration-500">
-                <span className="text-4xl font-thin text-green-300/80">24/7</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400/10 to-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/5 group-hover:scale-105 transition-all duration-300">
+                <span className="text-2xl font-thin text-green-300/70">24/7</span>
               </div>
-              <div className="text-white/80 font-light text-xl mb-2">Live Updates</div>
+              <div className="text-white/80 font-light text-lg mb-1">Live Updates</div>
               <div className="text-white/40 text-sm font-extralight tracking-wide">Real-time Data</div>
             </div>
             <div className="group text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-400/10 to-pink-500/10 rounded-3xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/5 group-hover:scale-110 transition-all duration-500">
-                <span className="text-4xl font-thin text-purple-300/80">100%</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400/10 to-pink-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/5 group-hover:scale-105 transition-all duration-300">
+                <span className="text-2xl font-thin text-purple-300/70">100%</span>
               </div>
-              <div className="text-white/80 font-light text-xl mb-2">Transparent</div>
+              <div className="text-white/80 font-light text-lg mb-1">Transparent</div>
               <div className="text-white/40 text-sm font-extralight tracking-wide">Open Source</div>
             </div>
           </div>
@@ -151,95 +152,96 @@ export default function HomePage() {
       </div>
       
       {/* Features */}
-      <div className="py-32 bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.01'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
         
-        <div className="max-w-8xl mx-auto px-12 relative z-10">
-          <div className="text-center mb-24">
-            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-12">
-              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Premium Features</span>
+        <div className="max-w-7xl mx-auto px-12 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Premium Features</span>
             </div>
-            <h2 className="text-6xl font-thin text-white mb-8">
+            <h2 className="text-4xl font-thin text-white mb-6">
               Why Choose Northern Lights Radar?
             </h2>
-            <p className="text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Experience the future of aurora forecasting with cutting-edge technology and timeless design
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105">
-              <div className="w-24 h-24 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-500">
-                <svg className="w-12 h-12 text-cyan-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <svg className="w-8 h-8 text-cyan-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-light text-white mb-6">Real-time Data</h3>
-              <p className="text-white/70 font-light leading-relaxed text-lg">
+              <h3 className="text-xl font-light text-white mb-4">Real-time Data</h3>
+              <p className="text-white/70 font-light leading-relaxed">
                 Live updates from NOAA space weather data, FMI weather observations, and precise astronomical calculations.
               </p>
             </div>
             
-            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105">
-              <div className="w-24 h-24 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-500">
-                <svg className="w-12 h-12 text-green-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <svg className="w-8 h-8 text-green-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-light text-white mb-6">100% Transparent</h3>
-              <p className="text-white/70 font-light leading-relaxed text-lg">
+              <h3 className="text-xl font-light text-white mb-4">100% Transparent</h3>
+              <p className="text-white/70 font-light leading-relaxed">
                 See exactly how we calculate scores. No black boxes, no hidden algorithms, complete transparency.
               </p>
             </div>
             
-            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-500">
-                <svg className="w-12 h-12 text-purple-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <svg className="w-8 h-8 text-purple-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-light text-white mb-6">No API Keys</h3>
-              <p className="text-white/70 font-light leading-relaxed text-lg">
+              <h3 className="text-xl font-light text-white mb-4">No API Keys</h3>
+              <p className="text-white/70 font-light leading-relaxed">
                 Completely free to use. No registration, no payment details, no rate limits, no barriers.
               </p>
             </div>
             
-            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105">
-              <div className="w-24 h-24 bg-gradient-to-br from-orange-400/20 to-red-500/20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-500">
-                <svg className="w-12 h-12 text-orange-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-400/20 to-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <svg className="w-8 h-8 text-orange-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-light text-white mb-6">Mobile-First</h3>
-              <p className="text-white/70 font-light leading-relaxed text-lg">
+              <h3 className="text-xl font-light text-white mb-4">Mobile-First</h3>
+              <p className="text-white/70 font-light leading-relaxed">
                 Designed for aurora hunters on the go. Perfect for checking conditions in the field with gloves on.
               </p>
             </div>
             
-            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105">
-              <div className="w-24 h-24 bg-gradient-to-br from-red-400/20 to-pink-500/20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-500">
-                <svg className="w-12 h-12 text-red-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-400/20 to-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <svg className="w-8 h-8 text-red-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-light text-white mb-6">Local Expertise</h3>
-              <p className="text-white/70 font-light leading-relaxed text-lg">
+              <h3 className="text-xl font-light text-white mb-4">Local Expertise</h3>
+              <p className="text-white/70 font-light leading-relaxed">
                 Built specifically for Finnish Lapland with local viewing spots and authentic conditions.
               </p>
             </div>
             
-            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105">
-              <div className="w-24 h-24 bg-gradient-to-br from-indigo-400/20 to-purple-500/20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-500">
-                <svg className="w-12 h-12 text-indigo-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="group text-center bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-400/20 to-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <svg className="w-8 h-8 text-indigo-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-light text-white mb-6">Nordic Design</h3>
-              <p className="text-white/70 font-light leading-relaxed text-lg">
+              <h3 className="text-xl font-light text-white mb-4">Nordic Design</h3>
+              <p className="text-white/70 font-light leading-relaxed">
                 Clean, minimal interface inspired by Nordic design principles and aurora aesthetics.
               </p>
             </div>
