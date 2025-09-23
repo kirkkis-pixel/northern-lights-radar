@@ -95,7 +95,7 @@ export default function FinlandPage() {
             <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
           </div>
           
-          <div className="relative z-10 max-w-8xl mx-auto px-12 text-center pt-16">
+          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-16">
             <div className="mb-12">
               <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
