@@ -32,7 +32,7 @@ export default function HomePage() {
       <LuxuryNavigation />
       
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
         {/* Premium Dark Background with Subtle Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-gray-900" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -56,16 +56,13 @@ export default function HomePage() {
               <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Forecast</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-thin text-white mb-8 tracking-tight leading-tight">
-              Northern Lights
-              <span className="block text-4xl md:text-5xl font-extralight text-cyan-300/80 mt-3 bg-gradient-to-r from-cyan-300/70 to-blue-400/70 bg-clip-text text-transparent">
+              <span className="text-white">Northern Lights</span>
+              <span className="text-cyan-300/80 bg-gradient-to-r from-cyan-300/70 to-blue-400/70 bg-clip-text text-transparent">
                 Radar
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
               Experience the magic of Finnish Lapland with real-time aurora predictions.
-            </p>
-            <p className="text-base text-white/40 font-extralight tracking-wide">
-              Where science meets wonder
             </p>
           </div>
           
@@ -74,28 +71,73 @@ export default function HomePage() {
             <SwipeableCards />
           </div>
           
-          {/* Luxury Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 max-w-5xl mx-auto">
-            <div className="group text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/5 group-hover:scale-105 transition-all duration-300">
-                <span className="text-2xl font-thin text-cyan-300/70">7</span>
-              </div>
-              <div className="text-white/80 font-light text-lg mb-1">Lapland Cities</div>
-              <div className="text-white/40 text-sm font-extralight tracking-wide">Premium Locations</div>
+          {/* Lapland Cities Grid */}
+          <div className="mb-24">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-thin text-white mb-4">
+                Lapland Cities
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
+                Live aurora conditions for all Lapland destinations
+              </p>
             </div>
-            <div className="group text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-400/10 to-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/5 group-hover:scale-105 transition-all duration-300">
-                <span className="text-2xl font-thin text-green-300/70">24/7</span>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Rovaniemi</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">85</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Excellent</div>
+                </div>
               </div>
-              <div className="text-white/80 font-light text-lg mb-1">Live Updates</div>
-              <div className="text-white/40 text-sm font-extralight tracking-wide">Real-time Data</div>
-            </div>
-            <div className="group text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-400/10 to-pink-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/5 group-hover:scale-105 transition-all duration-300">
-                <span className="text-2xl font-thin text-purple-300/70">100%</span>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Ivalo</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">78</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Great</div>
+                </div>
               </div>
-              <div className="text-white/80 font-light text-lg mb-1">Transparent</div>
-              <div className="text-white/40 text-sm font-extralight tracking-wide">Open Source</div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Inari</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">82</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Great</div>
+                </div>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Levi</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">76</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Good</div>
+                </div>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Saariselkä</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">79</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Great</div>
+                </div>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Ylläs</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">74</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Good</div>
+                </div>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-light text-white mb-2">Kilpisjärvi</h3>
+                  <div className="text-3xl font-thin text-cyan-300/80 mb-2">88</div>
+                  <div className="text-xs text-white/50 font-light uppercase tracking-wider">Excellent</div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -147,6 +189,116 @@ export default function HomePage() {
           </div>
           <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             <HomeMap />
+          </div>
+        </div>
+      </div>
+      
+      {/* Why Lapland Section */}
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-thin text-white mb-6">
+              Why Lapland is Perfect for Aurora Viewing
+            </h2>
+            <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
+              Discover what makes Finnish Lapland the ultimate destination for aurora hunting
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <span className="text-cyan-300 font-light text-lg">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-light text-white mb-3">
+                    Arctic Circle Location
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    All Lapland cities are located above the Arctic Circle, 
+                    providing optimal positioning for aurora viewing.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <span className="text-cyan-300 font-light text-lg">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-light text-white mb-3">
+                    Minimal Light Pollution
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Sparse population and wilderness areas provide dark skies 
+                    essential for clear aurora observation.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <span className="text-cyan-300 font-light text-lg">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-light text-white mb-3">
+                    Long Winter Nights
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Polar night provides extended darkness from November to January, 
+                    maximizing aurora viewing opportunities.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <span className="text-cyan-300 font-light text-lg">4</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-light text-white mb-3">
+                    Clear Mountain Air
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    High altitude locations like Levi and Saariselkä offer 
+                    clearer skies and better visibility.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <span className="text-cyan-300 font-light text-lg">5</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-light text-white mb-3">
+                    Aurora Infrastructure
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Well-developed tourism infrastructure with aurora tours, 
+                    photography workshops, and viewing platforms.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <span className="text-cyan-300 font-light text-lg">6</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-light text-white mb-3">
+                    Cultural Experience
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Combine aurora viewing with Sámi culture, reindeer experiences, 
+                    and authentic Arctic lifestyle.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

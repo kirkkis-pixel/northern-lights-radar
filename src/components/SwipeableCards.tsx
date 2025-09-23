@@ -57,34 +57,15 @@ export default function SwipeableCards() {
       try {
         setLoading(true);
         
-        // Fetch user's location or Rovaniemi
-        let lat = 66.5039;
-        let lon = 25.7294;
-        
-        if (navigator.geolocation) {
-          try {
-            const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-              navigator.geolocation.getCurrentPosition(resolve, reject, {
-                timeout: 5000,
-                enableHighAccuracy: false
-              });
-            });
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
-          } catch {
-            console.log('Using Rovaniemi as fallback location');
-          }
+        // Always start with Rovaniemi as the default
+        const rovaniemiResponse = await fetch(`/api/city/rovaniemi`);
+        if (rovaniemiResponse.ok) {
+          const rovaniemiData = await rovaniemiResponse.json();
+          setScoreData(rovaniemiData);
         }
         
-        // Fetch user's location score
-        const scoreResponse = await fetch(`/api/score?lat=${lat}&lon=${lon}`);
-        if (scoreResponse.ok) {
-          const scoreData = await scoreResponse.json();
-          setScoreData(scoreData);
-        }
-        
-        // Fetch top 3 cities by score
-        const citySlugs = ['rovaniemi', 'ivalo', 'inari', 'levi', 'saariselka', 'yllas', 'kilpisjarvi'];
+        // Fetch other cities
+        const citySlugs = ['ivalo', 'inari', 'levi', 'saariselka', 'yllas', 'kilpisjarvi'];
         const cityPromises = citySlugs.map(async (slug) => {
           try {
             const response = await fetch(`/api/city/${slug}`);
@@ -156,15 +137,15 @@ export default function SwipeableCards() {
 
   const cards = [
     scoreData && {
-      type: 'location',
-      title: 'Your Location',
-      subtitle: 'Live Aurora Conditions',
+      type: 'city' as const,
+      title: 'Rovaniemi',
+      subtitle: 'Live Aurora Score',
       data: scoreData
     },
     ...citiesData.map(city => ({
-      type: 'city',
+      type: 'city' as const,
       title: city.city.name,
-      subtitle: city.city.region,
+      subtitle: 'Live Aurora Score',
       data: city
     }))
   ].filter(Boolean);
@@ -239,16 +220,16 @@ export default function SwipeableCards() {
             <div className="flex items-center justify-center space-x-4 text-sm text-white/40">
               <span className="font-light tracking-wide">Data sources:</span>
               <div className="flex space-x-3">
-                <span className={currentCard.type === 'location' && 'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.aurora ? 'text-green-400' : 'text-red-400'}>
+                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.aurora ? 'text-green-400' : 'text-red-400'}>
                   Aurora
                 </span>
-                <span className={currentCard.type === 'location' && 'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.weather ? 'text-green-400' : 'text-red-400'}>
+                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.weather ? 'text-green-400' : 'text-red-400'}>
                   Weather
                 </span>
-                <span className={currentCard.type === 'location' && 'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.moon ? 'text-green-400' : 'text-red-400'}>
+                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.moon ? 'text-green-400' : 'text-red-400'}>
                   Moon
                 </span>
-                <span className={currentCard.type === 'location' && 'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.solar ? 'text-green-400' : 'text-red-400'}>
+                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.solar ? 'text-green-400' : 'text-red-400'}>
                   Solar
                 </span>
               </div>
