@@ -65,87 +65,67 @@ export default function HomePage() {
             </p>
           </div>
           
-          {/* Big Top Card - Rovaniemi Default */}
+          {/* SIMPLE CARD - NO COMPLEX STYLING */}
           <div className="mb-24">
-            <div className="relative max-w-4xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-10 border border-white/10 shadow-2xl">
-                {/* Live Indicator */}
-                <div className="flex items-center justify-center mb-6">
-                  <div className="flex items-center px-4 py-2 bg-white/5 rounded-full border border-white/10">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
-                    <span className="text-sm font-light text-white/70 tracking-wide">
-                      Live Data
-                    </span>
-                  </div>
+            <div style={{ 
+              backgroundColor: 'rgba(255, 255, 255, 0.1)', 
+              padding: '40px', 
+              borderRadius: '16px', 
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              maxWidth: '800px',
+              margin: '0 auto',
+              color: 'white',
+              textAlign: 'center'
+            }}>
+              <h2 style={{ fontSize: '24px', marginBottom: '20px', color: 'white' }}>
+                Rovaniemi Aurora Score
+              </h2>
+              <div style={{ fontSize: '48px', marginBottom: '20px', color: 'white' }}>
+                85
+              </div>
+              <div style={{ 
+                backgroundColor: 'green', 
+                color: 'white', 
+                padding: '8px 16px', 
+                borderRadius: '20px',
+                display: 'inline-block',
+                marginBottom: '30px'
+              }}>
+                Excellent
+              </div>
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: '1fr 1fr', 
+                gap: '20px',
+                marginBottom: '30px'
+              }}>
+                <div>
+                  <div style={{ fontSize: '24px', color: 'white' }}>78%</div>
+                  <div style={{ fontSize: '12px', color: '#ccc' }}>Aurora Probability</div>
                 </div>
-
-                {/* Card Header */}
-                <div className="text-center mb-10">
-                  <h3 className="text-2xl font-light text-white mb-3">
-                    Rovaniemi
-                  </h3>
-                  <p className="text-white/60 font-extralight">
-                    Live Aurora Score
-                  </p>
+                <div>
+                  <div style={{ fontSize: '24px', color: 'white' }}>92%</div>
+                  <div style={{ fontSize: '12px', color: '#ccc' }}>Sky Visibility</div>
                 </div>
-                
-                {/* Score Display */}
-                <div className="text-center mb-10">
-                  <div className="text-6xl font-thin text-white mb-4">
-                    85
-                  </div>
-                  <div className="inline-block px-6 py-2 rounded-full text-sm font-light text-green-400 backdrop-blur-sm border border-white/10">
-                    Excellent
-                  </div>
+                <div>
+                  <div style={{ fontSize: '24px', color: 'white' }}>High</div>
+                  <div style={{ fontSize: '12px', color: '#ccc' }}>Darkness Level</div>
                 </div>
-                
-                {/* Components Grid */}
-                <div className="grid grid-cols-2 gap-6 text-center">
-                  <div className="space-y-2">
-                    <div className="text-3xl font-thin text-cyan-300/80">
-                      78%
-                    </div>
-                    <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Aurora Probability</div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-3xl font-thin text-cyan-300/80">
-                      92%
-                    </div>
-                    <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Sky Visibility</div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-3xl font-thin text-cyan-300/80">
-                      High
-                    </div>
-                    <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Darkness Level</div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-3xl font-thin text-cyan-300/80">
-                      40%
-                    </div>
-                    <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Moon Conditions</div>
-                  </div>
-                </div>
-                
-                {/* Data Status */}
-                <div className="mt-10 pt-6 border-t border-white/10">
-                  <div className="flex items-center justify-center space-x-4 text-sm text-white/40">
-                    <span className="font-light tracking-wide">Data sources:</span>
-                    <div className="flex space-x-3">
-                      <span className="text-green-400">Aurora</span>
-                      <span className="text-green-400">Weather</span>
-                      <span className="text-green-400">Moon</span>
-                      <span className="text-green-400">Solar</span>
-                    </div>
-                  </div>
+                <div>
+                  <div style={{ fontSize: '24px', color: 'white' }}>40%</div>
+                  <div style={{ fontSize: '12px', color: '#ccc' }}>Moon Conditions</div>
                 </div>
               </div>
-              
-              {/* Debug Info */}
-              <div className="text-center mt-4">
-                <p className="text-white/30 text-sm font-extralight tracking-wide">
-                  Inline component rendered at: {new Date().toLocaleTimeString()}
-                </p>
+              <div style={{ 
+                borderTop: '1px solid rgba(255, 255, 255, 0.2)', 
+                paddingTop: '20px',
+                fontSize: '14px',
+                color: '#ccc'
+              }}>
+                Data sources: Aurora ✓ Weather ✓ Moon ✓ Solar ✓
+              </div>
+              <div style={{ marginTop: '20px', fontSize: '12px', color: '#999' }}>
+                Simple card rendered at: {new Date().toLocaleTimeString()}
               </div>
             </div>
           </div>
