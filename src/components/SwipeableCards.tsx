@@ -41,10 +41,12 @@ interface CityData {
   };
 }
 
+type CardData = { type: 'location'; data: ScoreData } | { type: 'city'; data: CityData };
+
 export default function SwipeableCards() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scoreData, setScoreData] = useState<ScoreData | null>(null);
-  const [citiesData, setCitiesData] = useState<CityData[]>([]);
+  const [citiesData, setCitiesData] = useState<CardData[]>([]);
   const [loading, setLoading] = useState(true);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -57,11 +59,31 @@ export default function SwipeableCards() {
       try {
         setLoading(true);
         
-        // Always start with Rovaniemi as the default
+        // Fetch Rovaniemi as the default
         const rovaniemiResponse = await fetch(`/api/city/rovaniemi`);
         if (rovaniemiResponse.ok) {
           const rovaniemiData = await rovaniemiResponse.json();
           setScoreData(rovaniemiData);
+        }
+        
+        // Try to get user's location
+        let userLocationData: ScoreData | null = null;
+        if (navigator.geolocation) {
+          try {
+            const position = await new Promise<GeolocationPosition>((resolve, reject) => {
+              navigator.geolocation.getCurrentPosition(resolve, reject, {
+                timeout: 5000,
+                enableHighAccuracy: false
+              });
+            });
+            
+            const userScoreResponse = await fetch(`/api/score?lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
+            if (userScoreResponse.ok) {
+              userLocationData = await userScoreResponse.json();
+            }
+          } catch {
+            console.log('Could not get user location, using Rovaniemi only');
+          }
         }
         
         // Fetch other cities
@@ -81,7 +103,16 @@ export default function SwipeableCards() {
         const cityResults = await Promise.all(cityPromises);
         const validCities = cityResults.filter(Boolean) as CityData[];
         validCities.sort((a, b) => b.score - a.score);
-        setCitiesData(validCities.slice(0, 3));
+        
+        // Store user location data separately
+        if (userLocationData) {
+          setCitiesData([
+            { type: 'location', data: userLocationData },
+            ...validCities.slice(0, 2).map(city => ({ type: 'city' as const, data: city }))
+          ]);
+        } else {
+          setCitiesData(validCities.slice(0, 3).map(city => ({ type: 'city' as const, data: city })));
+        }
         
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -142,12 +173,23 @@ export default function SwipeableCards() {
       subtitle: 'Live Aurora Score',
       data: scoreData
     },
-    ...citiesData.map(city => ({
-      type: 'city' as const,
-      title: city.city.name,
-      subtitle: 'Live Aurora Score',
-      data: city
-    }))
+    ...citiesData.map(city => {
+      if (city.type === 'location') {
+        return {
+          type: 'location' as const,
+          title: 'Your Location',
+          subtitle: 'Tonight\'s Aurora Conditions',
+          data: city.data
+        };
+      } else {
+        return {
+          type: 'city' as const,
+          title: city.data.city.name,
+          subtitle: 'Live Aurora Score',
+          data: city.data
+        };
+      }
+    })
   ].filter(Boolean);
 
   const currentCard = cards[currentIndex];
@@ -215,26 +257,26 @@ export default function SwipeableCards() {
             </div>
           </div>
           
-          {/* Data Status */}
-          <div className="mt-10 pt-6 border-t border-white/10">
-            <div className="flex items-center justify-center space-x-4 text-sm text-white/40">
-              <span className="font-light tracking-wide">Data sources:</span>
-              <div className="flex space-x-3">
-                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.aurora ? 'text-green-400' : 'text-red-400'}>
-                  Aurora
-                </span>
-                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.weather ? 'text-green-400' : 'text-red-400'}>
-                  Weather
-                </span>
-                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.moon ? 'text-green-400' : 'text-red-400'}>
-                  Moon
-                </span>
-                <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.solar ? 'text-green-400' : 'text-red-400'}>
-                  Solar
-                </span>
-              </div>
-            </div>
-          </div>
+                {/* Data Status */}
+                <div className="mt-10 pt-6 border-t border-white/10">
+                  <div className="flex items-center justify-center space-x-4 text-sm text-white/40">
+                    <span className="font-light tracking-wide">Data sources:</span>
+                    <div className="flex space-x-3">
+                      <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.aurora ? 'text-green-400' : 'text-red-400'}>
+                        Aurora
+                      </span>
+                      <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.weather ? 'text-green-400' : 'text-red-400'}>
+                        Weather
+                      </span>
+                      <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.moon ? 'text-green-400' : 'text-red-400'}>
+                        Moon
+                      </span>
+                      <span className={'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.solar ? 'text-green-400' : 'text-red-400'}>
+                        Solar
+                      </span>
+                    </div>
+                  </div>
+                </div>
         </div>
       </div>
       
