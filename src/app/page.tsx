@@ -50,11 +50,15 @@ export default function HomePage() {
         <div className="relative z-10 max-w-8xl mx-auto px-12 text-center pt-16">
           {/* Main Headline */}
           <div className="mb-24">
-                  <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
-                    <div className="bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                      Northern Lights Radar
-                    </div>
-                  </h1>
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Radar</span>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
+              <div className="bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Northern Lights Radar
+              </div>
+            </h1>
             <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
               Experience the magic of Finnish Lapland with real-time aurora predictions.
             </p>
