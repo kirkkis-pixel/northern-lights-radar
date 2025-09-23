@@ -32,106 +32,71 @@ export default function RegionalNavigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <span className="text-white font-bold text-lg">NLR</span>
+            <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <div className="w-6 h-6 bg-white rounded-full"></div>
             </div>
             <div className="hidden md:block">
-              <h1 className="text-xl font-thin text-white group-hover:text-cyan-300 transition-colors">
-                Northern Lights Radar
+              <h1 className="text-xl font-bold text-white uppercase tracking-wide group-hover:text-cyan-300 transition-colors">
+                Northern Lights
               </h1>
-              <p className="text-xs text-white/60 font-light">Lapland Region</p>
+              <p className="text-xs text-gray-400 font-light uppercase tracking-wide">Radar</p>
             </div>
           </Link>
 
           {/* Main Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <Link 
-              href="/" 
+              href="/finland/northern-lights" 
               className={`text-sm font-light transition-colors duration-300 ${
-                isActive('/') 
+                isActive('/finland') 
                   ? 'text-cyan-300' 
-                  : 'text-white/70 hover:text-white'
+                  : 'text-white hover:text-cyan-300'
               }`}
             >
-              Home
+              Finland
             </Link>
             
-            <div className="relative group">
-              <button className="flex items-center space-x-1 text-sm font-light text-white/70 hover:text-white transition-colors duration-300">
-                <span>Lapland</span>
-                <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-md rounded-2xl border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                <div className="p-4 space-y-3">
-                  <Link 
-                    href="/finland/northern-lights" 
-                    className={`flex items-center space-x-3 p-3 rounded-xl transition-colors duration-300 ${
-                      isActive('/finland') 
-                        ? 'bg-cyan-500/20 text-cyan-300' 
-                        : 'hover:bg-white/5 text-white/70 hover:text-white'
-                    }`}
-                  >
-                    <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                      <span className="text-blue-300 text-sm font-bold">FI</span>
-                    </div>
-                    <div>
-                      <div className="font-light">Finland</div>
-                      <div className="text-xs text-white/50">8 cities</div>
-                    </div>
-                  </Link>
-                  
-                  <Link 
-                    href="/sweden/northern-lights" 
-                    className={`flex items-center space-x-3 p-3 rounded-xl transition-colors duration-300 ${
-                      isActive('/sweden') 
-                        ? 'bg-cyan-500/20 text-cyan-300' 
-                        : 'hover:bg-white/5 text-white/70 hover:text-white'
-                    }`}
-                  >
-                    <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center">
-                      <span className="text-yellow-300 text-sm font-bold">SE</span>
-                    </div>
-                    <div>
-                      <div className="font-light">Sweden</div>
-                      <div className="text-xs text-white/50">3 cities</div>
-                    </div>
-                  </Link>
-                  
-                  <Link 
-                    href="/norway/northern-lights" 
-                    className={`flex items-center space-x-3 p-3 rounded-xl transition-colors duration-300 ${
-                      isActive('/norway') 
-                        ? 'bg-cyan-500/20 text-cyan-300' 
-                        : 'hover:bg-white/5 text-white/70 hover:text-white'
-                    }`}
-                  >
-                    <div className="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center">
-                      <span className="text-red-300 text-sm font-bold">NO</span>
-                    </div>
-                    <div>
-                      <div className="font-light">Norway</div>
-                      <div className="text-xs text-white/50">4 cities</div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link 
+              href="/sweden/northern-lights" 
+              className={`text-sm font-light transition-colors duration-300 ${
+                isActive('/sweden') 
+                  ? 'text-cyan-300' 
+                  : 'text-white hover:text-cyan-300'
+              }`}
+            >
+              Sweden
+            </Link>
+            
+            <Link 
+              href="/norway/northern-lights" 
+              className={`text-sm font-light transition-colors duration-300 ${
+                isActive('/norway') 
+                  ? 'text-cyan-300' 
+                  : 'text-white hover:text-cyan-300'
+              }`}
+            >
+              Norway
+            </Link>
 
             <Link 
               href="/guide/how-to-see-the-northern-lights" 
               className={`text-sm font-light transition-colors duration-300 ${
                 isActive('/guide') 
                   ? 'text-cyan-300' 
-                  : 'text-white/70 hover:text-white'
+                  : 'text-white hover:text-cyan-300'
               }`}
             >
               Guide
             </Link>
           </div>
+
+          {/* CTA Button */}
+          <Link
+            href="/finland/northern-lights"
+            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium text-sm transition-colors duration-300"
+          >
+            Explore
+          </Link>
 
           {/* Mobile Menu Button */}
           <button className="lg:hidden text-white/70 hover:text-white transition-colors duration-300">
