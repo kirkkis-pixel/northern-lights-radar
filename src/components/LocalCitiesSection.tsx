@@ -52,6 +52,9 @@ export default function LocalCitiesSection() {
         const results = await Promise.all(promises);
         const validResults = results.filter(Boolean) as CityData[];
         
+        console.log('Fetched cities data:', validResults.length, 'cities');
+        console.log('Cities data:', validResults);
+        
         // Sort by score (highest first)
         validResults.sort((a, b) => b.score - a.score);
         
@@ -68,27 +71,32 @@ export default function LocalCitiesSection() {
 
   if (loading) {
     return (
-      <div className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              Lapland Cities
-            </h2>
-            <p className="text-gray-600 font-light max-w-2xl mx-auto">
-              Live aurora conditions across Finnish Lapland
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 animate-pulse">
-                <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                <div className="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-7xl mx-auto px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 animate-pulse">
+                <div className="h-6 bg-white/20 rounded w-3/4 mb-4"></div>
+                <div className="h-12 bg-white/20 rounded w-1/2 mb-4"></div>
                 <div className="space-y-2">
-                  <div className="h-4 bg-gray-200 rounded"></div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+                  <div className="h-4 bg-white/20 rounded"></div>
+                  <div className="h-4 bg-white/20 rounded w-2/3"></div>
+                  <div className="h-4 bg-white/20 rounded w-1/2"></div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (citiesData.length === 0) {
+    return (
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-7xl mx-auto px-12">
+          <div className="text-center">
+            <p className="text-white/60 text-lg">Loading city data...</p>
           </div>
         </div>
       </div>
