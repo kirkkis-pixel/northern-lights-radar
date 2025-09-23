@@ -198,7 +198,9 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          
+        </div>
+      </div>
+      
       {/* Local Cities Section */}
       <LocalCitiesSection />
       
