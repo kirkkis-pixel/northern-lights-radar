@@ -65,67 +65,136 @@ export default function HomePage() {
             </p>
           </div>
           
-          {/* SIMPLE CARD - NO COMPLEX STYLING */}
+          {/* COMPACT SWIPEABLE CARD */}
           <div className="mb-24">
             <div style={{ 
               backgroundColor: 'rgba(255, 255, 255, 0.1)', 
-              padding: '40px', 
+              padding: '24px', 
               borderRadius: '16px', 
               border: '1px solid rgba(255, 255, 255, 0.2)',
               maxWidth: '800px',
               margin: '0 auto',
               color: 'white',
-              textAlign: 'center'
+              textAlign: 'center',
+              position: 'relative'
             }}>
-              <h2 style={{ fontSize: '24px', marginBottom: '20px', color: 'white' }}>
-                Rovaniemi Aurora Score
-              </h2>
-              <div style={{ fontSize: '48px', marginBottom: '20px', color: 'white' }}>
-                85
-              </div>
+              {/* Live Indicator */}
               <div style={{ 
-                backgroundColor: 'green', 
-                color: 'white', 
-                padding: '8px 16px', 
-                borderRadius: '20px',
-                display: 'inline-block',
-                marginBottom: '30px'
+                position: 'absolute', 
+                top: '12px', 
+                right: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '12px',
+                color: '#ccc'
               }}>
-                Excellent
+                <div style={{ 
+                  width: '6px', 
+                  height: '6px', 
+                  backgroundColor: 'red', 
+                  borderRadius: '50%', 
+                  marginRight: '6px',
+                  animation: 'pulse 2s infinite'
+                }}></div>
+                Live Data
               </div>
+
+              {/* Header */}
+              <div style={{ marginBottom: '16px' }}>
+                <h2 style={{ fontSize: '20px', marginBottom: '4px', color: 'white' }}>
+                  Rovaniemi
+                </h2>
+                <p style={{ fontSize: '14px', color: '#ccc', margin: 0 }}>
+                  Live Aurora Score
+                </p>
+              </div>
+              
+              {/* Score Display */}
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontSize: '36px', marginBottom: '8px', color: 'white' }}>
+                  85
+                </div>
+                <div style={{ 
+                  backgroundColor: 'green', 
+                  color: 'white', 
+                  padding: '4px 12px', 
+                  borderRadius: '12px',
+                  display: 'inline-block',
+                  fontSize: '12px'
+                }}>
+                  Excellent
+                </div>
+              </div>
+              
+              {/* Compact Components Grid */}
               <div style={{ 
                 display: 'grid', 
-                gridTemplateColumns: '1fr 1fr', 
-                gap: '20px',
-                marginBottom: '30px'
+                gridTemplateColumns: '1fr 1fr 1fr 1fr', 
+                gap: '16px',
+                marginBottom: '16px'
               }}>
                 <div>
-                  <div style={{ fontSize: '24px', color: 'white' }}>78%</div>
-                  <div style={{ fontSize: '12px', color: '#ccc' }}>Aurora Probability</div>
+                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>78%</div>
+                  <div style={{ fontSize: '10px', color: '#ccc' }}>Aurora</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '24px', color: 'white' }}>92%</div>
-                  <div style={{ fontSize: '12px', color: '#ccc' }}>Sky Visibility</div>
+                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>92%</div>
+                  <div style={{ fontSize: '10px', color: '#ccc' }}>Visibility</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '24px', color: 'white' }}>High</div>
-                  <div style={{ fontSize: '12px', color: '#ccc' }}>Darkness Level</div>
+                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>High</div>
+                  <div style={{ fontSize: '10px', color: '#ccc' }}>Darkness</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '24px', color: 'white' }}>40%</div>
-                  <div style={{ fontSize: '12px', color: '#ccc' }}>Moon Conditions</div>
+                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>40%</div>
+                  <div style={{ fontSize: '10px', color: '#ccc' }}>Moon</div>
                 </div>
               </div>
+              
+              {/* Data Sources */}
               <div style={{ 
                 borderTop: '1px solid rgba(255, 255, 255, 0.2)', 
-                paddingTop: '20px',
-                fontSize: '14px',
+                paddingTop: '12px',
+                fontSize: '11px',
                 color: '#ccc'
               }}>
                 Data sources: Aurora ✓ Weather ✓ Moon ✓ Solar ✓
               </div>
-              <div style={{ marginTop: '20px', fontSize: '12px', color: '#999' }}>
-                Simple card rendered at: {new Date().toLocaleTimeString()}
+              
+              {/* Navigation Dots */}
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                gap: '8px', 
+                marginTop: '16px' 
+              }}>
+                <div style={{ 
+                  width: '8px', 
+                  height: '8px', 
+                  borderRadius: '50%', 
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)' 
+                }}></div>
+                <div style={{ 
+                  width: '8px', 
+                  height: '8px', 
+                  borderRadius: '50%', 
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)' 
+                }}></div>
+                <div style={{ 
+                  width: '8px', 
+                  height: '8px', 
+                  borderRadius: '50%', 
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)' 
+                }}></div>
+              </div>
+              
+              {/* Swipe Instructions */}
+              <div style={{ 
+                marginTop: '8px', 
+                fontSize: '10px', 
+                color: '#999' 
+              }}>
+                Swipe to explore different locations
               </div>
             </div>
           </div>
