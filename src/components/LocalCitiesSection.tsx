@@ -30,143 +30,40 @@ export default function LocalCitiesSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Use static data instead of API calls to ensure cards always show
-    const staticCitiesData: CityData[] = [
-      {
-        city: {
-          slug: 'rovaniemi',
-          name: 'Rovaniemi',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 66.5039,
-          longitude: 25.7294,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Arktikum Museum', 'Santa Claus Village', 'Ounasvaara Hill', 'Rovaniemi city center'],
-          description: 'Capital of Lapland • Arctic Circle • Best infrastructure'
-        },
-        score: 85,
-        badge: 'Excellent',
-        components: { P: 0.78, Visibility: 0.92, Dark: 0.9, MoonOK: 0.8 }
-      },
-      {
-        city: {
-          slug: 'ivalo',
-          name: 'Ivalo',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 68.6592,
-          longitude: 27.5389,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Ivalo Airport', 'Wilderness areas', 'Sámi cultural sites', 'Lake Inari'],
-          description: 'Northernmost airport • Wilderness access • Sámi culture'
-        },
-        score: 78,
-        badge: 'Great',
-        components: { P: 0.72, Visibility: 0.85, Dark: 0.9, MoonOK: 0.6 }
-      },
-      {
-        city: {
-          slug: 'inari',
-          name: 'Inari',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 68.9059,
-          longitude: 27.0288,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Lake Inari', 'Sámi Museum', 'Wilderness areas', 'Cultural sites'],
-          description: 'Sámi cultural heart • Lake Inari • Authentic Arctic'
-        },
-        score: 82,
-        badge: 'Great',
-        components: { P: 0.75, Visibility: 0.88, Dark: 0.9, MoonOK: 0.8 }
-      },
-      {
-        city: {
-          slug: 'levi',
-          name: 'Levi',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 67.8041,
-          longitude: 24.8081,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Levi Ski Resort', 'Mountain slopes', 'Fell areas', 'Aurora viewing spots'],
-          description: 'Mountain resort • Ski slopes • Elevated viewing'
-        },
-        score: 76,
-        badge: 'Good',
-        components: { P: 0.68, Visibility: 0.82, Dark: 0.7, MoonOK: 0.6 }
-      },
-      {
-        city: {
-          slug: 'saariselka',
-          name: 'Saariselkä',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 68.4167,
-          longitude: 27.4167,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Saariselkä village', 'Fell landscapes', 'Wilderness areas', 'Aurora tours'],
-          description: 'Mountain village • Fell landscapes • Remote wilderness'
-        },
-        score: 79,
-        badge: 'Great',
-        components: { P: 0.71, Visibility: 0.86, Dark: 0.9, MoonOK: 0.8 }
-      },
-      {
-        city: {
-          slug: 'yllas',
-          name: 'Ylläs',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 67.5667,
-          longitude: 24.2167,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Seven fells', 'Ski resort', 'Panoramic views', 'Mountain areas'],
-          description: 'Seven fells • Ski resort • Panoramic views'
-        },
-        score: 74,
-        badge: 'Good',
-        components: { P: 0.66, Visibility: 0.80, Dark: 0.7, MoonOK: 0.6 }
-      },
-      {
-        city: {
-          slug: 'kilpisjarvi',
-          name: 'Kilpisjärvi',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 69.0500,
-          longitude: 20.7833,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Three-country border', 'Arctic wilderness', 'Remote areas', 'Prime aurora location'],
-          description: 'Northernmost village • Arctic Circle • Prime location'
-        },
-        score: 88,
-        badge: 'Excellent',
-        components: { P: 0.82, Visibility: 0.95, Dark: 1.0, MoonOK: 0.9 }
-      },
-      {
-        city: {
-          slug: 'kemi',
-          name: 'Kemi',
-          region: 'Lapland',
-          country: 'Finland',
-          latitude: 65.7361,
-          longitude: 24.5639,
-          timezone: 'Europe/Helsinki',
-          viewingSpots: ['Icebreaker port', 'Coastal areas', 'City center', 'Gateway to Lapland'],
-          description: 'Coastal city • Icebreaker port • Gateway to Lapland'
-        },
-        score: 71,
-        badge: 'Good',
-        components: { P: 0.65, Visibility: 0.78, Dark: 0.7, MoonOK: 0.6 }
+    const fetchCitiesData = async () => {
+      try {
+        setLoading(true);
+        
+        // Fetch data for all Lapland cities
+        const citySlugs = ['rovaniemi', 'ivalo', 'inari', 'levi', 'saariselka', 'yllas', 'kilpisjarvi', 'kemi'];
+        
+        const promises = citySlugs.map(async (slug) => {
+          try {
+            const response = await fetch(`/api/city/${slug}`);
+            if (response.ok) {
+              return await response.json();
+            }
+            return null;
+          } catch {
+            return null;
+          }
+        });
+        
+        const results = await Promise.all(promises);
+        const validResults = results.filter(Boolean) as CityData[];
+        
+        // Sort by score (highest first)
+        validResults.sort((a, b) => b.score - a.score);
+        
+        setCitiesData(validResults);
+      } catch (error) {
+        console.error('Error fetching cities data:', error);
+      } finally {
+        setLoading(false);
       }
-    ];
-    
-    // Sort by score (highest first)
-    staticCitiesData.sort((a, b) => b.score - a.score);
-    
-    setCitiesData(staticCitiesData);
-    setLoading(false);
+    };
+
+    fetchCitiesData();
   }, []);
 
   if (loading) {
