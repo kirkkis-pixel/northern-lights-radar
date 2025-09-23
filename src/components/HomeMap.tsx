@@ -45,37 +45,46 @@ export default function HomeMap() {
   }, []);
 
   useEffect(() => {
-    if (map.current) return; // Initialize map only once
+    if (map.current || !mapContainer.current) return; // Initialize map only once
 
-    map.current = new maplibregl.Map({
-      container: mapContainer.current!,
-      style: {
-        version: 8,
-        sources: {
-          'raster-tiles': {
-            type: 'raster',
-            tiles: [
-              'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
-            ],
-            tileSize: 256,
-            attribution: '© OpenStreetMap contributors'
-          }
+    console.log('Initializing map...');
+    
+    try {
+      map.current = new maplibregl.Map({
+        container: mapContainer.current,
+        style: {
+          version: 8,
+          sources: {
+            'raster-tiles': {
+              type: 'raster',
+              tiles: [
+                'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+              ],
+              tileSize: 256,
+              attribution: '© OpenStreetMap contributors'
+            }
+          },
+          layers: [
+            {
+              id: 'simple-tiles',
+              type: 'raster',
+              source: 'raster-tiles',
+              minzoom: 0,
+              maxzoom: 19
+            }
+          ]
         },
-        layers: [
-          {
-            id: 'simple-tiles',
-            type: 'raster',
-            source: 'raster-tiles',
-            minzoom: 0,
-            maxzoom: 19
-          }
-        ]
-      },
-      center: [25.7294, 66.5039], // Rovaniemi coordinates
-      zoom: 6,
-      maxZoom: 12,
-      minZoom: 4
-    });
+        center: [25.7294, 66.5039], // Rovaniemi coordinates
+        zoom: 6,
+        maxZoom: 12,
+        minZoom: 4
+      });
+      
+      console.log('Map created successfully');
+    } catch (error) {
+      console.error('Map initialization error:', error);
+      return;
+    }
 
     map.current.on('load', () => {
       setMapLoaded(true);
@@ -151,6 +160,14 @@ export default function HomeMap() {
   return (
     <div className="w-full h-full relative">
       <div ref={mapContainer} className="w-full h-full rounded-2xl" />
+      {!map.current && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-2xl">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-500 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading map...</p>
+          </div>
+        </div>
+      )}
       
       {/* Map Controls */}
       <div className="absolute top-4 right-4 space-y-2">
