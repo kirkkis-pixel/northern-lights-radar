@@ -83,7 +83,7 @@ function parseFMIWeatherData(xmlData: string, latitude: number, longitude: numbe
   // Generate 24 hours of mock data
   for (let i = 0; i < 24; i++) {
     const time = new Date(now.getTime() + i * 60 * 60 * 1000);
-    hourly.time.push(time.toISOString());
+    (hourly.time as string[]).push(time.toISOString());
     
     // Mock data based on location and time
     const cloudCover = Math.max(0, Math.min(100, 30 + Math.sin(i * 0.3) * 40));
@@ -91,10 +91,10 @@ function parseFMIWeatherData(xmlData: string, latitude: number, longitude: numbe
     const precipitation = Math.max(0, Math.random() * 5);
     const temperature = -5 + Math.sin(i * 0.1) * 10; // Typical Finnish winter temp
     
-    hourly.cloudcover.push(cloudCover);
-    hourly.visibility.push(visibility);
-    hourly.precipitation.push(precipitation);
-    hourly.temperature_2m.push(temperature);
+    (hourly.cloudcover as number[]).push(cloudCover);
+    (hourly.visibility as number[]).push(visibility);
+    (hourly.precipitation as number[]).push(precipitation);
+    (hourly.temperature_2m as number[]).push(temperature);
   }
   
   return {
