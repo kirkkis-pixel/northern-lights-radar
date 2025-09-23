@@ -35,7 +35,7 @@ export default function LocalCitiesSection() {
         setLoading(true);
         
         // Fetch data for all Lapland cities
-        const citySlugs = ['rovaniemi', 'ivalo', 'inari', 'levi', 'saariselka', 'yllas', 'kilpisjarvi'];
+        const citySlugs = ['rovaniemi', 'ivalo', 'inari', 'levi', 'saariselka', 'yllas', 'kilpisjarvi', 'kemi'];
         
         const promises = citySlugs.map(async (slug) => {
           try {
