@@ -77,8 +77,29 @@ export default function HomePage() {
               textAlign: 'center',
               position: 'relative'
             }}>
+            
+            {/* Live Indicator */}
+            <div style={{ 
+              position: 'absolute', 
+              top: '12px', 
+              right: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              fontSize: '12px',
+              color: '#ccc'
+            }}>
+              <div style={{ 
+                width: '6px', 
+                height: '6px', 
+                backgroundColor: 'red', 
+                borderRadius: '50%', 
+                marginRight: '6px',
+                animation: 'pulse 2s infinite'
+              }}></div>
+              Live Data
+            </div>
 
-              {/* Header */}
+            {/* Header */}
               <div style={{ marginBottom: '16px' }}>
                 <h2 style={{ fontSize: '20px', marginBottom: '4px', color: 'white' }}>
                   Rovaniemi
