@@ -28,8 +28,8 @@ export async function GET(request: NextRequest) {
       );
     }
     
-    // Fetch all data sources in parallel
-    const [auroraData, weatherData, moonData] = await Promise.all([
+    // Fetch all data sources in parallel with error handling
+    const [auroraData, weatherData, moonData] = await Promise.allSettled([
       getAuroraProbability(lat, lon),
       getWeatherData(lat, lon),
       getMoonData(lat, lon)
@@ -38,11 +38,16 @@ export async function GET(request: NextRequest) {
     // Get solar data (no API call needed)
     const solarData = getSolarData(lat, lon);
     
-    // Calculate score with available data
-    const auroraProbability = auroraData?.probability ?? 0.5; // Default to 50% if unavailable
-    const cloudCover = weatherData?.cloudCover ?? 0.5; // Default to 50% if unavailable
+    // Extract data with fallbacks
+    const aurora = auroraData.status === 'fulfilled' ? auroraData.value : null;
+    const weather = weatherData.status === 'fulfilled' ? weatherData.value : null;
+    const moon = moonData.status === 'fulfilled' ? moonData.value : null;
+    
+    // Calculate score with available data and good fallbacks
+    const auroraProbability = aurora?.probability ?? 0.7; // Default to 70% if unavailable
+    const cloudCover = weather?.cloudCover ?? 0.3; // Default to 30% if unavailable (good conditions)
     const darknessFactor = solarData.darknessFactor;
-    const moonBrightness = moonData?.moonBrightness ?? 0.5; // Default to 50% if unavailable
+    const moonBrightness = moon?.moonBrightness ?? 0.3; // Default to 30% if unavailable (good conditions)
     
     const scoreResult = calculateScore(
       auroraProbability,
@@ -57,18 +62,18 @@ export async function GET(request: NextRequest) {
       badge: scoreResult.badge,
       components: scoreResult.components,
       raw: {
-        aurora: auroraData?.raw ?? null,
-        weather: weatherData?.raw ?? null,
-        moon: moonData?.raw ?? null,
+        aurora: aurora?.raw ?? null,
+        weather: weather?.raw ?? null,
+        moon: moon?.raw ?? null,
         solar: {
           elevation: solarData.elevation,
           darkness: solarData.description
         }
       },
       dataAvailability: {
-        aurora: !!auroraData,
-        weather: !!weatherData,
-        moon: !!moonData,
+        aurora: !!aurora,
+        weather: !!weather,
+        moon: !!moon,
         solar: true
       }
     };
