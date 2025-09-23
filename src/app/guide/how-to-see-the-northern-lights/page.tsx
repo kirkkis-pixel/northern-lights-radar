@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import LuxuryNavigation from '@/components/LuxuryNavigation';
 import TonightCard from '@/components/TonightCard';
+import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
 
 export const metadata: Metadata = {
   title: 'How to See the Northern Lights - Complete Beginner\'s Guide',
@@ -108,13 +109,16 @@ export default function HowToSeePage() {
               </p>
             </div>
             
-            <div className="max-w-4xl mx-auto">
-              <TonightCard 
-                latitude={66.5039} 
-                longitude={25.7294} 
-                cityName="Rovaniemi" 
-                description="Gateway to Lapland - Check conditions before your aurora hunt"
-              />
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <TonightCard 
+                  latitude={66.5039} 
+                  longitude={25.7294} 
+                  cityName="Rovaniemi" 
+                  description="Gateway to Lapland - Check conditions before your aurora hunt"
+                />
+                <SpaceWeatherWidget />
+              </div>
             </div>
           </div>
         </div>
@@ -396,43 +400,88 @@ export default function HowToSeePage() {
               </div>
 
               {/* Common Mistakes */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Common Mistakes to Avoid</h2>
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <h2 className="text-3xl font-thin text-white mb-8">Common Mistakes to Avoid</h2>
                 
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <span className="text-red-500 font-bold">✗</span>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Not checking conditions</h4>
-                        <p className="text-gray-600">Always check aurora probability and weather before heading out.</p>
-                      </div>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <span className="text-red-400 font-bold text-xl">✗</span>
+                    <div>
+                      <h4 className="text-lg font-light text-white mb-2">Not checking conditions</h4>
+                      <p className="text-white/70 font-light">Always check aurora probability and weather before heading out. Use our live conditions above.</p>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-red-500 font-bold">✗</span>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Giving up too early</h4>
-                        <p className="text-gray-600">Aurora can take time to appear. Stay patient and warm.</p>
-                      </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <span className="text-red-400 font-bold text-xl">✗</span>
+                    <div>
+                      <h4 className="text-lg font-light text-white mb-2">Giving up too early</h4>
+                      <p className="text-white/70 font-light">Aurora can take time to appear. Stay patient and warm - activity often peaks around midnight.</p>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-red-500 font-bold">✗</span>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Poor clothing choices</h4>
-                        <p className="text-gray-600">Dress in layers and avoid cotton. Cold weather is dangerous.</p>
-                      </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <span className="text-red-400 font-bold text-xl">✗</span>
+                    <div>
+                      <h4 className="text-lg font-light text-white mb-2">Poor clothing choices</h4>
+                      <p className="text-white/70 font-light">Dress in layers and avoid cotton. Cold weather is dangerous - hypothermia can set in quickly.</p>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-red-500 font-bold">✗</span>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Looking in wrong direction</h4>
-                        <p className="text-gray-600">Always look north. Use a compass or phone app to orient yourself.</p>
-                      </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <span className="text-red-400 font-bold text-xl">✗</span>
+                    <div>
+                      <h4 className="text-lg font-light text-white mb-2">Looking in wrong direction</h4>
+                      <p className="text-white/70 font-light">Always look north. Use a compass or phone app to orient yourself - aurora appears as an arc in the northern sky.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="py-32 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">FAQ</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-8">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
+                Everything you need to know about aurora hunting in Finland
+              </p>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <h3 className="text-xl font-light text-white mb-4">What is the Kp index and why does it matter?</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  The Kp index measures geomagnetic activity on a scale of 0-9. Higher Kp values indicate stronger aurora activity that can be seen further south. For Finland, Kp values of 3-4 are often sufficient for good aurora viewing in Lapland, while Kp 5+ can bring aurora to southern Finland.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <h3 className="text-xl font-light text-white mb-4">Can I see the aurora in Helsinki?</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  While it's possible to see the northern lights in Helsinki during strong geomagnetic storms (Kp 6+), the best viewing is in Lapland, particularly above the Arctic Circle. Cities like Rovaniemi, Ivalo, and Kilpisjärvi offer much better chances due to their northern location and darker skies.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <h3 className="text-xl font-light text-white mb-4">How long should I wait for the aurora to appear?</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Aurora activity comes in waves and can take 30+ minutes to appear after you arrive at your viewing spot. Peak activity typically occurs between 10 PM and 2 AM, with the strongest displays often around midnight. Stay patient and warm - the wait is usually worth it.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <h3 className="text-xl font-light text-white mb-4">What should I do if the aurora doesn't appear?</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Aurora hunting requires patience and flexibility. If conditions aren't favorable, consider staying multiple nights, checking our live conditions regularly, and having backup plans like visiting local attractions or trying different viewing spots. Sometimes the aurora appears when you least expect it.
+                </p>
+              </div>
             </div>
           </div>
         </div>
