@@ -465,7 +465,7 @@ export default function HowToSeePage() {
               <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
                 <h3 className="text-xl font-light text-white mb-4">Can I see the aurora in Helsinki?</h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  While it's possible to see the northern lights in Helsinki during strong geomagnetic storms (Kp 6+), the best viewing is in Lapland, particularly above the Arctic Circle. Cities like Rovaniemi, Ivalo, and Kilpisjärvi offer much better chances due to their northern location and darker skies.
+                  While it&apos;s possible to see the northern lights in Helsinki during strong geomagnetic storms (Kp 6+), the best viewing is in Lapland, particularly above the Arctic Circle. Cities like Rovaniemi, Ivalo, and Kilpisjärvi offer much better chances due to their northern location and darker skies.
                 </p>
               </div>
               
@@ -477,9 +477,9 @@ export default function HowToSeePage() {
               </div>
               
               <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <h3 className="text-xl font-light text-white mb-4">What should I do if the aurora doesn't appear?</h3>
+                <h3 className="text-xl font-light text-white mb-4">What should I do if the aurora doesn&apos;t appear?</h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  Aurora hunting requires patience and flexibility. If conditions aren't favorable, consider staying multiple nights, checking our live conditions regularly, and having backup plans like visiting local attractions or trying different viewing spots. Sometimes the aurora appears when you least expect it.
+                  Aurora hunting requires patience and flexibility. If conditions aren&apos;t favorable, consider staying multiple nights, checking our live conditions regularly, and having backup plans like visiting local attractions or trying different viewing spots. Sometimes the aurora appears when you least expect it.
                 </p>
               </div>
             </div>

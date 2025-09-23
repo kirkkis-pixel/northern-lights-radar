@@ -101,7 +101,7 @@ export default function CameraSettingsPage() {
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
               </div>
               <h2 className="text-4xl font-thin text-white mb-6">
-                Check Tonight's Conditions
+                Check Tonight&apos;s Conditions
               </h2>
               <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
                 Perfect conditions make for perfect photos - check the current aurora activity

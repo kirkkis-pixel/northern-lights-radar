@@ -48,7 +48,7 @@ export async function fetchSMHIWeatherData(
 /**
  * Parse SMHI weather data and convert to our standard format
  */
-function parseSMHIWeatherData(data: any, latitude: number, longitude: number): SMHIWeatherData {
+function parseSMHIWeatherData(data: Record<string, unknown>, latitude: number, longitude: number): SMHIWeatherData {
   // SMHI returns data in a different format, so we'll create mock data for now
   // In a real implementation, you would parse the actual SMHI response
   const now = new Date();

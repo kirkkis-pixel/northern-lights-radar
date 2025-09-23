@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import LuxuryNavigation from '@/components/LuxuryNavigation';
-import CityScoreCard from '@/components/CityScoreCard';
 import MultiCityWidget from '@/components/MultiCityWidget';
 
 export const metadata: Metadata = {

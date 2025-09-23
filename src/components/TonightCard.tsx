@@ -20,46 +20,35 @@ interface ScoreData {
   };
 }
 
-export default function TonightCard() {
+interface TonightCardProps {
+  latitude?: number;
+  longitude?: number;
+  cityName?: string;
+  description?: string;
+}
+
+export default function TonightCard({ 
+  latitude = 66.5039, 
+  longitude = 25.7294, 
+  cityName = 'Rovaniemi',
+  description = 'Gateway to Lapland'
+}: TonightCardProps) {
   const [scoreData, setScoreData] = useState<ScoreData | null>(null);
-  const [location, setLocation] = useState<string>('Rovaniemi');
+  const [location, setLocation] = useState<string>(cityName);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Try to get user's location, fallback to Rovaniemi
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          try {
-            const response = await fetch(
-              `/api/score?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
-            );
-            const data = await response.json();
-            setScoreData(data);
-            setLocation('Your location');
-      } catch {
-        // Fallback to Rovaniemi
-        fetchRovaniemiData();
-          }
-        },
-        () => {
-          // Fallback to Rovaniemi
-          fetchRovaniemiData();
-        }
-      );
-    } else {
-      // Fallback to Rovaniemi
-      fetchRovaniemiData();
-    }
-  }, []);
+    // Use the passed coordinates
+    fetchScoreData(latitude, longitude);
+  }, [latitude, longitude]);
 
-  const fetchRovaniemiData = async () => {
+  const fetchScoreData = async (lat: number, lon: number) => {
     try {
-      const response = await fetch('/api/score?lat=66.5039&lon=25.7294');
+      const response = await fetch(`/api/score?lat=${lat}&lon=${lon}`);
       const data = await response.json();
       setScoreData(data);
-      setLocation('Rovaniemi');
+      setLocation(cityName);
     } catch {
       setError('Unable to load aurora data');
     } finally {

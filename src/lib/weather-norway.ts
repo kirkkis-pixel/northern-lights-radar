@@ -51,7 +51,7 @@ export async function fetchMETWeatherData(
 /**
  * Parse MET Norway weather data and convert to our standard format
  */
-function parseMETWeatherData(data: any, latitude: number, longitude: number): METWeatherData {
+function parseMETWeatherData(data: Record<string, unknown>, latitude: number, longitude: number): METWeatherData {
   // MET Norway returns data in a different format, so we'll create mock data for now
   // In a real implementation, you would parse the actual MET response
   const now = new Date();
