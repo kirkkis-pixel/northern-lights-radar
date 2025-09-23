@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import LiveWidget from '@/components/LiveWidget';
 import GuideSection from '@/components/GuideSection';
 
 export const metadata: Metadata = {
@@ -84,7 +83,10 @@ export default function FinlandPage() {
               </p>
               
               {/* Live Widget */}
-              <LiveWidget />
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-xl font-light text-white mb-4">Live Aurora Conditions</h3>
+                <p className="text-white/60">Live data will be displayed here</p>
+              </div>
             </div>
           </div>
         </div>
