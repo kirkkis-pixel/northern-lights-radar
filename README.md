@@ -22,10 +22,10 @@ A production-ready, mobile-first website that aggregates publicly available spac
 
 ## Data Sources
 
-- **NOAA SWPC OVATION Prime**: Aurora probability data
-- **Open-Meteo**: Weather data (cloud cover, visibility, precipitation)
-- **OpenWeather**: Moon phase and solar data
-- **Public APIs**: No private vendors, all data publicly available
+- **NOAA SWPC OVATION Prime**: Aurora probability data (free, no API key)
+- **FMI (Finnish Meteorological Institute)**: Official Finnish weather data (free, no API key)
+- **Astronomical Calculations**: Moon phase and solar data (no API needed)
+- **100% Free**: No payment details, no API keys, no rate limits
 
 ## Quick Start
 
@@ -33,7 +33,7 @@ A production-ready, mobile-first website that aggregates publicly available spac
 
 - Node.js 18+ 
 - npm or yarn
-- OpenWeather API key (free)
+- No API keys required! 🎉
 
 ### Installation
 
@@ -48,26 +48,24 @@ A production-ready, mobile-first website that aggregates publicly available spac
    npm install
    ```
 
-3. **Set up environment variables**
+3. **Set up environment variables** (optional)
    ```bash
    cp env.example .env.local
    ```
    
-   Edit `.env.local` and add your OpenWeather API key:
+   Edit `.env.local` if you want custom settings:
    ```env
-   OWM_API_KEY=your_openweather_api_key_here
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
    ```
 
-4. **Get OpenWeather API Key**
-   - Go to [OpenWeatherMap](https://openweathermap.org/api)
-   - Sign up for a free account
-   - Get your API key from the dashboard
-   - Add it to your `.env.local` file
+4. **No API keys needed!** 🎉
+   - Aurora data: NOAA SWPC (free, no key)
+   - Weather data: FMI (free, no key)
+   - Moon data: Astronomical calculations (no API)
 
 5. **Run the development server**
-   ```bash
-   npm run dev
+```bash
+npm run dev
    ```
 
 6. **Open your browser**

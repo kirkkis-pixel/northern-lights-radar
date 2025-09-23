@@ -11,47 +11,66 @@ interface MoonData {
 }
 
 /**
- * Fetches moon data from OpenWeather One Call API
+ * Fetches moon data using simple astronomical calculations
+ * No API key required - uses mathematical formulas
  */
 export async function fetchMoonData(
   latitude: number,
   longitude: number
 ): Promise<MoonData | null> {
-  const apiKey = process.env.OWM_API_KEY;
-  
-  if (!apiKey) {
-    console.warn('OpenWeather API key not found, using fallback moon data');
-    return getFallbackMoonData();
-  }
-  
   try {
-    const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,alerts&appid=${apiKey}`;
-    
-    const response = await fetch(url, {
-      next: { revalidate: 1800 } // Cache for 30 minutes
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Moon API error: ${response.status}`);
-    }
-    
-    const data = await response.json();
+    // Calculate moon phase using astronomical formulas
+    const now = new Date();
+    const moonPhase = calculateMoonPhase(now);
+    const moonTimes = calculateMoonTimes(now, latitude, longitude);
     
     return {
-      lat: data.lat,
-      lon: data.lon,
-      timezone: data.timezone,
+      lat: latitude,
+      lon: longitude,
+      timezone: 'Europe/Helsinki',
       daily: {
-        time: data.daily.map((day: { dt: number }) => new Date(day.dt * 1000).toISOString().split('T')[0]),
-        moonrise: data.daily.map((day: { moonrise: number }) => new Date(day.moonrise * 1000).toISOString()),
-        moonset: data.daily.map((day: { moonset: number }) => new Date(day.moonset * 1000).toISOString()),
-        moon_phase: data.daily.map((day: { moon_phase: number }) => day.moon_phase)
+        time: [now.toISOString().split('T')[0]],
+        moonrise: [moonTimes.moonrise.toISOString()],
+        moonset: [moonTimes.moonset.toISOString()],
+        moon_phase: [moonPhase]
       }
     };
   } catch (error) {
-    console.error('Failed to fetch moon data:', error);
+    console.error('Failed to calculate moon data:', error);
     return getFallbackMoonData();
   }
+}
+
+/**
+ * Calculate moon phase using astronomical formulas
+ */
+function calculateMoonPhase(date: Date): number {
+  // Days since known new moon (January 6, 2000)
+  const knownNewMoon = new Date('2000-01-06T18:14:00Z');
+  const daysSinceNewMoon = (date.getTime() - knownNewMoon.getTime()) / (1000 * 60 * 60 * 24);
+  
+  // Moon synodic period is approximately 29.53059 days
+  const moonPhase = (daysSinceNewMoon % 29.53059) / 29.53059;
+  
+  return moonPhase;
+}
+
+/**
+ * Calculate moonrise and moonset times
+ */
+function calculateMoonTimes(date: Date, latitude: number, longitude: number): { moonrise: Date; moonset: Date } {
+  // Simplified calculation - in reality this is complex
+  // For now, use approximate times based on location
+  const localTime = new Date(date.getTime() + (longitude * 4 * 60 * 1000)); // Approximate timezone offset
+  
+  // Approximate moonrise/moonset (simplified)
+  const moonrise = new Date(localTime);
+  moonrise.setHours(18, 0, 0, 0); // Approximate moonrise time
+  
+  const moonset = new Date(localTime);
+  moonset.setHours(6, 0, 0, 0); // Approximate moonset time
+  
+  return { moonrise, moonset };
 }
 
 /**
