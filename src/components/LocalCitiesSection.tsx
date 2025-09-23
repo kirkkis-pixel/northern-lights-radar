@@ -67,7 +67,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 66.5039,
                 longitude: 25.7294,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Arktikum Museum', 'Santa Claus Village', 'Ounasvaara Hill'],
                 description: 'Capital of Lapland • Arctic Circle • Best infrastructure'
               },
@@ -83,7 +82,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 68.6592,
                 longitude: 27.5389,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Ivalo Airport', 'Wilderness areas', 'Sámi cultural sites'],
                 description: 'Northernmost airport • Wilderness access • Sámi culture'
               },
@@ -99,7 +97,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 68.9059,
                 longitude: 27.0288,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Lake Inari', 'Sámi Museum', 'Wilderness areas'],
                 description: 'Sámi cultural heart • Lake Inari • Authentic Arctic'
               },
@@ -115,7 +112,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 67.8041,
                 longitude: 24.8081,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Levi Ski Resort', 'Mountain slopes', 'Fell areas'],
                 description: 'Mountain resort • Ski slopes • Elevated viewing'
               },
@@ -131,7 +127,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 68.4167,
                 longitude: 27.4167,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Saariselkä village', 'Fell landscapes', 'Wilderness areas'],
                 description: 'Mountain village • Fell landscapes • Remote wilderness'
               },
@@ -147,7 +142,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 67.5667,
                 longitude: 24.2167,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Seven fells', 'Ski resort', 'Panoramic views'],
                 description: 'Seven fells • Ski resort • Panoramic views'
               },
@@ -163,7 +157,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 69.0500,
                 longitude: 20.7833,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Three-country border', 'Arctic wilderness', 'Remote areas'],
                 description: 'Northernmost village • Arctic Circle • Prime location'
               },
@@ -179,7 +172,6 @@ export default function LocalCitiesSection() {
                 country: 'Finland',
                 latitude: 65.7361,
                 longitude: 24.5639,
-                timezone: 'Europe/Helsinki',
                 viewingSpots: ['Icebreaker port', 'Coastal areas', 'City center'],
                 description: 'Coastal city • Icebreaker port • Gateway to Lapland'
               },
