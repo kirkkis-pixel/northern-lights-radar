@@ -69,102 +69,12 @@ export default function SwipeableCards() {
 
   const minSwipeDistance = 50;
 
+  // Simplified - no async data fetching for now
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        console.log('Starting data fetch...');
-        
-        // Create mock data for Rovaniemi to ensure the card shows up
-        const mockRovaniemiData: ScoreData = {
-          score: 85,
-          badge: 'Excellent',
-          components: {
-            P: 0.78,
-            Visibility: 0.92,
-            Dark: 0.95,
-            MoonOK: 0.4
-          },
-          dataAvailability: {
-            aurora: true,
-            weather: true,
-            moon: true,
-            solar: true
-          }
-        };
-        
-        setScoreData(mockRovaniemiData);
-        console.log('Set Rovaniemi data:', mockRovaniemiData);
-        
-        // Try to fetch real data in the background
-        try {
-          const rovaniemiResponse = await fetch(`/api/city/rovaniemi`);
-          if (rovaniemiResponse.ok) {
-            const rovaniemiData = await rovaniemiResponse.json();
-            setScoreData(rovaniemiData);
-            console.log('Updated with real Rovaniemi data:', rovaniemiData);
-          }
-        } catch (error) {
-          console.log('API call failed, using mock data:', error);
-        }
-        
-        // Try to get user's location
-        let userLocationData: ScoreData | null = null;
-        if (navigator.geolocation) {
-          try {
-            const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-              navigator.geolocation.getCurrentPosition(resolve, reject, {
-                timeout: 5000,
-                enableHighAccuracy: false
-              });
-            });
-            
-            const userScoreResponse = await fetch(`/api/score?lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
-            if (userScoreResponse.ok) {
-              userLocationData = await userScoreResponse.json();
-            }
-          } catch {
-            console.log('Could not get user location, using Rovaniemi only');
-          }
-        }
-        
-        // Fetch other cities
-        const citySlugs = ['ivalo', 'inari', 'levi', 'saariselka', 'yllas', 'kilpisjarvi'];
-        const cityPromises = citySlugs.map(async (slug) => {
-          try {
-            const response = await fetch(`/api/city/${slug}`);
-            if (response.ok) {
-              return await response.json();
-            }
-            return null;
-          } catch {
-            return null;
-          }
-        });
-        
-        const cityResults = await Promise.all(cityPromises);
-        const validCities = cityResults.filter(Boolean) as CityData[];
-        validCities.sort((a, b) => b.score - a.score);
-        
-        // Store user location data separately
-        if (userLocationData) {
-          setCitiesData([
-            { type: 'location', data: userLocationData },
-            ...validCities.slice(0, 2).map(city => ({ type: 'city' as const, data: city }))
-          ]);
-        } else {
-          setCitiesData(validCities.slice(0, 3).map(city => ({ type: 'city' as const, data: city })));
-        }
-        
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-        console.log('Data fetch completed, loading set to false');
-      }
+    console.log('SwipeableCards mounted');
+    return () => {
+      console.log('SwipeableCards unmounted');
     };
-
-    fetchData();
   }, []);
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -195,19 +105,7 @@ export default function SwipeableCards() {
     setCurrentIndex(index);
   };
 
-  if (loading) {
-    return (
-      <div className="relative max-w-5xl mx-auto">
-        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 shadow-2xl">
-          <div className="animate-pulse">
-            <div className="h-8 bg-white/10 rounded w-1/2 mx-auto mb-8"></div>
-            <div className="h-20 bg-white/10 rounded w-1/3 mx-auto mb-8"></div>
-            <div className="h-4 bg-white/10 rounded w-3/4 mx-auto"></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // No loading state needed since we have initial data
 
   const cards = [
     ...(scoreData ? [{
@@ -244,11 +142,27 @@ export default function SwipeableCards() {
   console.log('Cities data:', citiesData);
 
   if (!currentCard) {
-    console.log('No current card, returning null');
-    return null;
+    console.log('No current card, returning fallback');
+    return (
+      <div className="relative max-w-4xl mx-auto">
+        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 shadow-2xl">
+          <div className="text-center">
+            <h3 className="text-2xl font-light text-white mb-4">Rovaniemi</h3>
+            <div className="text-6xl font-thin text-cyan-300/80 mb-4">85</div>
+            <div className="text-lg text-green-400 font-light uppercase tracking-wider mb-8">Excellent</div>
+            <p className="text-white/60">Live Aurora Score</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  const badgeColorClass = getBadgeColorClass(currentCard.data.badge as 'Poor' | 'Fair' | 'Good' | 'Great' | 'Excellent');
+  let badgeColorClass = 'text-gray-400';
+  try {
+    badgeColorClass = getBadgeColorClass(currentCard.data.badge as 'Poor' | 'Fair' | 'Good' | 'Great' | 'Excellent');
+  } catch (error) {
+    console.error('Error getting badge color:', error);
+  }
 
   return (
     <div className="relative max-w-4xl mx-auto">
