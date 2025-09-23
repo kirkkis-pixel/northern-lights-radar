@@ -142,12 +142,12 @@ export default function SwipeableCards() {
 
   if (loading) {
     return (
-      <div className="relative max-w-4xl mx-auto">
-        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
+      <div className="relative max-w-5xl mx-auto">
+        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 shadow-2xl">
           <div className="animate-pulse">
-            <div className="h-8 bg-white/20 rounded w-1/2 mx-auto mb-6"></div>
-            <div className="h-16 bg-white/20 rounded w-1/3 mx-auto mb-6"></div>
-            <div className="h-4 bg-white/20 rounded w-3/4 mx-auto"></div>
+            <div className="h-8 bg-white/10 rounded w-1/2 mx-auto mb-8"></div>
+            <div className="h-20 bg-white/10 rounded w-1/3 mx-auto mb-8"></div>
+            <div className="h-4 bg-white/10 rounded w-3/4 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -176,7 +176,7 @@ export default function SwipeableCards() {
   const badgeColorClass = getBadgeColorClass(currentCard.data.badge as 'Poor' | 'Fair' | 'Good' | 'Great' | 'Excellent');
 
   return (
-    <div className="relative max-w-4xl mx-auto">
+    <div className="relative max-w-5xl mx-auto">
       {/* Card Container */}
       <div
         ref={containerRef}
@@ -185,60 +185,60 @@ export default function SwipeableCards() {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
+        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 shadow-2xl">
           {/* Card Header */}
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-light text-white mb-2">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-light text-white mb-4">
               {currentCard.title}
             </h3>
-            <p className="text-white/70 font-extralight">
+            <p className="text-white/60 font-extralight text-lg">
               {currentCard.subtitle}
             </p>
           </div>
           
           {/* Score Display */}
-          <div className="text-center mb-8">
-            <div className="text-7xl font-thin text-white mb-4">
+          <div className="text-center mb-12">
+            <div className="text-8xl font-thin text-white mb-6">
               {currentCard.data.score}
             </div>
-            <div className={`inline-block px-6 py-2 rounded-full text-sm font-medium ${badgeColorClass} backdrop-blur-sm`}>
+            <div className={`inline-block px-8 py-3 rounded-full text-sm font-light ${badgeColorClass} backdrop-blur-sm border border-white/10`}>
               {currentCard.data.badge}
             </div>
           </div>
           
           {/* Components Grid */}
-          <div className="grid grid-cols-2 gap-6 text-center">
-            <div className="space-y-2">
-              <div className="text-3xl font-thin text-cyan-300">
+          <div className="grid grid-cols-2 gap-8 text-center">
+            <div className="space-y-3">
+              <div className="text-4xl font-thin text-cyan-300/80">
                 {Math.round(currentCard.data.components.P * 100)}%
               </div>
-              <div className="text-xs text-white/60 font-extralight uppercase tracking-wider">Aurora Probability</div>
+              <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Aurora Probability</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-thin text-cyan-300">
+            <div className="space-y-3">
+              <div className="text-4xl font-thin text-cyan-300/80">
                 {Math.round(currentCard.data.components.Visibility * 100)}%
               </div>
-              <div className="text-xs text-white/60 font-extralight uppercase tracking-wider">Sky Visibility</div>
+              <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Sky Visibility</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-thin text-cyan-300">
+            <div className="space-y-3">
+              <div className="text-4xl font-thin text-cyan-300/80">
                 {currentCard.data.components.Dark > 0.8 ? 'High' : currentCard.data.components.Dark > 0.5 ? 'Medium' : 'Low'}
               </div>
-              <div className="text-xs text-white/60 font-extralight uppercase tracking-wider">Darkness Level</div>
+              <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Darkness Level</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-thin text-cyan-300">
+            <div className="space-y-3">
+              <div className="text-4xl font-thin text-cyan-300/80">
                 {Math.round(currentCard.data.components.MoonOK * 100)}%
               </div>
-              <div className="text-xs text-white/60 font-extralight uppercase tracking-wider">Moon Conditions</div>
+              <div className="text-sm text-white/50 font-extralight uppercase tracking-wider">Moon Conditions</div>
             </div>
           </div>
           
           {/* Data Status */}
-          <div className="mt-8 pt-6 border-t border-white/20">
-            <div className="flex items-center justify-center space-x-4 text-xs text-white/50">
-              <span>Data sources:</span>
-              <div className="flex space-x-3">
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <div className="flex items-center justify-center space-x-6 text-sm text-white/40">
+              <span className="font-light tracking-wide">Data sources:</span>
+              <div className="flex space-x-4">
                 <span className={currentCard.type === 'location' && 'dataAvailability' in currentCard.data && currentCard.data.dataAvailability?.aurora ? 'text-green-400' : 'text-red-400'}>
                   Aurora
                 </span>
@@ -258,12 +258,12 @@ export default function SwipeableCards() {
       </div>
       
       {/* Navigation Dots */}
-      <div className="flex justify-center space-x-3 mt-8">
+      <div className="flex justify-center space-x-4 mt-12">
         {cards.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-4 h-4 rounded-full transition-all duration-500 ${
               index === currentIndex 
                 ? 'bg-white/80 scale-125' 
                 : 'bg-white/30 hover:bg-white/50'
@@ -273,8 +273,8 @@ export default function SwipeableCards() {
       </div>
       
       {/* Swipe Instructions */}
-      <div className="text-center mt-4">
-        <p className="text-white/40 text-xs font-extralight">
+      <div className="text-center mt-6">
+        <p className="text-white/30 text-sm font-extralight tracking-wide">
           Swipe to explore different locations
         </p>
       </div>

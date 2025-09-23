@@ -96,21 +96,21 @@ export default function LocalCitiesSection() {
   }
 
   return (
-    <div className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-block px-6 py-2 bg-blue-100 rounded-full mb-6">
-            <span className="text-sm font-medium text-blue-600 tracking-wider uppercase">Live Conditions</span>
+    <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
+      <div className="max-w-8xl mx-auto px-12">
+        <div className="text-center mb-24">
+          <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-12">
+            <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
           </div>
-          <h2 className="text-4xl font-thin text-gray-900 mb-6">
+          <h2 className="text-6xl font-thin text-white mb-8">
             Lapland Cities
           </h2>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
             Discover real-time aurora conditions across Finnish Lapland&apos;s most beautiful destinations
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           {citiesData.map((cityData, index) => {
             const badgeColorClass = getBadgeColorClass(cityData.badge as 'Poor' | 'Fair' | 'Good' | 'Great' | 'Excellent');
             
@@ -118,79 +118,79 @@ export default function LocalCitiesSection() {
               <Link
                 key={cityData.city.slug}
                 href={`/finland/lapland/${cityData.city.slug}/aurora`}
-                className="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/50 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+                className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-700 hover:scale-105 hover:-translate-y-4"
                 style={{
-                  animationDelay: `${index * 100}ms`
+                  animationDelay: `${index * 150}ms`
                 }}
               >
                 {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <div className="flex items-center justify-between mb-8">
+                    <h3 className="text-2xl font-light text-white group-hover:text-cyan-300 transition-colors">
                       {cityData.city.name}
                     </h3>
-                    <div className={`px-4 py-2 rounded-full text-xs font-medium ${badgeColorClass} backdrop-blur-sm shadow-sm`}>
+                    <div className={`px-6 py-2 rounded-full text-sm font-light ${badgeColorClass} backdrop-blur-sm border border-white/10`}>
                       {cityData.badge}
                     </div>
                   </div>
                   
                   {/* Score Display */}
-                  <div className="text-center mb-8">
-                    <div className="text-5xl font-thin text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  <div className="text-center mb-10">
+                    <div className="text-6xl font-thin text-white mb-3 group-hover:text-cyan-300 transition-colors">
                       {cityData.score}
                     </div>
-                    <div className="text-sm text-gray-500 font-light">Aurora Score</div>
+                    <div className="text-sm text-white/50 font-light tracking-wide">Aurora Score</div>
                   </div>
                   
                   {/* Components Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="grid grid-cols-2 gap-6 mb-8">
                     <div className="text-center">
-                      <div className="text-2xl font-light text-blue-600 mb-1">
+                      <div className="text-3xl font-light text-cyan-300/80 mb-2">
                         {Math.round(cityData.components.P * 100)}%
                       </div>
-                      <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Aurora</div>
+                      <div className="text-xs text-white/50 font-light uppercase tracking-wider">Aurora</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-light text-blue-600 mb-1">
+                      <div className="text-3xl font-light text-cyan-300/80 mb-2">
                         {Math.round(cityData.components.Visibility * 100)}%
                       </div>
-                      <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Visibility</div>
+                      <div className="text-xs text-white/50 font-light uppercase tracking-wider">Visibility</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-light text-blue-600 mb-1">
+                      <div className="text-3xl font-light text-cyan-300/80 mb-2">
                         {cityData.components.Dark > 0.8 ? 'High' : cityData.components.Dark > 0.5 ? 'Medium' : 'Low'}
                       </div>
-                      <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Darkness</div>
+                      <div className="text-xs text-white/50 font-light uppercase tracking-wider">Darkness</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-light text-blue-600 mb-1">
+                      <div className="text-3xl font-light text-cyan-300/80 mb-2">
                         {Math.round(cityData.components.MoonOK * 100)}%
                       </div>
-                      <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Moon</div>
+                      <div className="text-xs text-white/50 font-light uppercase tracking-wider">Moon</div>
                     </div>
                   </div>
                   
                   {/* Viewing Spots */}
-                  <div className="pt-6 border-t border-gray-100">
+                  <div className="pt-8 border-t border-white/10">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-600 font-light mb-1">Viewing Spots</p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-sm text-white/60 font-light mb-2 tracking-wide">Viewing Spots</p>
+                        <p className="text-xs text-white/40">
                           {cityData.city.viewingSpots.slice(0, 2).join(', ')}
                         </p>
                         {cityData.city.viewingSpots.length > 2 && (
-                          <p className="text-xs text-gray-400 mt-1">
+                          <p className="text-xs text-white/30 mt-1">
                             +{cityData.city.viewingSpots.length - 2} more locations
                           </p>
                         )}
                       </div>
-                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
-                        <svg className="w-4 h-4 text-blue-600 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+                        <svg className="w-5 h-5 text-white/60 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
                     </div>
@@ -198,20 +198,21 @@ export default function LocalCitiesSection() {
                 </div>
                 
                 {/* Hover Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </Link>
             );
           })}
         </div>
         
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-lg shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 group">
-            <span className="flex items-center gap-3">
-              <span>Explore All Cities</span>
-              <div className="w-2 h-2 bg-white rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
-            </span>
-          </div>
+        <div className="text-center mt-24">
+          <Link
+            href="/lapland/northern-lights"
+            className="group inline-flex items-center gap-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-white px-12 py-5 rounded-full font-light tracking-wide hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-500 text-xl shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 hover:scale-105"
+          >
+            <span>Explore All Cities</span>
+            <div className="w-2 h-2 bg-white/60 rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
+          </Link>
         </div>
       </div>
     </div>
