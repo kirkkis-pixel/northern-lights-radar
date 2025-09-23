@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import LuxuryNavigation from '@/components/LuxuryNavigation';
+import TonightCard from '@/components/TonightCard';
 
 export const metadata: Metadata = {
   title: 'How to See the Northern Lights - Complete Beginner\'s Guide',
@@ -92,39 +93,89 @@ export default function HowToSeePage() {
           </div>
         </div>
 
+        {/* Live Conditions Widget */}
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-16">
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
+              </div>
+              <h2 className="text-4xl font-thin text-white mb-6">
+                Check Current Aurora Conditions
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+                Before heading out, check the real-time aurora conditions for your chosen location
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <TonightCard 
+                latitude={66.5039} 
+                longitude={25.7294} 
+                cityName="Rovaniemi" 
+                description="Gateway to Lapland - Check conditions before your aurora hunt"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Main Content */}
         <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
           <div className="max-w-6xl mx-auto px-12">
             <div className="space-y-16">
               
               {/* Step 1 */}
-              <div className="mb-12">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-blue-600 font-bold text-xl">1</span>
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="flex items-center mb-8">
+                  <div className="flex-shrink-0 w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mr-6 border border-cyan-400/30">
+                    <span className="text-cyan-300 font-light text-2xl">1</span>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">Choose the Right Time</h2>
+                  <h2 className="text-3xl font-thin text-white">Choose the Right Time</h2>
                 </div>
                 
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Best Months</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Peak Season (November - March)</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        <li>• Longest nights (up to 24 hours of darkness)</li>
-                        <li>• Highest aurora activity</li>
-                        <li>• Coldest temperatures (-20°C to -40°C)</li>
-                        <li>• Most reliable viewing conditions</li>
+                <div className="space-y-8">
+                  <h3 className="text-xl font-light text-white/80 mb-6">Best Months for Aurora Viewing</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-light text-cyan-300/80 mb-4">Peak Season (November - March)</h4>
+                      <ul className="text-white/70 space-y-3 font-light">
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Longest nights (up to 24 hours of darkness)</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Highest aurora activity and reliability</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Coldest temperatures (-20°C to -40°C)</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Most reliable viewing conditions</span>
+                        </li>
                       </ul>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Shoulder Season (September - October, April - May)</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        <li>• Milder temperatures (-5°C to -15°C)</li>
-                        <li>• Good aurora activity</li>
-                        <li>• Shorter nights but still dark enough</li>
-                        <li>• Less crowded, better prices</li>
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-light text-cyan-300/80 mb-4">Shoulder Season (September - October, April - May)</h4>
+                      <ul className="text-white/70 space-y-3 font-light">
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Milder temperatures (-5°C to -15°C)</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Good aurora activity with equinox peaks</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Shorter nights but still dark enough</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-cyan-300 mr-3">•</span>
+                          <span>Less crowded, better accommodation prices</span>
+                        </li>
                       </ul>
                     </div>
                   </div>

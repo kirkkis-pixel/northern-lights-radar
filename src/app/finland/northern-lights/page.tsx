@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import LuxuryNavigation from '@/components/LuxuryNavigation';
 import CityScoreCard from '@/components/CityScoreCard';
+import MultiCityWidget from '@/components/MultiCityWidget';
 
 export const metadata: Metadata = {
   title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
@@ -207,33 +208,17 @@ export default function FinlandPage() {
           </div>
         </div>
         
-        {/* Lapland Cities */}
-        <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-8xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
-              </div>
-              <h2 className="text-5xl font-thin text-white mb-8">
-                Best Cities for Aurora Viewing
-              </h2>
-              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Real-time aurora conditions across Finnish Lapland&apos;s most beautiful destinations
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-              {cities.map((city) => (
-                <CityScoreCard
-                  key={city.slug}
-                  citySlug={city.slug}
-                  cityName={city.name}
-                  description={city.description}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Live Multi-City Widget */}
+        <MultiCityWidget 
+          cities={cities.map(city => ({
+            slug: city.slug,
+            name: city.name,
+            latitude: 66.5039, // Default to Rovaniemi, will be overridden by API
+            longitude: 25.7294
+          }))}
+          title="Live Aurora Conditions Across Lapland"
+          description="Real-time aurora scores and conditions for all major Lapland destinations"
+        />
         
         {/* CTA Section */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
