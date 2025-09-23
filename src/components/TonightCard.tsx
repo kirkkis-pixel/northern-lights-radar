@@ -69,14 +69,11 @@ export default function TonightCard() {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
-        <div className="animate-pulse">
-          <div className="h-4 bg-gray-200 rounded w-1/3 mb-4"></div>
-          <div className="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
-          <div className="space-y-2">
-            <div className="h-3 bg-gray-200 rounded"></div>
-            <div className="h-3 bg-gray-200 rounded w-3/4"></div>
-          </div>
+      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20 max-w-md mx-auto">
+        <div className="animate-pulse text-center">
+          <div className="h-6 bg-gray-200 rounded w-1/2 mx-auto mb-6"></div>
+          <div className="h-16 bg-gray-200 rounded w-1/3 mx-auto mb-6"></div>
+          <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
         </div>
       </div>
     );
@@ -84,11 +81,11 @@ export default function TonightCard() {
 
   if (error || !scoreData) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-          Tonight in {location}
+      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20 max-w-md mx-auto text-center">
+        <h3 className="text-xl font-light text-gray-900 mb-4">
+          Tonight&apos;s Aurora Conditions
         </h3>
-        <p className="text-gray-600">Unable to load aurora data</p>
+        <p className="text-gray-500 font-light">Unable to load aurora data</p>
       </div>
     );
   }
@@ -96,65 +93,57 @@ export default function TonightCard() {
   const badgeColorClass = getBadgeColorClass(scoreData.badge as 'Poor' | 'Fair' | 'Good' | 'Great' | 'Excellent');
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        Tonight in {location}
-      </h3>
+    <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20 max-w-md mx-auto">
+      <div className="text-center mb-6">
+        <h3 className="text-xl font-light text-gray-900 mb-2">
+          Tonight&apos;s Aurora Conditions
+        </h3>
+        <p className="text-sm text-gray-500 font-light">{location}</p>
+      </div>
       
-      {/* Score Display */}
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <div className="text-4xl font-bold text-gray-900">
-            {scoreData.score}
-          </div>
-          <div className="text-sm text-gray-500">out of 100</div>
+      <div className="text-center mb-8">
+        <div className="text-6xl font-extralight text-gray-900 mb-2">
+          {scoreData.score}
         </div>
-        <div className={`px-4 py-2 rounded-full border text-sm font-medium ${badgeColorClass}`}>
+        <div className={`inline-block px-6 py-2 rounded-full text-sm font-medium ${badgeColorClass}`}>
           {scoreData.badge}
         </div>
       </div>
       
-      {/* Components */}
-      <div className="space-y-2 text-sm">
-        <div className="flex justify-between">
-          <span className="text-gray-600">Aurora P:</span>
-          <span className="font-medium">{Math.round(scoreData.components.P * 100)}%</span>
+      <div className="grid grid-cols-2 gap-6 text-center">
+        <div className="space-y-2">
+          <div className="text-2xl font-light text-blue-600">
+            {Math.round(scoreData.components.P * 100)}%
+          </div>
+          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Aurora Probability</div>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Visibility:</span>
-          <span className="font-medium">{Math.round(scoreData.components.Visibility * 100)}%</span>
+        <div className="space-y-2">
+          <div className="text-2xl font-light text-blue-600">
+            {Math.round(scoreData.components.Visibility * 100)}%
+          </div>
+          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Sky Visibility</div>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Darkness:</span>
-          <span className="font-medium">
+        <div className="space-y-2">
+          <div className="text-2xl font-light text-blue-600">
             {scoreData.components.Dark > 0.8 ? 'High' : scoreData.components.Dark > 0.5 ? 'Medium' : 'Low'}
-          </span>
+          </div>
+          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Darkness Level</div>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Moon:</span>
-          <span className="font-medium">{Math.round(scoreData.components.MoonOK * 100)}%</span>
+        <div className="space-y-2">
+          <div className="text-2xl font-light text-blue-600">
+            {Math.round(scoreData.components.MoonOK * 100)}%
+          </div>
+          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Moon Conditions</div>
         </div>
       </div>
       
-      {/* Data Availability */}
-      <div className="mt-4 pt-4 border-t border-gray-100">
-        <div className="flex items-center justify-between text-xs text-gray-500">
-          <span>Data sources:</span>
-          <div className="flex space-x-2">
-            <span className={scoreData.dataAvailability.aurora ? 'text-green-600' : 'text-red-600'}>
-              Aurora
-            </span>
-            <span className={scoreData.dataAvailability.weather ? 'text-green-600' : 'text-red-600'}>
-              Weather
-            </span>
-            <span className={scoreData.dataAvailability.moon ? 'text-green-600' : 'text-red-600'}>
-              Moon
-            </span>
-            <span className={scoreData.dataAvailability.solar ? 'text-green-600' : 'text-red-600'}>
-              Solar
-            </span>
-          </div>
-        </div>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <p className="text-xs text-gray-400 text-center font-light">
+          Data updates every 5 minutes • Last updated: {new Date().toLocaleTimeString('fi-FI', { 
+            hour: '2-digit', 
+            minute: '2-digit' 
+          })}
+        </p>
       </div>
     </div>
   );
