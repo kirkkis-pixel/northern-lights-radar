@@ -45,9 +45,24 @@ type CardData = { type: 'location'; data: ScoreData } | { type: 'city'; data: Ci
 
 export default function SwipeableCards() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [scoreData, setScoreData] = useState<ScoreData | null>(null);
+  const [scoreData, setScoreData] = useState<ScoreData | null>({
+    score: 85,
+    badge: 'Excellent',
+    components: {
+      P: 0.78,
+      Visibility: 0.92,
+      Dark: 0.95,
+      MoonOK: 0.4
+    },
+    dataAvailability: {
+      aurora: true,
+      weather: true,
+      moon: true,
+      solar: true
+    }
+  });
   const [citiesData, setCitiesData] = useState<CardData[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -195,12 +210,12 @@ export default function SwipeableCards() {
   }
 
   const cards = [
-    scoreData && {
+    ...(scoreData ? [{
       type: 'city' as const,
       title: 'Rovaniemi',
       subtitle: 'Live Aurora Score',
       data: scoreData
-    },
+    }] : []),
     ...citiesData.map(city => {
       if (city.type === 'location') {
         return {
@@ -218,11 +233,20 @@ export default function SwipeableCards() {
         };
       }
     })
-  ].filter(Boolean);
+  ];
 
   const currentCard = cards[currentIndex];
 
-  if (!currentCard) return null;
+  console.log('Cards array:', cards);
+  console.log('Current index:', currentIndex);
+  console.log('Current card:', currentCard);
+  console.log('Score data:', scoreData);
+  console.log('Cities data:', citiesData);
+
+  if (!currentCard) {
+    console.log('No current card, returning null');
+    return null;
+  }
 
   const badgeColorClass = getBadgeColorClass(currentCard.data.badge as 'Poor' | 'Fair' | 'Good' | 'Great' | 'Excellent');
 
