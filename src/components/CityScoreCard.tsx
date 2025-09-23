@@ -17,6 +17,24 @@ interface CityData {
     Dark: number;
     MoonOK: number;
   };
+  raw: {
+    weather: {
+      hourly: {
+        temperature_2m: number[];
+        cloudcover: number[];
+        visibility: number[];
+        precipitation: number[];
+      };
+    } | null;
+    moon: {
+      moonPhase: string;
+      moonBrightness: number;
+    } | null;
+    solar: {
+      elevation: number;
+      darkness: string;
+    } | null;
+  };
   dataAvailability: {
     aurora: boolean;
     weather: boolean;
@@ -118,15 +136,37 @@ export default function CityScoreCard({ citySlug, cityName, description }: CityS
           <span className="font-medium">{Math.round(cityData.components.P * 100)}%</span>
         </div>
         <div className="flex justify-between">
-          <span>Visibility:</span>
+          <span>Sky Visibility:</span>
           <span className="font-medium">{Math.round(cityData.components.Visibility * 100)}%</span>
         </div>
         <div className="flex justify-between">
-          <span>Darkness:</span>
+          <span>Darkness Level:</span>
           <span className="font-medium">
             {cityData.components.Dark > 0.8 ? 'High' : cityData.components.Dark > 0.5 ? 'Medium' : 'Low'}
           </span>
         </div>
+        <div className="flex justify-between">
+          <span>Moon Conditions:</span>
+          <span className="font-medium">
+            {cityData.raw.moon?.moonPhase || 'Unknown'}
+          </span>
+        </div>
+        {cityData.raw.weather?.hourly.temperature_2m && (
+          <div className="flex justify-between">
+            <span>Temperature:</span>
+            <span className="font-medium">
+              {Math.round(cityData.raw.weather.hourly.temperature_2m[0])}°C
+            </span>
+          </div>
+        )}
+        {cityData.raw.weather?.hourly.precipitation && (
+          <div className="flex justify-between">
+            <span>Precipitation:</span>
+            <span className="font-medium">
+              {cityData.raw.weather.hourly.precipitation[0] > 0 ? 'Yes' : 'No'}
+            </span>
+          </div>
+        )}
       </div>
       
       <div className="mt-4 pt-3 border-t border-gray-100">

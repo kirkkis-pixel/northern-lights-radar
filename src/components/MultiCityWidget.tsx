@@ -14,6 +14,24 @@ interface CityData {
     darkness: string;
     moon: string;
   };
+  raw: {
+    weather: {
+      hourly: {
+        temperature_2m: number[];
+        cloudcover: number[];
+        visibility: number[];
+        precipitation: number[];
+      };
+    } | null;
+    moon: {
+      moonPhase: string;
+      moonBrightness: number;
+    } | null;
+    solar: {
+      elevation: number;
+      darkness: string;
+    } | null;
+  };
   lastUpdated: string;
 }
 
@@ -52,10 +70,15 @@ export default function MultiCityWidget({
                 score: data.score || 0,
                 badge: data.badge || 'Unknown',
                 components: {
-                  aurora: data.components?.aurora || 0,
-                  visibility: data.components?.visibility || 0,
-                  darkness: data.components?.darkness || 'Unknown',
-                  moon: data.components?.moon || 'Unknown'
+                  aurora: data.components?.P || 0,
+                  visibility: data.components?.Visibility || 0,
+                  darkness: data.components?.Dark > 0.8 ? 'High' : data.components?.Dark > 0.5 ? 'Medium' : 'Low',
+                  moon: data.raw?.moon?.moonPhase || 'Unknown'
+                },
+                raw: data.raw || {
+                  weather: null,
+                  moon: null,
+                  solar: null
                 },
                 lastUpdated: new Date().toLocaleTimeString()
               };
@@ -173,21 +196,37 @@ export default function MultiCityWidget({
               
               <div className="space-y-2 text-sm text-white/70">
                 <div className="flex justify-between">
-                  <span>Aurora:</span>
+                  <span>Aurora P:</span>
                   <span className="text-cyan-300">{Math.round(city.components.aurora * 100)}%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Visibility:</span>
+                  <span>Sky Visibility:</span>
                   <span className="text-cyan-300">{Math.round(city.components.visibility * 100)}%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Darkness:</span>
+                  <span>Darkness Level:</span>
                   <span className="text-cyan-300">{city.components.darkness}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Moon:</span>
+                  <span>Moon Conditions:</span>
                   <span className="text-cyan-300">{city.components.moon}</span>
                 </div>
+                {city.raw.weather?.hourly.temperature_2m && (
+                  <div className="flex justify-between">
+                    <span>Temperature:</span>
+                    <span className="text-cyan-300">
+                      {Math.round(city.raw.weather.hourly.temperature_2m[0])}°C
+                    </span>
+                  </div>
+                )}
+                {city.raw.weather?.hourly.precipitation && (
+                  <div className="flex justify-between">
+                    <span>Precipitation:</span>
+                    <span className="text-cyan-300">
+                      {city.raw.weather.hourly.precipitation[0] > 0 ? 'Yes' : 'No'}
+                    </span>
+                  </div>
+                )}
               </div>
               
               <div className="mt-4 pt-3 border-t border-white/10">
