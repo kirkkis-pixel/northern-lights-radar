@@ -69,7 +69,7 @@ export default function WhyLaplandPage() {
               </div>
               <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
                 <div className="text-white mb-2">Why Lapland is the</div>
-                <div className="text-cyan-300/90 bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <div className="text-cyan-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Ultimate Aurora Destination
                 </div>
               </h1>
