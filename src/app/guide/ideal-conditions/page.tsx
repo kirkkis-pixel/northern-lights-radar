@@ -62,7 +62,6 @@ export default function IdealConditionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-24">
             <div className="mb-16">
               <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
                 <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Ideal Conditions</span>
               </div>
               <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
