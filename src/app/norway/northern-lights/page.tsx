@@ -88,17 +88,17 @@ export default function NorwayNorthernLightsPage() {
             <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
           </div>
           
-          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center">
-            <div className="mb-20">
+          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-16">
+            <div className="mb-24">
               <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
                 <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Arctic Norway</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-thin text-white mb-8 tracking-tight leading-tight">
-                <span className="text-white">Northern Lights in</span>
-                <span className="text-red-300/80 bg-gradient-to-r from-red-300/70 to-blue-400/70 bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+                <div className="text-white mb-2">Northern Lights in</div>
+                <div className="text-red-300/90 bg-gradient-to-r from-red-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Norway
-                </span>
+                </div>
               </h1>
               <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
                 Experience the Arctic capital of aurora viewing with world-renowned destinations
