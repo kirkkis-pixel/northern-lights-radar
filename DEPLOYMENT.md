@@ -146,3 +146,4 @@ If you encounter issues:
 3. Test locally first
 4. Check environment variables
 5. Verify API endpoints are working
+
