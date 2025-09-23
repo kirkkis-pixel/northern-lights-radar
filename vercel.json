@@ -1,0 +1,18 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "runtime": "edge"
+    }
+  },
+  "env": {
+    "OWM_API_KEY": "@owm_api_key",
+    "NEXT_PUBLIC_SITE_URL": "@next_public_site_url",
+    "NEXT_PUBLIC_ENABLE_ADSENSE": "@next_public_enable_adsense",
+    "NEXT_PUBLIC_ADSENSE_CLIENT_ID": "@next_public_adsense_client_id"
+  }
+}

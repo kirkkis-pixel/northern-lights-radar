@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "setup-github": "./setup-github.sh"
   },
   "dependencies": {
     "@types/maplibre-gl": "^1.13.2",
