@@ -98,6 +98,18 @@ export default function LocalCitiesSection() {
   return (
     <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
       <div className="max-w-7xl mx-auto px-12">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+            <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Conditions</span>
+          </div>
+          <h2 className="text-4xl font-thin text-white mb-6">
+            Lapland Cities
+          </h2>
+          <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+            Discover real-time aurora conditions across Finnish Lapland&apos;s most beautiful destinations
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {citiesData.map((cityData, index) => {
