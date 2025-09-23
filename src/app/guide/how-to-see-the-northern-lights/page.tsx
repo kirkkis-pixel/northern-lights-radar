@@ -74,8 +74,8 @@ export default function HowToSeePage() {
             <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
           </div>
           
-          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center">
-            <div className="mb-20">
+          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-24">
+            <div className="mb-16">
               <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
                 <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Complete Guide</span>
