@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import GuideSection from '@/components/GuideSection';
+import LuxuryNavigation from '@/components/LuxuryNavigation';
+import CityScoreCard from '@/components/CityScoreCard';
 
 export const metadata: Metadata = {
   title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
@@ -61,6 +62,17 @@ const jsonLd = {
   ]
 };
 
+const cities = [
+  { slug: 'rovaniemi', name: 'Rovaniemi', description: 'Capital of Lapland' },
+  { slug: 'ivalo', name: 'Ivalo', description: 'Northernmost airport' },
+  { slug: 'inari', name: 'Inari', description: 'Sámi cultural heart' },
+  { slug: 'levi', name: 'Levi', description: 'Mountain resort' },
+  { slug: 'saariselka', name: 'Saariselkä', description: 'Mountain village' },
+  { slug: 'yllas', name: 'Ylläs', description: 'Seven fells' },
+  { slug: 'kilpisjarvi', name: 'Kilpisjärvi', description: 'Northernmost village' },
+  { slug: 'kemi', name: 'Kemi', description: 'Coastal gateway' }
+];
+
 export default function FinlandPage() {
   return (
     <>
@@ -69,102 +81,123 @@ export default function FinlandPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-black">
+        {/* Luxury Navigation */}
+        <LuxuryNavigation />
+        
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Northern Lights in Finland
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Your complete guide to seeing the aurora borealis in Finland. 
-                Live conditions, best viewing spots, and expert tips for successful aurora hunting.
-              </p>
-              
-              {/* Live Widget */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <h3 className="text-xl font-light text-white mb-4">Live Aurora Conditions</h3>
-                <p className="text-white/60">Live data will be displayed here</p>
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-40 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
+          </div>
+          
+          <div className="relative z-10 max-w-8xl mx-auto px-12 text-center">
+            <div className="mb-20">
+              <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Forecast</span>
               </div>
+              <h1 className="text-5xl md:text-6xl font-thin text-white mb-8 tracking-tight leading-tight">
+                <span className="text-white">Northern Lights</span>
+                <span className="text-cyan-300/80 bg-gradient-to-r from-cyan-300/70 to-blue-400/70 bg-clip-text text-transparent">
+                  in Finland
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+                Your complete guide to seeing the aurora borealis in Finland. Live conditions, best viewing spots, and expert tips for successful aurora hunting.
+              </p>
             </div>
           </div>
         </div>
         
         {/* Quick Stats */}
-        <div className="py-12 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">200+</div>
-                <div className="text-gray-600">Aurora Nights per Year</div>
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-4xl font-thin text-cyan-300/80 mb-4">200+</div>
+                <div className="text-white/70 font-light">Aurora Nights per Year</div>
+                <div className="text-sm text-white/50 mt-2">In Lapland region</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">66°N</div>
-                <div className="text-gray-600">Arctic Circle Location</div>
+              <div className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-4xl font-thin text-cyan-300/80 mb-4">66°N</div>
+                <div className="text-white/70 font-light">Arctic Circle Location</div>
+                <div className="text-sm text-white/50 mt-2">Optimal positioning</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">85%</div>
-                <div className="text-gray-600">Success Rate in Lapland</div>
+              <div className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-4xl font-thin text-cyan-300/80 mb-4">85%</div>
+                <div className="text-white/70 font-light">Success Rate</div>
+                <div className="text-sm text-white/50 mt-2">In Lapland cities</div>
               </div>
             </div>
           </div>
         </div>
         
         {/* Best Time Section */}
-        <div className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              When to See the Aurora in Finland
-            </h2>
+        <div className="py-32 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Seasonal Guide</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-8">
+                When to See the Aurora
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
+                Complete seasonal breakdown of the best times to visit Finland for aurora viewing
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <h3 className="text-2xl font-light text-white mb-6">
                   Best Months
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">September - October</span>
-                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                    <span className="text-white/70 font-light">September - October</span>
+                    <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium border border-green-500/30">
                       Excellent
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">November - March</span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                    <span className="text-white/70 font-light">November - March</span>
+                    <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
                       Peak Season
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">April - May</span>
-                    <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+                    <span className="text-white/70 font-light">April - May</span>
+                    <span className="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30">
                       Good
                     </span>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <h3 className="text-2xl font-light text-white mb-6">
                   Best Times
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">10 PM - 2 AM</span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                    <span className="text-white/70 font-light">10 PM - 2 AM</span>
+                    <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
                       Peak Hours
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">8 PM - 4 AM</span>
-                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                    <span className="text-white/70 font-light">8 PM - 4 AM</span>
+                    <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium border border-green-500/30">
                       Good Window
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">All Night</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                    <span className="text-white/70 font-light">All Night</span>
+                    <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30">
                       Polar Night
                     </span>
                   </div>
@@ -175,47 +208,51 @@ export default function FinlandPage() {
         </div>
         
         {/* Lapland Cities */}
-        <div className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Best Cities for Aurora Viewing
-            </h2>
+        <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-8xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-8">
+                Best Cities for Aurora Viewing
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
+                Real-time aurora conditions across Finnish Lapland&apos;s most beautiful destinations
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { name: 'Rovaniemi', slug: 'rovaniemi', description: 'Gateway to Lapland' },
-                { name: 'Ivalo', slug: 'ivalo', description: 'Northernmost airport' },
-                { name: 'Inari', slug: 'inari', description: 'Sámi cultural heart' },
-                { name: 'Levi', slug: 'levi', description: 'Mountain views' },
-                { name: 'Saariselkä', slug: 'saariselka', description: 'Clear mountain air' },
-                { name: 'Ylläs', slug: 'yllas', description: 'Seven fells' },
-                { name: 'Kilpisjärvi', slug: 'kilpisjarvi', description: 'Northernmost village' }
-              ].map((city) => (
-                <Link
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {cities.map((city) => (
+                <CityScoreCard
                   key={city.slug}
-                  href={`/finland/lapland/${city.slug}/aurora`}
-                  className="block bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {city.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {city.description}
-                  </p>
-                </Link>
+                  citySlug={city.slug}
+                  cityName={city.name}
+                  description={city.description}
+                />
               ))}
             </div>
           </div>
         </div>
         
-        {/* Guide Section */}
-        <GuideSection />
+        {/* CTA Section */}
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto px-12 text-center">
+            <Link
+              href="/guide/how-to-see-the-northern-lights"
+              className="group inline-flex items-center gap-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-white px-12 py-5 rounded-full font-light tracking-wide hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-500 text-xl shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 hover:scale-105"
+            >
+              <span>Start Your Aurora Journey</span>
+              <div className="w-2 h-2 bg-white/60 rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
+            </Link>
+          </div>
+        </div>
         
         {/* Attribution Footer */}
-        <div className="py-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6">
-            <p className="text-sm text-gray-500 text-center">
-              Data from NOAA SWPC (OVATION), Open-Meteo, OpenWeather. Times in local timezone. 
+        <div className="py-12 bg-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <p className="text-sm text-white/40 text-center font-light">
+              Data from NOAA SWPC (OVATION), FMI, Open-Meteo. Times in local timezone. 
               Scores are indicative and depend on weather & darkness.
             </p>
           </div>

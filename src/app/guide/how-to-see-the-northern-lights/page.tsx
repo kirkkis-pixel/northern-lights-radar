@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import LuxuryNavigation from '@/components/LuxuryNavigation';
 
 export const metadata: Metadata = {
   title: 'How to See the Northern Lights - Complete Beginner\'s Guide',
@@ -46,28 +47,44 @@ export default function HowToSeePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-black">
+        {/* Luxury Navigation */}
+        <LuxuryNavigation />
+        
         {/* Breadcrumbs */}
-        <div className="bg-gray-50 py-4">
-          <div className="max-w-4xl mx-auto px-6">
-            <nav className="text-sm text-gray-600">
-              <Link href="/" className="hover:text-blue-600">Home</Link>
+        <div className="bg-black/50 py-4">
+          <div className="max-w-6xl mx-auto px-12">
+            <nav className="text-sm text-white/60">
+              <Link href="/" className="hover:text-cyan-300 transition-colors">Home</Link>
               <span className="mx-2">/</span>
-              <Link href="/finland/northern-lights" className="hover:text-blue-600">Finland</Link>
+              <Link href="/finland/northern-lights" className="hover:text-cyan-300 transition-colors">Finland</Link>
               <span className="mx-2">/</span>
-              <span className="text-gray-900">How to See the Northern Lights</span>
+              <span className="text-white/80">How to See the Northern Lights</span>
             </nav>
           </div>
         </div>
 
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                How to See the Northern Lights
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          </div>
+          
+          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center">
+            <div className="mb-20">
+              <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Complete Guide</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-thin text-white mb-8 tracking-tight leading-tight">
+                <span className="text-white">How to See the</span>
+                <span className="text-cyan-300/80 bg-gradient-to-r from-cyan-300/70 to-blue-400/70 bg-clip-text text-transparent">
+                  Northern Lights
+                </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
                 Your complete beginner&apos;s guide to aurora hunting in Finland. 
                 Learn the essentials for successful northern lights viewing.
               </p>
@@ -76,9 +93,9 @@ export default function HowToSeePage() {
         </div>
 
         {/* Main Content */}
-        <div className="py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="prose prose-lg max-w-none">
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="space-y-16">
               
               {/* Step 1 */}
               <div className="mb-12">

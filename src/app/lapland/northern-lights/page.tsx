@@ -77,37 +77,49 @@ export default function LaplandPage() {
         <LuxuryNavigation />
         
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-black via-slate-900 to-gray-900 py-24 pt-32">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center">
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-40 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
+          </div>
+          
+          <div className="relative z-10 max-w-8xl mx-auto px-12 text-center">
+            <div className="mb-20">
               <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
                 <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Conditions</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-thin text-white mb-8">
-                Northern Lights in Lapland
+              <h1 className="text-5xl md:text-6xl font-thin text-white mb-8 tracking-tight leading-tight">
+                <span className="text-white">Northern Lights</span>
+                <span className="text-cyan-300/80 bg-gradient-to-r from-cyan-300/70 to-blue-400/70 bg-clip-text text-transparent">
+                  in Lapland
+                </span>
               </h1>
-              <p className="text-xl text-white/60 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
-                Live aurora conditions for Lapland cities. Real-time scoring based on 
-                space weather, cloud cover, and darkness levels.
+              <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+                Experience the magic of Finnish Lapland with real-time aurora predictions and live conditions for all major destinations.
               </p>
             </div>
           </div>
         </div>
         
         {/* Live City Scores */}
-        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-7xl mx-auto px-12">
+        <div className="py-32 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-8xl mx-auto px-12">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-thin text-white mb-6">
-                Live Aurora Conditions
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-8">
+                Lapland Cities
               </h2>
-              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
-                Real-time aurora scores for all Lapland cities
+              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
+                Real-time aurora conditions across Finnish Lapland&apos;s most beautiful destinations
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {cities.map((city) => (
                 <CityScoreCard
                   key={city.slug}
@@ -264,6 +276,19 @@ export default function LaplandPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </div>
+        
+        {/* CTA Section */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12 text-center">
+            <Link
+              href="/guide/how-to-see-the-northern-lights"
+              className="group inline-flex items-center gap-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-white px-12 py-5 rounded-full font-light tracking-wide hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-500 text-xl shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 hover:scale-105"
+            >
+              <span>Start Your Aurora Journey</span>
+              <div className="w-2 h-2 bg-white/60 rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
+            </Link>
           </div>
         </div>
         
