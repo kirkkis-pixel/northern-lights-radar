@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import LuxuryNavigation from '@/components/LuxuryNavigation';
+import RegionalNavigation from '@/components/RegionalNavigation';
 import MultiCityWidget from '@/components/MultiCityWidget';
+import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
 
 export const metadata: Metadata = {
   title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
@@ -82,8 +83,8 @@ export default function FinlandPage() {
       />
       
       <div className="min-h-screen bg-black">
-        {/* Luxury Navigation */}
-        <LuxuryNavigation />
+        {/* Regional Navigation */}
+        <RegionalNavigation />
         
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-40 overflow-hidden">
@@ -215,9 +216,109 @@ export default function FinlandPage() {
             latitude: 66.5039, // Default to Rovaniemi, will be overridden by API
             longitude: 25.7294
           }))}
-          title="Live Aurora Conditions Across Lapland"
-          description="Real-time aurora scores and conditions for all major Lapland destinations"
+          title="Live Aurora Conditions Across Finnish Lapland"
+          description="Real-time aurora scores and conditions for all major Finnish Lapland destinations"
         />
+
+        {/* Why Finnish Lapland */}
+        <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-20">
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Why Finland</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-8">
+                Why Finnish Lapland is Perfect for Aurora Viewing
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
+                Finland offers unique advantages that make it one of the world&apos;s premier aurora destinations
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/30">
+                  <span className="text-blue-300 text-2xl">🌲</span>
+                </div>
+                <h3 className="text-xl font-light text-white mb-4">Pristine Wilderness</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Finnish Lapland is home to vast wilderness areas with minimal light pollution, offering some of the darkest skies in Europe for optimal aurora viewing.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/30">
+                  <span className="text-blue-300 text-2xl">🏔️</span>
+                </div>
+                <h3 className="text-xl font-light text-white mb-4">Fell Landscapes</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  The unique fell landscapes of Finnish Lapland provide elevated viewing points and dramatic backdrops for aurora photography, with clear sightlines to the northern horizon.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/30">
+                  <span className="text-blue-300 text-2xl">🌡️</span>
+                </div>
+                <h3 className="text-xl font-light text-white mb-4">Stable Climate</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Finland&apos;s continental climate provides more stable weather patterns compared to coastal areas, resulting in clearer skies and better aurora viewing conditions.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/30">
+                  <span className="text-blue-300 text-2xl">🏨</span>
+                </div>
+                <h3 className="text-xl font-light text-white mb-4">Aurora Infrastructure</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  World-class aurora tourism infrastructure including glass igloos, aurora hotels, and specialized viewing platforms designed specifically for northern lights enthusiasts.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/30">
+                  <span className="text-blue-300 text-2xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-light text-white mb-4">Optimal Latitude</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Finnish Lapland cities are positioned at the ideal latitude (66-69°N) within the auroral oval, providing the highest probability of seeing the northern lights.
+                </p>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/30">
+                  <span className="text-blue-300 text-2xl">🌙</span>
+                </div>
+                <h3 className="text-xl font-light text-white mb-4">Polar Night</h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  During winter months, Finnish Lapland experiences polar night with up to 24 hours of darkness, maximizing aurora viewing opportunities when the sun doesn&apos;t rise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Space Weather */}
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-16">
+              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Space Weather</span>
+              </div>
+              <h2 className="text-4xl font-thin text-white mb-6">
+                Current Space Weather Conditions
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+                Monitor real-time space weather data that affects aurora visibility across Finnish Lapland
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <SpaceWeatherWidget />
+            </div>
+          </div>
+        </div>
         
         {/* CTA Section */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
