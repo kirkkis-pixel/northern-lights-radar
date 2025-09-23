@@ -413,11 +413,40 @@ export default function HomePage() {
                   <p className="text-xs text-white/50">Northernmost village • Arctic Circle • Prime location</p>
                 </div>
               </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-light text-white mb-2">Kemi</h3>
+                  <div className="text-4xl font-thin text-cyan-300/80 mb-2">71</div>
+                  <div className="text-sm text-blue-400 font-light uppercase tracking-wider">Good</div>
+                </div>
+                <div className="space-y-2 text-sm text-white/70">
+                  <div className="flex justify-between">
+                    <span>Aurora Probability:</span>
+                    <span className="text-cyan-300">65%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Sky Visibility:</span>
+                    <span className="text-cyan-300">78%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Darkness Level:</span>
+                    <span className="text-cyan-300">Medium</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Moon Conditions:</span>
+                    <span className="text-cyan-300">Fair</span>
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-white/10">
+                  <p className="text-xs text-white/50">Coastal city • Icebreaker port • Gateway to Lapland</p>
+                </div>
+              </div>
             </div>
           </div>
           
-          {/* Luxury CTA Buttons */}
-          <div className="space-y-8">
+          {/* Single CTA Button */}
+          <div className="text-center">
             <Link
               href="/lapland/northern-lights"
               className="group inline-flex items-center gap-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-white px-12 py-5 rounded-full font-light tracking-wide hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-500 text-xl shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 hover:scale-105"
@@ -425,15 +454,6 @@ export default function HomePage() {
               <span>Explore Lapland Cities</span>
               <div className="w-2 h-2 bg-white/60 rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
             </Link>
-            <div className="text-center">
-              <Link
-                href="/finland/northern-lights"
-                className="group inline-flex items-center gap-3 text-white/50 hover:text-white/80 transition-all duration-300 font-light text-lg tracking-wide"
-              >
-                <span>View Finland Guide</span>
-                <div className="w-1 h-1 bg-white/50 rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
-              </Link>
-            </div>
           </div>
         </div>
         
