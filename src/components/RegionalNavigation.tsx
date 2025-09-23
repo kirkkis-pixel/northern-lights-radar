@@ -46,6 +46,17 @@ export default function RegionalNavigation() {
           {/* Main Navigation */}
           <div className="hidden lg:flex items-center space-x-12">
             <Link 
+              href="/why-lapland" 
+              className={`text-base font-light transition-colors duration-300 ${
+                isActive('/why-lapland') 
+                  ? 'text-cyan-300' 
+                  : 'text-white hover:text-cyan-300'
+              }`}
+            >
+              Why Lapland
+            </Link>
+            
+            <Link 
               href="/finland/northern-lights" 
               className={`text-base font-light transition-colors duration-300 ${
                 isActive('/finland') 
