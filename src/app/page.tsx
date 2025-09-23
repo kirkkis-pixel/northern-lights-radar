@@ -445,24 +445,8 @@ export default function HomePage() {
             </div>
           </div>
           
-          {/* Single CTA Button */}
-          <div className="text-center">
-            <Link
-              href="/lapland/northern-lights"
-              className="group inline-flex items-center gap-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-white px-12 py-5 rounded-full font-light tracking-wide hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-500 text-xl shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 hover:scale-105"
-            >
-              <span>Explore Lapland Cities</span>
-              <div className="w-2 h-2 bg-white/60 rounded-full group-hover:translate-x-1 transition-transform duration-300"></div>
-            </Link>
-          </div>
         </div>
         
-        {/* Luxury Scroll Indicator */}
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
-          <div className="w-8 h-12 border border-white/20 rounded-full flex justify-center backdrop-blur-sm bg-white/5">
-            <div className="w-1 h-4 bg-white/40 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
       </div>
       
       {/* Local Cities Section */}
