@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import HomeMap from '@/components/HomeMap';
 import LocalCitiesSection from '@/components/LocalCitiesSection';
-import LuxuryNavigation from '@/components/LuxuryNavigation';
+import RegionalNavigation from '@/components/RegionalNavigation';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Northern Lights Radar - Live Aurora Forecast for Finland',
-  description: 'Real-time aurora viewing conditions for Finnish Lapland. Simple, transparent scoring based on NOAA space weather data, cloud cover, and darkness levels.',
-  keywords: 'northern lights, aurora borealis, Finland, Lapland, aurora forecast, space weather',
+  title: 'Northern Lights Radar - Live Aurora Forecast for Lapland Region',
+  description: 'Real-time aurora viewing conditions across Finnish, Swedish, and Norwegian Lapland. Simple, transparent scoring based on NOAA space weather data, cloud cover, and darkness levels.',
+  keywords: 'northern lights, aurora borealis, Finland, Sweden, Norway, Lapland, aurora forecast, space weather',
   openGraph: {
     title: 'Northern Lights Radar - Live Aurora Forecast for Finland',
     description: 'Real-time aurora viewing conditions for Finnish Lapland. Simple, transparent scoring based on NOAA space weather data.',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-black">
-      {/* Luxury Navigation */}
-      <LuxuryNavigation />
+        {/* Regional Navigation */}
+        <RegionalNavigation />
       
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">

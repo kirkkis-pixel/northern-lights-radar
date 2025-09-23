@@ -111,6 +111,134 @@
         "Three-country border area"
       ],
       "description": "Northernmost village in Finland, closest to the auroral oval"
+    },
+    {
+      "slug": "kemi",
+      "name": "Kemi",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 65.7361,
+      "longitude": 24.5639,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Kemi city center",
+        "Bothnian Bay shoreline",
+        "Kemi SnowCastle area",
+        "Kemi railway station"
+      ],
+      "description": "Coastal city with icebreaker port and gateway to Lapland"
+    },
+    {
+      "slug": "kiruna",
+      "name": "Kiruna",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 67.8558,
+      "longitude": 20.2253,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Kiruna city center",
+        "Luossavaara mountain",
+        "Esrange Space Center",
+        "Jukkasjärvi Ice Hotel"
+      ],
+      "description": "Sweden's northernmost city and gateway to Swedish Lapland"
+    },
+    {
+      "slug": "abisko",
+      "name": "Abisko",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 68.3500,
+      "longitude": 18.8333,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Abisko National Park",
+        "Aurora Sky Station",
+        "Lake Torneträsk",
+        "Nuolja mountain"
+      ],
+      "description": "World-famous aurora viewing destination with clear skies"
+    },
+    {
+      "slug": "jokkmokk",
+      "name": "Jokkmokk",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 66.6000,
+      "longitude": 19.8333,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Jokkmokk town center",
+        "Ájtte Museum area",
+        "Lule River banks",
+        "Sarek National Park"
+      ],
+      "description": "Sámi cultural center with excellent aurora viewing"
+    },
+    {
+      "slug": "tromso",
+      "name": "Tromsø",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 69.6492,
+      "longitude": 18.9553,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Tromsø city center",
+        "Fjellheisen cable car",
+        "Tromsø Bridge",
+        "Prestvannet lake"
+      ],
+      "description": "Arctic capital of Norway and premier aurora destination"
+    },
+    {
+      "slug": "alta",
+      "name": "Alta",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 69.9689,
+      "longitude": 23.2717,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Alta city center",
+        "Alta Museum area",
+        "Alta River valley",
+        "Haldde mountain"
+      ],
+      "description": "Northern Norway's largest city with rich aurora history"
+    },
+    {
+      "slug": "narvik",
+      "name": "Narvik",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 68.4381,
+      "longitude": 17.4278,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Narvik city center",
+        "Narvikfjellet mountain",
+        "Ofotfjord shoreline",
+        "Narvik War Museum area"
+      ],
+      "description": "Coastal city with dramatic fjord views and aurora opportunities"
+    },
+    {
+      "slug": "bodo",
+      "name": "Bodø",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 67.2800,
+      "longitude": 14.4050,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Bodø city center",
+        "Saltstraumen area",
+        "Bodø Airport vicinity",
+        "Rønvikfjellet mountain"
+      ],
+      "description": "Gateway to northern Norway with good aurora viewing potential"
     }
   ]
 }

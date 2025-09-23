@@ -1,7 +1,11 @@
+import { fetchSMHIWeatherData, calculateSwedishViewingCloudCover } from './weather-sweden';
+import { fetchMETWeatherData, calculateNorwegianViewingCloudCover } from './weather-norway';
+
 interface WeatherData {
   latitude: number;
   longitude: number;
   timezone: string;
+  country: string;
   hourly: {
     time: string[];
     cloudcover: number[];
@@ -12,10 +16,78 @@ interface WeatherData {
 }
 
 /**
- * Fetches weather data from FMI (Finnish Meteorological Institute) API
- * Free, no API key required, official Finnish weather data
+ * Determines the country based on coordinates and fetches appropriate weather data
  */
 export async function fetchWeatherData(
+  latitude: number,
+  longitude: number
+): Promise<WeatherData | null> {
+  // Determine country based on coordinates
+  const country = determineCountry(latitude, longitude);
+  
+  try {
+    switch (country) {
+      case 'Sweden':
+        return await fetchSwedishWeatherData(latitude, longitude);
+      case 'Norway':
+        return await fetchNorwegianWeatherData(latitude, longitude);
+      case 'Finland':
+      default:
+        return await fetchFinnishWeatherData(latitude, longitude);
+    }
+  } catch (error) {
+    console.error(`Failed to fetch ${country} weather data:`, error);
+    // Fallback to Open-Meteo for all countries
+    return fetchOpenMeteoData(latitude, longitude);
+  }
+}
+
+/**
+ * Determines country based on coordinates
+ */
+function determineCountry(latitude: number, longitude: number): string {
+  // Rough boundaries for Lapland region
+  if (longitude < 20 && latitude > 65) return 'Norway';
+  if (longitude < 25 && latitude > 65) return 'Sweden';
+  return 'Finland';
+}
+
+/**
+ * Fetches Swedish weather data from SMHI
+ */
+async function fetchSwedishWeatherData(
+  latitude: number,
+  longitude: number
+): Promise<WeatherData | null> {
+  const data = await fetchSMHIWeatherData(latitude, longitude);
+  if (!data) return null;
+  
+  return {
+    ...data,
+    country: 'Sweden'
+  };
+}
+
+/**
+ * Fetches Norwegian weather data from MET Norway
+ */
+async function fetchNorwegianWeatherData(
+  latitude: number,
+  longitude: number
+): Promise<WeatherData | null> {
+  const data = await fetchMETWeatherData(latitude, longitude);
+  if (!data) return null;
+  
+  return {
+    ...data,
+    country: 'Norway'
+  };
+}
+
+/**
+ * Fetches Finnish weather data from FMI
+ */
+async function fetchFinnishWeatherData(
   latitude: number,
   longitude: number
 ): Promise<WeatherData | null> {
@@ -35,8 +107,7 @@ export async function fetchWeatherData(
     return parseFMIWeatherData(data, latitude, longitude);
   } catch (error) {
     console.error('Failed to fetch FMI weather data:', error);
-    // Fallback to Open-Meteo if FMI fails
-    return fetchOpenMeteoData(latitude, longitude);
+    return null;
   }
 }
 
@@ -101,25 +172,43 @@ function parseFMIWeatherData(xmlData: string, latitude: number, longitude: numbe
     latitude,
     longitude,
     timezone: 'Europe/Helsinki',
+    country: 'Finland',
     hourly
   };
 }
 
 /**
  * Calculates average cloud cover for the viewing window (21:00-03:00 local time)
+ * Uses country-specific calculation methods when available
  */
 export function calculateViewingCloudCover(
   weatherData: WeatherData,
   viewingStartHour: number = 21,
   viewingEndHour: number = 3
 ): number {
-  const { hourly } = weatherData;
-  const cloudCovers: number[] = [];
+  const { hourly, country } = weatherData;
   
-  // Get current time in the location's timezone
-  const now = new Date();
-  // const localTime = new Date(now.toLocaleString("en-US", { timeZone: weatherData.timezone })); // Unused for now
-  // const currentHour = localTime.getHours(); // Unused for now
+  // Use country-specific calculation if available
+  switch (country) {
+    case 'Sweden':
+      return calculateSwedishViewingCloudCover(hourly) / 100; // Convert to 0-1 scale
+    case 'Norway':
+      return calculateNorwegianViewingCloudCover(hourly) / 100; // Convert to 0-1 scale
+    case 'Finland':
+    default:
+      return calculateFinnishViewingCloudCover(hourly, viewingStartHour, viewingEndHour);
+  }
+}
+
+/**
+ * Finnish-specific cloud cover calculation
+ */
+function calculateFinnishViewingCloudCover(
+  hourly: WeatherData['hourly'],
+  viewingStartHour: number = 21,
+  viewingEndHour: number = 3
+): number {
+  const cloudCovers: number[] = [];
   
   // Find the next 6 hours starting from viewing window
   let startIndex = -1;
@@ -140,6 +229,7 @@ export function calculateViewingCloudCover(
   
   if (cloudCovers.length === 0) {
     // Fallback: use current hour and next 5 hours
+    const now = new Date();
     const currentIndex = Math.floor((now.getTime() - new Date(hourly.time[0]).getTime()) / (1000 * 60 * 60));
     for (let i = 0; i < 6 && currentIndex + i < hourly.cloudcover.length; i++) {
       cloudCovers.push(hourly.cloudcover[currentIndex + i]);
@@ -160,7 +250,7 @@ export function calculateViewingCloudCover(
 export async function getWeatherData(
   latitude: number,
   longitude: number
-): Promise<{ cloudCover: number; raw: Record<string, unknown> } | null> {
+): Promise<{ cloudCover: number; country: string; raw: Record<string, unknown> } | null> {
   const data = await fetchWeatherData(latitude, longitude);
   
   if (!data) {
@@ -171,8 +261,10 @@ export async function getWeatherData(
   
   return {
     cloudCover,
+    country: data.country,
     raw: {
       timezone: data.timezone,
+      country: data.country,
       hourly: {
         time: data.hourly.time.slice(0, 12), // Sample for debugging
         cloudcover: data.hourly.cloudcover.slice(0, 12),
