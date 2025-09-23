@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import HomeMap from '@/components/HomeMap';
 import RegionalNavigation from '@/components/RegionalNavigation';
+import LocalCitiesSection from '@/components/LocalCitiesSection';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -198,7 +199,8 @@ export default function HomePage() {
             </div>
           </div>
           
-      
+      {/* Local Cities Section */}
+      <LocalCitiesSection />
       
       {/* Map Section */}
       <div className="py-32 bg-gradient-to-b from-black to-slate-900">
