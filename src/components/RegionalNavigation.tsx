@@ -28,26 +28,26 @@ export default function RegionalNavigation() {
         ? 'bg-black/80 backdrop-blur-md border-b border-white/10' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-8xl mx-auto px-12 py-6">
+      <div className="max-w-8xl mx-auto px-16 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <div className="w-6 h-6 bg-white rounded-full"></div>
+          <Link href="/" className="flex items-center space-x-4 group">
+            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <div className="w-7 h-7 bg-white rounded-full"></div>
             </div>
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-white uppercase tracking-wide group-hover:text-cyan-300 transition-colors">
+              <h1 className="text-2xl font-bold text-white uppercase tracking-wide group-hover:text-cyan-300 transition-colors">
                 Northern Lights
               </h1>
-              <p className="text-xs text-gray-400 font-light uppercase tracking-wide">Radar</p>
+              <p className="text-sm text-gray-400 font-light uppercase tracking-wide">Radar</p>
             </div>
           </Link>
 
           {/* Main Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-12">
             <Link 
               href="/finland/northern-lights" 
-              className={`text-sm font-light transition-colors duration-300 ${
+              className={`text-base font-light transition-colors duration-300 ${
                 isActive('/finland') 
                   ? 'text-cyan-300' 
                   : 'text-white hover:text-cyan-300'
@@ -58,7 +58,7 @@ export default function RegionalNavigation() {
             
             <Link 
               href="/sweden/northern-lights" 
-              className={`text-sm font-light transition-colors duration-300 ${
+              className={`text-base font-light transition-colors duration-300 ${
                 isActive('/sweden') 
                   ? 'text-cyan-300' 
                   : 'text-white hover:text-cyan-300'
@@ -69,7 +69,7 @@ export default function RegionalNavigation() {
             
             <Link 
               href="/norway/northern-lights" 
-              className={`text-sm font-light transition-colors duration-300 ${
+              className={`text-base font-light transition-colors duration-300 ${
                 isActive('/norway') 
                   ? 'text-cyan-300' 
                   : 'text-white hover:text-cyan-300'
@@ -80,7 +80,7 @@ export default function RegionalNavigation() {
 
             <Link 
               href="/guide/how-to-see-the-northern-lights" 
-              className={`text-sm font-light transition-colors duration-300 ${
+              className={`text-base font-light transition-colors duration-300 ${
                 isActive('/guide') 
                   ? 'text-cyan-300' 
                   : 'text-white hover:text-cyan-300'
@@ -93,7 +93,7 @@ export default function RegionalNavigation() {
           {/* CTA Button */}
           <Link
             href="/finland/northern-lights"
-            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium text-sm transition-colors duration-300"
+            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium text-base transition-colors duration-300"
           >
             Explore
           </Link>
