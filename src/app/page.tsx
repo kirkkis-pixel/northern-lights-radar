@@ -50,6 +50,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-8xl mx-auto px-12 text-center pt-16">
           {/* Main Headline */}
           <div className="mb-24">
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Radar</span>
+            </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
               <div className="bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Northern Lights Radar
@@ -73,26 +77,6 @@ export default function HomePage() {
               textAlign: 'center',
               position: 'relative'
             }}>
-              {/* Live Indicator */}
-              <div style={{ 
-                position: 'absolute', 
-                top: '12px', 
-                right: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                fontSize: '12px',
-                color: '#ccc'
-              }}>
-                <div style={{ 
-                  width: '6px', 
-                  height: '6px', 
-                  backgroundColor: 'red', 
-                  borderRadius: '50%', 
-                  marginRight: '6px',
-                  animation: 'pulse 2s infinite'
-                }}></div>
-                Live Data
-              </div>
 
               {/* Header */}
               <div style={{ marginBottom: '16px' }}>
