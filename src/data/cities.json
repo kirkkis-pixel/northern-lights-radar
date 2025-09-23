@@ -1,0 +1,117 @@
+{
+  "cities": [
+    {
+      "slug": "rovaniemi",
+      "name": "Rovaniemi",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 66.5039,
+      "longitude": 25.7294,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Arktikum Science Centre",
+        "Santa Claus Village",
+        "Ounasvaara Hill",
+        "Rovaniemi City Center"
+      ],
+      "description": "The capital of Lapland and gateway to the Arctic Circle"
+    },
+    {
+      "slug": "ivalo",
+      "name": "Ivalo",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 68.6592,
+      "longitude": 27.5389,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Ivalo Airport area",
+        "Lake Inari shores",
+        "Saariselkä village",
+        "Urho Kekkonen National Park"
+      ],
+      "description": "Northernmost airport in Finland, excellent for aurora viewing"
+    },
+    {
+      "slug": "inari",
+      "name": "Inari",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 68.9056,
+      "longitude": 27.0281,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Lake Inari shores",
+        "Siida Museum area",
+        "Inari village center",
+        "Pielpajärvi Wilderness Church"
+      ],
+      "description": "Cultural heart of Sámi land with pristine wilderness"
+    },
+    {
+      "slug": "levi",
+      "name": "Levi",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 67.8044,
+      "longitude": 24.8089,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Levi Fell summit",
+        "Levi Ski Resort",
+        "Kittilä village",
+        "Pallas-Yllästunturi National Park"
+      ],
+      "description": "Popular ski resort with excellent aurora viewing opportunities"
+    },
+    {
+      "slug": "saariselka",
+      "name": "Saariselkä",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 68.4167,
+      "longitude": 27.4167,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Saariselkä village",
+        "Kaunispää fell",
+        "Iisakkipää fell",
+        "Urho Kekkonen National Park"
+      ],
+      "description": "Mountain village with clear skies and minimal light pollution"
+    },
+    {
+      "slug": "yllas",
+      "name": "Ylläs",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 67.5667,
+      "longitude": 24.2333,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Ylläs fell",
+        "Äkäslompolo village",
+        "Pallas-Yllästunturi National Park",
+        "Kittilä area"
+      ],
+      "description": "Seven fells offering panoramic views of the northern sky"
+    },
+    {
+      "slug": "kilpisjarvi",
+      "name": "Kilpisjärvi",
+      "region": "Lapland",
+      "country": "Finland",
+      "latitude": 69.0500,
+      "longitude": 20.8000,
+      "timezone": "Europe/Helsinki",
+      "viewingSpots": [
+        "Kilpisjärvi village",
+        "Saana fell",
+        "Malla Strict Nature Reserve",
+        "Three-country border area"
+      ],
+      "description": "Northernmost village in Finland, closest to the auroral oval"
+    }
+  ]
+}
+
