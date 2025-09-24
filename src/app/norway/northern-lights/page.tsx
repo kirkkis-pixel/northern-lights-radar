@@ -46,25 +46,57 @@ const norwegianCities = [
     slug: 'tromso',
     name: 'Tromsø',
     latitude: 69.6492,
-    longitude: 18.9553
+    longitude: 18.9553,
+    description: "Arctic capital of Norway and premier aurora destination",
+    viewingSpots: ["Tromsø city center", "Fjellheisen cable car", "Tromsø Bridge", "Prestvannet lake"]
   },
   {
     slug: 'alta',
     name: 'Alta',
     latitude: 69.9689,
-    longitude: 23.2717
+    longitude: 23.2717,
+    description: "Northern Norway's largest city with rich aurora history",
+    viewingSpots: ["Alta city center", "Alta Museum area", "Alta River valley", "Haldde mountain"]
   },
   {
     slug: 'narvik',
     name: 'Narvik',
     latitude: 68.4381,
-    longitude: 17.4278
+    longitude: 17.4278,
+    description: "Coastal city with dramatic fjord views and aurora opportunities",
+    viewingSpots: ["Narvik city center", "Narvikfjellet mountain", "Ofotfjord shoreline", "Narvik War Museum area"]
   },
   {
     slug: 'bodo',
     name: 'Bodø',
     latitude: 67.2800,
-    longitude: 14.4050
+    longitude: 14.4050,
+    description: "Gateway to northern Norway with good aurora viewing potential",
+    viewingSpots: ["Bodø city center", "Saltstraumen area", "Bodø Airport vicinity", "Rønvikfjellet mountain"]
+  },
+  {
+    slug: 'harstad',
+    name: 'Harstad',
+    latitude: 68.7986,
+    longitude: 16.5406,
+    description: "Coastal city with fjord views and aurora opportunities",
+    viewingSpots: ["Harstad city center", "Trondenes peninsula", "Hinnøya island", "Vågsfjord shoreline"]
+  },
+  {
+    slug: 'hammerfest',
+    name: 'Hammerfest',
+    latitude: 70.6611,
+    longitude: 23.6728,
+    description: "World's northernmost city with excellent aurora viewing",
+    viewingSpots: ["Hammerfest city center", "Salen mountain", "Hammerfest harbor", "Melkøya island"]
+  },
+  {
+    slug: 'vadso',
+    name: 'Vadsø',
+    latitude: 70.0731,
+    longitude: 29.7494,
+    description: "Eastern Finnmark city with coastal aurora viewing",
+    viewingSpots: ["Vadsø city center", "Varanger Peninsula", "Vadsø Airport area", "Varangerfjord shoreline"]
   }
 ];
 
@@ -112,6 +144,66 @@ export default function NorwayNorthernLightsPage() {
           title="Live Aurora Conditions in Arctic Norway"
           description="Real-time aurora scores and conditions for Norway's premier northern lights destinations"
         />
+
+        {/* Norwegian Cities Section */}
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-7xl mx-auto px-12">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Norwegian Cities</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-6">
+                Explore Arctic Norway Cities
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+                Discover the best aurora viewing destinations across Arctic Norway
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {norwegianCities.map((city, index) => (
+                <Link
+                  key={city.slug}
+                  href={`/norway/lapland/${city.slug}/aurora`}
+                  className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+                  style={{
+                    animationDelay: `${index * 100}ms`
+                  }}
+                >
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-red-300 text-xl">🏔️</span>
+                    </div>
+                    <h3 className="text-lg font-light text-white mb-2 group-hover:text-red-300 transition-colors">
+                      {city.name}
+                    </h3>
+                    <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
+                      {city.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1 justify-center">
+                      {city.viewingSpots.slice(0, 2).map((spot, spotIndex) => (
+                        <span
+                          key={spotIndex}
+                          className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full"
+                        >
+                          {spot}
+                        </span>
+                      ))}
+                      {city.viewingSpots.length > 2 && (
+                        <span className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full">
+                          +{city.viewingSpots.length - 2} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Why Arctic Norway */}
         <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
