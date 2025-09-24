@@ -103,7 +103,7 @@ export default function DynamicCityCard({ city }: DynamicCityCardProps) {
           city.longitude
         );
         
-        const data = await Promise.race([dataPromise, timeoutPromise]);
+        const data = await Promise.race([dataPromise, timeoutPromise]) as CityWeatherData;
         setWeatherData(data);
       } catch (err) {
         console.error('Error fetching weather data:', err);

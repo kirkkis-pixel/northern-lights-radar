@@ -31,7 +31,7 @@ interface CityWeatherData {
 }
 
 // Cache for API responses (5 minute cache)
-const cache = new Map<string, { data: any; timestamp: number }>();
+const cache = new Map<string, { data: unknown; timestamp: number }>();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promise<T> {
@@ -39,7 +39,7 @@ async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promis
   const now = Date.now();
   
   if (cached && (now - cached.timestamp) < CACHE_DURATION) {
-    return cached.data;
+    return cached.data as T;
   }
   
   try {
@@ -50,7 +50,7 @@ async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promis
     console.error(`Error fetching ${key}:`, error);
     // Return cached data if available, even if expired
     if (cached) {
-      return cached.data;
+      return cached.data as T;
     }
     throw error;
   }
@@ -122,8 +122,8 @@ async function fetchAuroraData(): Promise<AuroraData> {
         throw new Error(`NOAA API error: ${response.status}`);
       }
       
-      const data = await response.json();
-      const latest = data[data.length - 1];
+    const data = await response.json() as Array<{ kp?: number; speed?: number; bz_gsm?: number }>;
+    const latest = data[data.length - 1];
       
       // Calculate aurora probability based on Kp index and other factors
       const kpIndex = latest.kp || 0;

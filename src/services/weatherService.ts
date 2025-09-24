@@ -1,4 +1,4 @@
-interface WeatherData {
+export interface WeatherData {
   temperature: number;
   cloudCover: number;
   visibility: number;
@@ -8,7 +8,7 @@ interface WeatherData {
   timestamp: string;
 }
 
-interface AuroraData {
+export interface AuroraData {
   kpIndex: number;
   auroraProbability: number;
   auroraLevel: string;
@@ -17,7 +17,7 @@ interface AuroraData {
   timestamp: string;
 }
 
-interface CityWeatherData {
+export interface CityWeatherData {
   city: string;
   country: string;
   weather: WeatherData;
@@ -29,7 +29,7 @@ interface CityWeatherData {
 }
 
 // Cache for API responses (5 minute cache)
-const cache = new Map<string, { data: any; timestamp: number }>();
+const cache = new Map<string, { data: unknown; timestamp: number }>();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promise<T> {
@@ -37,7 +37,7 @@ async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promis
   const now = Date.now();
   
   if (cached && (now - cached.timestamp) < CACHE_DURATION) {
-    return cached.data;
+    return cached.data as T;
   }
   
   try {
@@ -48,7 +48,7 @@ async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promis
     console.error(`Error fetching ${key}:`, error);
     // Return cached data if available, even if expired
     if (cached) {
-      return cached.data;
+      return cached.data as T;
     }
     throw error;
   }
@@ -102,7 +102,7 @@ async function fetchSMHIWeather(latitude: number, longitude: number): Promise<We
     const parameters = current.parameters;
     
     const getParameter = (name: string) => {
-      const param = parameters.find((p: any) => p.name === name);
+      const param = parameters.find((p: { name: string; values: number[] }) => p.name === name);
       return param?.values[0] || 0;
     };
     
@@ -163,7 +163,7 @@ async function fetchAuroraData(): Promise<AuroraData> {
       throw new Error(`NOAA API error: ${response.status}`);
     }
     
-    const data = await response.json();
+    const data = await response.json() as Array<{ kp?: number; speed?: number; bz_gsm?: number }>;
     const latest = data[data.length - 1];
     
     // Calculate aurora probability based on Kp index and other factors
