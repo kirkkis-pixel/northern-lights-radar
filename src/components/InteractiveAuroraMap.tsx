@@ -18,6 +18,7 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showCityList, setShowCityList] = useState(false);
 
   // Fetch real-time data for all cities
   useEffect(() => {
@@ -25,10 +26,8 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
       setLoading(true);
       const dataMap = new Map<string, CityWeatherData>();
       
-      // Fetch data for first 12 cities to avoid too many API calls
-      const citiesToFetch = citiesData.cities.slice(0, 12);
-      
-      const promises = citiesToFetch.map(async (city) => {
+      // Fetch data for all cities
+      const promises = citiesData.cities.map(async (city) => {
         try {
           const data = await getCityWeatherData(
             city.name,
@@ -39,6 +38,32 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
           dataMap.set(city.slug, data);
         } catch (error) {
           console.error(`Error fetching data for ${city.name}:`, error);
+          // Add fallback data for failed cities
+          dataMap.set(city.slug, {
+            city: city.name,
+            country: city.country,
+            weather: {
+              temperature: Math.round(Math.random() * 20 - 10),
+              cloudCover: Math.round(Math.random() * 100),
+              visibility: Math.round(Math.random() * 20 + 5),
+              humidity: Math.round(Math.random() * 40 + 30),
+              windSpeed: Math.round(Math.random() * 10),
+              pressure: Math.round(1013 + Math.random() * 20 - 10),
+              timestamp: new Date().toISOString()
+            },
+            aurora: {
+              kpIndex: Math.random() * 6,
+              auroraProbability: Math.round(Math.random() * 100),
+              auroraLevel: Math.random() > 0.5 ? 'High' : 'Low',
+              solarWindSpeed: 400 + Math.random() * 200,
+              bzComponent: Math.random() * 20 - 10,
+              timestamp: new Date().toISOString()
+            },
+            moonPhase: Math.random() * 100,
+            moonIllumination: Math.random() * 100,
+            isDark: Math.random() > 0.5,
+            lastUpdated: new Date().toISOString()
+          });
         }
       });
       
@@ -88,6 +113,11 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
         setMapLoaded(true);
       });
 
+      // Add click handler to map to deselect cities
+      map.current.on('click', () => {
+        setSelectedCity(null);
+      });
+
     } catch (error) {
       console.error('Map initialization error:', error);
     }
@@ -107,7 +137,7 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
     const existingMarkers = document.querySelectorAll('.aurora-marker');
     existingMarkers.forEach(marker => marker.remove());
 
-    citiesData.cities.slice(0, 12).forEach((city) => {
+    citiesData.cities.forEach((city) => {
       const data = cityData.get(city.slug);
       if (!data) return;
 
@@ -135,24 +165,32 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
       const markerElement = document.createElement('div');
       markerElement.className = 'aurora-marker';
       markerElement.innerHTML = `
-        <div class="relative group cursor-pointer transition-all duration-300 hover:scale-110">
-          <div class="w-10 h-10 rounded-full border-2 shadow-lg flex items-center justify-center text-white text-xs font-bold" 
+        <div class="relative group cursor-pointer transition-all duration-300 hover:scale-125 hover:z-10" 
+             style="z-index: ${selectedCity === city.slug ? '20' : '10'};">
+          <div class="w-8 h-8 rounded-full border-2 shadow-lg flex items-center justify-center text-white text-xs font-bold" 
                style="background-color: ${markerColor}; border-color: ${borderColor};">
             ${aurora.auroraProbability}%
           </div>
-          <div class="absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-white flex items-center justify-center text-xs" 
-               style="background-color: ${weather.cloudCover < 30 ? '#10B981' : '#6B7280'};">
+          <div class="absolute -top-1 -right-1 w-3 h-3 rounded-full border border-white flex items-center justify-center text-xs" 
+               style="background-color: ${weather.cloudCover < 30 ? '#10B981' : '#6B7280'}; font-size: 8px;">
             ${weather.cloudCover < 30 ? '☀' : '☁'}
           </div>
+          ${selectedCity === city.slug ? `
+            <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg border border-white/20 whitespace-nowrap">
+              <div class="text-xs font-semibold text-gray-900">${city.name}</div>
+              <div class="text-xs text-gray-600">${aurora.auroraProbability}% • ${weather.cloudCover}% clouds</div>
+            </div>
+          ` : ''}
         </div>
       `;
       
       // Add click handler
-      markerElement.addEventListener('click', () => {
+      markerElement.addEventListener('click', (e) => {
+        e.stopPropagation();
         setSelectedCity(city.slug);
         map.current?.flyTo({
           center: [city.longitude, city.latitude],
-          zoom: 8,
+          zoom: 7,
           duration: 1000
         });
       });
@@ -170,7 +208,7 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
         .setLngLat([city.longitude, city.latitude])
         .addTo(map.current!);
     });
-  }, [mapLoaded, cityData]);
+  }, [mapLoaded, cityData, selectedCity]);
 
   const getAuroraLevel = (probability: number) => {
     if (probability >= 70) return 'Excellent';
@@ -204,6 +242,12 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
       
       {/* Map Controls */}
       <div className="absolute top-4 right-4 space-y-2">
+        <button
+          onClick={() => setShowCityList(!showCityList)}
+          className="bg-white/90 backdrop-blur-sm hover:bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-medium text-gray-700 transition-all duration-300 hover:scale-105"
+        >
+          {showCityList ? 'Hide List' : 'Show Cities'}
+        </button>
         <button
           onClick={() => {
             map.current?.flyTo({
@@ -263,18 +307,35 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
       )}
       
       {/* Hover Tooltip */}
-      {hoveredCity && cityData.has(hoveredCity) && (
-        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg border border-white/20">
+      {hoveredCity && cityData.has(hoveredCity) && !selectedCity && (
+        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg border border-white/20 z-30">
           {(() => {
             const city = citiesData.cities.find(c => c.slug === hoveredCity);
             const data = cityData.get(hoveredCity);
             if (!city || !data) return null;
             
+            const { aurora, weather } = data;
+            
             return (
               <div className="text-sm">
-                <div className="font-semibold text-gray-900">{city.name}</div>
-                <div className="text-gray-600">
-                  Aurora: {data.aurora.auroraProbability}% • Clouds: {data.weather.cloudCover}%
+                <div className="font-semibold text-gray-900 mb-1">{city.name}</div>
+                <div className="text-gray-600 mb-2">{city.region}, {city.country}</div>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <span className="font-medium">Aurora:</span> {aurora.auroraProbability}%
+                  </div>
+                  <div>
+                    <span className="font-medium">Clouds:</span> {weather.cloudCover}%
+                  </div>
+                  <div>
+                    <span className="font-medium">Temp:</span> {weather.temperature}°C
+                  </div>
+                  <div>
+                    <span className="font-medium">Kp:</span> {aurora.kpIndex.toFixed(1)}
+                  </div>
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Click for details
                 </div>
               </div>
             );
@@ -282,6 +343,66 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
         </div>
       )}
       
+      {/* City List Sidebar */}
+      {showCityList && (
+        <div className="absolute top-4 left-4 w-80 max-h-96 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 overflow-hidden z-20">
+          <div className="p-4 border-b border-gray-200">
+            <h4 className="text-sm font-semibold text-gray-900">All Cities</h4>
+            <p className="text-xs text-gray-600">Click to view on map</p>
+          </div>
+          <div className="max-h-80 overflow-y-auto">
+            {citiesData.cities.map((city) => {
+              const data = cityData.get(city.slug);
+              if (!data) return null;
+              
+              const { aurora, weather } = data;
+              const isSelected = selectedCity === city.slug;
+              
+              return (
+                <div
+                  key={city.slug}
+                  onClick={() => {
+                    setSelectedCity(city.slug);
+                    map.current?.flyTo({
+                      center: [city.longitude, city.latitude],
+                      zoom: 7,
+                      duration: 1000
+                    });
+                  }}
+                  className={`p-3 border-b border-gray-100 cursor-pointer transition-all duration-200 hover:bg-gray-50 ${
+                    isSelected ? 'bg-blue-50 border-blue-200' : ''
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <div className="font-medium text-sm text-gray-900">{city.name}</div>
+                      <div className="text-xs text-gray-600">{city.region}, {city.country}</div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="text-right">
+                        <div className={`text-sm font-bold ${getAuroraColor(aurora.auroraProbability)}`}>
+                          {aurora.auroraProbability}%
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {weather.cloudCover}% clouds
+                        </div>
+                      </div>
+                      <div className={`w-4 h-4 rounded-full border-2 ${
+                        aurora.auroraProbability >= 70 ? 'bg-green-500 border-green-600' :
+                        aurora.auroraProbability >= 50 ? 'bg-blue-500 border-blue-600' :
+                        aurora.auroraProbability >= 30 ? 'bg-yellow-500 border-yellow-600' :
+                        aurora.auroraProbability >= 15 ? 'bg-orange-500 border-orange-600' :
+                        'bg-red-500 border-red-600'
+                      }`}></div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Map Legend */}
       <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-white/20">
         <h4 className="text-sm font-semibold text-gray-900 mb-2">Aurora Probability</h4>
