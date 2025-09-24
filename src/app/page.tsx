@@ -226,7 +226,10 @@ export default function HomePage() {
       <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
         <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-thin text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Why Lapland</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               Why Lapland is Perfect for Aurora Viewing
             </h2>
             <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
