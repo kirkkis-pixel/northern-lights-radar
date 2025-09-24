@@ -275,21 +275,30 @@ export default function WhyLaplandPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 href="/finland/northern-lights"
-                className="px-8 py-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 rounded-2xl text-white font-light text-lg hover:from-blue-500/30 hover:to-cyan-500/30 hover:border-blue-400/50 transition-all duration-500 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 rounded-2xl text-white font-light text-lg hover:from-blue-500/30 hover:to-cyan-500/30 hover:border-blue-400/50 transition-all duration-500 hover:scale-105"
               >
                 Explore Finland
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
               <Link
                 href="/sweden/northern-lights"
-                className="px-8 py-4 bg-gradient-to-r from-yellow-500/20 to-red-500/20 border border-yellow-400/30 rounded-2xl text-white font-light text-lg hover:from-yellow-500/30 hover:to-red-500/30 hover:border-yellow-400/50 transition-all duration-500 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-500/20 to-red-500/20 border border-yellow-400/30 rounded-2xl text-white font-light text-lg hover:from-yellow-500/30 hover:to-red-500/30 hover:border-yellow-400/50 transition-all duration-500 hover:scale-105"
               >
                 Explore Sweden
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
               <Link
                 href="/norway/northern-lights"
-                className="px-8 py-4 bg-gradient-to-r from-red-500/20 to-blue-500/20 border border-red-400/30 rounded-2xl text-white font-light text-lg hover:from-red-500/30 hover:to-blue-500/30 hover:border-red-400/50 transition-all duration-500 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-500/20 to-blue-500/20 border border-red-400/30 rounded-2xl text-white font-light text-lg hover:from-red-500/30 hover:to-blue-500/30 hover:border-red-400/50 transition-all duration-500 hover:scale-105"
               >
                 Explore Norway
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
           </div>

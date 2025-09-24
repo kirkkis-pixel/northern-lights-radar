@@ -73,7 +73,10 @@ export default function FilteredCitiesSection() {
       <div className="max-w-8xl mx-auto px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+          <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+            <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
             <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Explore Cities</span>
           </div>
           <h2 className="text-5xl font-thin text-white mb-8">
