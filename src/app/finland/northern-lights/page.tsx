@@ -3,6 +3,7 @@ import Link from 'next/link';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import MultiCityWidget from '@/components/MultiCityWidget';
 import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
+import DynamicCityCard from '@/components/DynamicCityCard';
 
 export const metadata: Metadata = {
   title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
@@ -67,49 +68,89 @@ const cities = [
   { 
     slug: 'rovaniemi', 
     name: 'Rovaniemi', 
-    description: 'Capital of Lapland',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 66.5039,
+    longitude: 25.7294,
+    timezone: 'Europe/Helsinki',
+    description: 'Capital of Lapland and gateway to the Arctic Circle',
     viewingSpots: ['Arktikum Science Centre', 'Santa Claus Village', 'Ounasvaara Hill', 'Rovaniemi City Center']
   },
   { 
     slug: 'ivalo', 
     name: 'Ivalo', 
-    description: 'Northernmost airport',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 68.6592,
+    longitude: 27.5389,
+    timezone: 'Europe/Helsinki',
+    description: 'Northernmost airport in Finland, excellent for aurora viewing',
     viewingSpots: ['Ivalo Airport area', 'Lake Inari shores', 'Saariselkä village', 'Urho Kekkonen National Park']
   },
   { 
     slug: 'inari', 
     name: 'Inari', 
-    description: 'Sámi cultural heart',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 68.9056,
+    longitude: 27.0281,
+    timezone: 'Europe/Helsinki',
+    description: 'Cultural heart of Sámi land with pristine wilderness',
     viewingSpots: ['Lake Inari shores', 'Siida Museum area', 'Inari village center', 'Pielpajärvi Wilderness Church']
   },
   { 
     slug: 'levi', 
     name: 'Levi', 
-    description: 'Mountain resort',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 67.8044,
+    longitude: 24.8089,
+    timezone: 'Europe/Helsinki',
+    description: 'Popular ski resort with excellent aurora viewing opportunities',
     viewingSpots: ['Levi Fell summit', 'Levi Ski Resort', 'Kittilä village', 'Pallas-Yllästunturi National Park']
   },
   { 
     slug: 'saariselka', 
     name: 'Saariselkä', 
-    description: 'Mountain village',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 68.4167,
+    longitude: 27.4167,
+    timezone: 'Europe/Helsinki',
+    description: 'Mountain village with clear skies and minimal light pollution',
     viewingSpots: ['Saariselkä village', 'Kaunispää fell', 'Iisakkipää fell', 'Urho Kekkonen National Park']
   },
   { 
     slug: 'yllas', 
     name: 'Ylläs', 
-    description: 'Seven fells',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 67.5667,
+    longitude: 24.2333,
+    timezone: 'Europe/Helsinki',
+    description: 'Seven fells offering panoramic views of the northern sky',
     viewingSpots: ['Ylläs fell', 'Äkäslompolo village', 'Pallas-Yllästunturi National Park', 'Kittilä area']
   },
   { 
     slug: 'kilpisjarvi', 
     name: 'Kilpisjärvi', 
-    description: 'Northernmost village',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 69.0500,
+    longitude: 20.8000,
+    timezone: 'Europe/Helsinki',
+    description: 'Northernmost village in Finland, closest to the auroral oval',
     viewingSpots: ['Kilpisjärvi village', 'Saana fell', 'Malla Strict Nature Reserve', 'Three-country border area']
   },
   { 
     slug: 'kemi', 
     name: 'Kemi', 
-    description: 'Coastal gateway',
+    region: 'Lapland',
+    country: 'Finland',
+    latitude: 65.7361,
+    longitude: 24.5639,
+    timezone: 'Europe/Helsinki',
+    description: 'Coastal city with icebreaker port and gateway to Lapland',
     viewingSpots: ['Kemi city center', 'Bothnian Bay shoreline', 'Kemi SnowCastle area', 'Kemi railway station']
   }
 ];
@@ -270,50 +311,23 @@ export default function FinlandPage() {
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Finnish Cities</span>
               </div>
               <h2 className="text-5xl font-thin text-white mb-6">
-                Explore Finnish Lapland Cities
+                Live Aurora Conditions in Finnish Cities
               </h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
-                Discover the best aurora viewing destinations across Finnish Lapland
+                Real-time aurora data, weather conditions, and viewing information for all major Finnish Lapland destinations
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {cities.map((city, index) => (
-                <Link
+                <div
                   key={city.slug}
-                  href={`/finland/lapland/${city.slug}/aurora`}
-                  className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-2"
                   style={{
                     animationDelay: `${index * 100}ms`
                   }}
                 >
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-blue-300 text-xl">🏔️</span>
-                    </div>
-                    <h3 className="text-lg font-light text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                      {city.name}
-                    </h3>
-                    <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
-                      {city.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {city.viewingSpots.slice(0, 2).map((spot, spotIndex) => (
-                        <span
-                          key={spotIndex}
-                          className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full"
-                        >
-                          {spot}
-                        </span>
-                      ))}
-                      {city.viewingSpots.length > 2 && (
-                        <span className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full">
-                          +{city.viewingSpots.length - 2} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
+                  <DynamicCityCard city={city} />
+                </div>
               ))}
             </div>
           </div>

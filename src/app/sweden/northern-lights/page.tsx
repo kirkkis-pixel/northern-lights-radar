@@ -3,6 +3,7 @@ import Link from 'next/link';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import MultiCityWidget from '@/components/MultiCityWidget';
 import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
+import DynamicCityCard from '@/components/DynamicCityCard';
 
 export const metadata: Metadata = {
   title: 'Northern Lights in Sweden - Swedish Lapland Aurora Guide',
@@ -45,56 +46,77 @@ const swedishCities = [
   {
     slug: 'kiruna',
     name: 'Kiruna',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 67.8558,
     longitude: 20.2253,
+    timezone: 'Europe/Stockholm',
     description: "Sweden's northernmost city and gateway to Swedish Lapland",
     viewingSpots: ["Kiruna city center", "Luossavaara mountain", "Esrange Space Center", "Jukkasjärvi Ice Hotel"]
   },
   {
     slug: 'abisko',
     name: 'Abisko',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 68.3500,
     longitude: 18.8333,
+    timezone: 'Europe/Stockholm',
     description: "World-famous aurora viewing destination with clear skies",
     viewingSpots: ["Abisko National Park", "Aurora Sky Station", "Lake Torneträsk", "Nuolja mountain"]
   },
   {
     slug: 'jokkmokk',
     name: 'Jokkmokk',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 66.6000,
     longitude: 19.8333,
+    timezone: 'Europe/Stockholm',
     description: "Sámi cultural center with excellent aurora viewing",
     viewingSpots: ["Jokkmokk town center", "Ájtte Museum area", "Lule River banks", "Sarek National Park"]
   },
   {
     slug: 'lulea',
     name: 'Luleå',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 65.5842,
     longitude: 22.1547,
+    timezone: 'Europe/Stockholm',
     description: "Coastal city with archipelago views and aurora opportunities",
     viewingSpots: ["Luleå city center", "Gammelstad Church Town", "Luleå archipelago", "Rödkallen island"]
   },
   {
     slug: 'gallivare',
     name: 'Gällivare',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 67.1333,
     longitude: 20.6500,
+    timezone: 'Europe/Stockholm',
     description: "Mining town with mountain views and clear aurora skies",
     viewingSpots: ["Gällivare town center", "Dundret mountain", "Malmberget area", "Lappland mountains"]
   },
   {
     slug: 'arvidsjaur',
     name: 'Arvidsjaur',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 65.5833,
     longitude: 19.1667,
+    timezone: 'Europe/Stockholm',
     description: "Sámi cultural town with pristine wilderness aurora viewing",
     viewingSpots: ["Arvidsjaur town center", "Silvermuseet area", "Lappland wilderness", "Pite River valley"]
   },
   {
     slug: 'pajala',
     name: 'Pajala',
+    region: 'Lapland',
+    country: 'Sweden',
     latitude: 67.2000,
     longitude: 23.3667,
+    timezone: 'Europe/Stockholm',
     description: "Border town with excellent aurora viewing conditions",
     viewingSpots: ["Pajala town center", "Torne River banks", "Kangos village", "Muonio River area"]
   }
@@ -156,50 +178,23 @@ export default function SwedenNorthernLightsPage() {
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Swedish Cities</span>
               </div>
               <h2 className="text-5xl font-thin text-white mb-6">
-                Explore Swedish Lapland Cities
+                Live Aurora Conditions in Swedish Cities
               </h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
-                Discover the best aurora viewing destinations across Swedish Lapland
+                Real-time aurora data, weather conditions, and viewing information for all major Swedish Lapland destinations
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {swedishCities.map((city, index) => (
-                <Link
+                <div
                   key={city.slug}
-                  href={`/sweden/lapland/${city.slug}/aurora`}
-                  className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-2"
                   style={{
                     animationDelay: `${index * 100}ms`
                   }}
                 >
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-yellow-300 text-xl">🏔️</span>
-                    </div>
-                    <h3 className="text-lg font-light text-white mb-2 group-hover:text-yellow-300 transition-colors">
-                      {city.name}
-                    </h3>
-                    <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
-                      {city.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {city.viewingSpots.slice(0, 2).map((spot, spotIndex) => (
-                        <span
-                          key={spotIndex}
-                          className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full"
-                        >
-                          {spot}
-                        </span>
-                      ))}
-                      {city.viewingSpots.length > 2 && (
-                        <span className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full">
-                          +{city.viewingSpots.length - 2} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
+                  <DynamicCityCard city={city} />
+                </div>
               ))}
             </div>
           </div>
