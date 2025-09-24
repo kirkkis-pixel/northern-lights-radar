@@ -302,7 +302,7 @@ export default function FinlandPage() {
 
         {/* Finnish Cities Section */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-7xl mx-auto px-12">
+          <div className="max-w-8xl mx-auto px-12">
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,7 +318,7 @@ export default function FinlandPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {cities.map((city, index) => (
                 <div
                   key={city.slug}
