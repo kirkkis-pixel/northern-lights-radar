@@ -219,7 +219,7 @@ export default function DynamicCityCard({ city }: DynamicCityCardProps) {
       </div>
 
       {/* Aurora Probability - Main Feature */}
-      <div className={`mb-6 p-4 rounded-xl border ${getAuroraBgColor(aurora.auroraProbability)}`}>
+      <div className={`mb-4 p-3 rounded-xl border ${getAuroraBgColor(aurora.auroraProbability)}`}>
         <div className="flex items-center justify-between mb-2">
           <h4 className="text-sm font-medium text-white/80">Aurora Probability</h4>
           <span className="text-xs text-white/60">
@@ -227,67 +227,48 @@ export default function DynamicCityCard({ city }: DynamicCityCardProps) {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <div className={`text-3xl font-bold ${getAuroraColor(aurora.auroraProbability)}`}>
+          <div className={`text-2xl font-bold ${getAuroraColor(aurora.auroraProbability)}`}>
             {aurora.auroraProbability}%
           </div>
           <div className="text-right">
             <div className={`text-sm font-medium ${getAuroraColor(aurora.auroraProbability)}`}>
               {getAuroraLevel(aurora.auroraProbability)}
             </div>
-            <div className="text-xs text-white/60">
-              {aurora.auroraLevel}
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Weather Conditions */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      {/* Weather Conditions - Compact Grid */}
+      <div className="grid grid-cols-4 gap-3 mb-4">
         <div className="text-center">
-          <div className="text-2xl font-light text-white mb-1">
+          <div className="text-lg font-light text-white mb-1">
             {formatTemperature(weather.temperature)}
           </div>
-          <div className="text-xs text-white/60">Temperature</div>
+          <div className="text-xs text-white/60">Temp</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-light text-white mb-1">
+          <div className="text-lg font-light text-white mb-1">
             {Math.round(weather.cloudCover)}%
           </div>
-          <div className="text-xs text-white/60">Cloud Cover</div>
+          <div className="text-xs text-white/60">Clouds</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-light text-white mb-1">
+          <div className="text-lg font-light text-white mb-1">
             {Math.round(weather.visibility)}km
           </div>
           <div className="text-xs text-white/60">Visibility</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-light text-white mb-1">
-            {Math.round(weather.windSpeed)}m/s
+          <div className="text-lg font-light text-white mb-1">
+            {Math.round(moonIllumination)}%
           </div>
-          <div className="text-xs text-white/60">Wind Speed</div>
+          <div className="text-xs text-white/60">Moon</div>
         </div>
       </div>
 
-      {/* Moon Phase */}
-      <div className="mb-6">
+      {/* Viewing Conditions - Compact */}
+      <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-white/80">Moon Phase</span>
-          <span className="text-xs text-white/60">
-            {Math.round(moonIllumination)}% illuminated
-          </span>
-        </div>
-        <div className="w-full bg-white/10 rounded-full h-2">
-          <div 
-            className="bg-white/60 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${moonIllumination}%` }}
-          ></div>
-        </div>
-      </div>
-
-      {/* Viewing Conditions */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-3">
           <span className="text-sm font-medium text-white/80">Viewing Conditions</span>
           <div className={`px-2 py-1 rounded-full text-xs font-medium ${
             isDark ? 'bg-green-500/20 text-green-300' : 'bg-yellow-500/20 text-yellow-300'
@@ -295,36 +276,13 @@ export default function DynamicCityCard({ city }: DynamicCityCardProps) {
             {isDark ? 'Dark Enough' : 'Too Bright'}
           </div>
         </div>
-        <div className="space-y-2">
-          <div className="flex justify-between text-xs text-white/60">
-            <span>Cloud Cover</span>
-            <span className={weather.cloudCover < 30 ? 'text-green-400' : 'text-red-400'}>
-              {weather.cloudCover < 30 ? 'Clear' : 'Cloudy'}
-            </span>
-          </div>
-          <div className="flex justify-between text-xs text-white/60">
-            <span>Visibility</span>
-            <span className={weather.visibility > 10 ? 'text-green-400' : 'text-yellow-400'}>
-              {weather.visibility > 10 ? 'Excellent' : 'Good'}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Viewing Spots Preview */}
-      <div className="mb-6">
-        <h4 className="text-sm font-medium text-white/80 mb-3">Top Viewing Spots</h4>
-        <div className="space-y-1">
-          {city.viewingSpots.slice(0, 2).map((spot, index) => (
-            <div key={index} className="text-xs text-white/60 font-light">
-              • {spot}
-            </div>
-          ))}
-          {city.viewingSpots.length > 2 && (
-            <div className="text-xs text-white/40 font-light">
-              +{city.viewingSpots.length - 2} more spots
-            </div>
-          )}
+        <div className="flex justify-between text-xs text-white/60">
+          <span>Clouds: <span className={weather.cloudCover < 30 ? 'text-green-400' : 'text-red-400'}>
+            {weather.cloudCover < 30 ? 'Clear' : 'Cloudy'}
+          </span></span>
+          <span>Visibility: <span className={weather.visibility > 10 ? 'text-green-400' : 'text-yellow-400'}>
+            {weather.visibility > 10 ? 'Excellent' : 'Good'}
+          </span></span>
         </div>
       </div>
 
