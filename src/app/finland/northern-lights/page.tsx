@@ -441,6 +441,100 @@ export default function FinlandPage() {
           </div>
         </div>
         
+        {/* FAQ Section */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Frequently Asked Questions</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-6">
+                Finland Northern Lights FAQ
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+                Everything you need to know about seeing the aurora borealis in Finnish Lapland
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ 1 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  When is the best time to see the northern lights in Finland?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  The best time to see the northern lights in Finland is from late September to early April, 
+                  when the nights are dark enough. The peak season is typically from December to March, 
+                  with the highest probability of aurora activity occurring between 10 PM and 2 AM. 
+                  During the summer months (May-August), Finland experiences the midnight sun, making 
+                  aurora viewing impossible due to continuous daylight.
+                </p>
+              </div>
+
+              {/* FAQ 2 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  Which Finnish cities offer the best aurora viewing opportunities?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Rovaniemi, Ivalo, Inari, and Kilpisjärvi are among the best cities for aurora viewing in Finland. 
+                  Rovaniemi, the capital of Lapland, offers excellent infrastructure and multiple viewing spots. 
+                  Ivalo and Inari, located further north, provide darker skies and higher aurora probability. 
+                  Kilpisjärvi, Finland&apos;s northernmost village, offers the highest chance of seeing the aurora 
+                  due to its proximity to the auroral oval and minimal light pollution.
+                </p>
+              </div>
+
+              {/* FAQ 3 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  What weather conditions are ideal for aurora viewing in Finland?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Clear, cloud-free skies are essential for aurora viewing. The best conditions occur during 
+                  high-pressure weather systems that bring cold, clear nights. Avoid nights with heavy cloud 
+                  cover, precipitation, or fog. Winter temperatures in Finnish Lapland can drop to -30°C (-22°F), 
+                  so proper cold-weather clothing is crucial. Check local weather forecasts and aurora prediction 
+                  apps before heading out for the best viewing experience.
+                </p>
+              </div>
+
+              {/* FAQ 4 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  Do I need to book guided tours to see the northern lights in Finland?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  While guided tours can enhance your experience with local knowledge and transportation to 
+                  optimal viewing locations, they&apos;re not necessary. Many excellent viewing spots are accessible 
+                  independently, such as Ounasvaara Hill in Rovaniemi or the shores of Lake Inari. However, 
+                  guided tours offer advantages like aurora photography tips, warm refreshments, and access to 
+                  remote locations with minimal light pollution. Consider your photography skills and comfort 
+                  level with cold weather when deciding.
+                </p>
+              </div>
+
+              {/* FAQ 5 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  How can I increase my chances of seeing the aurora in Finland?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  To maximize your aurora viewing chances in Finland: 1) Stay for at least 3-4 nights to 
+                  account for weather variability, 2) Get away from city lights and find dark sky locations, 
+                  3) Monitor space weather conditions and aurora forecasts, 4) Be patient and stay out for 
+                  several hours as aurora activity can be sporadic, 5) Visit during the new moon phase for 
+                  darker skies, 6) Dress warmly and bring hot drinks for comfort during long waits, and 
+                  7) Consider staying in glass igloos or aurora cabins for overnight viewing opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Attribution Footer */}
         <div className="py-12 bg-black">
           <div className="max-w-6xl mx-auto px-12">

@@ -278,6 +278,102 @@ export default function SwedenNorthernLightsPage() {
           </div>
         </div>
 
+        {/* FAQ Section */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Frequently Asked Questions</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-6">
+                Sweden Northern Lights FAQ
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+                Everything you need to know about seeing the aurora borealis in Swedish Lapland
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ 1 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  When is the best time to see the northern lights in Sweden?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  The optimal time for aurora viewing in Sweden is from late September to early April, 
+                  with peak season from December to March. Swedish Lapland offers some of the world&apos;s 
+                  best aurora viewing conditions, particularly in Abisko, which is famous for its clear 
+                  skies. The best viewing hours are typically between 9 PM and 1 AM, when the sky is 
+                  darkest and aurora activity is most likely to occur.
+                </p>
+              </div>
+
+              {/* FAQ 2 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  Why is Abisko considered the best place for aurora viewing in Sweden?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Abisko is renowned for its unique microclimate that creates exceptionally clear skies, 
+                  earning it the nickname &quot;the blue hole of Abisko.&quot; The area is protected from coastal 
+                  weather by surrounding mountains, resulting in less cloud cover than other locations. 
+                  The Aurora Sky Station on Mount Nuolja offers an elevated viewing platform above the 
+                  tree line, providing unobstructed views of the northern horizon where aurora typically appears.
+                </p>
+              </div>
+
+              {/* FAQ 3 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  What makes Swedish Lapland special for aurora photography?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Swedish Lapland offers diverse landscapes perfect for aurora photography, including 
+                  frozen lakes, snow-covered forests, and dramatic mountain backdrops. The region&apos;s 
+                  minimal light pollution and clear atmospheric conditions create ideal conditions for 
+                  capturing vibrant aurora colors. Popular photography locations include Lake Torneträsk 
+                  near Abisko, the Ice Hotel in Jukkasjärvi, and the wilderness areas around Kiruna. 
+                  The long winter nights provide extended shooting opportunities.
+                </p>
+              </div>
+
+              {/* FAQ 4 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  How do I get to the best aurora viewing locations in Sweden?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Most aurora viewing locations in Swedish Lapland are accessible by car or organized tours. 
+                  Kiruna serves as the main gateway with an international airport and connections to 
+                  Stockholm. From Kiruna, you can drive to Abisko (1.5 hours) or take the scenic train 
+                  route. Many hotels offer aurora packages with transportation to prime viewing spots. 
+                  For remote locations like the Aurora Sky Station, cable car access is available, 
+                  though weather conditions may affect operations.
+                </p>
+              </div>
+
+              {/* FAQ 5 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  What should I pack for aurora viewing in Swedish Lapland?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Essential items for Swedish Lapland aurora viewing include: 1) Thermal base layers and 
+                  insulated outerwear for temperatures as low as -40°C (-40°F), 2) Warm, waterproof boots 
+                  with good traction for icy conditions, 3) Hand and foot warmers for extended outdoor stays, 
+                  4) A headlamp with red light mode to preserve night vision, 5) Camera equipment with 
+                  extra batteries (they drain faster in cold), 6) A thermos with hot drinks, and 7) 
+                  A portable chair or mat for comfortable waiting. Many tour operators provide warm 
+                  overalls and boots for rent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
         <footer className="bg-black py-16">
           <div className="max-w-6xl mx-auto px-12">

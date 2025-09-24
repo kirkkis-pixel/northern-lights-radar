@@ -278,6 +278,106 @@ export default function NorwayNorthernLightsPage() {
           </div>
         </div>
 
+        {/* FAQ Section */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-12">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Frequently Asked Questions</span>
+              </div>
+              <h2 className="text-5xl font-thin text-white mb-6">
+                Norway Northern Lights FAQ
+              </h2>
+              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+                Everything you need to know about seeing the aurora borealis in Arctic Norway
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ 1 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  When is the best time to see the northern lights in Norway?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  The prime aurora viewing season in Norway runs from late September to early April, 
+                  with the highest activity typically occurring from October to March. Tromsø, known 
+                  as the &quot;Aurora Capital of the World,&quot; offers excellent viewing opportunities throughout 
+                  this period. The best viewing hours are usually between 6 PM and 2 AM, with peak 
+                  activity often occurring around 10 PM to midnight. During the summer months, the 
+                  midnight sun makes aurora viewing impossible.
+                </p>
+              </div>
+
+              {/* FAQ 2 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  Why is Tromsø considered the aurora capital of the world?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Tromsø&apos;s reputation as the aurora capital stems from its ideal geographical location 
+                  within the auroral oval, where aurora activity is most frequent and intense. The city 
+                  benefits from the Gulf Stream, which moderates temperatures while maintaining clear 
+                  skies. Its position above the Arctic Circle ensures long winter nights, and the 
+                  surrounding fjords and mountains provide dramatic backdrops for aurora photography. 
+                  The city also offers excellent infrastructure and numerous guided tour options.
+                </p>
+              </div>
+
+              {/* FAQ 3 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  What are the best aurora viewing locations in Arctic Norway?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Top locations include Tromsø with its fjellheisen cable car and city viewpoints, 
+                  Alta with its rich aurora history and clear skies, Narvik offering dramatic fjord 
+                  backdrops, and the Lofoten Islands providing stunning coastal aurora displays. 
+                  For the most remote and pristine viewing, consider Svalbard (Spitsbergen), where 
+                  you can experience aurora during the polar night. Each location offers unique 
+                  landscapes and varying degrees of accessibility, from easily reachable city spots 
+                  to remote wilderness areas requiring guided tours.
+                </p>
+              </div>
+
+              {/* FAQ 4 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  How do I photograph the northern lights in Norway?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Successful aurora photography in Norway requires: 1) A camera with manual settings 
+                  and a wide-angle lens (14-24mm), 2) A sturdy tripod for long exposures, 3) Camera 
+                  settings: ISO 1600-3200, aperture f/2.8-f/4, shutter speed 5-30 seconds, 4) Extra 
+                  batteries (they drain quickly in cold), 5) A remote shutter release to avoid camera 
+                  shake, 6) Manual focus set to infinity, and 7) Dress warmly for extended outdoor 
+                  sessions. Popular photography spots include Tromsø&apos;s fjellheisen, the Lofoten 
+                  Islands&apos; beaches, and Alta&apos;s mountain viewpoints.
+                </p>
+              </div>
+
+              {/* FAQ 5 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <h3 className="text-xl font-light text-white mb-4">
+                  What should I know about weather and safety for aurora viewing in Norway?
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  Arctic Norway&apos;s weather can be unpredictable, with temperatures ranging from -5°C to 
+                  -25°C (23°F to -13°F). Always check weather forecasts and aurora predictions before 
+                  heading out. Dress in layers with windproof outerwear, warm boots, and thermal 
+                  undergarments. Be aware of avalanche risks in mountain areas and always inform 
+                  someone of your plans. Consider joining guided tours for safety, especially in 
+                  remote areas. The Gulf Stream moderates coastal temperatures, but inland areas 
+                  can be significantly colder. Always prioritize safety over getting the perfect shot.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
         <footer className="bg-black py-16">
           <div className="max-w-6xl mx-auto px-12">
