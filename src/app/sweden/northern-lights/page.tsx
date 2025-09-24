@@ -186,15 +186,8 @@ export default function SwedenNorthernLightsPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {swedishCities.map((city, index) => (
-                <div
-                  key={city.slug}
-                  style={{
-                    animationDelay: `${index * 100}ms`
-                  }}
-                >
-                  <DynamicCityCard city={city} />
-                </div>
+              {swedishCities.map((city) => (
+                <DynamicCityCard key={city.slug} city={city} />
               ))}
             </div>
           </div>
