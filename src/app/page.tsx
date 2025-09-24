@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import HomeMap from '@/components/HomeMap';
+import InteractiveAuroraMap from '@/components/InteractiveAuroraMap';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import FilteredCitiesSection from '@/components/FilteredCitiesSection';
 import Link from 'next/link';
@@ -216,7 +216,7 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-            <HomeMap />
+            <InteractiveAuroraMap />
           </div>
           
         </div>
