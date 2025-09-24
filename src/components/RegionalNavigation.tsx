@@ -89,17 +89,42 @@ export default function RegionalNavigation() {
               Norway
             </Link>
 
+            <Link 
+              href="/guide" 
+              className={`text-base font-light transition-colors duration-300 ${
+                isActive('/guide') 
+                  ? 'text-cyan-300' 
+                  : 'text-white hover:text-cyan-300'
+              }`}
+            >
+              Guide
+            </Link>
+
+            <Link 
+              href="/aurora-lab" 
+              className={`text-base font-light transition-colors duration-300 ${
+                isActive('/aurora-lab') 
+                  ? 'text-cyan-300' 
+                  : 'text-white hover:text-cyan-300'
+              }`}
+            >
+              Aurora Lab
+            </Link>
+
             <div className="relative group">
               <button className="flex items-center space-x-1 text-base font-light text-white hover:text-cyan-300 transition-colors duration-300">
-                <span>Guide</span>
+                <span>More</span>
                 <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               
-              {/* Guide Dropdown Menu */}
+              {/* More Dropdown Menu */}
               <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md rounded-2xl border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-sm font-light text-white/70 uppercase tracking-wide mb-3">Guide Sections</h3>
+                  </div>
                   <div className="grid grid-cols-2 gap-4">
                     <Link 
                       href="/guide/how-to-see-the-northern-lights" 
