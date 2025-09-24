@@ -239,6 +239,118 @@
         "Rønvikfjellet mountain"
       ],
       "description": "Gateway to northern Norway with good aurora viewing potential"
+    },
+    {
+      "slug": "lulea",
+      "name": "Luleå",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 65.5842,
+      "longitude": 22.1547,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Luleå city center",
+        "Gammelstad Church Town",
+        "Luleå archipelago",
+        "Rödkallen island"
+      ],
+      "description": "Coastal city with archipelago views and aurora opportunities"
+    },
+    {
+      "slug": "gallivare",
+      "name": "Gällivare",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 67.1333,
+      "longitude": 20.6500,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Gällivare town center",
+        "Dundret mountain",
+        "Malmberget area",
+        "Lappland mountains"
+      ],
+      "description": "Mining town with mountain views and clear aurora skies"
+    },
+    {
+      "slug": "arvidsjaur",
+      "name": "Arvidsjaur",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 65.5833,
+      "longitude": 19.1667,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Arvidsjaur town center",
+        "Silvermuseet area",
+        "Lappland wilderness",
+        "Pite River valley"
+      ],
+      "description": "Sámi cultural town with pristine wilderness aurora viewing"
+    },
+    {
+      "slug": "pajala",
+      "name": "Pajala",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 67.2000,
+      "longitude": 23.3667,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Pajala town center",
+        "Torne River banks",
+        "Kangos village",
+        "Muonio River area"
+      ],
+      "description": "Border town with excellent aurora viewing conditions"
+    },
+    {
+      "slug": "harstad",
+      "name": "Harstad",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 68.7986,
+      "longitude": 16.5406,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Harstad city center",
+        "Trondenes peninsula",
+        "Hinnøya island",
+        "Vågsfjord shoreline"
+      ],
+      "description": "Coastal city with fjord views and aurora opportunities"
+    },
+    {
+      "slug": "hammerfest",
+      "name": "Hammerfest",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 70.6611,
+      "longitude": 23.6728,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Hammerfest city center",
+        "Salen mountain",
+        "Hammerfest harbor",
+        "Melkøya island"
+      ],
+      "description": "World's northernmost city with excellent aurora viewing"
+    },
+    {
+      "slug": "vadso",
+      "name": "Vadsø",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 70.0731,
+      "longitude": 29.7494,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Vadsø city center",
+        "Varanger Peninsula",
+        "Vadsø Airport area",
+        "Varangerfjord shoreline"
+      ],
+      "description": "Eastern Finnmark city with coastal aurora viewing"
     }
   ]
 }

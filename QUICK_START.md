@@ -114,3 +114,4 @@ Transparent, simple, and honest scoring system.
 Your Northern Lights Radar is production-ready and will help aurora hunters in Finland with transparent, real-time viewing conditions!
 
 
+

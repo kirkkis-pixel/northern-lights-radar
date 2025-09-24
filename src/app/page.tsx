@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import HomeMap from '@/components/HomeMap';
 import RegionalNavigation from '@/components/RegionalNavigation';
-import LocalCitiesSection from '@/components/LocalCitiesSection';
+import FilteredCitiesSection from '@/components/FilteredCitiesSection';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ export default function HomePage() {
               </div>
             </h1>
             <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
-              Experience the magic of Finnish Lapland with real-time aurora predictions.
+              Experience the magic of Lapland with real-time aurora predictions across Finland, Sweden, and Norway.
             </p>
           </div>
           
@@ -201,8 +201,8 @@ export default function HomePage() {
         </div>
       </div>
       
-      {/* Local Cities Section */}
-      <LocalCitiesSection />
+      {/* Filtered Cities Section */}
+      <FilteredCitiesSection />
       
       {/* Map Section */}
       <div className="py-32 bg-gradient-to-b from-black to-slate-900">
@@ -230,7 +230,7 @@ export default function HomePage() {
               Why Lapland is Perfect for Aurora Viewing
             </h2>
             <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
-              Discover what makes Finnish Lapland the ultimate destination for aurora hunting
+              Discover what makes Lapland the ultimate destination for aurora hunting across Finland, Sweden, and Norway
             </p>
           </div>
           
@@ -422,7 +422,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-light text-white mb-4">Local Expertise</h3>
               <p className="text-white/70 font-light leading-relaxed">
-                Built specifically for Finnish Lapland with local viewing spots and authentic conditions.
+                Built specifically for Lapland with local viewing spots and authentic conditions across Finland, Sweden, and Norway.
               </p>
             </div>
             
