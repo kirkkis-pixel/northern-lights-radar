@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import citiesData from '@/data/cities.json';
+import DynamicCityCard from './DynamicCityCard';
 
 interface City {
   slug: string;
@@ -110,66 +110,7 @@ export default function FilteredCitiesSection() {
         {/* Cities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredCities.map((city) => (
-            <Link
-              key={city.slug}
-              href={`/${city.country.toLowerCase()}/lapland/${city.slug}/aurora`}
-              className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/10"
-            >
-              {/* Country Badge */}
-              <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCountryColor(city.country)} ${getCountryTextColor(city.country)}`}>
-                {getCountryFlag(city.country)} {city.country}
-              </div>
-
-              {/* City Info */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-light text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
-                  {city.name}
-                </h3>
-                <p className="text-sm text-white/60 font-light mb-3">
-                  {city.region}, {city.country}
-                </p>
-                <p className="text-sm text-white/70 font-light leading-relaxed">
-                  {city.description}
-                </p>
-              </div>
-
-              {/* Viewing Spots Preview */}
-              <div className="mb-6">
-                <h4 className="text-sm font-medium text-white/80 mb-3">Top Viewing Spots</h4>
-                <div className="space-y-1">
-                  {city.viewingSpots.slice(0, 2).map((spot, index) => (
-                    <div key={index} className="text-xs text-white/60 font-light">
-                      • {spot}
-                    </div>
-                  ))}
-                  {city.viewingSpots.length > 2 && (
-                    <div className="text-xs text-white/40 font-light">
-                      +{city.viewingSpots.length - 2} more spots
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Coordinates */}
-              <div className="text-xs text-white/40 font-light mb-4">
-                {city.latitude.toFixed(4)}°N, {city.longitude.toFixed(4)}°E
-              </div>
-
-              {/* Hover Arrow */}
-              <div className="flex items-center justify-between">
-                <div className="text-sm text-white/60 group-hover:text-cyan-300 transition-colors duration-300">
-                  View Aurora Forecast
-                </div>
-                <div className="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors duration-300">
-                  <svg className="w-3 h-3 text-white/60 group-hover:text-cyan-300 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
-            </Link>
+            <DynamicCityCard key={city.slug} city={city} />
           ))}
         </div>
 
