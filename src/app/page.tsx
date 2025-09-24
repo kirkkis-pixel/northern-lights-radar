@@ -356,10 +356,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-12 relative z-10">
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-              <div className="w-2 h-2 bg-red-500 rounded-full mr-3 animate-pulse"></div>
               <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Premium Features</span>
             </div>
-            <h2 className="text-4xl font-thin text-white mb-6">
+            <h2 className="text-5xl font-thin text-white mb-6">
               Why Choose Northern Lights Radar?
             </h2>
             <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
