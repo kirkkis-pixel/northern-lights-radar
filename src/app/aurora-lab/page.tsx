@@ -458,22 +458,23 @@ export default function AuroraLabPage() {
               </div>
             </Link>
 
-            {/* Blog Article 6 */}
-            <Link href="/aurora-lab/blog/aurora-mythology-science" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-pink-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl flex items-center justify-center mb-4 border border-pink-400/30">
-                <svg className="w-6 h-6 text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            {/* Blog Article 6 - Aurora Travel Guide */}
+            <Link href="/aurora-lab/blog/aurora-travel-guide" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-green-500/20 rounded-xl flex items-center justify-center mb-4 border border-blue-400/30">
+                <svg className="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-light text-white mb-3 group-hover:text-pink-300 transition-colors">
-                Aurora Mythology Meets Modern Science
+              <h3 className="text-xl font-light text-white mb-3 group-hover:text-blue-300 transition-colors">
+                Aurora Travel Guide: Top Destinations in Finland, Norway, and Sweden
               </h3>
               <p className="text-white/70 font-light leading-relaxed mb-4">
-                Bridging ancient aurora legends with contemporary scientific understanding of these phenomena.
+                Planning a northern lights trip? Here are the best destinations in Lapland, Tromsø, and Abisko to maximize your chances.
               </p>
               <div className="flex items-center justify-between text-sm text-white/50">
-                <span>16 min read</span>
-                <span>Oct 2024</span>
+                <span>8 min read</span>
+                <span>Dec 18, 2024</span>
               </div>
             </Link>
 
