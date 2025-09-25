@@ -362,22 +362,22 @@ export default function AuroraLabPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {/* Blog Article 1 */}
-            <Link href="/aurora-lab/blog/quantum-aurora-physics" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-4 border border-cyan-400/30">
-                <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            {/* Blog Article 1 - Aurora Further South 2025 */}
+            <Link href="/aurora-lab/blog/aurora-further-south-2025" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-yellow-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-4 border border-yellow-400/30">
+                <svg className="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-light text-white mb-3 group-hover:text-cyan-300 transition-colors">
-                Quantum Physics of Aurora Formation
+              <h3 className="text-xl font-light text-white mb-3 group-hover:text-yellow-300 transition-colors">
+                Why You Might See the Northern Lights Further South This Year
               </h3>
               <p className="text-white/70 font-light leading-relaxed mb-4">
-                Deep dive into the quantum mechanics behind aurora creation, from electron acceleration to photon emission.
+                Solar activity is peaking, making the aurora visible at latitudes far below the Arctic. Learn why 2025 could be your chance to see them closer to home.
               </p>
               <div className="flex items-center justify-between text-sm text-white/50">
-                <span>15 min read</span>
-                <span>Dec 2024</span>
+                <span>8 min read</span>
+                <span>Dec 19, 2024</span>
               </div>
             </Link>
 
