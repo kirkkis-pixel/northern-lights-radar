@@ -420,22 +420,22 @@ export default function AuroraLabPage() {
               </div>
             </Link>
 
-            {/* Blog Article 4 */}
-            <Link href="/aurora-lab/blog/aurora-photography-tech" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-orange-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl flex items-center justify-center mb-4 border border-orange-400/30">
-                <svg className="w-6 h-6 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+            {/* Blog Article 4 - Auroras Beyond Earth */}
+            <Link href="/aurora-lab/blog/auroras-beyond-earth" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-4 border border-purple-400/30">
+                <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-light text-white mb-3 group-hover:text-orange-300 transition-colors">
-                Advanced Aurora Photography Techniques
+              <h3 className="text-xl font-light text-white mb-3 group-hover:text-purple-300 transition-colors">
+                Auroras Beyond Earth: Lights on Jupiter, Saturn, and Mars
               </h3>
               <p className="text-white/70 font-light leading-relaxed mb-4">
-                Cutting-edge camera technology and AI-assisted techniques for capturing stunning aurora images.
+                Auroras aren&apos;t just an Earthly show. Learn how the northern lights appear on other planets, from Jupiter&apos;s dazzling ovals to Mars&apos; faint glows.
               </p>
               <div className="flex items-center justify-between text-sm text-white/50">
-                <span>10 min read</span>
-                <span>Nov 2024</span>
+                <span>9 min read</span>
+                <span>Dec 5, 2024</span>
               </div>
             </Link>
 
