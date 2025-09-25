@@ -381,22 +381,22 @@ export default function AuroraLabPage() {
               </div>
             </Link>
 
-            {/* Blog Article 2 */}
-            <Link href="/aurora-lab/blog/ai-aurora-prediction" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
+            {/* Blog Article 2 - Aurora Steve Phenomenon */}
+            <Link href="/aurora-lab/blog/aurora-steve-phenomenon" className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-400/30 hover:bg-white/10 transition-all duration-500 hover:scale-105">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-4 border border-purple-400/30">
                 <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
               <h3 className="text-xl font-light text-white mb-3 group-hover:text-purple-300 transition-colors">
-                AI-Powered Aurora Prediction Models
+                What Is &apos;Steve&apos;? The Strangest Aurora You&apos;ve Never Heard Of
               </h3>
               <p className="text-white/70 font-light leading-relaxed mb-4">
-                How machine learning algorithms are revolutionizing aurora forecasting with unprecedented accuracy.
+                Meet &quot;Steve&quot; — a peculiar aurora discovered by citizen scientists. Here&apos;s what makes it different from the classic northern lights.
               </p>
               <div className="flex items-center justify-between text-sm text-white/50">
-                <span>12 min read</span>
-                <span>Dec 2024</span>
+                <span>6 min read</span>
+                <span>Oct 15, 2024</span>
               </div>
             </Link>
 
