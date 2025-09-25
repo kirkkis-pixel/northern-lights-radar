@@ -168,37 +168,43 @@ export default function AuroraTravelGuidePage() {
             <section className="mb-16">
               <h2 className="text-4xl font-normal text-white mb-10">Finland: Lapland&apos;s Magic</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Rovaniemi</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Aurora + Santa Claus hometown. Perfect for families with aurora viewing and Christmas magic combined.
-                    </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-blue-400/30">
+                    <svg className="w-8 h-8 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Ivalo & Inari</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Remote, dark-sky areas with less light pollution. Ideal for serious aurora photographers.
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-light text-white mb-3">Rovaniemi</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Aurora + Santa Claus hometown. Perfect for families with aurora viewing and Christmas magic combined.
+                  </p>
                 </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Saariselkä & Levi</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Resorts with both skiing and aurora. Perfect for winter sports enthusiasts who want to see the lights.
-                    </p>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-green-400/30">
+                    <svg className="w-8 h-8 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-xl p-6 border border-yellow-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Best Time</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      September to March, with peak viewing from December to February when nights are longest.
-                    </p>
+                  <h3 className="text-xl font-light text-white mb-3">Ivalo & Inari</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Remote, dark-sky areas with less light pollution. Ideal for serious aurora photographers.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-purple-400/30">
+                    <svg className="w-8 h-8 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-light text-white mb-3">Saariselkä & Levi</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Resorts with both skiing and aurora. Perfect for winter sports enthusiasts who want to see the lights.
+                  </p>
                 </div>
               </div>
             </section>
@@ -251,37 +257,42 @@ export default function AuroraTravelGuidePage() {
             <section className="mb-16">
               <h2 className="text-4xl font-normal text-white mb-10">Sweden: Arctic Silence</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-cyan-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Abisko National Park</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Famous &quot;blue hole&quot; of clear skies. One of the world&apos;s best aurora viewing locations.
-                    </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-400/30">
+                    <svg className="w-8 h-8 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Kiruna</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Sweden&apos;s northernmost town, with easy access to wilderness and aurora viewing.
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-light text-white mb-3">Abisko National Park</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Famous &quot;blue hole&quot; of clear skies. One of the world&apos;s best aurora viewing locations.
+                  </p>
                 </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Jukkasjärvi</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Home to the famous Icehotel, offering unique aurora viewing experiences.
-                    </p>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-green-400/30">
+                    <svg className="w-8 h-8 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-xl p-6 border border-yellow-400/20">
-                    <h3 className="text-xl font-light text-white mb-3">Arctic Silence</h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Sweden offers some of the most peaceful aurora viewing experiences in the Arctic.
-                    </p>
+                  <h3 className="text-xl font-light text-white mb-3">Kiruna</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Sweden&apos;s northernmost town, with easy access to wilderness and aurora viewing.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-purple-400/30">
+                    <svg className="w-8 h-8 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-light text-white mb-3">Jukkasjärvi</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Home to the famous Icehotel, offering unique aurora viewing experiences.
+                  </p>
                 </div>
               </div>
             </section>
@@ -299,7 +310,7 @@ export default function AuroraTravelGuidePage() {
                   </div>
                   <h3 className="text-xl font-light text-white mb-3">Best Season</h3>
                   <p className="text-white/70 font-light leading-relaxed">
-                    Visit September–March for the best aurora viewing opportunities.
+                    Visit September–March for the best aurora viewing opportunities. Peak viewing from December to February when nights are longest.
                   </p>
                 </div>
 
@@ -311,7 +322,7 @@ export default function AuroraTravelGuidePage() {
                   </div>
                   <h3 className="text-xl font-light text-white mb-3">Stay Duration</h3>
                   <p className="text-white/70 font-light leading-relaxed">
-                    Stay at least 3–4 nights for better odds of seeing the aurora.
+                    Stay at least 3–4 nights for better odds of seeing the aurora. The more nights, the higher your chances.
                   </p>
                 </div>
 
@@ -323,7 +334,23 @@ export default function AuroraTravelGuidePage() {
                   </div>
                   <h3 className="text-xl font-light text-white mb-3">Forecast Tools</h3>
                   <p className="text-white/70 font-light leading-relaxed">
-                    Use Aurora forecast tools to plan each night&apos;s viewing activities.
+                    Use Aurora forecast tools to plan each night&apos;s viewing activities. Check space weather and Kp index.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-cyan-400/20">
+                  <h3 className="text-xl font-light text-white mb-3">Climate Considerations</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    <strong className="text-cyan-300">Finland:</strong> Cold but dry climate. <strong className="text-cyan-300">Norway:</strong> Coastal areas can be cloudy, inland areas like Alta are more stable. <strong className="text-cyan-300">Sweden:</strong> Abisko&apos;s &quot;blue hole&quot; offers the clearest skies.
+                  </p>
+                </div>
+                
+                <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-400/20">
+                  <h3 className="text-xl font-light text-white mb-3">Experience Levels</h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    <strong className="text-green-300">Beginners:</strong> Rovaniemi, Tromsø. <strong className="text-green-300">Photographers:</strong> Ivalo, Inari, Lofoten. <strong className="text-green-300">Adventure seekers:</strong> Abisko, remote Lapland areas.
                   </p>
                 </div>
               </div>
@@ -336,7 +363,8 @@ export default function AuroraTravelGuidePage() {
                   <div>
                     <p className="text-white/70 font-light leading-relaxed">
                       <strong className="text-blue-300">Pro Tip:</strong> Book accommodations with aurora wake-up services and guided tours. 
-                      Many hotels offer specialized aurora viewing packages that include transportation to prime viewing spots.
+                      Many hotels offer specialized aurora viewing packages that include transportation to prime viewing spots. 
+                      Consider staying in multiple locations to maximize your chances across different weather patterns.
                     </p>
                   </div>
                 </div>
