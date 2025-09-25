@@ -103,10 +103,8 @@ export default function AuroraFurtherSouth2025Page() {
 
         <div className="max-w-4xl mx-auto px-12 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm text-white/60 mb-20">
+          <div className="flex items-center justify-center space-x-2 text-sm text-white/60 mb-20">
             <Link href="/aurora-lab" className="hover:text-cyan-300 transition-colors">Aurora Lab</Link>
-            <span>•</span>
-            <Link href="/aurora-lab/blog" className="hover:text-cyan-300 transition-colors">Blog</Link>
             <span>•</span>
             <span className="text-white/40">Aurora Further South 2025</span>
           </div>
