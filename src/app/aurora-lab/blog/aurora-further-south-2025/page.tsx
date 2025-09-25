@@ -103,23 +103,26 @@ export default function AuroraFurtherSouth2025Page() {
 
         <div className="max-w-4xl mx-auto px-12 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm text-white/60 mb-8">
-            <Link href="/aurora-lab" className="hover:text-cyan-300 transition-colors">Aurora Lab</Link>
-            <span>•</span>
-            <Link href="/aurora-lab/blog" className="hover:text-cyan-300 transition-colors">Blog</Link>
-            <span>•</span>
-            <span className="text-white/40">Aurora Further South 2025</span>
-          </div>
-
-          {/* Article Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm rounded-full border border-yellow-400/20 mb-8">
+          <div className="flex items-center justify-between mb-16">
+            <div className="flex items-center space-x-2 text-sm text-white/60">
+              <Link href="/aurora-lab" className="hover:text-cyan-300 transition-colors">Aurora Lab</Link>
+              <span>•</span>
+              <Link href="/aurora-lab/blog" className="hover:text-cyan-300 transition-colors">Blog</Link>
+              <span>•</span>
+              <span className="text-white/40">Aurora Further South 2025</span>
+            </div>
+            
+            {/* Solar Maximum Badge */}
+            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm rounded-full border border-yellow-400/20">
               <svg className="w-4 h-4 text-yellow-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
               <span className="text-sm font-light text-yellow-300 tracking-[0.2em] uppercase">Solar Maximum 2025</span>
             </div>
-            
+          </div>
+
+          {/* Article Header */}
+          <div className="text-center mb-12">
             <h1 className="text-5xl font-thin text-white mb-6 leading-tight">
               Why You Might See the Northern Lights Further South This Year
             </h1>
@@ -169,7 +172,7 @@ export default function AuroraFurtherSouth2025Page() {
 
             {/* The Solar Maximum Effect */}
             <section className="mb-16">
-              <h2 className="text-3xl font-light text-white mb-10">The Solar Maximum Effect</h2>
+              <h2 className="text-4xl font-normal text-white mb-10">The Solar Maximum Effect</h2>
               
               <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
                 Every ~11 years, the sun goes through a cycle of activity. During what scientists call the solar maximum, 
@@ -197,7 +200,7 @@ export default function AuroraFurtherSouth2025Page() {
 
             {/* Why 2025 Is Special */}
             <section className="mb-16">
-              <h2 className="text-3xl font-light text-white mb-10">Why 2025 Is Special</h2>
+              <h2 className="text-4xl font-normal text-white mb-10">Why 2025 Is Special</h2>
               
               <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
                 The current solar cycle is expected to peak in 2025, with some predictions suggesting it may be one of the 
@@ -227,7 +230,7 @@ export default function AuroraFurtherSouth2025Page() {
 
             {/* How to Track Your Chances */}
             <section className="mb-16">
-              <h2 className="text-3xl font-light text-white mb-10">How to Track Your Chances</h2>
+              <h2 className="text-4xl font-normal text-white mb-10">How to Track Your Chances</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
