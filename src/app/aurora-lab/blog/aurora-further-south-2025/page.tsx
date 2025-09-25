@@ -101,7 +101,7 @@ export default function AuroraFurtherSouth2025Page() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
-        <div className="max-w-3xl mx-auto px-12 relative z-10">
+        <div className="max-w-4xl mx-auto px-12 relative z-10">
           {/* Breadcrumb */}
           <div className="flex items-center space-x-2 text-sm text-white/60 mb-20">
             <Link href="/aurora-lab" className="hover:text-cyan-300 transition-colors">Aurora Lab</Link>
@@ -155,7 +155,7 @@ export default function AuroraFurtherSouth2025Page() {
 
       {/* Article Content */}
       <div className="py-16">
-        <div className="max-w-3xl mx-auto px-12">
+        <div className="max-w-4xl mx-auto px-12">
           <article className="prose prose-lg prose-invert max-w-none">
             {/* Lead Paragraph */}
             <div className="mb-12">
