@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function AuroraFurtherSouth2025Page() {
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-gray-900">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-8xl mx-auto px-16 py-6">
@@ -93,7 +93,7 @@ export default function AuroraFurtherSouth2025Page() {
       </nav>
 
       {/* Hero Section */}
-      <div className="pt-32 pb-16 bg-gradient-to-br from-black via-slate-900 to-gray-900 relative overflow-hidden">
+      <div className="pt-32 pb-16 relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5"></div>
@@ -155,12 +155,12 @@ export default function AuroraFurtherSouth2025Page() {
       </div>
 
       {/* Article Content */}
-      <div className="py-16 bg-gradient-to-b from-slate-900 to-black">
+      <div className="py-16">
         <div className="max-w-4xl mx-auto px-12">
           <article className="prose prose-lg prose-invert max-w-none">
             {/* Lead Paragraph */}
-            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/20 mb-12">
-              <p className="text-xl text-white/90 font-light leading-relaxed mb-0">
+            <div className="mb-12">
+              <p className="text-2xl text-white/90 font-light leading-relaxed mb-6">
                 If you&apos;ve noticed more friends posting aurora photos from places like Germany, the UK, or even parts of the U.S., 
                 you&apos;re not imagining things. Thanks to a powerful upswing in solar activity, the northern lights are making rare 
                 appearances far from their usual Arctic haunts.
@@ -168,86 +168,82 @@ export default function AuroraFurtherSouth2025Page() {
             </div>
 
             {/* The Solar Maximum Effect */}
-            <section className="mb-12">
+            <section className="mb-16">
               <div className="flex items-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mr-6 border border-yellow-400/30">
-                  <svg className="w-8 h-8 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mr-4 border border-yellow-400/30">
+                  <svg className="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 </div>
                 <h2 className="text-3xl font-light text-white">The Solar Maximum Effect</h2>
               </div>
               
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
-                  Every ~11 years, the sun goes through a cycle of activity. During what scientists call the solar maximum, 
-                  eruptions of plasma and magnetic fields — coronal mass ejections (CMEs) — are more frequent. These streams 
-                  of charged particles hit Earth&apos;s magnetic field, generating auroras that extend further south.
-                </p>
-                
-                <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl p-6 border border-blue-400/20">
-                  <div className="flex items-start">
-                    <svg className="w-6 h-6 text-blue-300 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                      <p className="text-white/70 font-light leading-relaxed">
-                        <strong className="text-blue-300">NASA explains the solar cycle</strong> in detail, showing how these 
-                        11-year cycles affect everything from satellite communications to aurora visibility. 
-                        <a href="https://www.nasa.gov/mission_pages/sunearth/science/solar-cycle.html" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 transition-colors ml-1">
-                          Learn more about solar cycles →
-                        </a>
-                      </p>
-                    </div>
+              <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
+                Every ~11 years, the sun goes through a cycle of activity. During what scientists call the solar maximum, 
+                eruptions of plasma and magnetic fields — coronal mass ejections (CMEs) — are more frequent. These streams 
+                of charged particles hit Earth&apos;s magnetic field, generating auroras that extend further south.
+              </p>
+              
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl p-6 border border-blue-400/20">
+                <div className="flex items-start">
+                  <svg className="w-6 h-6 text-blue-300 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      <strong className="text-blue-300">NASA explains the solar cycle</strong> in detail, showing how these 
+                      11-year cycles affect everything from satellite communications to aurora visibility. 
+                      <a href="https://www.nasa.gov/mission_pages/sunearth/science/solar-cycle.html" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 transition-colors ml-1">
+                        Learn more about solar cycles →
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
             </section>
 
             {/* Why 2025 Is Special */}
-            <section className="mb-12">
+            <section className="mb-16">
               <div className="flex items-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mr-6 border border-purple-400/30">
-                  <svg className="w-8 h-8 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mr-4 border border-purple-400/30">
+                  <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
                 <h2 className="text-3xl font-light text-white">Why 2025 Is Special</h2>
               </div>
               
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
-                  The current solar cycle is expected to peak in 2025, with some predictions suggesting it may be one of the 
-                  most active in decades. That means the auroral oval, normally confined to high latitudes, expands southward.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                  <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-400/20 text-center">
-                    <div className="text-2xl font-light text-green-300 mb-2">Edinburgh</div>
-                    <div className="text-sm text-white/60">Scotland, UK</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-400/20 text-center">
-                    <div className="text-2xl font-light text-blue-300 mb-2">Minneapolis</div>
-                    <div className="text-sm text-white/60">Minnesota, USA</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-400/20 text-center">
-                    <div className="text-2xl font-light text-purple-300 mb-2">Hamburg</div>
-                    <div className="text-sm text-white/60">Germany</div>
-                  </div>
+              <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
+                The current solar cycle is expected to peak in 2025, with some predictions suggesting it may be one of the 
+                most active in decades. That means the auroral oval, normally confined to high latitudes, expands southward.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-400/20 text-center">
+                  <div className="text-2xl font-light text-green-300 mb-2">Edinburgh</div>
+                  <div className="text-sm text-white/60">Scotland, UK</div>
                 </div>
-                
-                <p className="text-lg text-white/80 font-light leading-relaxed">
-                  Cities like these may all get unexpected light shows during the 2025 solar maximum, bringing the aurora 
-                  to millions who have never seen it before.
-                </p>
+                <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-400/20 text-center">
+                  <div className="text-2xl font-light text-blue-300 mb-2">Minneapolis</div>
+                  <div className="text-sm text-white/60">Minnesota, USA</div>
+                </div>
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-400/20 text-center">
+                  <div className="text-2xl font-light text-purple-300 mb-2">Hamburg</div>
+                  <div className="text-sm text-white/60">Germany</div>
+                </div>
               </div>
+              
+              <p className="text-lg text-white/80 font-light leading-relaxed">
+                Cities like these may all get unexpected light shows during the 2025 solar maximum, bringing the aurora 
+                to millions who have never seen it before.
+              </p>
             </section>
 
             {/* How to Track Your Chances */}
-            <section className="mb-12">
+            <section className="mb-16">
               <div className="flex items-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mr-6 border border-cyan-400/30">
-                  <svg className="w-8 h-8 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mr-4 border border-cyan-400/30">
+                  <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
@@ -255,43 +251,37 @@ export default function AuroraFurtherSouth2025Page() {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mr-4 border border-red-400/30">
-                      <svg className="w-6 h-6 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-light text-white">NOAA Forecasts</h3>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-red-400/30">
+                    <svg className="w-8 h-8 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-light text-white mb-3">NOAA Forecasts</h3>
                   <p className="text-white/70 font-light leading-relaxed">
                     Follow NOAA&apos;s Space Weather Prediction Center for daily Kp index forecasts and real-time aurora predictions.
                   </p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/30">
-                      <svg className="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-light text-white">Aurora Apps</h3>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-green-400/30">
+                    <svg className="w-8 h-8 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-light text-white mb-3">Aurora Apps</h3>
                   <p className="text-white/70 font-light leading-relaxed">
                     Use aurora apps or check sites like AuroraWatch UK for real-time alerts and notifications.
                   </p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mr-4 border border-blue-400/30">
-                      <svg className="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-light text-white">Dark Skies</h3>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-blue-400/30">
+                    <svg className="w-8 h-8 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-light text-white mb-3">Dark Skies</h3>
                   <p className="text-white/70 font-light leading-relaxed">
                     Remember: dark skies, low light pollution, and clear weather are essential for aurora viewing.
                   </p>
@@ -300,7 +290,7 @@ export default function AuroraFurtherSouth2025Page() {
             </section>
 
             {/* Takeaway */}
-            <section className="mb-12">
+            <section className="mb-16">
               <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm rounded-2xl p-8 border border-yellow-400/20">
                 <div className="flex items-start">
                   <svg className="w-8 h-8 text-yellow-300 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -356,6 +346,6 @@ export default function AuroraFurtherSouth2025Page() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
