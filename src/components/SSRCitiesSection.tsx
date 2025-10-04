@@ -1,5 +1,5 @@
 import citiesData from '@/data/cities.json';
-import HydratedCityCard from './HydratedCityCard';
+import SSRCityCard from './SSRCityCard';
 
 interface City {
   slug: string;
@@ -43,7 +43,7 @@ export default function SSRCitiesSection() {
         {/* Cities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {defaultCities.map((city) => (
-            <HydratedCityCard key={city.slug} city={city} />
+            <SSRCityCard key={city.slug} city={city} />
           ))}
         </div>
 
