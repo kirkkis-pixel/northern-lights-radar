@@ -99,7 +99,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
         temperature: Math.round(weather.current?.temperature_2m || 0),
         humidity: Math.round(weather.current?.relative_humidity_2m || 0),
         windSpeed: Math.round(weather.current?.wind_speed_10m || 0),
-        visibility: Math.min(Math.round((weather.current?.visibility || 0) / 1000), 20) // Convert meters to km, cap at 20km max
+        visibility: Math.min(Math.round((weather.current?.visibility || 0) / 1000), 50) // Convert meters to km, cap at 50km max
       };
     }
   } catch (e) {
@@ -117,7 +117,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
 
   // Calculate viewing conditions
   const viewingConditionsClouds = cloudPct < 30 ? 'Clear' : cloudPct < 70 ? 'Partly Cloudy' : 'Cloudy';
-  const viewingConditionsVisibility = (weatherData?.visibility ?? 0) > 15 ? 'Excellent' : (weatherData?.visibility ?? 0) > 8 ? 'Good' : (weatherData?.visibility ?? 0) > 3 ? 'Fair' : 'Poor';
+  const viewingConditionsVisibility = (weatherData?.visibility ?? 0) > 30 ? 'Excellent' : (weatherData?.visibility ?? 0) > 15 ? 'Good' : (weatherData?.visibility ?? 0) > 8 ? 'Fair' : 'Poor';
   const isDarkEnough = dark > 0.5;
 
   return (
