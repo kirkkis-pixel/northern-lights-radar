@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import RegionalNavigation from '@/components/RegionalNavigation';
-import HybridCitiesSection from '@/components/HybridCitiesSection';
-import LiveAuroraCommandCenter from '@/components/LiveAuroraCommandCenter';
+import SSRCitiesSection from '@/components/SSRCitiesSection';
+import TonightCard from '@/components/TonightCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -75,13 +75,13 @@ export default function HomePage() {
           
           {/* Live Aurora Command Center */}
           <div>
-            <LiveAuroraCommandCenter />
+            <TonightCard />
           </div>
         </div>
       </div>
       
       {/* Filtered Cities Section */}
-      <HybridCitiesSection />
+        <SSRCitiesSection />
       
       {/* Aurora Images Section */}
       <div className="py-24 bg-gradient-to-b from-black to-slate-900">

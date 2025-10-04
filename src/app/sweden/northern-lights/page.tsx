@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
-import TrustedCityCard from '@/components/TrustedCityCard';
+import HydratedCityCard from '@/components/HydratedCityCard';
 
 export const metadata: Metadata = {
   title: 'Northern Lights in Sweden - Swedish Lapland Aurora Guide',
@@ -275,7 +275,7 @@ export default function SwedenNorthernLightsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {cities.map((city) => (
-              <TrustedCityCard key={city.slug} city={city} />
+                <HydratedCityCard key={city.slug} city={city} />
             ))}
           </div>
         </div>
