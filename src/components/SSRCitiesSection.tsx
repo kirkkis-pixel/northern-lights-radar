@@ -1,5 +1,5 @@
 import citiesData from '@/data/cities.json';
-import SSRCityCard from './SSRCityCard';
+import HydratedCityCard from './HydratedCityCard';
 
 interface City {
   slug: string;
@@ -16,7 +16,7 @@ interface City {
 const countries = ['Finland', 'Sweden', 'Norway'];
 
 export default function SSRCitiesSection() {
-  // For SSR, we'll show all cities initially
+  // For SSR, we'll show all cities initially with static data
   const allCities = citiesData.cities as City[];
   
   // Show all cities for better SEO and visibility
@@ -44,7 +44,7 @@ export default function SSRCitiesSection() {
         {/* Cities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {defaultCities.map((city) => (
-            <SSRCityCard key={city.slug} city={city} />
+            <HydratedCityCard key={city.slug} city={city} />
           ))}
         </div>
 
