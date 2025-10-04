@@ -37,11 +37,6 @@ export default function TonightCard({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    // Use the passed coordinates
-    fetchScoreData(latitude, longitude);
-  }, [latitude, longitude, fetchScoreData]);
-
   const fetchScoreData = async (lat: number, lon: number) => {
     try {
       const response = await fetch(`/api/score?lat=${lat}&lon=${lon}`);
@@ -54,6 +49,11 @@ export default function TonightCard({
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    // Use the passed coordinates
+    fetchScoreData(latitude, longitude);
+  }, [latitude, longitude, fetchScoreData]);
 
   if (loading) {
     return (

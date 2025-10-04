@@ -98,7 +98,7 @@ export default function HydratedCityCard({ city, initialData }: HydratedCityCard
     // Set up periodic refresh every 5 minutes
     const interval = setInterval(fetchAuroraData, 5 * 60 * 1000);
     return () => clearInterval(interval);
-  }, [city.latitude, city.longitude, initialData, fetchAuroraData]);
+  }, [city.latitude, city.longitude, initialData]);
 
   const score = auroraData?.score ?? 0;
   const badge = getScoreBadge(score);
