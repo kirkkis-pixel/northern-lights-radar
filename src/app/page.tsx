@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import InteractiveAuroraMap from '@/components/InteractiveAuroraMap';
 import RegionalNavigation from '@/components/RegionalNavigation';
-import FilteredCitiesSection from '@/components/FilteredCitiesSection';
+import SSRCitiesSection from '@/components/SSRCitiesSection';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -202,7 +202,7 @@ export default function HomePage() {
       </div>
       
       {/* Filtered Cities Section */}
-      <FilteredCitiesSection />
+        <SSRCitiesSection />
       
       {/* Map Section */}
       <div className="py-32 bg-gradient-to-b from-black to-slate-900">
