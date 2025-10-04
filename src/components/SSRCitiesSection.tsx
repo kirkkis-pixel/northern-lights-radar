@@ -19,8 +19,8 @@ export default async function SSRCitiesSection() {
   // For SSR, we'll show all cities initially
   const allCities = citiesData.cities as City[];
   
-  // Filter to show Finland cities by default (or we could show all)
-  const defaultCities = allCities.filter(city => city.country === 'Finland');
+  // Show all cities for better SEO and visibility
+  const defaultCities = allCities;
 
   return (
     <div className="py-24 bg-gradient-to-b from-black to-slate-900">
@@ -51,7 +51,7 @@ export default async function SSRCitiesSection() {
         {/* Results Count */}
         <div className="text-center mt-12">
           <p className="text-white/60 font-light">
-            Showing {defaultCities.length} cities across Finland
+            Showing {defaultCities.length} cities across Finland, Sweden, and Norway
           </p>
         </div>
       </div>
