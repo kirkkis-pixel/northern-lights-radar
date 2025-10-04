@@ -157,7 +157,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-3xl font-bold text-red-400">{prob}%</span>
-                  <span className="text-red-400 font-semibold">{getScoreBadge(score)}</span>
+                  <span className="text-red-400 font-semibold">{getScoreBadge(prob)}</span>
                 </div>
               </div>
 
