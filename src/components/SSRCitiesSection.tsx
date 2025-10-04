@@ -15,7 +15,7 @@ interface City {
 
 const countries = ['Finland', 'Sweden', 'Norway'];
 
-export default async function SSRCitiesSection() {
+export default function SSRCitiesSection() {
   // For SSR, we'll show all cities initially
   const allCities = citiesData.cities as City[];
   

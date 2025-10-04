@@ -41,36 +41,18 @@ const getScoreBadge = (score: number) => {
   return 'Poor';
 };
 
-export default async function SSRCityCard({ city }: SSRCityCardProps) {
-  let auroraData;
-  let error = null;
-
-  try {
-    // Add timeout to prevent hanging during SSR
-    const timeoutPromise = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('API timeout')), 8000)
-    );
-    
-    auroraData = await Promise.race([
-      getAuroraNow(city.latitude, city.longitude),
-      timeoutPromise
-    ]) as any;
-  } catch (err) {
-    console.error(`Failed to fetch aurora data for ${city.name}:`, err);
-    error = err instanceof Error ? err.message : 'Unknown error';
-    
-    // Provide fallback data for SSR instead of showing error
-    auroraData = {
-      score: 0,
-      kp: 0,
-      prob: 0,
-      cloudPct: 100,
-      dark: 0,
-      moon: 1,
-      updatedAt: new Date().toISOString(),
-      freshness: {}
-    };
-  }
+export default function SSRCityCard({ city }: SSRCityCardProps) {
+  // For SSR, provide static data that will be updated by client-side hydration
+  const auroraData = {
+    score: 0,
+    kp: 0,
+    prob: 0,
+    cloudPct: 100,
+    dark: 0,
+    moon: 1,
+    updatedAt: new Date().toISOString(),
+    freshness: {}
+  };
 
   const formatTime = (timestamp: string) => {
     return new Date(timestamp).toLocaleTimeString('en-US', {
