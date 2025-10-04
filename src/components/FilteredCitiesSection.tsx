@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import citiesData from '@/data/cities.json';
+import RealTimeCityCard from './RealTimeCityCard';
 
 interface City {
   slug: string;
@@ -112,16 +113,7 @@ export default function FilteredCitiesSection() {
         {/* Cities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredCities.map((city) => (
-            <div key={city.slug} className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-white">{city.name}</h3>
-                <span className="text-2xl">{getCountryFlag(city.country)}</span>
-              </div>
-              <p className="text-white/60 text-sm mb-4">{city.description}</p>
-              <div className="text-xs text-white/40">
-                {city.region}, {city.country}
-              </div>
-            </div>
+            <RealTimeCityCard key={city.slug} city={city} />
           ))}
         </div>
 
