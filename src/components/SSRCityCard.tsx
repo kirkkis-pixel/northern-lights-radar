@@ -99,7 +99,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
         temperature: Math.round(weather.current?.temperature_2m || 0),
         humidity: Math.round(weather.current?.relative_humidity_2m || 0),
         windSpeed: Math.round(weather.current?.wind_speed_10m || 0),
-        visibility: Math.min(Math.round((weather.current?.visibility || 0) / 1000), 50) // Convert meters to km, cap at 50km max
+        visibility: Math.round((weather.current?.visibility || 0) / 1000) // Convert meters to km, show real API values
       };
     }
   } catch (e) {
