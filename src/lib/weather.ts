@@ -1,5 +1,4 @@
 import { fetchSMHIWeatherData, calculateSwedishViewingCloudCover } from './weather-sweden';
-import { fetchMETWeatherData, calculateNorwegianViewingCloudCover } from './weather-norway';
 
 interface WeatherData {
   latitude: number;
@@ -30,7 +29,6 @@ export async function fetchWeatherData(
       case 'Sweden':
         return await fetchSwedishWeatherData(latitude, longitude);
       case 'Norway':
-        return await fetchNorwegianWeatherData(latitude, longitude);
       case 'Finland':
       default:
         return await fetchFinnishWeatherData(latitude, longitude);
@@ -68,21 +66,6 @@ async function fetchSwedishWeatherData(
   };
 }
 
-/**
- * Fetches Norwegian weather data from MET Norway
- */
-async function fetchNorwegianWeatherData(
-  latitude: number,
-  longitude: number
-): Promise<WeatherData | null> {
-  const data = await fetchMETWeatherData(latitude, longitude);
-  if (!data) return null;
-  
-  return {
-    ...data,
-    country: 'Norway'
-  };
-}
 
 /**
  * Fetches Finnish weather data from FMI
@@ -193,7 +176,6 @@ export function calculateViewingCloudCover(
     case 'Sweden':
       return calculateSwedishViewingCloudCover(hourly) / 100; // Convert to 0-1 scale
     case 'Norway':
-      return calculateNorwegianViewingCloudCover(hourly) / 100; // Convert to 0-1 scale
     case 'Finland':
     default:
       return calculateFinnishViewingCloudCover(hourly, viewingStartHour, viewingEndHour);

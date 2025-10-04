@@ -66,7 +66,7 @@ export default function CameraSettingsPage() {
         </div>
 
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-40 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
@@ -100,7 +100,7 @@ export default function CameraSettingsPage() {
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Live Conditions</span>
               </div>
               <h2 className="text-4xl font-thin text-white mb-6">
-                Check Tonight&apos;s Conditions
+                Check Tonight's Conditions
               </h2>
               <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
                 Perfect conditions make for perfect photos - check the current aurora activity
@@ -298,7 +298,7 @@ export default function CameraSettingsPage() {
                         <ol className="text-sm text-green-800 space-y-1">
                           <li>1. Focus on bright star or distant light</li>
                           <li>2. Switch to manual focus</li>
-                          <li>3. Don&apos;t touch focus ring</li>
+                          <li>3. Don't touch focus ring</li>
                         </ol>
                       </div>
                     </div>
@@ -496,7 +496,7 @@ export default function CameraSettingsPage() {
                   How to See the Northern Lights
                 </h3>
                 <p className="text-gray-600">
-                  Complete beginner&apos;s guide to aurora hunting in Finland.
+                  Complete beginner's guide to aurora hunting in Finland.
                 </p>
               </Link>
               
@@ -519,8 +519,7 @@ export default function CameraSettingsPage() {
         <div className="py-8 bg-gray-50 border-t border-gray-200">
           <div className="max-w-4xl mx-auto px-6">
             <p className="text-sm text-gray-500 text-center">
-              Data from NOAA SWPC (OVATION), Open-Meteo, OpenWeather. Times in local timezone. 
-              Scores are indicative and depend on weather & darkness.
+              © 2024 Northern Lights Radar. All rights reserved.
             </p>
           </div>
         </div>

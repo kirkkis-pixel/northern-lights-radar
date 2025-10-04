@@ -1,181 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-interface WeatherData {
-  temperature: number;
-  cloudCover: number;
-  visibility: number;
-  humidity: number;
-  windSpeed: number;
-  pressure: number;
-  timestamp: string;
-}
-
-interface AuroraData {
-  kpIndex: number;
-  auroraProbability: number;
-  auroraLevel: string;
-  solarWindSpeed: number;
-  bzComponent: number;
-  timestamp: string;
-}
+import { 
+  getWeatherDataByCountry, 
+  fetchRealTimeAuroraData,
+  RealTimeWeatherData,
+  RealTimeAuroraData 
+} from '@/lib/real-time-weather';
 
 interface CityWeatherData {
   city: string;
   country: string;
-  weather: WeatherData;
-  aurora: AuroraData;
+  weather: RealTimeWeatherData;
+  aurora: RealTimeAuroraData;
   moonPhase: number;
   moonIllumination: number;
   isDark: boolean;
   lastUpdated: string;
-}
-
-// Cache for API responses (5 minute cache)
-const cache = new Map<string, { data: unknown; timestamp: number }>();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-
-async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promise<T> {
-  const cached = cache.get(key);
-  const now = Date.now();
-  
-  if (cached && (now - cached.timestamp) < CACHE_DURATION) {
-    return cached.data as T;
-  }
-  
-  try {
-    const data = await fetchFn();
-    cache.set(key, { data, timestamp: now });
-    return data;
-  } catch (error) {
-    console.error(`Error fetching ${key}:`, error);
-    // Return cached data if available, even if expired
-    if (cached) {
-      return cached.data as T;
-    }
-    throw error;
-  }
-}
-
-// FMI (Finnish Meteorological Institute) API
-async function fetchFMIWeather(latitude: number, longitude: number): Promise<WeatherData> {
-  const key = `fmi-${latitude}-${longitude}`;
-  
-  return fetchWithCache(key, async () => {
-    // For now, return mock data to avoid CORS issues
-    // In production, this would call the actual FMI API
-    return {
-      temperature: Math.random() * 20 - 10, // -10 to 10°C
-      cloudCover: Math.random() * 100,
-      visibility: Math.random() * 20 + 5,
-      humidity: Math.random() * 40 + 30,
-      windSpeed: Math.random() * 10,
-      pressure: 1013 + Math.random() * 20 - 10,
-      timestamp: new Date().toISOString()
-    };
-  });
-}
-
-// SMHI (Swedish Meteorological and Hydrological Institute) API
-async function fetchSMHIWeather(latitude: number, longitude: number): Promise<WeatherData> {
-  const key = `smhi-${latitude}-${longitude}`;
-  
-  return fetchWithCache(key, async () => {
-    // For now, return mock data to avoid CORS issues
-    return {
-      temperature: Math.random() * 20 - 10,
-      cloudCover: Math.random() * 100,
-      visibility: Math.random() * 20 + 5,
-      humidity: Math.random() * 40 + 30,
-      windSpeed: Math.random() * 10,
-      pressure: 1013 + Math.random() * 20 - 10,
-      timestamp: new Date().toISOString()
-    };
-  });
-}
-
-// MET Norway API
-async function fetchMETNorwayWeather(latitude: number, longitude: number): Promise<WeatherData> {
-  const key = `met-${latitude}-${longitude}`;
-  
-  return fetchWithCache(key, async () => {
-    // For now, return mock data to avoid CORS issues
-    return {
-      temperature: Math.random() * 20 - 10,
-      cloudCover: Math.random() * 100,
-      visibility: Math.random() * 20 + 5,
-      humidity: Math.random() * 40 + 30,
-      windSpeed: Math.random() * 10,
-      pressure: 1013 + Math.random() * 20 - 10,
-      timestamp: new Date().toISOString()
-    };
-  });
-}
-
-// NOAA Space Weather API for aurora data
-async function fetchAuroraData(): Promise<AuroraData> {
-  const key = 'aurora-data';
-  
-  return fetchWithCache(key, async () => {
-    try {
-      const response = await fetch('https://services.swpc.noaa.gov/json/rtsw/rtsw_mag_1m.json');
-      if (!response.ok) {
-        throw new Error(`NOAA API error: ${response.status}`);
-      }
-      
-    const data = await response.json() as Array<{ kp?: number; speed?: number; bz_gsm?: number }>;
-    const latest = data[data.length - 1];
-      
-      // Calculate aurora probability based on Kp index and other factors
-      const kpIndex = latest.kp || 0;
-      const solarWindSpeed = latest.speed || 400;
-      const bzComponent = latest.bz_gsm || 0;
-      
-      // Aurora probability calculation (simplified)
-      let auroraProbability = 0;
-      if (kpIndex >= 3) auroraProbability += 30;
-      if (kpIndex >= 4) auroraProbability += 25;
-      if (kpIndex >= 5) auroraProbability += 25;
-      if (kpIndex >= 6) auroraProbability += 20;
-      
-      // Solar wind speed factor
-      if (solarWindSpeed > 500) auroraProbability += 10;
-      if (solarWindSpeed > 600) auroraProbability += 10;
-      
-      // Bz component factor (negative Bz is good for aurora)
-      if (bzComponent < -5) auroraProbability += 15;
-      if (bzComponent < -10) auroraProbability += 10;
-      
-      auroraProbability = Math.min(100, Math.max(0, auroraProbability));
-      
-      let auroraLevel = 'Low';
-      if (auroraProbability >= 70) auroraLevel = 'Very High';
-      else if (auroraProbability >= 50) auroraLevel = 'High';
-      else if (auroraProbability >= 30) auroraLevel = 'Moderate';
-      
-      return {
-        kpIndex,
-        auroraProbability,
-        auroraLevel,
-        solarWindSpeed,
-        bzComponent,
-        timestamp: new Date().toISOString()
-      };
-    } catch (error) {
-      console.error('Error fetching aurora data:', error);
-      // Return mock data as fallback
-      const kpIndex = Math.random() * 6;
-      const auroraProbability = Math.min(100, kpIndex * 15 + Math.random() * 20);
-      
-      return {
-        kpIndex,
-        auroraProbability,
-        auroraLevel: auroraProbability >= 50 ? 'High' : 'Low',
-        solarWindSpeed: 400 + Math.random() * 200,
-        bzComponent: Math.random() * 20 - 10,
-        timestamp: new Date().toISOString()
-      };
-    }
-  });
 }
 
 // Calculate moon phase and illumination
@@ -221,44 +60,99 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Fetch weather data based on country
-    let weather: WeatherData;
-    switch (country) {
-      case 'Finland':
-        weather = await fetchFMIWeather(parseFloat(latitude), parseFloat(longitude));
-        break;
-      case 'Sweden':
-        weather = await fetchSMHIWeather(parseFloat(latitude), parseFloat(longitude));
-        break;
-      case 'Norway':
-        weather = await fetchMETNorwayWeather(parseFloat(latitude), parseFloat(longitude));
-        break;
-      default:
-        throw new Error(`Unsupported country: ${country}`);
+    const lat = parseFloat(latitude);
+    const lon = parseFloat(longitude);
+    
+    // Validate coordinates
+    if (isNaN(lat) || isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
+      return NextResponse.json(
+        { error: 'Invalid coordinates' },
+        { status: 400 }
+      );
+    }
+
+    // Fetch real-time weather and aurora data in parallel
+    const [weather, aurora] = await Promise.allSettled([
+      getWeatherDataByCountry(lat, lon, country),
+      fetchRealTimeAuroraData(lat, lon)
+    ]);
+    
+    // Handle weather data
+    let weatherData: RealTimeWeatherData;
+    if (weather.status === 'fulfilled') {
+      weatherData = weather.value;
+    } else {
+      console.error('Weather data fetch failed:', weather.reason);
+      // Fallback weather data
+      const month = new Date().getMonth() + 1;
+      const realisticTemp = lat > 65 ? 
+        (month >= 10 || month <= 3 ? Math.floor(Math.random() * 15) - 10 : Math.floor(Math.random() * 20) + 5) :
+        Math.floor(Math.random() * 15) + 5;
+      
+      weatherData = {
+        temperature: realisticTemp,
+        cloudCover: Math.floor(Math.random() * 40) + 30,
+        visibility: Math.floor(Math.random() * 15) + 5, // 5-20km realistic visibility
+        humidity: Math.floor(Math.random() * 30) + 60,
+        windSpeed: Math.floor(Math.random() * 8) + 3,
+        pressure: 1013 + Math.floor(Math.random() * 20) - 10,
+        precipitation: Math.floor(Math.random() * 5),
+        uvIndex: Math.floor(Math.random() * 3),
+        timestamp: new Date().toISOString(),
+        source: 'FALLBACK',
+        quality: 'LOW'
+      };
     }
     
-    // Fetch aurora data (same for all countries)
-    const aurora = await fetchAuroraData();
+    // Handle aurora data
+    let auroraData: RealTimeAuroraData;
+    if (aurora.status === 'fulfilled') {
+      auroraData = aurora.value;
+    } else {
+      console.error('Aurora data fetch failed:', aurora.reason);
+      // Fallback aurora data
+      auroraData = {
+        kpIndex: 2,
+        auroraProbability: 25,
+        auroraLevel: 'Low',
+        solarWindSpeed: 400,
+        bzComponent: 0,
+        density: 5,
+        temperature: 0,
+        dstIndex: 0,
+        aeIndex: 50,
+        apIndex: 5,
+        timestamp: new Date().toISOString(),
+        forecast: {
+          next3Hours: 25,
+          next6Hours: 30,
+          next12Hours: 20,
+          next24Hours: 35
+        },
+        source: 'FALLBACK',
+        quality: 'LOW'
+      };
+    }
     
     // Calculate moon data
     const now = new Date();
     const moonData = calculateMoonPhase(now);
     
     // Check if it's dark enough for aurora
-    const isDark = isDarkEnoughForAurora(parseFloat(latitude), now);
+    const isDark = isDarkEnoughForAurora(lat, now);
     
-    const weatherData: CityWeatherData = {
+    const response: CityWeatherData = {
       city,
       country,
-      weather,
-      aurora,
+      weather: weatherData,
+      aurora: auroraData,
       moonPhase: moonData.phase,
       moonIllumination: moonData.illumination,
       isDark,
       lastUpdated: now.toISOString()
     };
 
-    return NextResponse.json(weatherData);
+    return NextResponse.json(response);
   } catch (error) {
     console.error('Error fetching weather data:', error);
     return NextResponse.json(

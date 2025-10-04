@@ -6,6 +6,8 @@ export interface WeatherData {
   windSpeed: number;
   pressure: number;
   timestamp: string;
+  dataSource: string;
+  dataQuality: 'high' | 'medium' | 'low';
 }
 
 export interface AuroraData {
@@ -15,6 +17,8 @@ export interface AuroraData {
   solarWindSpeed: number;
   bzComponent: number;
   timestamp: string;
+  dataSource: string;
+  dataQuality: 'high' | 'medium' | 'low';
 }
 
 export interface CityWeatherData {
@@ -80,7 +84,9 @@ async function fetchFMIWeather(latitude: number, longitude: number): Promise<Wea
       humidity: values[3] || 50,
       windSpeed: values[4] || 0,
       pressure: values[5] || 1013,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      dataSource: 'FMI',
+      dataQuality: 'high' as const
     };
   });
 }
@@ -115,7 +121,9 @@ async function fetchSMHIWeather(latitude: number, longitude: number): Promise<We
       humidity: getParameter('r') || 50,
       windSpeed: getParameter('ws'),
       pressure: getParameter('msl'),
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      dataSource: 'SMHI',
+      dataQuality: 'high' as const
     };
   });
 }
@@ -150,7 +158,9 @@ async function fetchMETNorwayWeather(latitude: number, longitude: number): Promi
       humidity: details.relative_humidity * 100 || 50,
       windSpeed: details.wind_speed || 0,
       pressure: details.air_pressure_at_sea_level || 1013,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      dataSource: 'MET Norway',
+      dataQuality: 'high' as const
     };
   });
 }
@@ -203,7 +213,9 @@ async function fetchAuroraData(): Promise<AuroraData> {
       auroraLevel,
       solarWindSpeed,
       bzComponent,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      dataSource: 'NOAA Space Weather Prediction Center',
+      dataQuality: 'high' as const
     };
   });
 }
@@ -269,7 +281,9 @@ async function fetch7TimerWeatherData(latitude: number, longitude: number): Prom
         humidity: Math.round(Math.random() * 40 + 30), // 7Timer doesn't provide humidity
         windSpeed: Math.round(windSpeed),
         pressure: Math.round(1013 + Math.random() * 20 - 10), // 7Timer doesn't provide pressure
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        dataSource: '7Timer',
+        dataQuality: 'medium' as const
       };
     } catch (error) {
       console.error('7Timer API error:', error);
@@ -284,7 +298,9 @@ async function fetch7TimerWeatherData(latitude: number, longitude: number): Prom
         humidity: Math.round(Math.random() * 40 + 30),
         windSpeed: Math.round(Math.random() * 8 + 2),
         pressure: Math.round(1013 + Math.random() * 20 - 10),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        dataSource: '7Timer',
+        dataQuality: 'medium' as const
       };
     }
   });
@@ -339,7 +355,9 @@ async function fetchRealAuroraData(): Promise<AuroraData> {
         auroraLevel,
         solarWindSpeed,
         bzComponent,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        dataSource: '7Timer',
+        dataQuality: 'medium' as const
       };
     } catch (error) {
       console.error('Error fetching real aurora data:', error);
@@ -353,7 +371,9 @@ async function fetchRealAuroraData(): Promise<AuroraData> {
         auroraLevel: auroraProbability >= 50 ? 'High' : 'Low',
         solarWindSpeed: Math.round(400 + Math.random() * 200),
         bzComponent: Math.round((Math.random() * 20 - 10) * 10) / 10,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        dataSource: 'Fallback Data',
+        dataQuality: 'low' as const
       };
     }
   });
@@ -412,7 +432,9 @@ export async function getCityWeatherData(
         humidity: Math.round(Math.random() * 40 + 30),
         windSpeed: Math.round(Math.random() * 8 + 2),
         pressure: Math.round(1013 + Math.random() * 20 - 10),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        dataSource: 'Fallback Data',
+        dataQuality: 'low' as const
       },
       aurora: {
         kpIndex: Math.round((Math.random() * 6 + 1) * 10) / 10,
@@ -420,7 +442,9 @@ export async function getCityWeatherData(
         auroraLevel: Math.random() > 0.5 ? 'High' : 'Low',
         solarWindSpeed: Math.round(400 + Math.random() * 200),
         bzComponent: Math.round((Math.random() * 20 - 10) * 10) / 10,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        dataSource: 'Fallback Data',
+        dataQuality: 'low' as const
       },
       moonPhase: Math.round(Math.random() * 100),
       moonIllumination: Math.round(Math.random() * 100),

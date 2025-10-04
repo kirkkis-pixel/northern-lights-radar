@@ -177,70 +177,6 @@
       "description": "Sámi cultural center with excellent aurora viewing"
     },
     {
-      "slug": "tromso",
-      "name": "Tromsø",
-      "region": "Lapland",
-      "country": "Norway",
-      "latitude": 69.6492,
-      "longitude": 18.9553,
-      "timezone": "Europe/Oslo",
-      "viewingSpots": [
-        "Tromsø city center",
-        "Fjellheisen cable car",
-        "Tromsø Bridge",
-        "Prestvannet lake"
-      ],
-      "description": "Arctic capital of Norway and premier aurora destination"
-    },
-    {
-      "slug": "alta",
-      "name": "Alta",
-      "region": "Lapland",
-      "country": "Norway",
-      "latitude": 69.9689,
-      "longitude": 23.2717,
-      "timezone": "Europe/Oslo",
-      "viewingSpots": [
-        "Alta city center",
-        "Alta Museum area",
-        "Alta River valley",
-        "Haldde mountain"
-      ],
-      "description": "Northern Norway's largest city with rich aurora history"
-    },
-    {
-      "slug": "narvik",
-      "name": "Narvik",
-      "region": "Lapland",
-      "country": "Norway",
-      "latitude": 68.4381,
-      "longitude": 17.4278,
-      "timezone": "Europe/Oslo",
-      "viewingSpots": [
-        "Narvik city center",
-        "Narvikfjellet mountain",
-        "Ofotfjord shoreline",
-        "Narvik War Museum area"
-      ],
-      "description": "Coastal city with dramatic fjord views and aurora opportunities"
-    },
-    {
-      "slug": "bodo",
-      "name": "Bodø",
-      "region": "Lapland",
-      "country": "Norway",
-      "latitude": 67.2800,
-      "longitude": 14.4050,
-      "timezone": "Europe/Oslo",
-      "viewingSpots": [
-        "Bodø city center",
-        "Saltstraumen area",
-        "Bodø Airport vicinity",
-        "Rønvikfjellet mountain"
-      ],
-      "description": "Gateway to northern Norway with good aurora viewing potential"
-    },
-    {
       "slug": "lulea",
       "name": "Luleå",
       "region": "Lapland",
@@ -305,6 +241,86 @@
       "description": "Border town with excellent aurora viewing conditions"
     },
     {
+      "slug": "boden",
+      "name": "Boden",
+      "region": "Lapland",
+      "country": "Sweden",
+      "latitude": 65.8333,
+      "longitude": 21.7000,
+      "timezone": "Europe/Stockholm",
+      "viewingSpots": [
+        "Boden town center",
+        "Boden Fortress area",
+        "Lule River valley",
+        "Råne River banks"
+      ],
+      "description": "Military town with clear skies and good aurora viewing"
+    },
+    {
+      "slug": "tromso",
+      "name": "Tromsø",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 69.6492,
+      "longitude": 18.9553,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Tromsø city center",
+        "Fjellheisen cable car",
+        "Tromsø Bridge",
+        "Prestvannet lake"
+      ],
+      "description": "Arctic capital of Norway and premier aurora destination"
+    },
+    {
+      "slug": "alta",
+      "name": "Alta",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 69.9689,
+      "longitude": 23.2717,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Alta city center",
+        "Alta Museum area",
+        "Alta River valley",
+        "Haldde mountain"
+      ],
+      "description": "Northern Norway's largest city with rich aurora history"
+    },
+    {
+      "slug": "narvik",
+      "name": "Narvik",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 68.4381,
+      "longitude": 17.4278,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Narvik city center",
+        "Narvikfjellet mountain",
+        "Ofotfjord shoreline",
+        "Narvik War Museum area"
+      ],
+      "description": "Coastal city with dramatic fjord views and aurora opportunities"
+    },
+    {
+      "slug": "bodo",
+      "name": "Bodø",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 67.2800,
+      "longitude": 14.4050,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Bodø city center",
+        "Saltstraumen area",
+        "Bodø Airport vicinity",
+        "Rønvikfjellet mountain"
+      ],
+      "description": "Gateway to northern Norway with good aurora viewing potential"
+    },
+    {
       "slug": "harstad",
       "name": "Harstad",
       "region": "Lapland",
@@ -351,6 +367,22 @@
         "Varangerfjord shoreline"
       ],
       "description": "Eastern Finnmark city with coastal aurora viewing"
+    },
+    {
+      "slug": "honningsvag",
+      "name": "Honningsvåg",
+      "region": "Lapland",
+      "country": "Norway",
+      "latitude": 70.9781,
+      "longitude": 25.9747,
+      "timezone": "Europe/Oslo",
+      "viewingSpots": [
+        "Honningsvåg city center",
+        "North Cape area",
+        "Magerøya island",
+        "Nordkapp plateau"
+      ],
+      "description": "Northernmost city in Europe with exceptional aurora viewing"
     }
   ]
 }

@@ -49,7 +49,9 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
               humidity: Math.round(Math.random() * 40 + 30),
               windSpeed: Math.round(Math.random() * 10),
               pressure: Math.round(1013 + Math.random() * 20 - 10),
-              timestamp: new Date().toISOString()
+              timestamp: new Date().toISOString(),
+              dataSource: 'Mock Data',
+              dataQuality: 'low' as const
             },
             aurora: {
               kpIndex: Math.random() * 6,
@@ -57,7 +59,9 @@ export default function InteractiveAuroraMap({ className = '' }: AuroraMapProps)
               auroraLevel: Math.random() > 0.5 ? 'High' : 'Low',
               solarWindSpeed: 400 + Math.random() * 200,
               bzComponent: Math.random() * 20 - 10,
-              timestamp: new Date().toISOString()
+              timestamp: new Date().toISOString(),
+              dataSource: 'Mock Data',
+              dataQuality: 'low' as const
             },
             moonPhase: Math.random() * 100,
             moonIllumination: Math.random() * 100,

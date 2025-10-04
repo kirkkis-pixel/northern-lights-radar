@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getAuroraProbability } from '@/lib/ovation';
-import { getWeatherData } from '@/lib/weather';
+import { 
+  fetchRealTimeAuroraData, 
+  getWeatherDataByCountry
+} from '@/lib/real-time-weather';
 import { getMoonData } from '@/lib/moon';
 import { getSolarData } from '@/lib/solar';
 import { calculateScore } from '@/lib/score';
@@ -28,10 +30,20 @@ export async function GET(request: NextRequest) {
       );
     }
     
+    // Determine country based on coordinates
+    const determineCountry = (lat: number, lon: number): string => {
+      if (lat >= 59 && lat <= 70 && lon >= 5 && lon <= 31) return 'Norway';
+      if (lat >= 55 && lat <= 69 && lon >= 11 && lon <= 24) return 'Sweden';
+      if (lat >= 60 && lat <= 70 && lon >= 20 && lon <= 31) return 'Finland';
+      return 'Unknown';
+    };
+    
+    const country = determineCountry(lat, lon);
+    
     // Fetch all data sources in parallel with error handling
     const [auroraData, weatherData, moonData] = await Promise.allSettled([
-      getAuroraProbability(lat, lon),
-      getWeatherData(lat, lon),
+      fetchRealTimeAuroraData(lat, lon),
+      getWeatherDataByCountry(lat, lon, country),
       getMoonData(lat, lon)
     ]);
     
@@ -44,8 +56,8 @@ export async function GET(request: NextRequest) {
     const moon = moonData.status === 'fulfilled' ? moonData.value : null;
     
     // Calculate score with available data and good fallbacks
-    const auroraProbability = aurora?.probability ?? 0.7; // Default to 70% if unavailable
-    const cloudCover = weather?.cloudCover ?? 0.3; // Default to 30% if unavailable (good conditions)
+    const auroraProbability = aurora ? (aurora.auroraProbability / 100) : 0.7; // Convert percentage to decimal
+    const cloudCover = weather ? (weather.cloudCover / 100) : 0.3; // Convert percentage to decimal
     const darknessFactor = solarData.darknessFactor;
     const moonBrightness = moon?.moonBrightness ?? 0.3; // Default to 30% if unavailable (good conditions)
     
@@ -62,8 +74,25 @@ export async function GET(request: NextRequest) {
       badge: scoreResult.badge,
       components: scoreResult.components,
       raw: {
-        aurora: aurora?.raw ?? null,
-        weather: weather?.raw ?? null,
+        aurora: aurora ? {
+          kpIndex: aurora.kpIndex,
+          auroraProbability: aurora.auroraProbability,
+          auroraLevel: aurora.auroraLevel,
+          solarWindSpeed: aurora.solarWindSpeed,
+          bzComponent: aurora.bzComponent,
+          source: aurora.source,
+          quality: aurora.quality
+        } : null,
+        weather: weather ? {
+          temperature: weather.temperature,
+          cloudCover: weather.cloudCover,
+          visibility: weather.visibility,
+          humidity: weather.humidity,
+          windSpeed: weather.windSpeed,
+          pressure: weather.pressure,
+          source: weather.source,
+          quality: weather.quality
+        } : null,
         moon: moon?.raw ?? null,
         solar: {
           elevation: solarData.elevation,

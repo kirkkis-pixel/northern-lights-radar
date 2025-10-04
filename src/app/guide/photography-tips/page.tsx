@@ -3,498 +3,430 @@ import Link from 'next/link';
 import RegionalNavigation from '@/components/RegionalNavigation';
 
 export const metadata: Metadata = {
-  title: 'Northern Lights Photography Tips - Complete Camera Guide',
-  description: 'Master northern lights photography with expert tips, camera settings, and techniques. Learn how to capture stunning aurora photos in Lapland with professional guidance.',
-  keywords: 'northern lights photography, aurora photography tips, camera settings aurora, night photography, aurora camera guide',
+  title: 'Northern Lights Photography Tips - Complete Guide',
+  description: 'Learn how to photograph the northern lights with expert tips, camera settings, and techniques. Capture stunning aurora photographs in Lapland.',
+  keywords: 'northern lights photography, aurora photography, camera settings, aurora tips, photography guide',
   openGraph: {
-    title: 'Northern Lights Photography Tips - Complete Camera Guide',
-    description: 'Master northern lights photography with expert tips, camera settings, and techniques.',
-    type: 'article',
+    title: 'Northern Lights Photography Tips - Complete Guide',
+    description: 'Learn how to photograph the northern lights with expert tips and techniques.',
+    type: 'website',
     locale: 'en_US',
+    url: 'https://northernlightsradar.com/guide/photography-tips',
+    siteName: 'Northern Lights Radar',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Northern Lights Photography Tips - Complete Guide',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Northern Lights Photography Tips - Complete Camera Guide',
-    description: 'Master northern lights photography with expert tips and techniques.',
+    title: 'Northern Lights Photography Tips - Complete Guide',
+    description: 'Learn how to photograph the northern lights with expert tips and techniques.',
+    images: ['/og-image.svg'],
   },
   alternates: {
     canonical: 'https://northernlightsradar.com/guide/photography-tips',
   },
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Northern Lights Photography Tips - Complete Camera Guide',
-  description: 'Master northern lights photography with expert tips, camera settings, and techniques for capturing stunning aurora photos.',
-  author: {
-    '@type': 'Organization',
-    name: 'Northern Lights Radar'
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Northern Lights Radar'
-  },
-  datePublished: '2024-01-01',
-  dateModified: '2024-01-01'
-};
-
 export default function PhotographyTipsPage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <div className="min-h-screen bg-black">
+      {/* Regional Navigation */}
+      <RegionalNavigation />
       
-      <div className="min-h-screen bg-black">
-        {/* Regional Navigation */}
-        <RegionalNavigation />
-        
-        {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
-          </div>
-          
-          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-24">
-            <div className="mb-16">
-              <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Photography Guide</span>
-              </div>
-              <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
-                <div className="text-white mb-2">Northern Lights</div>
-                <div className="text-cyan-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  Photography Tips
-                </div>
-              </h1>
-              <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
-                Master the art of capturing stunning aurora photos with expert techniques and camera settings
-              </p>
-            </div>
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
+              Aurora
+              <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Photography
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed">
+              Learn how to photograph the northern lights with expert tips, camera settings, and techniques. Capture stunning aurora photographs in Lapland.
+            </p>
           </div>
         </div>
-
-        {/* Essential Camera Settings */}
-        <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Camera Settings</span>
-              </div>
-              <h2 className="text-5xl font-thin text-white mb-8">
-                Essential Camera Settings
-              </h2>
-              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Master these fundamental settings for successful aurora photography
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">📸</span>
-                </div>
-                <h3 className="text-2xl font-light text-white mb-4">Aperture (f-stop)</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-6">
-                  Use the widest aperture your lens allows for maximum light capture
-                </p>
-                <ul className="text-white/60 font-light space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>f/1.4 - f/2.8 ideal for aurora</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>f/4 maximum for acceptable results</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Wider aperture = more light</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">⏱️</span>
-                </div>
-                <h3 className="text-2xl font-light text-white mb-4">Shutter Speed</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-6">
-                  Balance between capturing light and preventing star trails
-                </p>
-                <ul className="text-white/60 font-light space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>5-30 seconds for aurora</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>500 rule: 500/focal length</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Faster for bright aurora</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">🔍</span>
-                </div>
-                <h3 className="text-2xl font-light text-white mb-4">ISO Settings</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-6">
-                  Higher ISO for low light, but watch for noise
-                </p>
-                <ul className="text-white/60 font-light space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>ISO 800-3200 typical range</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Test your camera&apos;s noise levels</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Higher ISO = more noise</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Focus Techniques */}
-        <div className="py-32 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Focus Techniques</span>
-              </div>
-              <h2 className="text-5xl font-thin text-white mb-8">
-                Achieving Sharp Focus
-              </h2>
-              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Critical techniques for sharp aurora photos in complete darkness
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Manual Focus Methods</h3>
-                  <ul className="text-white/70 font-light space-y-4">
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Infinity Focus</span>
-                        <p className="text-white/60 text-sm mt-1">Set lens to infinity mark, then back off slightly</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Live View Zoom</span>
-                        <p className="text-white/60 text-sm mt-1">Use 10x zoom on bright stars to focus</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Hyperfocal Distance</span>
-                        <p className="text-white/60 text-sm mt-1">Focus at hyperfocal distance for maximum depth</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="space-y-8">
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Focus Tips</h3>
-                  <ul className="text-white/70 font-light space-y-4">
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Use a Bright Star</span>
-                        <p className="text-white/60 text-sm mt-1">Focus on the brightest star in the sky</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Tape Focus Ring</span>
-                        <p className="text-white/60 text-sm mt-1">Tape focus ring once set to prevent movement</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Check Focus Regularly</span>
-                        <p className="text-white/60 text-sm mt-1">Review images and adjust if needed</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Equipment Recommendations */}
-        <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Equipment</span>
-              </div>
-              <h2 className="text-5xl font-thin text-white mb-8">
-                Essential Photography Equipment
-              </h2>
-              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Must-have gear for successful aurora photography
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">📷</span>
-                </div>
-                <h3 className="text-xl font-light text-white mb-4">Camera Body</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
-                  Full-frame DSLR or mirrorless with excellent low-light performance
-                </p>
-                <ul className="text-white/60 font-light space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Manual mode capability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Good high ISO performance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Live view with zoom</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">🔍</span>
-                </div>
-                <h3 className="text-xl font-light text-white mb-4">Lenses</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
-                  Wide-angle lenses with fast apertures for maximum light capture
-                </p>
-                <ul className="text-white/60 font-light space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>14-24mm f/2.8 or faster</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>24-70mm f/2.8 for details</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Prime lenses f/1.4-f/2.8</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">📐</span>
-                </div>
-                <h3 className="text-xl font-light text-white mb-4">Tripod</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
-                  Sturdy, stable tripod essential for long exposures
-                </p>
-                <ul className="text-white/60 font-light space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Carbon fiber or aluminum</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Ball head for easy adjustment</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Spiked feet for snow/ice</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">🔋</span>
-                </div>
-                <h3 className="text-xl font-light text-white mb-4">Batteries & Memory</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
-                  Cold weather drains batteries faster - bring extras
-                </p>
-                <ul className="text-white/60 font-light space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>3-4 spare batteries</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Fast memory cards (64GB+)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Keep batteries warm</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">⏰</span>
-                </div>
-                <h3 className="text-xl font-light text-white mb-4">Remote Shutter</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
-                  Prevent camera shake during long exposures
-                </p>
-                <ul className="text-white/60 font-light space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Wired or wireless remote</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Intervalometer for timelapse</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>2-second timer as backup</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
-                  <span className="text-cyan-300 text-2xl">💡</span>
-                </div>
-                <h3 className="text-xl font-light text-white mb-4">Lighting & Accessories</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
-                  Additional tools for better aurora photography
-                </p>
-                <ul className="text-white/60 font-light space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Red headlamp for night vision</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Lens cleaning kit</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3">•</span>
-                    <span>Hand warmers for equipment</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Composition Tips */}
-        <div className="py-32 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Composition</span>
-              </div>
-              <h2 className="text-5xl font-thin text-white mb-8">
-                Composition Techniques
-              </h2>
-              <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Create compelling aurora photos with strong composition
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Foreground Elements</h3>
-                  <ul className="text-white/70 font-light space-y-4">
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Trees and Mountains</span>
-                        <p className="text-white/60 text-sm mt-1">Add depth and scale to your aurora photos</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Reflections</span>
-                        <p className="text-white/60 text-sm mt-1">Water or ice can create stunning reflections</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Buildings</span>
-                        <p className="text-white/60 text-sm mt-1">Include cabins or structures for context</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="space-y-8">
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Rule of Thirds</h3>
-                  <ul className="text-white/70 font-light space-y-4">
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Aurora Placement</span>
-                        <p className="text-white/60 text-sm mt-1">Position aurora along the upper third line</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Foreground Balance</span>
-                        <p className="text-white/60 text-sm mt-1">Place interesting elements at intersection points</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <div>
-                        <span className="font-medium">Leading Lines</span>
-                        <p className="text-white/60 text-sm mt-1">Use natural lines to guide the eye</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <footer className="bg-black py-16">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center text-white/40 text-sm font-light">
-              <p>Data from NOAA SWPC (OVATION), SMHI, MET Norway. Times in local timezone.</p>
-              <p className="mt-2">Scores are indicative and depend on weather & darkness conditions.</p>
-            </div>
-          </div>
-        </footer>
       </div>
-    </>
+
+      {/* Introduction */}
+      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Capture the Magic
+            </h2>
+            <p className="text-xl text-white/70 font-light leading-relaxed">
+              Photographing the northern lights can be challenging but incredibly rewarding. With the right equipment, settings, and techniques, you can capture stunning images of this natural phenomenon.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Essential Equipment */}
+      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Essential Equipment
+            </h2>
+            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+              The right gear is crucial for successful aurora photography.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📷</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Camera</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• DSLR or mirrorless camera</li>
+                <li>• Manual mode capability</li>
+                <li>• Good low-light performance</li>
+                <li>• Raw format support</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🔭</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Lens</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Wide-angle lens (14-24mm)</li>
+                <li>• Fast aperture (f/2.8 or wider)</li>
+                <li>• Manual focus capability</li>
+                <li>• Good sharpness wide open</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📐</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Tripod</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Sturdy, stable tripod</li>
+                <li>• Ball head or pan-tilt head</li>
+                <li>• Quick release plate</li>
+                <li>• Wind resistance</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🔋</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Batteries</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Extra camera batteries</li>
+                <li>• Battery grip (optional)</li>
+                <li>• Keep batteries warm</li>
+                <li>• Battery charger</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">💾</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Memory Cards</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• High-speed memory cards</li>
+                <li>• Large capacity (64GB+)</li>
+                <li>• Multiple cards</li>
+                <li>• Card reader</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🔦</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Accessories</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Remote shutter release</li>
+                <li>• Headlamp with red light</li>
+                <li>• Lens cleaning kit</li>
+                <li>• Camera rain cover</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Camera Settings */}
+      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Camera Settings
+            </h2>
+            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+              The right camera settings are crucial for capturing the aurora. These are starting points - adjust based on conditions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Basic Settings</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Mode</span>
+                    <span className="text-cyan-400 font-medium">Manual (M)</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Aperture</span>
+                    <span className="text-cyan-400 font-medium">f/2.8 or wider</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Shutter Speed</span>
+                    <span className="text-cyan-400 font-medium">10-30 seconds</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">ISO</span>
+                    <span className="text-cyan-400 font-medium">800-3200</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Focus</span>
+                    <span className="text-cyan-400 font-medium">Manual</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Format</span>
+                    <span className="text-cyan-400 font-medium">RAW</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Advanced Settings</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">White Balance</span>
+                    <span className="text-cyan-400 font-medium">Daylight (5500K)</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Image Stabilization</span>
+                    <span className="text-cyan-400 font-medium">Off (tripod)</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Long Exposure NR</span>
+                    <span className="text-cyan-400 font-medium">Off</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Mirror Lock-up</span>
+                    <span className="text-cyan-400 font-medium">On</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Focusing Tips</h3>
+                <div className="space-y-4 text-white/70">
+                  <p>• Set lens to manual focus</p>
+                  <p>• Focus on a distant light or star</p>
+                  <p>• Use live view with magnification</p>
+                  <p>• Focus at infinity for wide shots</p>
+                  <p>• Check focus with test shots</p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Composition Tips</h3>
+                <div className="space-y-4 text-white/70">
+                  <p>• Include foreground elements</p>
+                  <p>• Use rule of thirds</p>
+                  <p>• Look for reflections</p>
+                  <p>• Include people for scale</p>
+                  <p>• Frame with trees or mountains</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Techniques */}
+      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Photography Techniques
+            </h2>
+            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+              Master these techniques to capture stunning aurora photographs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">⏱️</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Timing</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Arrive early to set up</li>
+                <li>• Take test shots before aurora</li>
+                <li>• Be ready for quick changes</li>
+                <li>• Shoot during peak activity</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📍</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Location</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Scout locations during day</li>
+                <li>• Find interesting foregrounds</li>
+                <li>• Avoid light pollution</li>
+                <li>• Consider safety factors</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🎨</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Composition</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Use leading lines</li>
+                <li>• Include scale references</li>
+                <li>• Balance sky and ground</li>
+                <li>• Try different angles</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🔧</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Technical</h3>
+              <ul className="space-y-2 text-white/70">
+                <li>• Use remote shutter release</li>
+                <li>• Minimize camera shake</li>
+                <li>• Check histogram regularly</li>
+                <li>• Take multiple exposures</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Post-Processing */}
+      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Post-Processing
+            </h2>
+            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+              Enhance your aurora photographs with these post-processing tips.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Basic Adjustments</h3>
+                <div className="space-y-4 text-white/70">
+                  <p>• <strong>Exposure:</strong> Adjust brightness and contrast</p>
+                  <p>• <strong>White Balance:</strong> Correct color temperature</p>
+                  <p>• <strong>Highlights/Shadows:</strong> Recover detail</p>
+                  <p>• <strong>Clarity:</strong> Enhance aurora definition</p>
+                  <p>• <strong>Vibrance:</strong> Boost aurora colors</p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Advanced Techniques</h3>
+                <div className="space-y-4 text-white/70">
+                  <p>• <strong>Noise Reduction:</strong> Clean up high ISO noise</p>
+                  <p>• <strong>Sharpening:</strong> Enhance aurora details</p>
+                  <p>• <strong>Color Grading:</strong> Enhance aurora colors</p>
+                  <p>• <strong>Local Adjustments:</strong> Target specific areas</p>
+                  <p>• <strong>Blending:</strong> Combine multiple exposures</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Software Recommendations</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Adobe Lightroom</span>
+                    <span className="text-green-400 text-sm">Recommended</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Adobe Photoshop</span>
+                    <span className="text-green-400 text-sm">Advanced</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Capture One</span>
+                    <span className="text-blue-400 text-sm">Professional</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/80">Luminar</span>
+                    <span className="text-blue-400 text-sm">AI-Powered</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-6">Common Mistakes</h3>
+                <div className="space-y-4 text-white/70">
+                  <p>• Over-processing aurora colors</p>
+                  <p>• Excessive noise reduction</p>
+                  <p>• Poor white balance</p>
+                  <p>• Over-sharpening</p>
+                  <p>• Ignoring foreground elements</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            Ready to Capture the Aurora?
+          </h2>
+          <p className="text-xl text-white/70 font-light leading-relaxed mb-12">
+            Check live conditions and start planning your northern lights photography adventure today.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+            >
+              Check Live Conditions
+            </Link>
+            <Link 
+              href="/guide"
+              className="px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+            >
+              More Guides
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,24 +1,22 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import RegionalNavigation from '@/components/RegionalNavigation';
-import MultiCityWidget from '@/components/MultiCityWidget';
 import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
-import DynamicCityCard from '@/components/DynamicCityCard';
+import TrustedCityCard from '@/components/TrustedCityCard';
 
 export const metadata: Metadata = {
-  title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
-  description: 'Complete guide to seeing the aurora borealis in Finland. Live conditions, best viewing spots, and expert tips for Lapland aurora hunting.',
-  keywords: 'northern lights Finland, aurora borealis Finland, best time northern lights, Finland aurora guide',
+  title: 'Northern Lights in Finland - Finnish Lapland Aurora Guide',
+  description: 'Discover the best places to see the northern lights in Finnish Lapland. Live conditions, viewing spots, and expert tips for Rovaniemi, Ivalo, and Kilpisjärvi.',
+  keywords: 'northern lights Finland, Finnish Lapland aurora, Rovaniemi northern lights, Ivalo aurora, Kilpisjärvi northern lights',
   openGraph: {
-    title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
-    description: 'Complete guide to seeing the aurora borealis in Finland. Live conditions and expert tips.',
+    title: 'Northern Lights in Finland - Finnish Lapland Aurora Guide',
+    description: 'Discover the best places to see the northern lights in Finnish Lapland with live conditions and expert tips.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Time to See the Northern Lights in Finland (Updated Daily)',
-    description: 'Complete guide to seeing the aurora borealis in Finland.',
+    title: 'Northern Lights in Finland - Finnish Lapland Aurora Guide',
+    description: 'Discover the best places to see the northern lights in Finnish Lapland.',
   },
   alternates: {
     canonical: 'https://northernlightsradar.com/finland/northern-lights',
@@ -27,41 +25,19 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'When is the best time to see the northern lights in Finland?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The best time to see the northern lights in Finland is from September to March, with peak activity typically occurring between 10 PM and 2 AM local time. The aurora is most active during the equinoxes (September and March) and around the winter solstice in December.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Can I see the northern lights in Helsinki?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'While it\'s possible to see the northern lights in Helsinki during strong geomagnetic storms, the best viewing is in Lapland, particularly above the Arctic Circle. Cities like Rovaniemi, Ivalo, and Kilpisjärvi offer much better chances due to their northern location and darker skies.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the Kp index and how does it affect aurora viewing?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The Kp index measures geomagnetic activity on a scale of 0-9. Higher Kp values (6-9) indicate stronger aurora activity that can be seen further south. For Finland, Kp values of 3-4 are often sufficient for good aurora viewing in Lapland.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need special equipment to photograph the northern lights?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'While not strictly necessary, a camera with manual settings, a tripod, and a wide-angle lens will significantly improve your aurora photography. Most modern smartphones can capture aurora with the right settings and a stable mount.'
-      }
+  '@type': 'WebPage',
+  name: 'Northern Lights in Finland - Finnish Lapland Aurora Guide',
+  description: 'Discover the best places to see the northern lights in Finnish Lapland with live conditions and expert tips.',
+  url: 'https://northernlightsradar.com/finland/northern-lights',
+  mainEntity: {
+    '@type': 'Place',
+    name: 'Finnish Lapland',
+    description: 'Northern region of Finland known for excellent aurora viewing',
+    containedInPlace: {
+      '@type': 'Country',
+      name: 'Finland'
     }
-  ]
+  }
 };
 
 const cities = [
@@ -168,59 +144,61 @@ export default function FinlandPage() {
         <RegionalNavigation />
         
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-40 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
             <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
           </div>
           
           <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-16">
             <div className="mb-12">
               <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Forecast</span>
+                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Finnish Lapland</span>
               </div>
               <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
-                <div className="text-white mb-2">Northern Lights</div>
+                <div className="text-white mb-2">Northern Lights in</div>
                 <div className="text-blue-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  in Finland
+                  Finland
                 </div>
               </h1>
               <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
-                Your complete guide to seeing the aurora borealis in Finland. Live conditions, best viewing spots, and expert tips for successful aurora hunting.
+                Experience the magic of Finnish Lapland with world-class aurora viewing destinations
               </p>
             </div>
           </div>
         </div>
-        
-        {/* Quick Stats */}
-        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-                <div className="text-4xl font-thin text-cyan-300/80 mb-4">200+</div>
-                <div className="text-white/70 font-light">Aurora Nights per Year</div>
-                <div className="text-sm text-white/50 mt-2">In Lapland region</div>
-              </div>
-              <div className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-                <div className="text-4xl font-thin text-cyan-300/80 mb-4">66°N</div>
-                <div className="text-white/70 font-light">Arctic Circle Location</div>
-                <div className="text-sm text-white/50 mt-2">Optimal positioning</div>
-              </div>
-              <div className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-                <div className="text-4xl font-thin text-cyan-300/80 mb-4">85%</div>
-                <div className="text-white/70 font-light">Success Rate</div>
-                <div className="text-sm text-white/50 mt-2">In Lapland cities</div>
+
+        {/* Welcome to Finnish Lapland - Full Width Image */}
+        <div className="py-12 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-8xl mx-auto px-12">
+            <div className="relative overflow-hidden rounded-3xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1488415032361-b7e238421f1b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Aurora Borealis dancing over Finnish Lapland's pristine winter landscape with snow-covered fells and frozen lakes"
+                className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center max-w-2xl px-8">
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wide">
+                              Welcome to Finnish Lapland
+                            </h2>
+                  <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
+                    The northernmost region of Finland, spanning across the Arctic Circle and offering some of the world's most spectacular aurora viewing opportunities.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Best Time Section */}
+
+
+        {/* When to See Aurora */}
         <div className="py-32 bg-gradient-to-b from-black to-slate-900">
           <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
+            <div className="text-center mb-6">
               <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Seasonal Guide</span>
               </div>
@@ -228,80 +206,120 @@ export default function FinlandPage() {
                 When to See the Aurora
               </h2>
               <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Complete seasonal breakdown of the best times to visit Finland for aurora viewing
+                Complete seasonal breakdown of the best times to visit Finnish Lapland for aurora viewing
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-                <h3 className="text-2xl font-light text-white mb-6">
-                  Best Months
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/70 font-light">September - October</span>
-                    <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium border border-green-500/30">
-                      Excellent
-                    </span>
+            {/* Monthly Visibility Chart */}
+            <div className="mb-16 max-w-2xl mx-auto">
+              {/* Chart Container */}
+              <div className="relative h-80 mb-6">
+                {/* Chart Bars */}
+                <div className="h-full flex items-end justify-between gap-1">
+                  {/* January */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-cyan-600 to-cyan-400 rounded-t h-32 mb-2"></div>
+                    <span className="text-xs text-white/70">Jan</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/70 font-light">November - March</span>
-                    <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
-                      Peak Season
-                    </span>
+                  
+                  {/* February */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-cyan-600 to-cyan-400 rounded-t h-36 mb-2"></div>
+                    <span className="text-xs text-white/70">Feb</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/70 font-light">April - May</span>
-                    <span className="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30">
-                      Good
-                    </span>
+                  
+                  {/* March - Peak */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-green-600 to-green-400 rounded-t h-48 mb-2"></div>
+                    <span className="text-xs text-white/70">Mar</span>
+                  </div>
+                  
+                  {/* April */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-cyan-600 to-cyan-400 rounded-t h-44 mb-2"></div>
+                    <span className="text-xs text-white/70">Apr</span>
+                  </div>
+                  
+                  {/* May - Not Visible */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gray-600 rounded-t h-12 mb-2"></div>
+                    <span className="text-xs text-white/70">May</span>
+                  </div>
+                  
+                  {/* June - Not Visible */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gray-600 rounded-t h-8 mb-2"></div>
+                    <span className="text-xs text-white/70">Jun</span>
+                  </div>
+                  
+                  {/* July - Not Visible */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gray-600 rounded-t h-8 mb-2"></div>
+                    <span className="text-xs text-white/70">Jul</span>
+                  </div>
+                  
+                  {/* August - Not Visible */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gray-600 rounded-t h-10 mb-2"></div>
+                    <span className="text-xs text-white/70">Aug</span>
+                  </div>
+                  
+                  {/* September - Peak */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-green-600 to-green-400 rounded-t h-48 mb-2"></div>
+                    <span className="text-xs text-white/70">Sep</span>
+                  </div>
+                  
+                  {/* October - Peak */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-green-600 to-green-400 rounded-t h-48 mb-2"></div>
+                    <span className="text-xs text-white/70">Oct</span>
+                  </div>
+                  
+                  {/* November */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-cyan-600 to-cyan-400 rounded-t h-32 mb-2"></div>
+                    <span className="text-xs text-white/70">Nov</span>
+                  </div>
+                  
+                  {/* December */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-6 bg-gradient-to-t from-cyan-600 to-cyan-400 rounded-t h-32 mb-2"></div>
+                    <span className="text-xs text-white/70">Dec</span>
                   </div>
                 </div>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105">
-                <h3 className="text-2xl font-light text-white mb-6">
-                  Best Times
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/70 font-light">10 PM - 2 AM</span>
-                    <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
-                      Peak Hours
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/70 font-light">8 PM - 4 AM</span>
-                    <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium border border-green-500/30">
-                      Good Window
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/70 font-light">All Night</span>
-                    <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30">
-                      Polar Night
-                    </span>
-                  </div>
+              {/* Legend */}
+              <div className="flex justify-center gap-8">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-gradient-to-t from-green-600 to-green-400 rounded"></div>
+                  <span className="text-sm text-white/70">Peak</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-gradient-to-t from-cyan-600 to-cyan-400 rounded"></div>
+                  <span className="text-sm text-white/70">Good</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-gray-600 rounded"></div>
+                  <span className="text-sm text-white/70">Not Visible</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Peak Times - Compact */}
+            <div className="text-center">
+              <div className="inline-flex items-center gap-8 text-sm text-white/60">
+                <span><span className="text-cyan-300 font-medium">Peak Hours:</span> 10 PM - 2 AM</span>
+                <span><span className="text-green-300 font-medium">Good Window:</span> 8 PM - 4 AM</span>
+                <span><span className="text-purple-300 font-medium">Polar Night:</span> Dec - Feb</span>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Live Multi-City Widget */}
-        <MultiCityWidget 
-          cities={cities.map(city => ({
-            slug: city.slug,
-            name: city.name,
-            latitude: 66.5039, // Default to Rovaniemi, will be overridden by API
-            longitude: 25.7294
-          }))}
-          title="Live Aurora Conditions Across Finnish Lapland"
-          description="Real-time aurora scores and conditions for all major Finnish Lapland destinations"
-        />
 
-        {/* Finnish Cities Section */}
-        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+        {/* City Cards */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
           <div className="max-w-8xl mx-auto px-12">
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
@@ -319,15 +337,15 @@ export default function FinlandPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {cities.map((city) => (
-                <DynamicCityCard key={city.slug} city={city} />
-              ))}
+               {cities.map((city) => (
+                 <TrustedCityCard key={city.slug} city={city} />
+               ))}
             </div>
           </div>
         </div>
 
-        {/* Why Finnish Lapland */}
-        <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
+        {/* Why Finland */}
+        <div className="py-32 bg-gradient-to-b from-black to-slate-900">
           <div className="max-w-6xl mx-auto px-12">
             <div className="text-center mb-20">
               <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
@@ -337,7 +355,7 @@ export default function FinlandPage() {
                 Why Finnish Lapland is Perfect for Aurora Viewing
               </h2>
               <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Finland offers unique advantages that make it one of the world&apos;s premier aurora destinations
+                Finland offers unique advantages that make it one of the world's premier aurora destinations
               </p>
             </div>
             
@@ -368,7 +386,7 @@ export default function FinlandPage() {
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Stable Climate</h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  Finland&apos;s continental climate provides more stable weather patterns compared to coastal areas, resulting in clearer skies and better aurora viewing conditions.
+                  Finland's continental climate provides more stable weather patterns compared to coastal areas, resulting in clearer skies and better aurora viewing conditions.
                 </p>
               </div>
               
@@ -398,22 +416,22 @@ export default function FinlandPage() {
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Polar Night</h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  During winter months, Finnish Lapland experiences polar night with up to 24 hours of darkness, maximizing aurora viewing opportunities when the sun doesn&apos;t rise.
+                  During winter months, Finnish Lapland experiences polar night with up to 24 hours of darkness, maximizing aurora viewing opportunities when the sun doesn't rise.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Space Weather */}
-        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+        {/* Current Space Weather */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
           <div className="max-w-6xl mx-auto px-12">
             <div className="text-center mb-16">
               <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Space Weather</span>
               </div>
               <h2 className="text-4xl font-thin text-white mb-6">
-                Current Space Weather Conditions
+                Current Space Weather in Finnish Lapland
               </h2>
               <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
                 Monitor real-time space weather data that affects aurora visibility across Finnish Lapland
@@ -425,24 +443,9 @@ export default function FinlandPage() {
             </div>
           </div>
         </div>
-        
-        {/* CTA Section */}
-        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12 text-center">
-            <Link
-              href="/guide/how-to-see-the-northern-lights"
-              className="inline-flex items-center px-12 py-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-2xl text-white font-light text-lg hover:from-cyan-500/30 hover:to-blue-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105"
-            >
-              Start Your Aurora Journey
-              <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-        
+
         {/* FAQ Section */}
-        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
           <div className="max-w-6xl mx-auto px-12">
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
@@ -466,86 +469,87 @@ export default function FinlandPage() {
                   When is the best time to see the northern lights in Finland?
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  The best time to see the northern lights in Finland is from late September to early April, 
-                  when the nights are dark enough. The peak season is typically from December to March, 
-                  with the highest probability of aurora activity occurring between 10 PM and 2 AM. 
-                  During the summer months (May-August), Finland experiences the midnight sun, making 
-                  aurora viewing impossible due to continuous daylight.
+                  The optimal time for aurora viewing in Finland is from late September to early April, 
+                  with peak season from December to March. Finnish Lapland offers some of the world's 
+                  best aurora viewing conditions, particularly in Rovaniemi and Ivalo. The best viewing 
+                  hours are typically between 9 PM and 1 AM, when the sky is darkest and aurora activity 
+                  is most likely to occur.
                 </p>
               </div>
 
               {/* FAQ 2 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <h3 className="text-xl font-light text-white mb-4">
-                  Which Finnish cities offer the best aurora viewing opportunities?
+                  Why is Finnish Lapland considered one of the best places for aurora viewing?
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  Rovaniemi, Ivalo, Inari, and Kilpisjärvi are among the best cities for aurora viewing in Finland. 
-                  Rovaniemi, the capital of Lapland, offers excellent infrastructure and multiple viewing spots. 
-                  Ivalo and Inari, located further north, provide darker skies and higher aurora probability. 
-                  Kilpisjärvi, Finland&apos;s northernmost village, offers the highest chance of seeing the aurora 
-                  due to its proximity to the auroral oval and minimal light pollution.
+                  Finnish Lapland is renowned for its pristine wilderness with minimal light pollution, 
+                  stable continental climate that provides clearer skies, and optimal latitude positioning 
+                  within the auroral oval. The region's unique fell landscapes provide elevated viewing 
+                  points and dramatic backdrops for aurora photography. Additionally, Finland offers 
+                  world-class aurora tourism infrastructure including glass igloos and specialized viewing platforms.
                 </p>
               </div>
 
               {/* FAQ 3 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <h3 className="text-xl font-light text-white mb-4">
-                  What weather conditions are ideal for aurora viewing in Finland?
+                  What makes Finnish Lapland special for aurora photography?
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  Clear, cloud-free skies are essential for aurora viewing. The best conditions occur during 
-                  high-pressure weather systems that bring cold, clear nights. Avoid nights with heavy cloud 
-                  cover, precipitation, or fog. Winter temperatures in Finnish Lapland can drop to -30°C (-22°F), 
-                  so proper cold-weather clothing is crucial. Check local weather forecasts and aurora prediction 
-                  apps before heading out for the best viewing experience.
+                  Finnish Lapland offers diverse landscapes perfect for aurora photography, including 
+                  frozen lakes, snow-covered forests, and dramatic fell backdrops. The region's 
+                  minimal light pollution and clear atmospheric conditions create ideal conditions for 
+                  capturing vibrant aurora colors. Popular photography locations include Lake Inari, 
+                  the fells around Rovaniemi, and the wilderness areas around Ivalo. The long winter 
+                  nights provide extended shooting opportunities.
                 </p>
               </div>
 
               {/* FAQ 4 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <h3 className="text-xl font-light text-white mb-4">
-                  Do I need to book guided tours to see the northern lights in Finland?
+                  How do I get to the best aurora viewing locations in Finland?
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  While guided tours can enhance your experience with local knowledge and transportation to 
-                  optimal viewing locations, they&apos;re not necessary. Many excellent viewing spots are accessible 
-                  independently, such as Ounasvaara Hill in Rovaniemi or the shores of Lake Inari. However, 
-                  guided tours offer advantages like aurora photography tips, warm refreshments, and access to 
-                  remote locations with minimal light pollution. Consider your photography skills and comfort 
-                  level with cold weather when deciding.
+                  Most aurora viewing locations in Finnish Lapland are accessible by car or organized tours. 
+                  Rovaniemi serves as the main gateway with an international airport and connections to 
+                  Helsinki. From Rovaniemi, you can drive to Ivalo (4 hours) or take domestic flights. 
+                  Many hotels offer aurora packages with transportation to prime viewing spots. 
+                  For remote locations like the fells, guided tours are recommended, especially during 
+                  winter months when road conditions can be challenging.
                 </p>
               </div>
 
               {/* FAQ 5 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <h3 className="text-xl font-light text-white mb-4">
-                  How can I increase my chances of seeing the aurora in Finland?
+                  What should I pack for aurora viewing in Finnish Lapland?
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  To maximize your aurora viewing chances in Finland: 1) Stay for at least 3-4 nights to 
-                  account for weather variability, 2) Get away from city lights and find dark sky locations, 
-                  3) Monitor space weather conditions and aurora forecasts, 4) Be patient and stay out for 
-                  several hours as aurora activity can be sporadic, 5) Visit during the new moon phase for 
-                  darker skies, 6) Dress warmly and bring hot drinks for comfort during long waits, and 
-                  7) Consider staying in glass igloos or aurora cabins for overnight viewing opportunities.
+                  Essential items for Finnish Lapland aurora viewing include: 1) Thermal base layers and 
+                  insulated outerwear for temperatures as low as -30°C (-22°F), 2) Warm, waterproof boots 
+                  with good traction for icy conditions, 3) Hand and foot warmers for extended outdoor stays, 
+                  4) A headlamp with red light mode to preserve night vision, 5) Camera equipment with 
+                  extra batteries (they drain faster in cold), 6) A thermos with hot drinks, and 7) 
+                  A portable chair or mat for comfortable waiting. Many tour operators provide warm 
+                  overalls and boots for rent.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Attribution Footer */}
-        <div className="py-12 bg-black">
+        {/* Footer */}
+        <footer className="bg-slate-900 py-16">
           <div className="max-w-6xl mx-auto px-12">
-            <p className="text-sm text-white/40 text-center font-light">
-              Data from NOAA SWPC (OVATION), FMI, Open-Meteo. Times in local timezone. 
-              Scores are indicative and depend on weather & darkness.
-            </p>
+            <div className="text-center text-white/40 text-sm font-light">
+              <p>Data from NOAA SWPC (OVATION), FMI, Open-Meteo. Times in local timezone.</p>
+              <p className="mt-2">Scores are indicative and depend on weather & darkness.</p>
+            </div>
           </div>
-        </div>
+        </footer>
       </div>
     </>
   );
 }
-

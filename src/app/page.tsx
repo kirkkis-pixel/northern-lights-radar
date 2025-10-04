@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import InteractiveAuroraMap from '@/components/InteractiveAuroraMap';
 import RegionalNavigation from '@/components/RegionalNavigation';
-import SSRCitiesSection from '@/components/SSRCitiesSection';
+import HybridCitiesSection from '@/components/HybridCitiesSection';
+import LiveAuroraCommandCenter from '@/components/LiveAuroraCommandCenter';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -9,15 +9,27 @@ export const metadata: Metadata = {
   description: 'Real-time aurora viewing conditions across Finnish, Swedish, and Norwegian Lapland. Simple, transparent scoring based on NOAA space weather data, cloud cover, and darkness levels.',
   keywords: 'northern lights, aurora borealis, Finland, Sweden, Norway, Lapland, aurora forecast, space weather',
   openGraph: {
-    title: 'Northern Lights Radar - Live Aurora Forecast for Finland',
-    description: 'Real-time aurora viewing conditions for Finnish Lapland. Simple, transparent scoring based on NOAA space weather data.',
+    title: 'Northern Lights Radar - Live Aurora Forecast for Lapland',
+    description: 'Real-time aurora viewing conditions across Finnish, Swedish, and Norwegian Lapland. Live space weather data and expert tips.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://northernlightsradar.com',
+    siteName: 'Northern Lights Radar',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Northern Lights Radar - Live Aurora Forecasts in Lapland',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Northern Lights Radar - Live Aurora Forecast for Finland',
-    description: 'Real-time aurora viewing conditions for Finnish Lapland.',
+    title: 'Northern Lights Radar - Live Aurora Forecast for Lapland',
+    description: 'Real-time aurora viewing conditions across Finnish, Swedish, and Norwegian Lapland.',
+    images: ['/og-image.svg'],
+    creator: '@northernlightsradar',
   },
   alternates: {
     canonical: 'https://northernlightsradar.com',
@@ -31,10 +43,7 @@ export default function HomePage() {
         <RegionalNavigation />
       
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
-        {/* Premium Dark Background with Subtle Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-gray-900" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+      <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
         
         {/* Subtle Aurora Particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -59,169 +68,90 @@ export default function HomePage() {
                 Northern Lights Radar
               </div>
             </h1>
-            <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
-              Experience the magic of Lapland with real-time aurora predictions across Finland, Sweden, and Norway.
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed mb-6">
+              Experience the magic of Lapland with real-time, AI-powered aurora predictions across Finland, Sweden, and Norway.
             </p>
           </div>
           
-          {/* COMPACT SWIPEABLE CARD */}
-          <div className="mb-24">
-            <div style={{ 
-              backgroundColor: 'rgba(255, 255, 255, 0.1)', 
-              padding: '24px', 
-              borderRadius: '16px', 
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              maxWidth: '800px',
-              margin: '0 auto',
-              color: 'white',
-              textAlign: 'center',
-              position: 'relative'
-            }}>
-            
-            {/* Live Indicator */}
-            <div style={{ 
-              position: 'absolute', 
-              top: '12px', 
-              right: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              fontSize: '12px',
-              color: '#ccc'
-            }}>
-              <div style={{ 
-                width: '6px', 
-                height: '6px', 
-                backgroundColor: 'red', 
-                borderRadius: '50%', 
-                marginRight: '6px',
-                animation: 'pulse 2s infinite'
-              }}></div>
-              Live Data
-            </div>
-
-            {/* Header */}
-              <div style={{ marginBottom: '16px' }}>
-                <h2 style={{ fontSize: '20px', marginBottom: '4px', color: 'white' }}>
-                  Rovaniemi
-                </h2>
-                <p style={{ fontSize: '14px', color: '#ccc', margin: 0 }}>
-                  Live Aurora Score
-                </p>
-              </div>
-              
-              {/* Score Display */}
-              <div style={{ marginBottom: '20px' }}>
-                <div style={{ fontSize: '36px', marginBottom: '8px', color: 'white' }}>
-                  85
-                </div>
-                <div style={{ 
-                  backgroundColor: 'green', 
-                  color: 'white', 
-                  padding: '4px 12px', 
-                  borderRadius: '12px',
-                  display: 'inline-block',
-                  fontSize: '12px'
-                }}>
-                  Excellent
-                </div>
-              </div>
-              
-              {/* Compact Components Grid */}
-              <div style={{ 
-                display: 'grid', 
-                gridTemplateColumns: '1fr 1fr 1fr 1fr', 
-                gap: '16px',
-                marginBottom: '16px'
-              }}>
-                <div>
-                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>78%</div>
-                  <div style={{ fontSize: '10px', color: '#ccc' }}>Aurora</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>92%</div>
-                  <div style={{ fontSize: '10px', color: '#ccc' }}>Visibility</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>High</div>
-                  <div style={{ fontSize: '10px', color: '#ccc' }}>Darkness</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '18px', color: 'white', marginBottom: '2px' }}>40%</div>
-                  <div style={{ fontSize: '10px', color: '#ccc' }}>Moon</div>
-                </div>
-              </div>
-              
-              {/* Data Sources */}
-              <div style={{ 
-                borderTop: '1px solid rgba(255, 255, 255, 0.2)', 
-                paddingTop: '12px',
-                fontSize: '11px',
-                color: '#ccc'
-              }}>
-                Data sources: Aurora ✓ Weather ✓ Moon ✓ Solar ✓
-              </div>
-              
-              {/* Navigation Dots */}
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'center', 
-                gap: '8px', 
-                marginTop: '16px' 
-              }}>
-                <div style={{ 
-                  width: '8px', 
-                  height: '8px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)' 
-                }}></div>
-                <div style={{ 
-                  width: '8px', 
-                  height: '8px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'rgba(255, 255, 255, 0.3)' 
-                }}></div>
-                <div style={{ 
-                  width: '8px', 
-                  height: '8px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'rgba(255, 255, 255, 0.3)' 
-                }}></div>
-              </div>
-              
-              {/* Swipe Instructions */}
-              <div style={{ 
-                marginTop: '8px', 
-                fontSize: '10px', 
-                color: '#999' 
-              }}>
-                Swipe to explore different locations
-              </div>
-            </div>
+          {/* Live Aurora Command Center */}
+          <div>
+            <LiveAuroraCommandCenter />
           </div>
         </div>
       </div>
       
       {/* Filtered Cities Section */}
-      <SSRCitiesSection />
+      <HybridCitiesSection />
       
-      {/* Map Section */}
-      <div className="py-32 bg-gradient-to-b from-black to-slate-900">
+      {/* Aurora Images Section */}
+      <div className="py-24 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-8xl mx-auto px-12">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-              <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-              </svg>
-              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Interactive Map</span>
+          {/* Full Width Image - Hidden on mobile */}
+          <div className="mb-12 hidden lg:block">
+            <div className="relative overflow-hidden rounded-3xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1488415032361-b7e238421f1b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Aurora Borealis dancing over a tranquil coastal Lapland landscape with snow-covered mountains and turquoise-green water reflecting the vibrant aurora lights"
+                className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-8 left-8">
+                <h3 className="text-2xl font-light text-white mb-2">Aurora Magic in Lapland</h3>
+                <p className="text-base text-white/80 font-light">The perfect combination of geographic position and clear skies creates unforgettable aurora displays</p>
+              </div>
             </div>
-            <h2 className="text-5xl font-thin text-white mb-8">
-              Explore Aurora Conditions
-            </h2>
           </div>
-          <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-            <InteractiveAuroraMap />
+
+          {/* Two Column Images */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* 2:3 Aspect Ratio Image */}
+            <div className="lg:col-span-2">
+              <div className="relative overflow-hidden rounded-2xl group h-[400px] md:h-[600px]">
+                <img 
+                  src="https://images.unsplash.com/photo-1523057530100-383d7fbc77a1?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                  alt="Aurora Borealis dancing over Lapland's winter landscape"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                  <h4 className="text-lg md:text-xl font-light text-white mb-2">Geographic Advantage</h4>
+                  <p className="text-white/80 font-light text-xs md:text-sm">Located above the Arctic Circle for optimal aurora viewing</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 1:1 Aspect Ratio Image */}
+            <div className="lg:col-span-1">
+              <div className="relative overflow-hidden rounded-2xl group h-[400px] md:h-[600px]">
+                <img 
+                  src="https://images.unsplash.com/photo-1473711409856-39138e48cb9b?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                  alt="Stunning aurora display over Lapland's pristine winter scenery"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                  <h4 className="text-lg md:text-xl font-light text-white mb-2">Clear Skies</h4>
+                  <p className="text-white/80 font-light text-xs md:text-sm">Optimal weather conditions for aurora visibility</p>
+                </div>
+              </div>
+            </div>
           </div>
-          
+
+          {/* Mobile: Third Image - Only visible on mobile */}
+          <div className="lg:hidden mt-8">
+            <div className="relative overflow-hidden rounded-2xl group h-[400px]">
+              <img 
+                src="https://images.unsplash.com/photo-1488415032361-b7e238421f1b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Aurora Borealis dancing over a tranquil coastal Lapland landscape with snow-covered mountains and turquoise-green water reflecting the vibrant aurora lights"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4">
+                <h4 className="text-lg font-light text-white mb-2">Aurora Magic</h4>
+                <p className="text-white/80 font-light text-xs">The perfect combination of geographic position and clear skies</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -465,13 +395,26 @@ export default function HomePage() {
                   
                   <div className="pt-4 border-t border-white/10">
                     <div className="text-center">
-                      <div className="text-2xl font-light text-white mb-1">98.7%</div>
-                      <div className="text-sm text-white/60">Prediction Accuracy</div>
+                      <div className="text-2xl font-light text-white mb-1">Advanced</div>
+                      <div className="text-sm text-white/60">AI Processing</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <Link
+              href="/aurora-lab"
+              className="inline-flex items-center px-12 py-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-2xl text-white font-light text-lg hover:from-cyan-500/30 hover:to-blue-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105"
+            >
+              Explore Aurora Lab
+              <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

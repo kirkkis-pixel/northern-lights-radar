@@ -69,7 +69,7 @@ export default function FilteredCitiesSection() {
   };
 
   return (
-    <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+    <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
       <div className="max-w-8xl mx-auto px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
