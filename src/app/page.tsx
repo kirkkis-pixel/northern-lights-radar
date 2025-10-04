@@ -202,7 +202,7 @@ export default function HomePage() {
       </div>
       
       {/* Filtered Cities Section */}
-        <SSRCitiesSection />
+      <SSRCitiesSection />
       
       {/* Map Section */}
       <div className="py-32 bg-gradient-to-b from-black to-slate-900">
