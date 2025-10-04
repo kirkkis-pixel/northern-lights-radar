@@ -116,94 +116,104 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
 
   return (
     <Link href={`/${city.country.toLowerCase()}/northern-lights/${city.slug}`} passHref>
-      <div className="group bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 flex flex-col justify-between min-h-[380px]">
-        <div>
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors">
+      <div className="group bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
+        {/* Header */}
+        <div className="p-6 pb-4">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-xl font-light text-white group-hover:text-cyan-300 transition-colors">
               {city.name}
             </h3>
-            <span className="text-2xl">{getCountryFlag(city.country)}</span>
+            <span className="text-2xl opacity-80">{getCountryFlag(city.country)}</span>
           </div>
           
-          <p className="text-white/60 text-sm mb-6 leading-relaxed">{city.description}</p>
-          
+          <p className="text-white/60 text-sm leading-relaxed mb-6">{city.description}</p>
+        </div>
+
+        {/* Content */}
+        <div className="px-6 pb-6">
           {error ? (
-            <div className="text-center py-8">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400 mx-auto mb-3"></div>
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400 mx-auto mb-4"></div>
               <p className="text-white/50 text-sm">Loading data...</p>
             </div>
           ) : (
-            <div className="space-y-4">
-              {/* Aurora Score */}
-              <div className="flex items-center justify-between">
-                <span className="text-white/70 text-sm font-medium">Aurora Score</span>
-                <span className={`text-lg font-semibold ${getScoreColor(score)}`}>
-                  {score}% ({getScoreBadge(score)})
-                </span>
+            <div className="space-y-6">
+              {/* Aurora Score - Prominent Display */}
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/20 mb-3">
+                  <span className={`text-2xl font-light ${getScoreColor(score)}`}>
+                    {score}%
+                  </span>
+                </div>
+                <p className="text-white/70 text-sm font-light">{getScoreBadge(score)} Aurora Conditions</p>
               </div>
               
-              {/* Aurora Data Grid */}
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-white/60">Kp Index:</span>
-                  <span className="text-white/80 font-medium">{kp}</span>
+              {/* Aurora Data - Clean Grid */}
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-white/60 text-sm">Kp Index</span>
+                  <span className="text-white/90 font-medium">{kp}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-white/60">Probability:</span>
-                  <span className="text-white/80 font-medium">{prob}%</span>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-white/60 text-sm">Probability</span>
+                  <span className="text-white/90 font-medium">{prob}%</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-white/60">Cloud Cover:</span>
-                  <span className="text-white/80 font-medium">{cloudPct}%</span>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-white/60 text-sm">Cloud Cover</span>
+                  <span className="text-white/90 font-medium">{cloudPct}%</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-white/60">Darkness:</span>
-                  <span className="text-white/80 font-medium">{formatDarkness(dark)}</span>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-white/60 text-sm">Darkness</span>
+                  <span className="text-white/90 font-medium text-xs">{formatDarkness(dark)}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-white/60">Moon:</span>
-                  <span className="text-white/80 font-medium">{formatMoon(moon)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-white/60">Updated:</span>
-                  <span className="text-white/80 text-xs font-medium">
-                    {formatTime(updatedAt)}
-                  </span>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-white/60 text-sm">Moon Phase</span>
+                  <span className="text-white/90 font-medium text-xs">{formatMoon(moon)}</span>
                 </div>
               </div>
 
-              {/* Weather Data */}
+              {/* Weather Data - Elegant Section */}
               {weatherData && (
                 <div className="pt-4 border-t border-white/10">
-                  <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="grid grid-cols-3 gap-4">
                     <div className="text-center">
-                      <div className={`text-lg font-semibold ${getTemperatureColor(weatherData.temperature)}`}>
-                        {weatherData.temperature}°C
+                      <div className={`text-xl font-light ${getTemperatureColor(weatherData.temperature)} mb-1`}>
+                        {weatherData.temperature}°
                       </div>
-                      <div className="text-white/60 text-xs">Temperature</div>
+                      <div className="text-white/50 text-xs font-light">Temperature</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-white/80 text-lg font-semibold">
+                      <div className="text-white/90 text-xl font-light mb-1">
                         {weatherData.humidity}%
                       </div>
-                      <div className="text-white/60 text-xs">Humidity</div>
+                      <div className="text-white/50 text-xs font-light">Humidity</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-white/80 text-lg font-semibold">
-                        {weatherData.windSpeed} km/h
+                      <div className="text-white/90 text-xl font-light mb-1">
+                        {weatherData.windSpeed}
                       </div>
-                      <div className="text-white/60 text-xs">Wind Speed</div>
+                      <div className="text-white/50 text-xs font-light">Wind km/h</div>
                     </div>
                   </div>
                 </div>
               )}
+
+              {/* Last Updated */}
+              <div className="pt-3 border-t border-white/5">
+                <p className="text-white/40 text-xs text-center font-light">
+                  Updated {formatTime(updatedAt)}
+                </p>
+              </div>
             </div>
           )}
         </div>
 
+        {/* Error State */}
         {error && (
-          <div className="mt-4 pt-4 border-t border-red-400/20">
-            <p className="text-red-400 text-xs text-center">Data temporarily unavailable</p>
+          <div className="px-6 pb-6">
+            <div className="pt-4 border-t border-red-400/20">
+              <p className="text-red-400 text-xs text-center font-light">Data temporarily unavailable</p>
+            </div>
           </div>
         )}
       </div>
