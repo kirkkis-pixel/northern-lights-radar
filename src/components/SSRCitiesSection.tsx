@@ -13,7 +13,6 @@ interface City {
   description: string;
 }
 
-const countries = ['Finland', 'Sweden', 'Norway'];
 
 export default function SSRCitiesSection() {
   // For SSR, we'll show all cities initially with static data

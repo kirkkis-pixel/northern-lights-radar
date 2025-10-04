@@ -1,4 +1,3 @@
-import { getAuroraNow } from '@/lib/aurora-now';
 
 interface City {
   slug: string;

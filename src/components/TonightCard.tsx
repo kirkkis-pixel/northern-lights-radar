@@ -30,8 +30,7 @@ interface TonightCardProps {
 export default function TonightCard({ 
   latitude = 66.5039, 
   longitude = 25.7294, 
-  cityName = 'Rovaniemi',
-  description = 'Gateway to Lapland'
+  cityName = 'Rovaniemi'
 }: TonightCardProps) {
   const [scoreData, setScoreData] = useState<ScoreData | null>(null);
   const [location, setLocation] = useState<string>(cityName);
@@ -41,7 +40,7 @@ export default function TonightCard({
   useEffect(() => {
     // Use the passed coordinates
     fetchScoreData(latitude, longitude);
-  }, [latitude, longitude]);
+  }, [latitude, longitude, fetchScoreData]);
 
   const fetchScoreData = async (lat: number, lon: number) => {
     try {

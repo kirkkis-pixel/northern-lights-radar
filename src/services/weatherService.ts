@@ -55,6 +55,7 @@ async function fetchWithCache<T>(key: string, fetchFn: () => Promise<T>): Promis
 }
 
 // FMI (Finnish Meteorological Institute) API
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchFMIWeather(latitude: number, longitude: number): Promise<WeatherData> {
   const key = `fmi-${latitude}-${longitude}`;
   
@@ -85,6 +86,7 @@ async function fetchFMIWeather(latitude: number, longitude: number): Promise<Wea
 }
 
 // SMHI (Swedish Meteorological and Hydrological Institute) API
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchSMHIWeather(latitude: number, longitude: number): Promise<WeatherData> {
   const key = `smhi-${latitude}-${longitude}`;
   
@@ -119,6 +121,7 @@ async function fetchSMHIWeather(latitude: number, longitude: number): Promise<We
 }
 
 // MET Norway API
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchMETNorwayWeather(latitude: number, longitude: number): Promise<WeatherData> {
   const key = `met-${latitude}-${longitude}`;
   
@@ -153,6 +156,7 @@ async function fetchMETNorwayWeather(latitude: number, longitude: number): Promi
 }
 
 // NOAA Space Weather API for aurora data
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchAuroraData(): Promise<AuroraData> {
   const key = 'aurora-data';
   
@@ -205,6 +209,7 @@ async function fetchAuroraData(): Promise<AuroraData> {
 }
 
 // Calculate moon phase and illumination
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function calculateMoonPhase(date: Date): { phase: number; illumination: number } {
   const knownNewMoon = new Date('2024-01-11T11:57:00Z'); // Known new moon date
   const lunarCycle = 29.53059; // days
@@ -219,6 +224,7 @@ function calculateMoonPhase(date: Date): { phase: number; illumination: number }
 }
 
 // Check if it's dark enough for aurora viewing
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isDarkEnoughForAurora(latitude: number, date: Date): boolean {
   // Simplified calculation - in reality this would be more complex
   const month = date.getMonth() + 1;

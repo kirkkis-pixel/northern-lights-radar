@@ -13,7 +13,7 @@ export async function GET(req: Request) {
     }
     const data = await getAuroraNow(lat, lon);
     return NextResponse.json(data);
-  } catch (e: any) {
+  } catch (e: unknown) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
   }
 }

@@ -30,13 +30,6 @@ const getCountryFlag = (country: string) => {
   }
 };
 
-const getScoreColor = (score: number) => {
-  if (score >= 80) return 'text-green-400';
-  if (score >= 60) return 'text-blue-400';
-  if (score >= 40) return 'text-yellow-400';
-  if (score >= 20) return 'text-orange-400';
-  return 'text-red-400';
-};
 
 const getScoreBadge = (score: number) => {
   if (score >= 80) return 'Excellent';
@@ -76,8 +69,8 @@ export default function HydratedCityCard({ city, initialData }: HydratedCityCard
       if (!response.ok) throw new Error('Failed to fetch aurora data');
       const data: AuroraNow = await response.json();
       setAuroraData(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : String(err));
       // Keep the initial data if API fails
       if (!initialData) {
         setAuroraData({
@@ -105,7 +98,7 @@ export default function HydratedCityCard({ city, initialData }: HydratedCityCard
     // Set up periodic refresh every 5 minutes
     const interval = setInterval(fetchAuroraData, 5 * 60 * 1000);
     return () => clearInterval(interval);
-  }, [city.latitude, city.longitude, initialData]);
+  }, [city.latitude, city.longitude, initialData, fetchAuroraData]);
 
   const score = auroraData?.score ?? 0;
   const badge = getScoreBadge(score);
