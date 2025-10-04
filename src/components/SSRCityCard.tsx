@@ -99,7 +99,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
         temperature: Math.round(weather.current?.temperature_2m || 0),
         humidity: Math.round(weather.current?.relative_humidity_2m || 0),
         windSpeed: Math.round(weather.current?.wind_speed_10m || 0),
-        visibility: Math.round((weather.current?.visibility || 0) / 1000) // Convert meters to km
+        visibility: Math.min(Math.round((weather.current?.visibility || 0) / 1000), 20) // Convert meters to km, cap at 20km max
       };
     }
   } catch (e) {
@@ -117,7 +117,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
 
   // Calculate viewing conditions
   const viewingConditionsClouds = cloudPct < 30 ? 'Clear' : cloudPct < 70 ? 'Partly Cloudy' : 'Cloudy';
-  const viewingConditionsVisibility = (weatherData?.visibility ?? 0) > 50 ? 'Excellent' : (weatherData?.visibility ?? 0) > 20 ? 'Good' : 'Poor';
+  const viewingConditionsVisibility = (weatherData?.visibility ?? 0) > 15 ? 'Excellent' : (weatherData?.visibility ?? 0) > 8 ? 'Good' : (weatherData?.visibility ?? 0) > 3 ? 'Fair' : 'Poor';
   const isDarkEnough = dark > 0.5;
 
   return (
@@ -202,7 +202,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Visibility:</span>
-                    <span className={viewingConditionsVisibility === 'Excellent' ? 'text-green-400' : viewingConditionsVisibility === 'Good' ? 'text-yellow-400' : 'text-red-400'}>
+                    <span className={viewingConditionsVisibility === 'Excellent' ? 'text-green-400' : viewingConditionsVisibility === 'Good' ? 'text-yellow-400' : viewingConditionsVisibility === 'Fair' ? 'text-orange-400' : 'text-red-400'}>
                       {viewingConditionsVisibility}
                     </span>
                   </div>
