@@ -89,7 +89,7 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
     
     // Fetch weather data from Open-Meteo
     const weatherResponse = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=auto`,
+      `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,visibility&timezone=auto`,
       { next: { revalidate: 1800 } } // 30 min cache
     );
     
@@ -98,7 +98,8 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
       weatherData = {
         temperature: Math.round(weather.current?.temperature_2m || 0),
         humidity: Math.round(weather.current?.relative_humidity_2m || 0),
-        windSpeed: Math.round(weather.current?.wind_speed_10m || 0)
+        windSpeed: Math.round(weather.current?.wind_speed_10m || 0),
+        visibility: Math.round((weather.current?.visibility || 0) / 1000) // Convert meters to km
       };
     }
   } catch (e) {
@@ -113,6 +114,11 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
   const dark = auroraData?.dark ?? 0;
   const moon = auroraData?.moon ?? 1;
   const updatedAt = auroraData?.updatedAt ?? new Date().toISOString();
+
+  // Calculate viewing conditions
+  const viewingConditionsClouds = cloudPct < 30 ? 'Clear' : cloudPct < 70 ? 'Partly Cloudy' : 'Cloudy';
+  const viewingConditionsVisibility = (weatherData?.visibility ?? 0) > 50 ? 'Excellent' : (weatherData?.visibility ?? 0) > 20 ? 'Good' : 'Poor';
+  const isDarkEnough = dark > 0.5;
 
   return (
     <Link href={`/${city.country.toLowerCase()}/northern-lights/${city.slug}`} passHref>
@@ -168,7 +174,9 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
                   <div className="text-gray-400 text-xs">Clouds</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-white">65km</div>
+                  <div className="text-xl font-bold text-white">
+                    {weatherData?.visibility || '--'}km
+                  </div>
                   <div className="text-gray-400 text-xs">Visibility</div>
                 </div>
                 <div className="text-center">
@@ -181,20 +189,22 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-white text-sm font-medium">Viewing Conditions</span>
-                  <span className="bg-green-900/50 text-green-400 px-2 py-1 rounded text-xs font-medium">
-                    {formatDarkness(dark) === 'Deep Darkness' ? 'Dark Enough' : 'Too Bright'}
+                  <span className={`px-2 py-1 rounded text-xs font-medium ${isDarkEnough ? 'bg-green-900/50 text-green-400' : 'bg-red-900/50 text-red-400'}`}>
+                    {isDarkEnough ? 'Dark Enough' : 'Too Bright'}
                   </span>
                 </div>
                 <div className="space-y-1 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-400">Clouds:</span>
-                    <span className={cloudPct > 70 ? 'text-red-400' : 'text-green-400'}>
-                      {cloudPct > 70 ? 'Cloudy' : 'Clear'}
+                    <span className={viewingConditionsClouds === 'Clear' ? 'text-green-400' : 'text-red-400'}>
+                      {viewingConditionsClouds}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Visibility:</span>
-                    <span className="text-green-400">Excellent</span>
+                    <span className={viewingConditionsVisibility === 'Excellent' ? 'text-green-400' : viewingConditionsVisibility === 'Good' ? 'text-yellow-400' : 'text-red-400'}>
+                      {viewingConditionsVisibility}
+                    </span>
                   </div>
                 </div>
               </div>
