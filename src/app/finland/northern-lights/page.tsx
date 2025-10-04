@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import SpaceWeatherWidget from '@/components/SpaceWeatherWidget';
-import HydratedCityCard from '@/components/HydratedCityCard';
+import SSRCityCard from '@/components/SSRCityCard';
 
 export const metadata: Metadata = {
   title: 'Northern Lights in Finland - Finnish Lapland Aurora Guide',
@@ -338,7 +338,7 @@ export default function FinlandPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                {cities.map((city) => (
-                 <HydratedCityCard key={city.slug} city={city} />
+                 <SSRCityCard key={city.slug} city={city} />
                ))}
             </div>
           </div>
