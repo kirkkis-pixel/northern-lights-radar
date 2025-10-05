@@ -42,42 +42,42 @@ export default function AuroraLabPage() {
       
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
-        {/* Subtle Aurora Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400/20 rounded-full animate-pulse shadow-lg shadow-cyan-400/30" />
-          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400/30 rounded-full animate-pulse shadow-lg shadow-blue-400/40" />
-          <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-purple-400/25 rounded-full animate-pulse shadow-lg shadow-purple-400/35" />
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
         </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
-              Aurora
-              <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Lab
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed mb-12">
-              Explore cutting-edge aurora research, advanced forecasting models, and real-time space weather data. Discover the science behind the northern lights with our experimental prediction system.
-            </p>
-            
-            {/* Demo Data Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/30 rounded-full text-yellow-300 text-sm font-medium mb-8">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse mr-3"></div>
-              Research & Demo Data
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-16">
+          <div className="mb-12">
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Research Lab</span>
             </div>
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+              <div className="text-white mb-2">Aurora</div>
+              <div className="text-cyan-300/90 bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-500 bg-clip-text text-transparent">
+                Lab
+              </div>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+              Advanced aurora research, experimental forecasting models, and real-time space weather data
+            </p>
           </div>
         </div>
       </div>
 
       {/* Introduction */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Research Overview</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               Advanced Aurora Research
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
               Our Aurora Lab combines real-time space weather data with advanced machine learning models to provide experimental aurora predictions. While our system is still in development, it offers valuable insights into aurora behavior and solar activity patterns.
             </p>
           </div>
@@ -85,54 +85,57 @@ export default function AuroraLabPage() {
       </div>
 
       {/* Featured Research */}
-      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-              Featured Research
+      <div className="py-32 bg-gradient-to-b from-black to-slate-900">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center mb-20">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Featured Research</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
+              Experimental Forecasting Models
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Explore our latest research projects and experimental forecasting models.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">🤖</span>
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
+                <span className="text-cyan-300 text-2xl">🤖</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">AI Aurora Prediction</h3>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h3 className="text-xl font-light text-white mb-4">AI Aurora Prediction</h3>
+              <p className="text-white/70 font-light leading-relaxed mb-4">
                 Machine learning models trained on historical aurora data to predict visibility and intensity patterns.
               </p>
-              <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                DEMO DATA
+              <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                SIMULATED DATA
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">🌡️</span>
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6 border border-green-400/30">
+                <span className="text-green-300 text-2xl">🌡️</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Weather Integration</h3>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h3 className="text-xl font-light text-white mb-4">Weather Integration</h3>
+              <p className="text-white/70 font-light leading-relaxed mb-4">
                 Advanced algorithms combining space weather data with local meteorological conditions for accurate predictions.
               </p>
-              <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                DEMO DATA
+              <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                SIMULATED DATA
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">📊</span>
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 border border-purple-400/30">
+                <span className="text-purple-300 text-2xl">📊</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Real-time Analytics</h3>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h3 className="text-xl font-light text-white mb-4">Real-time Analytics</h3>
+              <p className="text-white/70 font-light leading-relaxed mb-4">
                 Live monitoring of solar wind parameters, geomagnetic activity, and aurora probability calculations.
               </p>
-              <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                DEMO DATA
+              <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                SIMULATED DATA
               </div>
             </div>
           </div>
@@ -140,14 +143,17 @@ export default function AuroraLabPage() {
       </div>
 
       {/* Live Data Dashboard */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-              Live Research Data
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Research Data</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-6">
+              Simulated Research Data
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
-              Real-time space weather data and experimental aurora predictions from our research systems.
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+              Experimental data visualization and simulated research metrics from our aurora research systems.
             </p>
           </div>
 
@@ -156,8 +162,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-2">2.1M/s</div>
                 <div className="text-sm text-white/60 mb-2">Processing Speed</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -166,8 +172,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">47</div>
                 <div className="text-sm text-white/60 mb-2">Solar Sunspots</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -176,8 +182,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-400 mb-2">2</div>
                 <div className="text-sm text-white/60 mb-2">Solar Flares (C-class)</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -186,8 +192,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-red-400 mb-2">1</div>
                 <div className="text-sm text-white/60 mb-2">CME Events</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -196,8 +202,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-400 mb-2">-15 nT</div>
                 <div className="text-sm text-white/60 mb-2">Geomagnetic Dst Index</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -206,8 +212,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-400 mb-2">234 nT</div>
                 <div className="text-sm text-white/60 mb-2">AE Index</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -216,8 +222,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400 mb-2">G1</div>
                 <div className="text-sm text-white/60 mb-2">Storm Level</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -226,8 +232,8 @@ export default function AuroraLabPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-2">45 TECU</div>
                 <div className="text-sm text-white/60 mb-2">Ionosphere TEC Level</div>
-                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full inline-block">
-                  DEMO DATA
+                <div className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full inline-block font-medium">
+                  SIMULATED DATA
                 </div>
               </div>
             </div>
@@ -236,20 +242,23 @@ export default function AuroraLabPage() {
       </div>
 
       {/* System Status */}
-      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-              System Status
+      <div className="py-32 bg-gradient-to-b from-black to-slate-900">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center mb-20">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">System Status</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
+              Research System Status
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Current status of our research systems and data sources.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-semibold text-white mb-6">Data Sources</h3>
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <h3 className="text-2xl font-light text-white mb-6">Data Sources</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-white/80">NOAA Space Weather</span>
@@ -282,8 +291,8 @@ export default function AuroraLabPage() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-semibold text-white mb-6">Performance Metrics</h3>
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <h3 className="text-2xl font-light text-white mb-6">Performance Metrics</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-white/80">API Calls</span>
@@ -308,13 +317,16 @@ export default function AuroraLabPage() {
       </div>
 
       {/* Research Blog */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Research Blog</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               Research Blog
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Latest insights, research findings, and technical developments from our aurora research team.
             </p>
           </div>
@@ -375,23 +387,47 @@ export default function AuroraLabPage() {
       </div>
 
       {/* Space Weather Widget */}
-      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SpaceWeatherWidget />
+      <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center mb-16">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Space Weather</span>
+            </div>
+            <h2 className="text-4xl font-thin text-white mb-6">
+              Current Space Weather
+            </h2>
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+              Real-time space weather data from NOAA and other sources
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <SpaceWeatherWidget />
+          </div>
         </div>
       </div>
 
       {/* Disclaimer */}
-      <div className="py-16 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-16 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="bg-yellow-500/10 border border-yellow-400/30 rounded-2xl p-8">
-            <h3 className="text-xl font-semibold text-yellow-300 mb-4">Research Disclaimer</h3>
-            <p className="text-white/80 leading-relaxed">
+            <h3 className="text-xl font-light text-yellow-300 mb-4">Research Disclaimer</h3>
+            <p className="text-white/80 font-light leading-relaxed">
               The Aurora Lab is an experimental research platform. All predictions, forecasts, and data presented here are for research purposes only and should not be used as the sole basis for travel or viewing decisions. Our models are still in development and may not accurately predict aurora activity. Always consult official meteorological services and aurora forecast centers for reliable information.
             </p>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 py-16">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center text-white/40 text-sm font-light">
+            <p>Data from NOAA SWPC (OVATION), Open-Meteo. Times in local timezone.</p>
+            <p className="mt-2">Research data is simulated for demonstration purposes.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
