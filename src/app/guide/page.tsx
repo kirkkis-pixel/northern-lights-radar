@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RegionalNavigation from '@/components/RegionalNavigation';
 
 export const metadata: Metadata = {
   title: 'Northern Lights Guide - Complete Aurora Viewing Guide 2024',
@@ -128,6 +129,7 @@ const guideCategories = [
 export default function GuidePage() {
   return (
     <div>
+      <RegionalNavigation />
       <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
