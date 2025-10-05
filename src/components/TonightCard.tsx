@@ -48,8 +48,6 @@ export default function TonightCard({
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
-  }, []);
-
   const fetchTopHotspots = useCallback(async () => {
     // Top aurora viewing locations in Lapland
     const topLocations = [
