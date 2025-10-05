@@ -43,7 +43,7 @@ export default function HomePage() {
         <RegionalNavigation />
       
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-20 pt-16 md:pt-24 overflow-hidden">
         
         {/* Subtle Aurora Particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -56,7 +56,7 @@ export default function HomePage() {
         </div>
         
         {/* Main Content */}
-        <div className="relative z-10 max-w-8xl mx-auto px-12 text-center pt-16">
+        <div className="relative z-10 max-w-8xl mx-auto px-12 text-center pt-8">
           {/* Main Headline */}
           <div className="mb-24">
             <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">

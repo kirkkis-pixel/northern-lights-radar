@@ -2,30 +2,16 @@
 
 export default function AnimatedRadar() {
   return (
-    <div className="py-16 bg-gradient-to-b from-black via-slate-900 to-black relative overflow-hidden">
+    <div className="py-8 bg-gradient-to-b from-black via-slate-900 to-black relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`
       }}></div>
       
       <div className="max-w-6xl mx-auto px-12 text-center relative z-10">
-        {/* Section Header */}
-        <div className="mb-12">
-          <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-6">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-            <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Live Aurora Detection</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-thin text-white mb-4">
-            Scanning Lapland Skies
-          </h2>
-          <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
-            Real-time aurora activity detection across Finnish, Swedish, and Norwegian Lapland
-          </p>
-        </div>
-
         {/* Animated Radar */}
         <div className="flex justify-center mb-8">
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
+          <div className="relative w-32 h-32 md:w-40 md:h-40">
             {/* Outer Circle */}
             <div className="absolute inset-0 rounded-full border border-white/20"></div>
             
@@ -66,11 +52,11 @@ export default function AnimatedRadar() {
             {/* Grid Lines */}
             <div className="absolute inset-0">
               {/* Vertical Line */}
-              <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/10 transform -translate-x-1/2"></div>
+              <div className="absolute top-1/4 bottom-1/4 left-1/2 w-px bg-white/10 transform -translate-x-1/2"></div>
               {/* Horizontal Line */}
-              <div className="absolute left-0 right-0 top-1/2 h-px bg-white/10 transform -translate-y-1/2"></div>
+              <div className="absolute left-1/4 right-1/4 top-1/2 h-px bg-white/10 transform -translate-y-1/2"></div>
               {/* Diagonal Lines */}
-              <div className="absolute inset-0">
+              <div className="absolute inset-1/4">
                 <div className="absolute top-0 right-0 w-full h-full">
                   <div className="absolute top-0 right-0 w-px h-full bg-white/5 transform rotate-45 origin-top"></div>
                   <div className="absolute top-0 right-0 w-full h-px bg-white/5 transform -rotate-45 origin-right"></div>
