@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { AuroraNow } from '@/lib/aurora-now';
 
@@ -59,7 +59,7 @@ export default function HydratedCityCard({ city, initialData }: HydratedCityCard
   const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchAuroraData = async () => {
+  const fetchAuroraData = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -87,7 +87,7 @@ export default function HydratedCityCard({ city, initialData }: HydratedCityCard
     } finally {
       setLoading(false);
     }
-  };
+  }, [city.latitude, city.longitude]);
 
   useEffect(() => {
     // Only fetch if we don't have initial data

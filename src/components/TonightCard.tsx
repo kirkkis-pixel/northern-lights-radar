@@ -20,17 +20,12 @@ interface TonightCardProps {
 export default function TonightCard({ 
   latitude = 66.5039, 
   longitude = 25.7294, 
-  cityName = 'Rovaniemi',
-  description = 'Gateway to Lapland'
+  cityName = 'Rovaniemi'
 }: TonightCardProps) {
   const [auroraData, setAuroraData] = useState<AuroraNow | null>(null);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetchAuroraData();
-  }, [latitude, longitude, fetchAuroraData]);
 
   const fetchAuroraData = useCallback(async () => {
     try {
@@ -63,6 +58,10 @@ export default function TonightCard({
       setLoading(false);
     }
   }, [latitude, longitude]);
+
+  useEffect(() => {
+    fetchAuroraData();
+  }, [fetchAuroraData]);
 
   const getScoreBadge = (score: number) => {
     if (score >= 80) return 'Excellent';
