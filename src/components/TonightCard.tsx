@@ -26,21 +26,71 @@ export default function TonightCard({
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [userLocation, setUserLocation] = useState<{lat: number, lon: number, city: string} | null>(null);
+  const [locationPermission, setLocationPermission] = useState<'granted' | 'denied' | 'prompting' | 'unknown'>('unknown');
 
-  const fetchAuroraData = useCallback(async () => {
+  const getCurrentLocation = useCallback(async () => {
+    if (!navigator.geolocation) {
+      setLocationPermission('denied');
+      return null;
+    }
+
+    setLocationPermission('prompting');
+    
+    return new Promise<{lat: number, lon: number, city: string} | null>((resolve) => {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude: lat, longitude: lon } = position.coords;
+          setLocationPermission('granted');
+          
+          // Try to get city name from reverse geocoding
+          try {
+            const response = await fetch(
+              `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&timezone=auto`
+            );
+            if (response.ok) {
+              const data = await response.json();
+              const cityName = data.timezone?.split('/')[1]?.replace('_', ' ') || 'Your Location';
+              resolve({ lat, lon, city: cityName });
+            } else {
+              resolve({ lat, lon, city: 'Your Location' });
+            }
+          } catch {
+            resolve({ lat, lon, city: 'Your Location' });
+          }
+        },
+        (error) => {
+          console.log('Geolocation error:', error);
+          setLocationPermission('denied');
+          resolve(null);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 300000 // 5 minutes
+        }
+      );
+    });
+  }, []);
+
+  const fetchAuroraData = useCallback(async (lat?: number, lon?: number, city?: string) => {
     try {
       setLoading(true);
       setError(null);
       
+      const targetLat = lat || latitude;
+      const targetLon = lon || longitude;
+      const targetCity = city || cityName;
+      
       // Fetch aurora data
-      const auroraResponse = await fetch(`/api/aurora-now?lat=${latitude}&lon=${longitude}`);
+      const auroraResponse = await fetch(`/api/aurora-now?lat=${targetLat}&lon=${targetLon}`);
       if (!auroraResponse.ok) throw new Error('Failed to fetch aurora data');
       const aurora = await auroraResponse.json();
       setAuroraData(aurora);
       
       // Fetch weather data
       const weatherResponse = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,visibility&timezone=auto`
+        `https://api.open-meteo.com/v1/forecast?latitude=${targetLat}&longitude=${targetLon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,visibility&timezone=auto`
       );
       if (weatherResponse.ok) {
         const weather = await weatherResponse.json();
@@ -57,11 +107,23 @@ export default function TonightCard({
     } finally {
       setLoading(false);
     }
-  }, [latitude, longitude]);
+  }, [latitude, longitude, cityName]);
 
   useEffect(() => {
-    fetchAuroraData();
-  }, [fetchAuroraData]);
+    // Try to get user's location first
+    const initializeLocation = async () => {
+      const location = await getCurrentLocation();
+      if (location) {
+        setUserLocation(location);
+        await fetchAuroraData(location.lat, location.lon, location.city);
+      } else {
+        // Fallback to default location
+        await fetchAuroraData();
+      }
+    };
+    
+    initializeLocation();
+  }, [getCurrentLocation, fetchAuroraData]);
 
   const getScoreBadge = (score: number) => {
     if (score >= 80) return 'Excellent';
@@ -104,6 +166,9 @@ export default function TonightCard({
           <div className="h-6 bg-gray-200 rounded w-1/2 mx-auto mb-6"></div>
           <div className="h-16 bg-gray-200 rounded w-1/3 mx-auto mb-6"></div>
           <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+          {locationPermission === 'prompting' && (
+            <p className="text-xs text-gray-500 mt-4">Detecting your location...</p>
+          )}
         </div>
       </div>
     );
@@ -130,7 +195,28 @@ export default function TonightCard({
         <h3 className="text-xl font-light text-gray-900 mb-2">
           Tonight&apos;s Aurora Conditions
         </h3>
-        <p className="text-sm text-gray-500 font-light">{cityName}</p>
+        <div className="flex items-center justify-center space-x-2 mb-2">
+          <p className="text-sm text-gray-500 font-light">
+            {userLocation ? userLocation.city : cityName}
+          </p>
+          {locationPermission === 'granted' && (
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+          )}
+        </div>
+        {locationPermission === 'denied' && (
+          <button
+            onClick={async () => {
+              const location = await getCurrentLocation();
+              if (location) {
+                setUserLocation(location);
+                await fetchAuroraData(location.lat, location.lon, location.city);
+              }
+            }}
+            className="text-xs text-blue-600 hover:text-blue-800 underline"
+          >
+            Use my location
+          </button>
+        )}
       </div>
       
       <div className="text-center mb-8">
