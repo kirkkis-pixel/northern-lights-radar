@@ -42,42 +42,66 @@ export default function WhyLaplandPage() {
       
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
-        {/* Subtle Aurora Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400/20 rounded-full animate-pulse shadow-lg shadow-cyan-400/30" />
-          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400/30 rounded-full animate-pulse shadow-lg shadow-blue-400/40" />
-          <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-purple-400/25 rounded-full animate-pulse shadow-lg shadow-purple-400/35" />
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
         </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
-              Why
-              <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-16">
+          <div className="mb-12">
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">The Ultimate Destination</span>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+              <div className="text-white mb-2">Why</div>
+              <div className="text-blue-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Lapland?
-              </span>
+              </div>
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed mb-12">
-              Discover why Lapland is the world&apos;s premier destination for northern lights viewing. From optimal geographical positioning to unique cultural experiences, Lapland offers everything you need for an unforgettable aurora adventure.
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+              Discover why Lapland is the world&apos;s premier destination for northern lights viewing
             </p>
-            
-            {/* Live Aurora Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-full text-green-300 text-sm font-medium mb-8">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-3"></div>
-              Live Aurora Conditions
+          </div>
+        </div>
+      </div>
+
+      {/* Welcome to Lapland - Full Width Image */}
+      <div className="py-12 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-8xl mx-auto px-12">
+          <div className="relative overflow-hidden rounded-3xl group">
+            <img 
+              src="https://images.unsplash.com/photo-1488415032361-b7e238421f1b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              alt="Aurora Borealis dancing over Lapland&apos;s pristine winter landscape with snow-covered mountains and frozen lakes"
+              className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center max-w-2xl px-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wide">
+                  Welcome to Lapland
+                </h2>
+                <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
+                  The northernmost region spanning across Finland, Sweden, and Norway, offering some of the world&apos;s most spectacular aurora viewing opportunities.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Introduction */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Why Lapland</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               The Ultimate Aurora Destination
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
               Lapland offers unique advantages that make it the world&apos;s premier destination for northern lights viewing. With over 200 nights of aurora activity per year, Lapland&apos;s geographical position within the aurora oval provides exceptional viewing opportunities. The region&apos;s pristine wilderness, minimal light pollution, and excellent infrastructure make it ideal for aurora enthusiasts.
             </p>
           </div>
@@ -85,13 +109,16 @@ export default function WhyLaplandPage() {
       </div>
 
       {/* Key Advantages */}
-      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Key Advantages</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               Why Choose Lapland?
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Lapland offers unique advantages that make it the perfect choice for your northern lights adventure.
             </p>
           </div>
@@ -161,13 +188,16 @@ export default function WhyLaplandPage() {
       </div>
 
       {/* Country Comparison */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Lapland Regions</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               Lapland by Country
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Each Lapland region offers unique advantages for aurora viewing and Arctic experiences.
             </p>
           </div>
@@ -255,13 +285,16 @@ export default function WhyLaplandPage() {
       </div>
 
       {/* Best Time to Visit */}
-      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Best Time</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
               When to Visit Lapland
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
               Plan your Lapland aurora adventure during the optimal viewing periods for the best chances of seeing the northern lights.
             </p>
           </div>
@@ -334,38 +367,71 @@ export default function WhyLaplandPage() {
       </div>
 
       {/* Space Weather Widget */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SpaceWeatherWidget />
+      <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center mb-16">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Space Weather</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
+              Current Space Weather
+            </h2>
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
+              Real-time space weather data from NOAA and other sources
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <SpaceWeatherWidget />
+          </div>
         </div>
       </div>
 
       {/* Call to Action */}
-      <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+      <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div className="max-w-6xl mx-auto px-12 text-center">
+          <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+            <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Start Your Journey</span>
+          </div>
+          <h2 className="text-5xl font-thin text-white mb-8">
             Ready for Your Aurora Adventure?
           </h2>
-          <p className="text-xl text-white/70 font-light leading-relaxed mb-12">
+          <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed mb-12">
             Start planning your Lapland northern lights experience today. Explore our city guides, check live conditions, and discover the perfect destination for your aurora adventure.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
-              href="/"
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+              href="/finland/northern-lights" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
             >
-              Check Live Conditions
+              Explore Finland
             </Link>
             <Link 
-              href="/guide"
-              className="px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              href="/sweden/northern-lights" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
             >
-              View Aurora Guide
+              Explore Sweden
+            </Link>
+            <Link 
+              href="/norway/northern-lights" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
+            >
+              Explore Norway
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 py-16">
+        <div className="max-w-6xl mx-auto px-12">
+          <div className="text-center text-white/40 text-sm font-light">
+            <p>Data from NOAA SWPC (OVATION), Open-Meteo. Times in local timezone.</p>
+            <p className="mt-2">Real-time aurora forecasts for Lapland destinations.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
