@@ -73,7 +73,7 @@ export default function AuroraMythsPage() {
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center">
                     <span className="text-red-300 text-xl">❌</span>
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col">
                     <h3 className="text-2xl font-light text-white mb-4">Myth: You can hear the aurora</h3>
                     <div className="bg-red-500/10 rounded-xl p-6 mb-6 border border-red-400/20">
                       <p className="text-red-300 font-light leading-relaxed">
@@ -82,7 +82,7 @@ export default function AuroraMythsPage() {
                         atmospheric phenomena like crackling ice or wind, not the aurora itself.
                       </p>
                     </div>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       While some people report hearing sounds during aurora displays, scientific studies have 
                       confirmed that the aurora itself is silent. The sounds are likely caused by nearby 
                       environmental factors like ice cracking, wind, or even psychological effects.
@@ -97,7 +97,7 @@ export default function AuroraMythsPage() {
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center">
                     <span className="text-red-300 text-xl">❌</span>
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col">
                     <h3 className="text-2xl font-light text-white mb-4">Myth: Aurora only appears in winter</h3>
                     <div className="bg-red-500/10 rounded-xl p-6 mb-6 border border-red-400/20">
                       <p className="text-red-300 font-light leading-relaxed">
@@ -106,7 +106,7 @@ export default function AuroraMythsPage() {
                         Aurora activity peaks around the equinoxes (March and September).
                       </p>
                     </div>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       The aurora is always happening, but you need darkness to see it. During Arctic summer, 
                       the sun never sets, so aurora remains invisible. The best viewing seasons are autumn 
                       and spring when nights are dark but weather is often clearer than mid-winter.
@@ -121,7 +121,7 @@ export default function AuroraMythsPage() {
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center">
                     <span className="text-red-300 text-xl">❌</span>
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col">
                     <h3 className="text-2xl font-light text-white mb-4">Myth: Aurora is caused by ice crystals</h3>
                     <div className="bg-red-500/10 rounded-xl p-6 mb-6 border border-red-400/20">
                       <p className="text-red-300 font-light leading-relaxed">
@@ -130,7 +130,7 @@ export default function AuroraMythsPage() {
                         but not aurora. The colors come from different gases in the atmosphere.
                       </p>
                     </div>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       Aurora is a space weather phenomenon caused by solar wind particles interacting with 
                       Earth's magnetic field and atmosphere. Green aurora comes from oxygen at high altitudes, 
                       red from oxygen at lower altitudes, and blue/purple from nitrogen.
@@ -145,7 +145,7 @@ export default function AuroraMythsPage() {
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center">
                     <span className="text-red-300 text-xl">❌</span>
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col">
                     <h3 className="text-2xl font-light text-white mb-4">Myth: Aurora only appears in the north</h3>
                     <div className="bg-red-500/10 rounded-xl p-6 mb-6 border border-red-400/20">
                       <p className="text-red-300 font-light leading-relaxed">
@@ -154,7 +154,7 @@ export default function AuroraMythsPage() {
                         During strong solar storms, aurora can be visible much further from the poles.
                       </p>
                     </div>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       Aurora occurs in oval-shaped regions around both magnetic poles. The northern lights 
                       (aurora borealis) are more famous because more people live in northern regions. 
                       The southern lights (aurora australis) are equally spectacular but less accessible.
@@ -176,7 +176,7 @@ export default function AuroraMythsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-green-300 text-xl">☀️</span>
@@ -258,7 +258,7 @@ export default function AuroraMythsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-amber-300 text-xl">🔥</span>
@@ -274,7 +274,7 @@ export default function AuroraMythsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-rose-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-rose-300 text-xl">🔬</span>
@@ -292,7 +292,7 @@ export default function AuroraMythsPage() {
               </div>
               
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-violet-300 text-xl">🌌</span>
@@ -308,7 +308,7 @@ export default function AuroraMythsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-lime-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-lime-300 text-xl">📡</span>
@@ -348,7 +348,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-xl font-light text-white mb-3">
                       Check Scientific Sources
                     </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       Always verify aurora information with reputable scientific sources like NASA, 
                       NOAA, or university research. Avoid social media claims without citations.
                     </p>
@@ -363,7 +363,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-xl font-light text-white mb-3">
                       Understand Basic Physics
                     </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       Aurora is fundamentally about charged particles and electromagnetic fields. 
                       Any explanation that doesn't involve these concepts is likely incorrect.
                     </p>
@@ -378,7 +378,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-xl font-light text-white mb-3">
                       Question Extraordinary Claims
                     </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       If someone claims aurora can be heard, affects weather, or has supernatural 
                       properties, ask for scientific evidence. Extraordinary claims require extraordinary proof.
                     </p>
@@ -395,7 +395,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-xl font-light text-white mb-3">
                       Look for Patterns
                     </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       Aurora follows predictable patterns based on solar activity, season, and location. 
                       Claims that contradict these patterns are usually myths.
                     </p>
@@ -410,7 +410,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-xl font-light text-white mb-3">
                       Consult Multiple Sources
                     </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       Cross-reference aurora information across multiple scientific sources. 
                       If only one source makes a claim, be skeptical until you find corroboration.
                     </p>
@@ -425,7 +425,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-xl font-light text-white mb-3">
                       Embrace the Real Magic
                     </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
+                    <p className="text-white/70 font-light leading-relaxed flex-grow">
                       The real aurora is magical enough! Understanding the science behind it 
                       doesn't diminish its beauty - it enhances our appreciation of this incredible phenomenon.
                     </p>

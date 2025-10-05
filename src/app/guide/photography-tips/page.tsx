@@ -82,13 +82,13 @@ export default function PhotographyTipsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">📷</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Camera</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• DSLR or mirrorless camera</li>
                 <li>• Manual mode capability</li>
                 <li>• Good low-light performance</li>
@@ -96,12 +96,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🔭</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Lens</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Wide-angle lens (14-24mm)</li>
                 <li>• Fast aperture (f/2.8 or wider)</li>
                 <li>• Manual focus capability</li>
@@ -109,12 +109,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">📐</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Tripod</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Sturdy, stable tripod</li>
                 <li>• Ball head or pan-tilt head</li>
                 <li>• Quick release plate</li>
@@ -122,12 +122,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🔋</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Batteries</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Extra camera batteries</li>
                 <li>• Battery grip (optional)</li>
                 <li>• Keep batteries warm</li>
@@ -135,12 +135,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">💾</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Memory Cards</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• High-speed memory cards</li>
                 <li>• Large capacity (64GB+)</li>
                 <li>• Multiple cards</li>
@@ -148,12 +148,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🔦</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Accessories</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Remote shutter release</li>
                 <li>• Headlamp with red light</li>
                 <li>• Lens cleaning kit</li>
@@ -178,7 +178,7 @@ export default function PhotographyTipsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Basic Settings</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -208,7 +208,7 @@ export default function PhotographyTipsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Advanced Settings</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -232,7 +232,7 @@ export default function PhotographyTipsPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Focusing Tips</h3>
                 <div className="space-y-4 text-white/70">
                   <p>• Set lens to manual focus</p>
@@ -243,7 +243,7 @@ export default function PhotographyTipsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Composition Tips</h3>
                 <div className="space-y-4 text-white/70">
                   <p>• Include foreground elements</p>
@@ -271,12 +271,12 @@ export default function PhotographyTipsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">⏱️</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Timing</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Arrive early to set up</li>
                 <li>• Take test shots before aurora</li>
                 <li>• Be ready for quick changes</li>
@@ -284,12 +284,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">📍</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Location</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Scout locations during day</li>
                 <li>• Find interesting foregrounds</li>
                 <li>• Avoid light pollution</li>
@@ -297,12 +297,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🎨</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Composition</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Use leading lines</li>
                 <li>• Include scale references</li>
                 <li>• Balance sky and ground</li>
@@ -310,12 +310,12 @@ export default function PhotographyTipsPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🔧</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Technical</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Use remote shutter release</li>
                 <li>• Minimize camera shake</li>
                 <li>• Check histogram regularly</li>
@@ -340,7 +340,7 @@ export default function PhotographyTipsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Basic Adjustments</h3>
                 <div className="space-y-4 text-white/70">
                   <p>• <strong>Exposure:</strong> Adjust brightness and contrast</p>
@@ -351,7 +351,7 @@ export default function PhotographyTipsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Advanced Techniques</h3>
                 <div className="space-y-4 text-white/70">
                   <p>• <strong>Noise Reduction:</strong> Clean up high ISO noise</p>
@@ -364,7 +364,7 @@ export default function PhotographyTipsPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Software Recommendations</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -386,7 +386,7 @@ export default function PhotographyTipsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                 <h3 className="text-2xl font-semibold text-white mb-6">Common Mistakes</h3>
                 <div className="space-y-4 text-white/70">
                   <p>• Over-processing aurora colors</p>

@@ -66,13 +66,13 @@ export default function PerfectLocationsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-red-300 text-xl">🏔️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Levi Summit</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   At 531 meters above sea level, Levi Summit offers panoramic views with minimal light pollution. 
                   Accessible by gondola or hiking trails.
                 </p>
@@ -83,12 +83,12 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-blue-300 text-xl">🌲</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Saariselkä Wilderness</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   Remote wilderness area with pristine dark skies. Perfect for serious aurora photographers 
                   seeking uninterrupted views.
                 </p>
@@ -99,12 +99,12 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-green-300 text-xl">🏘️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Rovaniemi Arctic Circle</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   The gateway to Lapland with excellent infrastructure. Multiple viewing spots including 
                   the Arctic Circle marker and Ounasvaara Hill.
                 </p>
@@ -128,13 +128,13 @@ export default function PerfectLocationsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-yellow-300 text-xl">🏔️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Abisko National Park</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   Famous for its clear skies and Aurora Sky Station. The microclimate creates 
                   unusually clear conditions perfect for aurora viewing.
                 </p>
@@ -145,12 +145,12 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-purple-300 text-xl">🏭</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Kiruna Iron Ore Mine</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   Unique industrial setting with excellent aurora views. The mine area provides 
                   elevated positions and clear sightlines to the north.
                 </p>
@@ -161,12 +161,12 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-indigo-300 text-xl">🏞️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Luleå Archipelago</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   Coastal location with stunning aurora reflections on frozen waters. 
                   Accessible by snowmobile or guided tours.
                 </p>
@@ -190,13 +190,13 @@ export default function PerfectLocationsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-cyan-300 text-xl">🏔️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Tromsø Fjords</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   The "Gateway to the Arctic" offers fjord views with aurora dancing over 
                   dramatic mountain silhouettes. Multiple accessible viewing spots.
                 </p>
@@ -207,12 +207,12 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-emerald-300 text-xl">🌊</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Alta Northern Lights Cathedral</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   Dedicated aurora viewing platform with panoramic views. The cathedral's 
                   architecture creates stunning aurora photography opportunities.
                 </p>
@@ -223,12 +223,12 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                 <div className="w-12 h-12 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-violet-300 text-xl">❄️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Svalbard Archipelago</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-4">
+                <p className="text-white/70 font-light leading-relaxed mb-4 flex-grow">
                   The northernmost inhabited place on Earth. Experience polar night aurora 
                   viewing in complete darkness for months.
                 </p>

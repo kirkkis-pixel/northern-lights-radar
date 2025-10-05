@@ -84,7 +84,7 @@ export default function WhatToWearPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Base Layer */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">👕</span>
               </div>
@@ -92,7 +92,7 @@ export default function WhatToWearPage() {
               <p className="text-white/70 leading-relaxed mb-6">
                 Moisture-wicking thermal underwear that keeps you dry and warm.
               </p>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Merino wool or synthetic thermal tops</li>
                 <li>• Thermal leggings or long johns</li>
                 <li>• Moisture-wicking socks</li>
@@ -101,7 +101,7 @@ export default function WhatToWearPage() {
             </div>
 
             {/* Mid Layer */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🧥</span>
               </div>
@@ -109,7 +109,7 @@ export default function WhatToWearPage() {
               <p className="text-white/70 leading-relaxed mb-6">
                 Insulating layers that trap body heat and provide warmth.
               </p>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Fleece jacket or sweater</li>
                 <li>• Down or synthetic vest</li>
                 <li>• Fleece pants or insulated trousers</li>
@@ -118,7 +118,7 @@ export default function WhatToWearPage() {
             </div>
 
             {/* Outer Layer */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🧥</span>
               </div>
@@ -126,7 +126,7 @@ export default function WhatToWearPage() {
               <p className="text-white/70 leading-relaxed mb-6">
                 Windproof and waterproof shell that protects from the elements.
               </p>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Windproof jacket</li>
                 <li>• Waterproof pants</li>
                 <li>• Insulated winter coat</li>
@@ -149,13 +149,13 @@ export default function WhatToWearPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🥾</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Footwear</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Insulated winter boots</li>
                 <li>• Thick wool socks</li>
                 <li>• Toe warmers</li>
@@ -163,12 +163,12 @@ export default function WhatToWearPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">🧤</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Hands & Head</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Insulated gloves or mittens</li>
                 <li>• Warm hat or balaclava</li>
                 <li>• Hand warmers</li>
@@ -176,12 +176,12 @@ export default function WhatToWearPage() {
               </ul>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">👓</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Accessories</h3>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-white/70 flex-grow">
                 <li>• Sunglasses (snow blindness)</li>
                 <li>• Headlamp with red light</li>
                 <li>• Extra batteries</li>
@@ -205,7 +205,7 @@ export default function WhatToWearPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-semibold text-white">-10°C to 0°C (14°F to 32°F)</h3>
                 <div className="text-2xl font-bold text-blue-400">Mild Cold</div>
@@ -213,7 +213,7 @@ export default function WhatToWearPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-3">Clothing</h4>
-                  <ul className="space-y-2 text-white/70">
+                  <ul className="space-y-2 text-white/70 flex-grow">
                     <li>• Thermal base layer</li>
                     <li>• Fleece jacket</li>
                     <li>• Windproof outer shell</li>
@@ -222,7 +222,7 @@ export default function WhatToWearPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-3">Accessories</h4>
-                  <ul className="space-y-2 text-white/70">
+                  <ul className="space-y-2 text-white/70 flex-grow">
                     <li>• Warm hat</li>
                     <li>• Gloves</li>
                     <li>• Thick socks</li>
@@ -232,7 +232,7 @@ export default function WhatToWearPage() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-semibold text-white">-20°C to -10°C (-4°F to 14°F)</h3>
                 <div className="text-2xl font-bold text-orange-400">Cold</div>
@@ -240,7 +240,7 @@ export default function WhatToWearPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-3">Clothing</h4>
-                  <ul className="space-y-2 text-white/70">
+                  <ul className="space-y-2 text-white/70 flex-grow">
                     <li>• Heavy thermal base layer</li>
                     <li>• Down jacket</li>
                     <li>• Insulated pants</li>
@@ -249,7 +249,7 @@ export default function WhatToWearPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-3">Accessories</h4>
-                  <ul className="space-y-2 text-white/70">
+                  <ul className="space-y-2 text-white/70 flex-grow">
                     <li>• Balaclava or face mask</li>
                     <li>• Insulated mittens</li>
                     <li>• Extra thick socks</li>
@@ -259,7 +259,7 @@ export default function WhatToWearPage() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-semibold text-white">Below -20°C (Below -4°F)</h3>
                 <div className="text-2xl font-bold text-red-400">Extreme Cold</div>
@@ -267,7 +267,7 @@ export default function WhatToWearPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-3">Clothing</h4>
-                  <ul className="space-y-2 text-white/70">
+                  <ul className="space-y-2 text-white/70 flex-grow">
                     <li>• Multiple thermal layers</li>
                     <li>• Heavy down parka</li>
                     <li>• Insulated overalls</li>
@@ -276,7 +276,7 @@ export default function WhatToWearPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-3">Accessories</h4>
-                  <ul className="space-y-2 text-white/70">
+                  <ul className="space-y-2 text-white/70 flex-grow">
                     <li>• Full face protection</li>
                     <li>• Heavy mittens</li>
                     <li>• Multiple sock layers</li>
@@ -305,7 +305,7 @@ export default function WhatToWearPage() {
             <div className="space-y-6">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-3">Before You Go</h3>
-                <ul className="space-y-2 text-white/70">
+                <ul className="space-y-2 text-white/70 flex-grow">
                   <li>• Test your gear in cold conditions</li>
                   <li>• Pack extra layers</li>
                   <li>• Bring backup clothing</li>
@@ -315,7 +315,7 @@ export default function WhatToWearPage() {
 
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-3">During Viewing</h3>
-                <ul className="space-y-2 text-white/70">
+                <ul className="space-y-2 text-white/70 flex-grow">
                   <li>• Keep moving to stay warm</li>
                   <li>• Take breaks in warm places</li>
                   <li>• Stay hydrated</li>
@@ -327,7 +327,7 @@ export default function WhatToWearPage() {
             <div className="space-y-6">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-3">What to Avoid</h3>
-                <ul className="space-y-2 text-white/70">
+                <ul className="space-y-2 text-white/70 flex-grow">
                   <li>• Cotton clothing (retains moisture)</li>
                   <li>• Tight clothing (reduces circulation)</li>
                   <li>• Alcohol (increases heat loss)</li>
@@ -337,7 +337,7 @@ export default function WhatToWearPage() {
 
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-3">Emergency Items</h3>
-                <ul className="space-y-2 text-white/70">
+                <ul className="space-y-2 text-white/70 flex-grow">
                   <li>• Emergency blanket</li>
                   <li>• Hot water bottle</li>
                   <li>• Extra dry clothing</li>

@@ -66,13 +66,13 @@ export default function EquipmentChecklistPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-blue-300 text-xl">👕</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Base Layers</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Merino wool thermal underwear (top & bottom)</li>
                   <li>• Moisture-wicking long-sleeve shirt</li>
                   <li>• Thermal socks (2-3 pairs)</li>
@@ -85,7 +85,7 @@ export default function EquipmentChecklistPage() {
                   <span className="text-green-300 text-xl">🧥</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Insulation Layers</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Fleece jacket or wool sweater</li>
                   <li>• Down or synthetic insulated jacket</li>
                   <li>• Insulated pants or snow pants</li>
@@ -98,7 +98,7 @@ export default function EquipmentChecklistPage() {
                   <span className="text-purple-300 text-xl">🛡️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Outer Shell</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Waterproof/windproof jacket</li>
                   <li>• Waterproof/windproof pants</li>
                   <li>• Insulated winter boots</li>
@@ -121,7 +121,7 @@ export default function EquipmentChecklistPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-red-300 text-xl">📷</span>
@@ -137,7 +137,7 @@ export default function EquipmentChecklistPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-yellow-300 text-xl">🔧</span>
@@ -155,7 +155,7 @@ export default function EquipmentChecklistPage() {
               </div>
               
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-indigo-300 text-xl">⚙️</span>
@@ -172,7 +172,7 @@ export default function EquipmentChecklistPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-emerald-300 text-xl">📱</span>
@@ -202,13 +202,13 @@ export default function EquipmentChecklistPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-orange-300 text-xl">🔥</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Warmth Items</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Hand warmers (disposable or reusable)</li>
                   <li>• Foot warmers</li>
                   <li>• Insulated water bottle</li>
@@ -222,7 +222,7 @@ export default function EquipmentChecklistPage() {
                   <span className="text-cyan-300 text-xl">🪑</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Comfort Items</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Portable chair or sitting pad</li>
                   <li>• Blanket or sleeping bag</li>
                   <li>• Snacks and energy bars</li>
@@ -236,7 +236,7 @@ export default function EquipmentChecklistPage() {
                   <span className="text-violet-300 text-xl">🛡️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Safety Items</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• First aid kit</li>
                   <li>• Emergency whistle</li>
                   <li>• GPS device or compass</li>
@@ -260,7 +260,7 @@ export default function EquipmentChecklistPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-pink-300 text-xl">🎒</span>
@@ -276,7 +276,7 @@ export default function EquipmentChecklistPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-teal-300 text-xl">🌡️</span>
@@ -294,7 +294,7 @@ export default function EquipmentChecklistPage() {
               </div>
               
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-amber-300 text-xl">🚗</span>
@@ -310,7 +310,7 @@ export default function EquipmentChecklistPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-lime-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-lime-300 text-xl">🎯</span>

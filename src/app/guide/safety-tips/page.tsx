@@ -66,13 +66,13 @@ export default function SafetyTipsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-red-300 text-xl">❄️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Hypothermia Prevention</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Dress in layers with moisture-wicking base layers</li>
                   <li>• Stay dry - avoid sweating</li>
                   <li>• Eat high-energy foods regularly</li>
@@ -86,7 +86,7 @@ export default function SafetyTipsPage() {
                   <span className="text-blue-300 text-xl">🧤</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Frostbite Protection</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Keep extremities warm and dry</li>
                   <li>• Use hand and foot warmers</li>
                   <li>• Avoid tight clothing that restricts circulation</li>
@@ -100,7 +100,7 @@ export default function SafetyTipsPage() {
                   <span className="text-green-300 text-xl">🌡️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Temperature Monitoring</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Monitor weather conditions continuously</li>
                   <li>• Know the wind chill factor</li>
                   <li>• Dress for the coldest expected temperature</li>
@@ -124,7 +124,7 @@ export default function SafetyTipsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-purple-300 text-xl">🧭</span>
@@ -140,7 +140,7 @@ export default function SafetyTipsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-yellow-300 text-xl">📍</span>
@@ -158,7 +158,7 @@ export default function SafetyTipsPage() {
               </div>
               
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-indigo-300 text-xl">🌙</span>
@@ -174,7 +174,7 @@ export default function SafetyTipsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-emerald-300 text-xl">🚨</span>
@@ -204,13 +204,13 @@ export default function SafetyTipsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-amber-300 text-xl">🦌</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Wildlife Encounters</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Keep safe distance from reindeer</li>
                   <li>• Avoid approaching wild animals</li>
                   <li>• Store food securely</li>
@@ -224,7 +224,7 @@ export default function SafetyTipsPage() {
                   <span className="text-teal-300 text-xl">🌊</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Water Safety</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Never walk on frozen water alone</li>
                   <li>• Check ice thickness before venturing</li>
                   <li>• Avoid areas with moving water</li>
@@ -238,7 +238,7 @@ export default function SafetyTipsPage() {
                   <span className="text-rose-300 text-xl">🌬️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Weather Hazards</h3>
-                <ul className="text-white/70 font-light space-y-2">
+                <ul className="text-white/70 font-light space-y-2 flex-grow">
                   <li>• Monitor wind conditions</li>
                   <li>• Avoid exposed ridges in storms</li>
                   <li>• Watch for whiteout conditions</li>
@@ -262,7 +262,7 @@ export default function SafetyTipsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-violet-300 text-xl">📷</span>
@@ -278,7 +278,7 @@ export default function SafetyTipsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-lime-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-lime-300 text-xl">🔦</span>
@@ -296,7 +296,7 @@ export default function SafetyTipsPage() {
               </div>
               
               <div className="space-y-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-sky-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-sky-300 text-xl">⏰</span>
@@ -312,7 +312,7 @@ export default function SafetyTipsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center mr-4">
                       <span className="text-orange-300 text-xl">👥</span>
