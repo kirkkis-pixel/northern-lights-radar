@@ -6,10 +6,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center relative">
+                {/* Radar circles */}
+                <div className="absolute inset-1 rounded-full border border-white/30"></div>
+                <div className="absolute inset-2 rounded-full border border-white/20"></div>
+                {/* Center dot */}
+                <div className="w-1 h-1 bg-white/80 rounded-full z-10"></div>
               </div>
               <span className="text-white font-light text-lg">Northern Lights Radar</span>
             </div>
@@ -34,9 +36,17 @@ export default function Footer() {
             <h3 className="text-white font-light text-lg mb-4">Guides</h3>
             <ul className="space-y-2">
               <li><a href="/guide/how-to-see-the-northern-lights" className="text-white/60 hover:text-white transition-colors">How to See</a></li>
-              <li><a href="/guide/photography-tips" className="text-white/60 hover:text-white transition-colors">Photography</a></li>
+              <li><a href="/guide/best-time-to-visit" className="text-white/60 hover:text-white transition-colors">Best Time to Visit</a></li>
+              <li><a href="/guide/ideal-conditions" className="text-white/60 hover:text-white transition-colors">Ideal Conditions</a></li>
+              <li><a href="/guide/where-to-look" className="text-white/60 hover:text-white transition-colors">Where to Look</a></li>
               <li><a href="/guide/what-to-wear" className="text-white/60 hover:text-white transition-colors">What to Wear</a></li>
+              <li><a href="/guide/equipment-checklist" className="text-white/60 hover:text-white transition-colors">Equipment Checklist</a></li>
               <li><a href="/guide/safety-tips" className="text-white/60 hover:text-white transition-colors">Safety Tips</a></li>
+              <li><a href="/guide/perfect-locations" className="text-white/60 hover:text-white transition-colors">Perfect Locations</a></li>
+              <li><a href="/guide/photography-tips" className="text-white/60 hover:text-white transition-colors">Photography Tips</a></li>
+              <li><a href="/guide/camera-settings" className="text-white/60 hover:text-white transition-colors">Camera Settings</a></li>
+              <li><a href="/guide/best-time-in-finland" className="text-white/60 hover:text-white transition-colors">Best Time in Finland</a></li>
+              <li><a href="/guide/aurora-myths" className="text-white/60 hover:text-white transition-colors">Aurora Myths</a></li>
             </ul>
           </div>
 
@@ -65,4 +75,3 @@ export default function Footer() {
     </footer>
   );
 }
-
