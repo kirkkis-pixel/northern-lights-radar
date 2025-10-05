@@ -79,7 +79,7 @@ export default function WhereToLookPage() {
 
         {/* Direction to Look */}
         <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-20">
               <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Direction</span>
@@ -170,7 +170,7 @@ export default function WhereToLookPage() {
 
         {/* Best Viewing Locations */}
         <div className="py-32 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-20">
               <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Locations</span>
@@ -301,7 +301,7 @@ export default function WhereToLookPage() {
 
         {/* What to Avoid */}
         <div className="py-32 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-20">
               <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
                 <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Avoid</span>
@@ -378,12 +378,42 @@ export default function WhereToLookPage() {
           </div>
         </div>
 
+        {/* Call to Action */}
+        <div className="py-24 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-4xl mx-auto px-8 text-center">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Ready to Hunt</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
+              Start Your Aurora Adventure
+            </h2>
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+              Now that you know where to look, explore our comprehensive guides and real-time forecasts to maximize your northern lights experience.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link 
+                href="/guide/how-to-see-the-northern-lights" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
+              >
+                Complete Aurora Guide
+              </Link>
+              <Link 
+                href="/guide/photography-tips" 
+                className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                Photography Tips
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
-        <footer className="bg-black py-16">
-          <div className="max-w-6xl mx-auto px-12">
+        <footer className="bg-slate-900 py-16">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center text-white/40 text-sm font-light">
-              <p>Data from NOAA SWPC (OVATION), SMHI, MET Norway. Times in local timezone.</p>
-              <p className="mt-2">Scores are indicative and depend on weather & darkness conditions.</p>
+              <p>Data from NOAA SWPC (OVATION), Open-Meteo. Times in local timezone.</p>
+              <p className="mt-2">Real-time aurora forecasts for Lapland destinations.</p>
             </div>
           </div>
         </footer>

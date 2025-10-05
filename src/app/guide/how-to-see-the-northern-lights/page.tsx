@@ -58,7 +58,7 @@ export default function HowToSeeNorthernLightsPage() {
 
       {/* Introduction */}
       <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
               Your First Aurora Experience
@@ -72,7 +72,7 @@ export default function HowToSeeNorthernLightsPage() {
 
       {/* Step-by-Step Guide */}
       <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
               Step-by-Step Guide
@@ -273,7 +273,7 @@ export default function HowToSeeNorthernLightsPage() {
 
       {/* What to Expect */}
       <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
               What to Expect
@@ -319,7 +319,7 @@ export default function HowToSeeNorthernLightsPage() {
 
       {/* Tips for Success */}
       <div className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
               Tips for Success
@@ -379,30 +379,43 @@ export default function HowToSeeNorthernLightsPage() {
 
       {/* Call to Action */}
       <div className="py-24 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+        <div className="max-w-4xl mx-auto px-8 text-center">
+          <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+            <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Ready to Hunt</span>
+          </div>
+          <h2 className="text-5xl font-thin text-white mb-8">
             Ready to See the Aurora?
           </h2>
-          <p className="text-xl text-white/70 font-light leading-relaxed mb-12">
+          <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed mb-12">
             Check live conditions and start planning your northern lights adventure today.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
               href="/"
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
             >
               Check Live Conditions
             </Link>
             <Link 
-              href="/guide"
-              className="px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              href="/guide/photography-tips"
+              className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
             >
-              More Guides
+              Photography Tips
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 py-16">
+        <div className="max-w-4xl mx-auto px-8">
+          <div className="text-center text-white/40 text-sm font-light">
+            <p>Data from NOAA SWPC (OVATION), Open-Meteo. Times in local timezone.</p>
+            <p className="mt-2">Real-time aurora forecasts for Lapland destinations.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
