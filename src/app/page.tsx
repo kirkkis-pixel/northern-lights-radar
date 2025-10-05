@@ -118,13 +118,13 @@ export default function HomePage() {
                 <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/10 transform -translate-x-1/2"></div>
                 {/* Horizontal Line */}
                 <div className="absolute left-0 right-0 top-1/2 h-px bg-white/10 transform -translate-y-1/2"></div>
-                {/* Diagonal Lines - Constrained to circle */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <div className="absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="absolute top-0 left-1/2 w-px h-full bg-white/5 transform -translate-x-1/2 rotate-45 origin-top"></div>
-                    <div className="absolute top-0 left-1/2 w-px h-full bg-white/5 transform -translate-x-1/2 -rotate-45 origin-top"></div>
-                  </div>
-                </div>
+                {/* Diagonal Lines - SVG for perfect edge-to-edge */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+                  {/* Diagonal from top-left to bottom-right */}
+                  <line x1="0" y1="0" x2="100" y2="100" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5"/>
+                  {/* Diagonal from top-right to bottom-left */}
+                  <line x1="100" y1="0" x2="0" y2="100" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5"/>
+                </svg>
               </div>
             </div>
           </div>
