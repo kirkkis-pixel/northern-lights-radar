@@ -3,9 +3,25 @@ import RegionalNavigation from '@/components/RegionalNavigation';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Perfect Aurora Locations in Lapland - Northern Lights Radar',
-  description: 'Discover the best aurora viewing locations across Finnish, Swedish, and Norwegian Lapland. Expert recommendations for optimal aurora hunting spots.',
-  keywords: 'aurora locations, northern lights spots, Lapland viewing locations, aurora hunting spots, Finland aurora, Sweden aurora, Norway aurora',
+  title: 'Perfect Aurora Locations in Lapland - Top Viewing Spots',
+  description: 'Discover the best aurora viewing locations across Finnish, Swedish, and Norwegian Lapland. Expert recommendations for optimal aurora hunting spots with detailed location guides, accessibility information, and viewing tips.',
+  keywords: 'aurora locations, northern lights spots, Lapland viewing locations, aurora hunting spots, Finland aurora, Sweden aurora, Norway aurora, best aurora locations, aurora viewing spots',
+  openGraph: {
+    title: 'Perfect Aurora Locations in Lapland - Top Viewing Spots',
+    description: 'Discover the best aurora viewing locations across Finnish, Swedish, and Norwegian Lapland.',
+    type: 'article',
+    locale: 'en_US',
+    url: 'https://northernlightsradar.com/guide/perfect-locations',
+    siteName: 'Northern Lights Radar',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Perfect Aurora Locations in Lapland - Top Viewing Spots',
+    description: 'Discover the best aurora viewing locations across Finnish, Swedish, and Norwegian Lapland.',
+  },
+  alternates: {
+    canonical: 'https://northernlightsradar.com/guide/perfect-locations',
+  },
 };
 
 export default function PerfectLocationsPage() {
@@ -15,22 +31,26 @@ export default function PerfectLocationsPage() {
         <RegionalNavigation />
         
         {/* Hero Section */}
-        <div className="relative py-32 bg-gradient-to-b from-black via-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Perfect Locations</span>
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          </div>
+          
+          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-24">
+            <div className="mb-16">
+              <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Top Spots</span>
               </div>
-              <h1 className="text-5xl font-thin text-white mb-8">
-                Perfect Aurora Locations in Lapland
+              <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+                <div className="text-white mb-2">Perfect Aurora</div>
+                <div className="text-cyan-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                  Locations
+                </div>
               </h1>
-              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
-                Discover the most spectacular aurora viewing locations across Finnish, Swedish, and Norwegian Lapland. 
-                From remote wilderness areas to accessible viewing platforms, find your perfect aurora hunting spot.
+              <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+                Top viewing spots in Lapland for optimal aurora hunting experiences
               </p>
             </div>
           </div>
