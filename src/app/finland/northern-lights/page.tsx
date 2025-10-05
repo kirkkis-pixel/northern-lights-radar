@@ -176,7 +176,7 @@ export default function FinlandPage() {
             <div className="relative overflow-hidden rounded-3xl group">
               <img 
                 src="https://images.unsplash.com/photo-1488415032361-b7e238421f1b?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Aurora Borealis dancing over Finnish Lapland's pristine winter landscape with snow-covered fells and frozen lakes"
+                alt="Aurora Borealis dancing over Finnish Lapland&apos;s pristine winter landscape with snow-covered fells and frozen lakes"
                 className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -186,7 +186,7 @@ export default function FinlandPage() {
                               Welcome to Finnish Lapland
                             </h2>
                   <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
-                    The northernmost region of Finland, spanning across the Arctic Circle and offering some of the world's most spectacular aurora viewing opportunities.
+                    The northernmost region of Finland, spanning across the Arctic Circle and offering some of the world&apos;s most spectacular aurora viewing opportunities.
                   </p>
                 </div>
               </div>
@@ -355,7 +355,7 @@ export default function FinlandPage() {
                 Why Finnish Lapland is Perfect for Aurora Viewing
               </h2>
               <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Finland offers unique advantages that make it one of the world's premier aurora destinations
+                Finland offers unique advantages that make it one of the world&apos;s premier aurora destinations
               </p>
             </div>
             
@@ -386,7 +386,7 @@ export default function FinlandPage() {
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Stable Climate</h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  Finland's continental climate provides more stable weather patterns compared to coastal areas, resulting in clearer skies and better aurora viewing conditions.
+                  Finland&apos;s continental climate provides more stable weather patterns compared to coastal areas, resulting in clearer skies and better aurora viewing conditions.
                 </p>
               </div>
               
@@ -470,7 +470,7 @@ export default function FinlandPage() {
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
                   The optimal time for aurora viewing in Finland is from late September to early April, 
-                  with peak season from December to March. Finnish Lapland offers some of the world's 
+                  with peak season from December to March. Finnish Lapland offers some of the world&apos;s 
                   best aurora viewing conditions, particularly in Rovaniemi and Ivalo. The best viewing 
                   hours are typically between 9 PM and 1 AM, when the sky is darkest and aurora activity 
                   is most likely to occur.
@@ -485,7 +485,7 @@ export default function FinlandPage() {
                 <p className="text-white/70 font-light leading-relaxed">
                   Finnish Lapland is renowned for its pristine wilderness with minimal light pollution, 
                   stable continental climate that provides clearer skies, and optimal latitude positioning 
-                  within the auroral oval. The region's unique fell landscapes provide elevated viewing 
+                  within the auroral oval. The region&apos;s unique fell landscapes provide elevated viewing 
                   points and dramatic backdrops for aurora photography. Additionally, Finland offers 
                   world-class aurora tourism infrastructure including glass igloos and specialized viewing platforms.
                 </p>
@@ -498,7 +498,7 @@ export default function FinlandPage() {
                 </h3>
                 <p className="text-white/70 font-light leading-relaxed">
                   Finnish Lapland offers diverse landscapes perfect for aurora photography, including 
-                  frozen lakes, snow-covered forests, and dramatic fell backdrops. The region's 
+                  frozen lakes, snow-covered forests, and dramatic fell backdrops. The region&apos;s 
                   minimal light pollution and clear atmospheric conditions create ideal conditions for 
                   capturing vibrant aurora colors. Popular photography locations include Lake Inari, 
                   the fells around Rovaniemi, and the wilderness areas around Ivalo. The long winter 

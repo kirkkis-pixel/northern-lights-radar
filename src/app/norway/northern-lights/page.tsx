@@ -164,7 +164,7 @@ export default function NorwayNorthernLightsPage() {
           <div className="relative overflow-hidden rounded-3xl group">
             <img 
               src="https://images.unsplash.com/photo-1494243762909-b498c7e440a9?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Aurora Borealis dancing over Norwegian Lapland's pristine winter landscape with snow-covered mountains and fjords"
+              alt="Aurora Borealis dancing over Norwegian Lapland&apos;s pristine winter landscape with snow-covered mountains and fjords"
               className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -174,7 +174,7 @@ export default function NorwayNorthernLightsPage() {
                   Welcome to Norwegian Lapland
                 </h2>
                 <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
-                  The northernmost region of Norway, spanning across the Arctic Circle and offering some of the world's most spectacular aurora viewing opportunities.
+                  The northernmost region of Norway, spanning across the Arctic Circle and offering some of the world&apos;s most spectacular aurora viewing opportunities.
                 </p>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function NorwayNorthernLightsPage() {
               Why Norwegian Lapland is Perfect for Aurora Viewing
             </h2>
             <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-              Norway offers unique advantages that make it one of the world's premier aurora destinations
+              Norway offers unique advantages that make it one of the world&apos;s premier aurora destinations
             </p>
           </div>
           
@@ -353,7 +353,7 @@ export default function NorwayNorthernLightsPage() {
               </div>
               <h3 className="text-xl font-light text-white mb-4">Arctic Capital</h3>
               <p className="text-white/70 font-light leading-relaxed">
-                Tromsø is the world's northernmost city with over 100,000 inhabitants, offering urban comfort with excellent aurora viewing.
+                Tromsø is the world&apos;s northernmost city with over 100,000 inhabitants, offering urban comfort with excellent aurora viewing.
               </p>
             </div>
             
@@ -457,7 +457,7 @@ export default function NorwayNorthernLightsPage() {
               </h3>
               <p className="text-white/70 font-light leading-relaxed">
                 The optimal time for aurora viewing in Norway is from late September to early April, 
-                with peak season from December to March. Norwegian Lapland offers some of the world's 
+                with peak season from December to March. Norwegian Lapland offers some of the world&apos;s 
                 best aurora viewing conditions, particularly in Tromsø and Alta. The best viewing 
                 hours are typically between 9 PM and 1 AM, when the sky is darkest and aurora activity 
                 is most likely to occur.
@@ -472,7 +472,7 @@ export default function NorwayNorthernLightsPage() {
               <p className="text-white/70 font-light leading-relaxed">
                 Norwegian Lapland is renowned for its pristine wilderness with minimal light pollution, 
                 stable continental climate that provides clearer skies, and optimal latitude positioning 
-                within the auroral oval. The region's unique fjord landscapes provide dramatic backdrops 
+                within the auroral oval. The region&apos;s unique fjord landscapes provide dramatic backdrops 
                 for aurora photography. Additionally, Norway offers world-class aurora tourism 
                 infrastructure including glass igloos and specialized viewing platforms.
               </p>
@@ -485,7 +485,7 @@ export default function NorwayNorthernLightsPage() {
               </h3>
               <p className="text-white/70 font-light leading-relaxed">
                 Norwegian Lapland offers diverse landscapes perfect for aurora photography, including 
-                frozen fjords, snow-covered mountains, and dramatic coastal backdrops. The region's 
+                frozen fjords, snow-covered mountains, and dramatic coastal backdrops. The region&apos;s 
                 minimal light pollution and clear atmospheric conditions create ideal conditions for 
                 capturing vibrant aurora colors. Popular photography locations include Tromsø's fjords, 
                 the mountains around Alta, and the wilderness areas around Svalbard. The long winter 

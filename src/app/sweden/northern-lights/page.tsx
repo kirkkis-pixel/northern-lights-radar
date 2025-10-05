@@ -164,7 +164,7 @@ export default function SwedenNorthernLightsPage() {
           <div className="relative overflow-hidden rounded-3xl group">
             <img 
               src="https://images.unsplash.com/photo-1526644253653-a411eaafdfe6?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Aurora Borealis dancing over Swedish Lapland's pristine winter landscape with snow-covered mountains and frozen lakes"
+              alt="Aurora Borealis dancing over Swedish Lapland&apos;s pristine winter landscape with snow-covered mountains and frozen lakes"
               className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -174,7 +174,7 @@ export default function SwedenNorthernLightsPage() {
                   Welcome to Swedish Lapland
                 </h2>
                 <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
-                  The northernmost region of Sweden, spanning across the Arctic Circle and offering some of the world's most spectacular aurora viewing opportunities.
+                  The northernmost region of Sweden, spanning across the Arctic Circle and offering some of the world&apos;s most spectacular aurora viewing opportunities.
                 </p>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function SwedenNorthernLightsPage() {
               Why Swedish Lapland is Perfect for Aurora Viewing
             </h2>
             <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-              Sweden offers unique advantages that make it one of the world's premier aurora destinations
+              Sweden offers unique advantages that make it one of the world&apos;s premier aurora destinations
             </p>
           </div>
           
@@ -353,7 +353,7 @@ export default function SwedenNorthernLightsPage() {
               </div>
               <h3 className="text-xl font-light text-white mb-4">Aurora Sky Station</h3>
               <p className="text-white/70 font-light leading-relaxed">
-                The world's most accessible aurora viewing station, offering guided tours and the highest success rate for seeing the northern lights.
+                The world&apos;s most accessible aurora viewing station, offering guided tours and the highest success rate for seeing the northern lights.
               </p>
             </div>
             
@@ -457,7 +457,7 @@ export default function SwedenNorthernLightsPage() {
               </h3>
               <p className="text-white/70 font-light leading-relaxed">
                 The optimal time for aurora viewing in Sweden is from late September to early April, 
-                with peak season from December to March. Swedish Lapland offers some of the world's 
+                with peak season from December to March. Swedish Lapland offers some of the world&apos;s 
                 best aurora viewing conditions, particularly in Abisko and Kiruna. The best viewing 
                 hours are typically between 9 PM and 1 AM, when the sky is darkest and aurora activity 
                 is most likely to occur.
@@ -472,7 +472,7 @@ export default function SwedenNorthernLightsPage() {
               <p className="text-white/70 font-light leading-relaxed">
                 Swedish Lapland is renowned for its pristine wilderness with minimal light pollution, 
                 stable continental climate that provides clearer skies, and optimal latitude positioning 
-                within the auroral oval. The region's unique microclimate in Abisko creates clear skies 
+                within the auroral oval. The region&apos;s unique microclimate in Abisko creates clear skies 
                 even when surrounding areas are cloudy. Additionally, Sweden offers world-class aurora 
                 tourism infrastructure including the Aurora Sky Station and Icehotel.
               </p>
@@ -485,7 +485,7 @@ export default function SwedenNorthernLightsPage() {
               </h3>
               <p className="text-white/70 font-light leading-relaxed">
                 Swedish Lapland offers diverse landscapes perfect for aurora photography, including 
-                frozen lakes, snow-covered mountains, and dramatic fell backdrops. The region's 
+                frozen lakes, snow-covered mountains, and dramatic fell backdrops. The region&apos;s 
                 minimal light pollution and clear atmospheric conditions create ideal conditions for 
                 capturing vibrant aurora colors. Popular photography locations include Lake Torneträsk, 
                 the mountains around Abisko, and the wilderness areas around Kiruna. The long winter 
