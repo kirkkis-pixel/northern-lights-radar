@@ -26,13 +26,6 @@ const getCountryFlag = (country: string) => {
   }
 };
 
-const getScoreColor = (score: number) => {
-  if (score >= 80) return 'text-green-400';
-  if (score >= 60) return 'text-blue-400';
-  if (score >= 40) return 'text-yellow-400';
-  if (score >= 20) return 'text-orange-400';
-  return 'text-red-400';
-};
 
 const getScoreBadge = (score: number) => {
   if (score >= 80) return 'Excellent';
@@ -42,20 +35,6 @@ const getScoreBadge = (score: number) => {
   return 'Poor';
 };
 
-const formatDarkness = (dark: number) => {
-  if (dark > 0.8) return 'Deep Darkness';
-  if (dark > 0.5) return 'Dark';
-  if (dark > 0.2) return 'Twilight';
-  return 'Daylight';
-};
-
-const formatMoon = (moon: number) => {
-  if (moon > 0.8) return 'New Moon';
-  if (moon > 0.6) return 'Crescent';
-  if (moon > 0.4) return 'Half Moon';
-  if (moon > 0.2) return 'Gibbous';
-  return 'Full Moon';
-};
 
 const getTemperatureColor = (temp: number) => {
   if (temp <= -20) return 'text-blue-300';
@@ -107,7 +86,6 @@ export default async function SSRCityCard({ city }: SSRCityCardProps) {
     error = true;
   }
 
-  const score = auroraData?.score ?? 0;
   const kp = auroraData?.kp ?? 0;
   const prob = auroraData?.prob ?? 0;
   const cloudPct = auroraData?.cloudPct ?? 100;

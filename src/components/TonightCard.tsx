@@ -1,7 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { AuroraNow } from '@/lib/aurora-now';
+
+interface WeatherData {
+  temperature: number;
+  humidity: number;
+  windSpeed: number;
+  visibility: number;
+}
 
 interface TonightCardProps {
   latitude?: number;
@@ -17,15 +24,15 @@ export default function TonightCard({
   description = 'Gateway to Lapland'
 }: TonightCardProps) {
   const [auroraData, setAuroraData] = useState<AuroraNow | null>(null);
-  const [weatherData, setWeatherData] = useState<any>(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchAuroraData();
-  }, [latitude, longitude]);
+  }, [latitude, longitude, fetchAuroraData]);
 
-  const fetchAuroraData = async () => {
+  const fetchAuroraData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -55,7 +62,7 @@ export default function TonightCard({
     } finally {
       setLoading(false);
     }
-  };
+  }, [latitude, longitude]);
 
   const getScoreBadge = (score: number) => {
     if (score >= 80) return 'Excellent';

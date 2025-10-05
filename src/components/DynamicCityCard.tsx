@@ -191,7 +191,7 @@ export default function DynamicCityCard({ city }: DynamicCityCardProps) {
     );
   }
 
-  const { weather, aurora, moonPhase, moonIllumination, isDark } = weatherData;
+  const { weather, aurora, moonIllumination, isDark } = weatherData;
 
   return (
     <Link
