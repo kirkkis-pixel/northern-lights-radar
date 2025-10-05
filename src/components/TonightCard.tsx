@@ -10,6 +10,21 @@ interface WeatherData {
   visibility: number;
 }
 
+interface AuroraForecast {
+  time: string;
+  probability: number;
+  kp: number;
+}
+
+interface HotspotLocation {
+  name: string;
+  country: string;
+  lat: number;
+  lon: number;
+  currentScore: number;
+  forecast: AuroraForecast[];
+}
+
 interface TonightCardProps {
   latitude?: number;
   longitude?: number;
@@ -28,6 +43,63 @@ export default function TonightCard({
   const [error, setError] = useState<string | null>(null);
   const [userLocation, setUserLocation] = useState<{lat: number, lon: number, city: string} | null>(null);
   const [locationPermission, setLocationPermission] = useState<'granted' | 'denied' | 'prompting' | 'unknown'>('unknown');
+  const [hotspots, setHotspots] = useState<HotspotLocation[]>([]);
+  const [currentHotspotIndex, setCurrentHotspotIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
+  }, []);
+
+  const fetchTopHotspots = useCallback(async () => {
+    // Top aurora viewing locations in Lapland
+    const topLocations = [
+      { name: 'Tromsø', country: 'Norway', lat: 69.6492, lon: 18.9553 },
+      { name: 'Rovaniemi', country: 'Finland', lat: 66.5039, lon: 25.7294 },
+      { name: 'Abisko', country: 'Sweden', lat: 68.3498, lon: 18.8314 },
+      { name: 'Kiruna', country: 'Sweden', lat: 67.8558, lon: 20.2253 },
+      { name: 'Ivalo', country: 'Finland', lat: 68.6593, lon: 27.5389 },
+      { name: 'Alta', country: 'Norway', lat: 69.9689, lon: 23.2717 }
+    ];
+
+    try {
+      const hotspotPromises = topLocations.map(async (location) => {
+        // Fetch current aurora data
+        const auroraResponse = await fetch(`/api/aurora-now?lat=${location.lat}&lon=${location.lon}`);
+        const auroraData = auroraResponse.ok ? await auroraResponse.json() : null;
+        
+        // Generate 6-hour forecast (simplified - in real app would fetch from forecast API)
+        const forecast: AuroraForecast[] = [];
+        const now = new Date();
+        for (let i = 0; i < 6; i++) {
+          const hour = new Date(now.getTime() + i * 60 * 60 * 1000);
+          // Simulate forecast data (would be real forecast API)
+          const baseProb = auroraData?.prob || 0;
+          const variation = Math.sin(i * 0.5) * 20; // Simulate hourly variation
+          forecast.push({
+            time: hour.toLocaleTimeString('en-US', { hour: '2-digit', hour12: false }),
+            probability: Math.max(0, Math.min(100, baseProb + variation)),
+            kp: auroraData?.kp || 0
+          });
+        }
+
+        return {
+          name: location.name,
+          country: location.country,
+          lat: location.lat,
+          lon: location.lon,
+          currentScore: auroraData?.score || 0,
+          forecast
+        };
+      });
+
+      const hotspotsData = await Promise.all(hotspotPromises);
+      // Sort by current score (best first)
+      hotspotsData.sort((a, b) => b.currentScore - a.currentScore);
+      setHotspots(hotspotsData);
+    } catch (error) {
+      console.error('Failed to fetch hotspots:', error);
+    }
+  }, []);
 
   const getCurrentLocation = useCallback(async () => {
     if (!navigator.geolocation) {
@@ -109,9 +181,34 @@ export default function TonightCard({
     }
   }, [latitude, longitude, cityName]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    
+    const distance = touchStartX - touchEndX;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentHotspotIndex < hotspots.length - 1) {
+      setCurrentHotspotIndex(currentHotspotIndex + 1);
+    }
+    if (isRightSwipe && currentHotspotIndex > 0) {
+      setCurrentHotspotIndex(currentHotspotIndex - 1);
+    }
+  };
+
   useEffect(() => {
-    // Try to get user's location first
-    const initializeLocation = async () => {
+    // Initialize hotspots and user location
+    const initializeData = async () => {
+      await fetchTopHotspots();
+      
       const location = await getCurrentLocation();
       if (location) {
         setUserLocation(location);
@@ -122,8 +219,8 @@ export default function TonightCard({
       }
     };
     
-    initializeLocation();
-  }, [getCurrentLocation, fetchAuroraData]);
+    initializeData();
+  }, [getCurrentLocation, fetchAuroraData, fetchTopHotspots]);
 
   const getScoreBadge = (score: number) => {
     if (score >= 80) return 'Excellent';
@@ -189,19 +286,33 @@ export default function TonightCard({
   const badge = getScoreBadge(score);
   const badgeColorClass = getBadgeColorClass(badge);
 
+  const currentHotspot = hotspots[currentHotspotIndex];
+
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20 max-w-md mx-auto">
+    <div 
+      className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20 max-w-md mx-auto"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="text-center mb-6">
         <h3 className="text-xl font-light text-gray-900 mb-2">
-          Tonight&apos;s Aurora Conditions
+          Top Aurora Hotspots
         </h3>
         <div className="flex items-center justify-center space-x-2 mb-2">
           <p className="text-sm text-gray-500 font-light">
-            {userLocation ? userLocation.city : cityName}
+            {currentHotspot ? `${currentHotspot.name}, ${currentHotspot.country}` : 'Loading...'}
           </p>
-          {locationPermission === 'granted' && (
-            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-          )}
+          <div className="flex space-x-1">
+            {hotspots.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentHotspotIndex ? 'bg-blue-500' : 'bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
         </div>
         {locationPermission === 'denied' && (
           <button
@@ -219,13 +330,41 @@ export default function TonightCard({
         )}
       </div>
       
-      <div className="text-center mb-8">
-        <div className="text-6xl font-extralight text-gray-900 mb-2">
-          {score}
+      <div className="text-center mb-6">
+        <div className="text-5xl font-extralight text-gray-900 mb-2">
+          {currentHotspot ? currentHotspot.currentScore : score}
         </div>
-        <div className={`inline-block px-6 py-2 rounded-full text-sm font-medium ${badgeColorClass}`}>
-          {badge}
+        <div className={`inline-block px-4 py-1 rounded-full text-sm font-medium ${badgeColorClass}`}>
+          {currentHotspot ? getScoreBadge(currentHotspot.currentScore) : badge}
         </div>
+      </div>
+      
+      {/* 6-Hour Aurora Timeline */}
+      {currentHotspot && (
+        <div className="mb-6">
+          <h4 className="text-sm font-medium text-gray-700 mb-3 text-center">6-Hour Forecast</h4>
+          <div className="flex justify-between items-end space-x-1 h-16">
+            {currentHotspot.forecast.map((hour, index) => (
+              <div key={index} className="flex flex-col items-center flex-1">
+                <div 
+                  className="w-full rounded-t transition-all duration-300 hover:opacity-80"
+                  style={{
+                    height: `${Math.max(8, (hour.probability / 100) * 48)}px`,
+                    backgroundColor: hour.probability > 70 ? '#10b981' : 
+                                   hour.probability > 40 ? '#3b82f6' : 
+                                   hour.probability > 20 ? '#f59e0b' : '#ef4444'
+                  }}
+                />
+                <div className="text-xs text-gray-500 mt-1">{hour.time}</div>
+                <div className="text-xs font-medium text-gray-700">{hour.probability}%</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <div className="text-center text-xs text-gray-500 mb-4">
+        Swipe to explore other hotspots
       </div>
       
       <div className="grid grid-cols-2 gap-6 text-center">
