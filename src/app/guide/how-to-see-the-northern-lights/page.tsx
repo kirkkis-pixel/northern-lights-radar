@@ -3,30 +3,21 @@ import Link from 'next/link';
 import RegionalNavigation from '@/components/RegionalNavigation';
 
 export const metadata: Metadata = {
-  title: 'How to See the Northern Lights - Complete Guide',
-  description: 'Learn how to see the northern lights with our complete guide. Essential tips for first-time aurora viewers, including when to go, where to look, and what to expect.',
-  keywords: 'how to see northern lights, aurora viewing guide, northern lights tips, aurora borealis guide',
+  title: 'How to See the Northern Lights - Complete Beginner Guide',
+  description: 'Learn how to see the northern lights with our comprehensive beginner guide. Essential tips for first-time aurora viewers, including optimal timing, locations, weather conditions, and what to expect during your aurora hunting adventure.',
+  keywords: 'how to see northern lights, aurora viewing guide, northern lights tips, aurora borealis guide, beginner aurora guide, northern lights for beginners',
   openGraph: {
-    title: 'How to See the Northern Lights - Complete Guide',
-    description: 'Learn how to see the northern lights with our complete guide.',
-    type: 'website',
+    title: 'How to See the Northern Lights - Complete Beginner Guide',
+    description: 'Learn how to see the northern lights with our comprehensive beginner guide.',
+    type: 'article',
     locale: 'en_US',
     url: 'https://northernlightsradar.com/guide/how-to-see-the-northern-lights',
     siteName: 'Northern Lights Radar',
-    images: [
-      {
-        url: '/og-image.svg',
-        width: 1200,
-        height: 630,
-        alt: 'How to See the Northern Lights - Complete Guide',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How to See the Northern Lights - Complete Guide',
-    description: 'Learn how to see the northern lights with our complete guide.',
-    images: ['/og-image.svg'],
+    title: 'How to See the Northern Lights - Complete Beginner Guide',
+    description: 'Learn how to see the northern lights with our comprehensive beginner guide.',
   },
   alternates: {
     canonical: 'https://northernlightsradar.com/guide/how-to-see-the-northern-lights',
@@ -40,17 +31,26 @@ export default function HowToSeeNorthernLightsPage() {
       <RegionalNavigation />
       
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-20 md:pt-40 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
-              How to See the
-              <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+      <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-24">
+          <div className="mb-16">
+            <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Complete Guide</span>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+              <div className="text-white mb-2">How to See the</div>
+              <div className="text-cyan-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Northern Lights
-              </span>
+              </div>
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed">
-              Complete guide for first-time aurora viewers. Learn when, where, and how to see the northern lights with expert tips and advice.
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+              Your complete beginner guide to experiencing the magical aurora borealis
             </p>
           </div>
         </div>
