@@ -49,30 +49,26 @@ export default function TonightCard({
   const [touchEndX, setTouchEndX] = useState(0);
 
   const fetchTopHotspots = useCallback(async () => {
-    // Top aurora viewing locations in Lapland
-    const topLocations = [
-      { name: 'Tromsø', country: 'Norway', lat: 69.6492, lon: 18.9553 },
-      { name: 'Rovaniemi', country: 'Finland', lat: 66.5039, lon: 25.7294 },
-      { name: 'Abisko', country: 'Sweden', lat: 68.3498, lon: 18.8314 },
-      { name: 'Kiruna', country: 'Sweden', lat: 67.8558, lon: 20.2253 },
-      { name: 'Ivalo', country: 'Finland', lat: 68.6593, lon: 27.5389 },
-      { name: 'Alta', country: 'Norway', lat: 69.9689, lon: 23.2717 }
-    ];
-
+    // Import cities data to get all available cities
+    const citiesData = await import('@/data/cities.json');
+    const allCities = citiesData.default.cities;
+    
+    // Take a sample of cities and fetch their aurora data
+    const sampleCities = allCities.slice(0, 12); // Get first 12 cities for performance
+    
     try {
-      const hotspotPromises = topLocations.map(async (location) => {
+      const hotspotPromises = sampleCities.map(async (city) => {
         // Fetch current aurora data
-        const auroraResponse = await fetch(`/api/aurora-now?lat=${location.lat}&lon=${location.lon}`);
+        const auroraResponse = await fetch(`/api/aurora-now?lat=${city.latitude}&lon=${city.longitude}`);
         const auroraData = auroraResponse.ok ? await auroraResponse.json() : null;
         
-        // Generate 6-hour forecast (simplified - in real app would fetch from forecast API)
+        // Generate 6-hour forecast (simplified)
         const forecast: AuroraForecast[] = [];
         const now = new Date();
         for (let i = 0; i < 6; i++) {
           const hour = new Date(now.getTime() + i * 60 * 60 * 1000);
-          // Simulate forecast data (would be real forecast API)
           const baseProb = auroraData?.prob || 0;
-          const variation = Math.sin(i * 0.5) * 20; // Simulate hourly variation
+          const variation = Math.sin(i * 0.5) * 15; // Simulate hourly variation
           forecast.push({
             time: hour.toLocaleTimeString('en-US', { hour: '2-digit', hour12: false }),
             probability: Math.max(0, Math.min(100, baseProb + variation)),
@@ -81,19 +77,19 @@ export default function TonightCard({
         }
 
         return {
-          name: location.name,
-          country: location.country,
-          lat: location.lat,
-          lon: location.lon,
+          name: city.name,
+          country: city.country,
+          lat: city.latitude,
+          lon: city.longitude,
           currentScore: auroraData?.score || 0,
           forecast
         };
       });
 
       const hotspotsData = await Promise.all(hotspotPromises);
-      // Sort by current score (best first)
+      // Sort by current score (best first) and take top 3
       hotspotsData.sort((a, b) => b.currentScore - a.currentScore);
-      setHotspots(hotspotsData);
+      setHotspots(hotspotsData.slice(0, 3));
     } catch (error) {
       console.error('Failed to fetch hotspots:', error);
     }
@@ -288,136 +284,97 @@ export default function TonightCard({
 
   return (
     <div 
-      className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20 max-w-md mx-auto"
+      className="bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-white/30 max-w-sm mx-auto relative overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="text-center mb-6">
-        <h3 className="text-xl font-light text-gray-900 mb-2">
-          Top Aurora Hotspots
-        </h3>
-        <div className="flex items-center justify-center space-x-2 mb-2">
-          <p className="text-sm text-gray-500 font-light">
-            {currentHotspot ? `${currentHotspot.name}, ${currentHotspot.country}` : 'Loading...'}
-          </p>
-          <div className="flex space-x-1">
+      {/* Animated background elements */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-xl"></div>
+      <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-purple-400/20 to-pink-500/20 rounded-full blur-lg"></div>
+      
+      <div className="relative z-10">
+        {/* Header */}
+        <div className="text-center mb-4">
+          <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-400/30 mb-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2"></div>
+            <span className="text-xs font-medium text-gray-700">Live Aurora Hotspots</span>
+          </div>
+          <div className="flex items-center justify-center space-x-2">
+            <h3 className="text-lg font-semibold text-gray-900">
+              {currentHotspot ? currentHotspot.name : 'Loading...'}
+            </h3>
+            {currentHotspot && (
+              <span className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-600">
+                {currentHotspot.country}
+              </span>
+            )}
+          </div>
+          {/* Swipe indicators */}
+          <div className="flex justify-center space-x-1 mt-2">
             {hotspots.map((_, index) => (
               <div
                 key={index}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentHotspotIndex ? 'bg-blue-500' : 'bg-gray-300'
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentHotspotIndex ? 'bg-blue-500 scale-125' : 'bg-gray-300'
                 }`}
               />
             ))}
           </div>
         </div>
-        {locationPermission === 'denied' && (
-          <button
-            onClick={async () => {
-              const location = await getCurrentLocation();
-              if (location) {
-                setUserLocation(location);
-                await fetchAuroraData(location.lat, location.lon, location.city);
-              }
-            }}
-            className="text-xs text-blue-600 hover:text-blue-800 underline"
-          >
-            Use my location
-          </button>
+        
+        {/* Main Score */}
+        <div className="text-center mb-4">
+          <div className="relative inline-block">
+            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {currentHotspot ? currentHotspot.currentScore : '--'}
+            </div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse"></div>
+          </div>
+          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mt-1 ${
+            currentHotspot ? getBadgeColorClass(getScoreBadge(currentHotspot.currentScore)) : 'bg-gray-200 text-gray-600'
+          }`}>
+            {currentHotspot ? getScoreBadge(currentHotspot.currentScore) : 'Loading'}
+          </div>
+        </div>
+        
+        {/* Compact Timeline */}
+        {currentHotspot && (
+          <div className="mb-4">
+            <div className="flex justify-between items-end space-x-1 h-12 bg-gray-50/50 rounded-lg p-2">
+              {currentHotspot.forecast.map((hour, index) => (
+                <div key={index} className="flex flex-col items-center flex-1">
+                  <div 
+                    className="w-full rounded-sm transition-all duration-300 hover:opacity-80"
+                    style={{
+                      height: `${Math.max(4, (hour.probability / 100) * 32)}px`,
+                      backgroundColor: hour.probability > 70 ? '#10b981' : 
+                                     hour.probability > 40 ? '#3b82f6' : 
+                                     hour.probability > 20 ? '#f59e0b' : '#ef4444'
+                    }}
+                  />
+                  <div className="text-xs text-gray-500 mt-1 font-medium">{hour.time}</div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-2">
+              <span className="text-xs text-gray-500">Peak: {Math.max(...currentHotspot.forecast.map(h => h.probability))}% at {currentHotspot.forecast.find(h => h.probability === Math.max(...currentHotspot.forecast.map(h => h.probability)))?.time}</span>
+            </div>
+          </div>
         )}
-      </div>
-      
-      <div className="text-center mb-6">
-        <div className="text-5xl font-extralight text-gray-900 mb-2">
-          {currentHotspot ? currentHotspot.currentScore : score}
-        </div>
-        <div className={`inline-block px-4 py-1 rounded-full text-sm font-medium ${badgeColorClass}`}>
-          {currentHotspot ? getScoreBadge(currentHotspot.currentScore) : badge}
-        </div>
-      </div>
-      
-      {/* 6-Hour Aurora Timeline */}
-      {currentHotspot && (
-        <div className="mb-6">
-          <h4 className="text-sm font-medium text-gray-700 mb-3 text-center">6-Hour Forecast</h4>
-          <div className="flex justify-between items-end space-x-1 h-16">
-            {currentHotspot.forecast.map((hour, index) => (
-              <div key={index} className="flex flex-col items-center flex-1">
-                <div 
-                  className="w-full rounded-t transition-all duration-300 hover:opacity-80"
-                  style={{
-                    height: `${Math.max(8, (hour.probability / 100) * 48)}px`,
-                    backgroundColor: hour.probability > 70 ? '#10b981' : 
-                                   hour.probability > 40 ? '#3b82f6' : 
-                                   hour.probability > 20 ? '#f59e0b' : '#ef4444'
-                  }}
-                />
-                <div className="text-xs text-gray-500 mt-1">{hour.time}</div>
-                <div className="text-xs font-medium text-gray-700">{hour.probability}%</div>
-              </div>
-            ))}
+        
+        {/* Swipe hint */}
+        <div className="text-center">
+          <div className="inline-flex items-center text-xs text-gray-400">
+            <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+            Swipe to explore
+            <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </div>
         </div>
-      )}
-      
-      <div className="text-center text-xs text-gray-500 mb-4">
-        Swipe to explore other hotspots
-      </div>
-      
-      <div className="grid grid-cols-2 gap-6 text-center">
-        <div className="space-y-2">
-          <div className="text-2xl font-light text-blue-600">
-            {auroraData.prob || 0}%
-          </div>
-          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Aurora Probability</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-2xl font-light text-blue-600">
-            {100 - (auroraData.cloudPct || 100)}%
-          </div>
-          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Sky Visibility</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-2xl font-light text-blue-600">
-            {getDarknessLevel(auroraData.dark)}
-          </div>
-          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Darkness Level</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-2xl font-light text-blue-600">
-            {getMoonPhase(auroraData.moon)}
-          </div>
-          <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Moon Phase</div>
-        </div>
-      </div>
-      
-      {weatherData && (
-        <div className="mt-6 pt-6 border-t border-gray-200">
-          <div className="grid grid-cols-2 gap-4 text-center">
-            <div className="space-y-1">
-              <div className="text-lg font-light text-gray-700">
-                {weatherData.temperature}°C
-              </div>
-              <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Temperature</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-lg font-light text-gray-700">
-                {weatherData.visibility}km
-              </div>
-              <div className="text-xs text-gray-500 font-light uppercase tracking-wide">Visibility</div>
-            </div>
-          </div>
-        </div>
-      )}
-      
-      <div className="mt-8 pt-6 border-t border-gray-200">
-        <p className="text-xs text-gray-400 text-center font-light">
-          Data updates every 5 minutes • Last updated: {new Date().toLocaleTimeString('fi-FI', { 
-            hour: '2-digit', 
-            minute: '2-digit' 
-          })}
-        </p>
       </div>
     </div>
   );
