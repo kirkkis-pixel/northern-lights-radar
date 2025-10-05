@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import RegionalNavigation from '@/components/RegionalNavigation';
+// import RegionalNavigation from '@/components/RegionalNavigation';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function PerfectLocationsPage() {
   return (
     <div>
       <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
-        <RegionalNavigation />
+        {/* <RegionalNavigation /> */}
         
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
