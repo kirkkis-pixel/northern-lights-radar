@@ -55,13 +55,13 @@ export default function AuroraLabPage() {
               <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Research & Demo Data</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
-              <div className="text-white mb-2">Aurora</div>
+              <div className="text-white mb-2">Aurora Lab</div>
               <div className="text-blue-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Lab
+                Research Platform
               </div>
             </h1>
             <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
-              Advanced aurora research, experimental forecasting models, and real-time space weather data
+              Explore cutting-edge aurora research, advanced forecasting models, and real-time space weather data
             </p>
           </div>
         </div>
