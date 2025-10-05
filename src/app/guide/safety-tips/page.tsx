@@ -510,7 +510,3 @@ export default function SafetyTipsPage() {
   );
 }
 
-
-
-
-

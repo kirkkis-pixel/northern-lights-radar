@@ -101,7 +101,7 @@ export default function AuroraMythsPage() {
                     <h3 className="text-2xl font-light text-white mb-4">Myth: Aurora only appears in winter</h3>
                     <div className="bg-red-500/10 rounded-xl p-6 mb-6 border border-red-400/20">
                       <p className="text-red-300 font-light leading-relaxed">
-                        <strong>Reality:</strong> Aurora occurs year-round, but it's only visible during dark hours. 
+                        <strong>Reality:</strong> Aurora occurs year-round, but it&apos;s only visible during dark hours. 
                         In summer, the Arctic experiences the midnight sun, making aurora invisible. 
                         Aurora activity peaks around the equinoxes (March and September).
                       </p>
@@ -477,8 +477,4 @@ export default function AuroraMythsPage() {
     </div>
   );
 }
-
-
-
-
 
