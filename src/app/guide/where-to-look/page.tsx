@@ -92,13 +92,13 @@ export default function WhereToLookPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
                   <span className="text-cyan-300 text-2xl">🧭</span>
                 </div>
                 <h3 className="text-2xl font-light text-white mb-4">North is Key</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-6">
+                <p className="text-white/70 font-light leading-relaxed mb-6 flex-grow">
                   Always look toward the northern horizon - this is where aurora appears most frequently
                 </p>
                 <ul className="text-white/60 font-light space-y-3">
@@ -117,12 +117,12 @@ export default function WhereToLookPage() {
                 </ul>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
                   <span className="text-cyan-300 text-2xl">🌅</span>
                 </div>
                 <h3 className="text-2xl font-light text-white mb-4">Time of Night</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-6">
+                <p className="text-white/70 font-light leading-relaxed mb-6 flex-grow">
                   Aurora activity varies throughout the night with peak times
                 </p>
                 <ul className="text-white/60 font-light space-y-3">
@@ -141,12 +141,12 @@ export default function WhereToLookPage() {
                 </ul>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-400/30">
                   <span className="text-cyan-300 text-2xl">👁️</span>
                 </div>
                 <h3 className="text-2xl font-light text-white mb-4">Eye Adaptation</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-6">
+                <p className="text-white/70 font-light leading-relaxed mb-6 flex-grow">
                   Give your eyes time to adjust to darkness for better aurora detection
                 </p>
                 <ul className="text-white/60 font-light space-y-3">
@@ -183,10 +183,10 @@ export default function WhereToLookPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Elevated Spots</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
+                <h3 className="text-2xl font-light text-white mb-6">Elevated Spots</h3>
+                <div className="flex-grow">
                   <ul className="text-white/70 font-light space-y-4">
                     <li className="flex items-start">
                       <span className="text-cyan-300 mr-3">•</span>
@@ -211,9 +211,11 @@ export default function WhereToLookPage() {
                     </li>
                   </ul>
                 </div>
-                
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Water Locations</h3>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
+                <h3 className="text-2xl font-light text-white mb-6">Water Locations</h3>
+                <div className="flex-grow">
                   <ul className="text-white/70 font-light space-y-4">
                     <li className="flex items-start">
                       <span className="text-cyan-300 mr-3">•</span>
@@ -240,9 +242,9 @@ export default function WhereToLookPage() {
                 </div>
               </div>
               
-              <div className="space-y-8">
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Wilderness Areas</h3>
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
+                <h3 className="text-2xl font-light text-white mb-6">Wilderness Areas</h3>
+                <div className="flex-grow">
                   <ul className="text-white/70 font-light space-y-4">
                     <li className="flex items-start">
                       <span className="text-cyan-300 mr-3">•</span>
@@ -267,9 +269,11 @@ export default function WhereToLookPage() {
                     </li>
                   </ul>
                 </div>
-                
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
-                  <h3 className="text-2xl font-light text-white mb-6">Urban Considerations</h3>
+              </div>
+              
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
+                <h3 className="text-2xl font-light text-white mb-6">Urban Considerations</h3>
+                <div className="flex-grow">
                   <ul className="text-white/70 font-light space-y-4">
                     <li className="flex items-start">
                       <span className="text-cyan-300 mr-3">•</span>
@@ -314,63 +318,63 @@ export default function WhereToLookPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 border border-red-400/30">
                   <span className="text-red-300 text-2xl">🚫</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Light Pollution</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <p className="text-white/70 font-light leading-relaxed flex-grow">
                   Avoid areas with street lights, buildings, or other sources of artificial light that can wash out the aurora
                 </p>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 border border-red-400/30">
                   <span className="text-red-300 text-2xl">🌲</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Obstructed Views</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <p className="text-white/70 font-light leading-relaxed flex-grow">
                   Don&apos;t choose spots with trees, mountains, or buildings blocking your northern horizon
                 </p>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 border border-red-400/30">
                   <span className="text-red-300 text-2xl">🌙</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Bright Moon</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <p className="text-white/70 font-light leading-relaxed flex-grow">
                   Full moon can significantly reduce aurora visibility - check moon phases before planning
                 </p>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 border border-red-400/30">
                   <span className="text-red-300 text-2xl">☁️</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Cloudy Skies</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <p className="text-white/70 font-light leading-relaxed flex-grow">
                   Check weather forecasts - clouds will completely block aurora visibility
                 </p>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 border border-red-400/30">
                   <span className="text-red-300 text-2xl">🌅</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Wrong Timing</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <p className="text-white/70 font-light leading-relaxed flex-grow">
                   Avoid viewing during twilight hours when the sky is still too bright
                 </p>
               </div>
               
-              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 h-full flex flex-col">
                 <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 border border-red-400/30">
                   <span className="text-red-300 text-2xl">📱</span>
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Phone Screens</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <p className="text-white/70 font-light leading-relaxed flex-grow">
                   Avoid checking your phone frequently as bright screens ruin night vision adaptation
                 </p>
               </div>
