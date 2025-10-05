@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function SafetyTipsPage() {
   return (
-    <>
+    <div>
       <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
         <RegionalNavigation />
         
@@ -506,7 +506,7 @@ export default function SafetyTipsPage() {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   );
 }
 

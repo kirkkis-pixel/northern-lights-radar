@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function AuroraMythsPage() {
   return (
-    <>
+    <div>
       <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
         <RegionalNavigation />
         
@@ -474,7 +474,7 @@ export default function AuroraMythsPage() {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function EquipmentChecklistPage() {
   return (
-    <>
+    <div>
       <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
         <RegionalNavigation />
         
@@ -476,7 +476,7 @@ export default function EquipmentChecklistPage() {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   );
 }
 
