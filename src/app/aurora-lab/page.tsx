@@ -52,11 +52,11 @@ export default function AuroraLabPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-16">
           <div className="mb-12">
             <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Research Lab</span>
+              <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Research & Demo Data</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
               <div className="text-white mb-2">Aurora</div>
-              <div className="text-cyan-300/90 bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-500 bg-clip-text text-transparent">
+              <div className="text-blue-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Lab
               </div>
             </h1>
