@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import SSRCitiesSection from '@/components/SSRCitiesSection';
-import TonightCard from '@/components/TonightCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -73,10 +72,6 @@ export default function HomePage() {
             </p>
           </div>
           
-          {/* Live Aurora Command Center */}
-          <div>
-            <TonightCard />
-          </div>
         </div>
       </div>
       
