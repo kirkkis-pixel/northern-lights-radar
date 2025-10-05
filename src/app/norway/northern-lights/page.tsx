@@ -487,7 +487,7 @@ export default function NorwayNorthernLightsPage() {
                 Norwegian Lapland offers diverse landscapes perfect for aurora photography, including 
                 frozen fjords, snow-covered mountains, and dramatic coastal backdrops. The region&apos;s 
                 minimal light pollution and clear atmospheric conditions create ideal conditions for 
-                capturing vibrant aurora colors. Popular photography locations include Tromsø's fjords, 
+                capturing vibrant aurora colors. Popular photography locations include Tromsø&apos;s fjords, 
                 the mountains around Alta, and the wilderness areas around Svalbard. The long winter 
                 nights provide extended shooting opportunities.
               </p>

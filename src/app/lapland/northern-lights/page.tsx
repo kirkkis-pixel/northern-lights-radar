@@ -115,7 +115,7 @@ export default function LaplandPage() {
                 Lapland Cities
               </h2>
               <p className="text-xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed">
-                Real-time aurora conditions across Finnish Lapland's most beautiful destinations
+                Real-time aurora conditions across Finnish Lapland&apos;s most beautiful destinations
               </p>
             </div>
             

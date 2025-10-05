@@ -363,7 +363,7 @@ export default function SwedenNorthernLightsPage() {
               </div>
               <h3 className="text-xl font-light text-white mb-4">Clear Skies</h3>
               <p className="text-white/70 font-light leading-relaxed">
-                Abisko's unique microclimate creates clear skies even when surrounding areas are cloudy, dramatically increasing aurora visibility.
+                Abisko&apos;s unique microclimate creates clear skies even when surrounding areas are cloudy, dramatically increasing aurora visibility.
               </p>
             </div>
             

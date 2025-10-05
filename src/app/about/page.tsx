@@ -39,7 +39,7 @@ export default function AboutPage() {
             </div>
             <h1 className="text-5xl font-thin text-white mb-8">About Northern Lights Radar</h1>
             <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
-              We're passionate about making aurora forecasting accessible, accurate, and transparent for everyone.
+              We&apos;re passionate about making aurora forecasting accessible, accurate, and transparent for everyone.
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
           <h2 className="text-4xl font-thin text-white mb-8">Get in Touch</h2>
           <p className="text-lg text-white/60 font-light mb-12 leading-relaxed">
             Have questions about our data, suggestions for improvements, or want to collaborate? 
-            We'd love to hear from you.
+            We&apos;d love to hear from you.
           </p>
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -416,7 +416,7 @@ export default function FinlandPage() {
                 </div>
                 <h3 className="text-xl font-light text-white mb-4">Polar Night</h3>
                 <p className="text-white/70 font-light leading-relaxed">
-                  During winter months, Finnish Lapland experiences polar night with up to 24 hours of darkness, maximizing aurora viewing opportunities when the sun doesn't rise.
+                  During winter months, Finnish Lapland experiences polar night with up to 24 hours of darkness, maximizing aurora viewing opportunities when the sun doesn&apos;t rise.
                 </p>
               </div>
             </div>

@@ -58,7 +58,7 @@ export default function WhyLaplandPage() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed mb-12">
-              Discover why Lapland is the world's premier destination for northern lights viewing. From optimal geographical positioning to unique cultural experiences, Lapland offers everything you need for an unforgettable aurora adventure.
+              Discover why Lapland is the world&apos;s premier destination for northern lights viewing. From optimal geographical positioning to unique cultural experiences, Lapland offers everything you need for an unforgettable aurora adventure.
             </p>
             
             {/* Live Aurora Badge */}
@@ -78,7 +78,7 @@ export default function WhyLaplandPage() {
               The Ultimate Aurora Destination
             </h2>
             <p className="text-xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed">
-              Lapland offers unique advantages that make it the world's premier destination for northern lights viewing. With over 200 nights of aurora activity per year, Lapland's geographical position within the aurora oval provides exceptional viewing opportunities. The region's pristine wilderness, minimal light pollution, and excellent infrastructure make it ideal for aurora enthusiasts.
+              Lapland offers unique advantages that make it the world&apos;s premier destination for northern lights viewing. With over 200 nights of aurora activity per year, Lapland&apos;s geographical position within the aurora oval provides exceptional viewing opportunities. The region&apos;s pristine wilderness, minimal light pollution, and excellent infrastructure make it ideal for aurora enthusiasts.
             </p>
           </div>
         </div>
@@ -210,7 +210,7 @@ export default function WhyLaplandPage() {
               </div>
               <ul className="space-y-3 text-white/70">
                 <li>• Aurora Sky Station in Abisko</li>
-                <li>• World's most accessible aurora viewing</li>
+                <li>• World&apos;s most accessible aurora viewing</li>
                 <li>• Famous Icehotel in Jukkasjärvi</li>
                 <li>• Clear skies microclimate</li>
                 <li>• UNESCO World Heritage sites</li>
@@ -237,7 +237,7 @@ export default function WhyLaplandPage() {
               <ul className="space-y-3 text-white/70">
                 <li>• Arctic capital of Tromsø</li>
                 <li>• 24-hour darkness in Svalbard</li>
-                <li>• World's first aurora observatory</li>
+                <li>• World&apos;s first aurora observatory</li>
                 <li>• Unique fjord landscapes</li>
                 <li>• Rich maritime history</li>
               </ul>
