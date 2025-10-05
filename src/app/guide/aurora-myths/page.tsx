@@ -3,9 +3,25 @@ import RegionalNavigation from '@/components/RegionalNavigation';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Aurora Myths Debunked - Northern Lights Radar',
-  description: 'Separate fact from fiction about the northern lights. Learn the truth behind common aurora myths and misconceptions.',
-  keywords: 'aurora myths, northern lights myths, aurora facts, northern lights facts, aurora misconceptions, aurora science',
+  title: 'Aurora Myths Debunked - Separating Fact from Fiction',
+  description: 'Separate fact from fiction about the northern lights. Learn the truth behind common aurora myths and misconceptions with scientific explanations and expert insights.',
+  keywords: 'aurora myths, northern lights myths, aurora facts, northern lights facts, aurora misconceptions, aurora science, aurora debunked, northern lights truth',
+  openGraph: {
+    title: 'Aurora Myths Debunked - Separating Fact from Fiction',
+    description: 'Separate fact from fiction about the northern lights.',
+    type: 'article',
+    locale: 'en_US',
+    url: 'https://northernlightsradar.com/guide/aurora-myths',
+    siteName: 'Northern Lights Radar',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aurora Myths Debunked - Separating Fact from Fiction',
+    description: 'Separate fact from fiction about the northern lights.',
+  },
+  alternates: {
+    canonical: 'https://northernlightsradar.com/guide/aurora-myths',
+  },
 };
 
 export default function AuroraMythsPage() {
@@ -15,21 +31,26 @@ export default function AuroraMythsPage() {
         <RegionalNavigation />
         
         {/* Hero Section */}
-        <div className="relative py-32 bg-gradient-to-b from-black via-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <svg className="w-4 h-4 text-white/70 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Aurora Myths</span>
+        <div className="relative bg-gradient-to-br from-black via-slate-900 to-gray-900 py-32 pt-24 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          </div>
+          
+          <div className="relative z-10 max-w-6xl mx-auto px-12 text-center pt-24">
+            <div className="mb-16">
+              <div className="inline-flex items-center px-6 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+                <span className="text-sm font-light text-white/70 tracking-[0.2em] uppercase">Myths Debunked</span>
               </div>
-              <h1 className="text-5xl font-thin text-white mb-8">
-                Aurora Myths Debunked
+              <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+                <div className="text-white mb-2">Aurora</div>
+                <div className="text-cyan-300/90 bg-gradient-to-r from-green-400 via-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                  Myths
+                </div>
               </h1>
-              <p className="text-lg text-white/60 font-light max-w-3xl mx-auto leading-relaxed">
-                Separate fact from fiction about the northern lights. Learn the truth behind common 
-                aurora myths and discover the real science behind this incredible natural phenomenon.
+              <p className="text-xl md:text-2xl text-white/60 font-light max-w-4xl mx-auto leading-relaxed mb-6">
+                Separating fact from fiction about the northern lights
               </p>
             </div>
           </div>
