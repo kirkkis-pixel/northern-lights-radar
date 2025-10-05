@@ -118,11 +118,11 @@ export default function HomePage() {
                 <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/10 transform -translate-x-1/2"></div>
                 {/* Horizontal Line */}
                 <div className="absolute left-0 right-0 top-1/2 h-px bg-white/10 transform -translate-y-1/2"></div>
-                {/* Diagonal Lines */}
-                <div className="absolute inset-0">
-                  <div className="absolute top-0 right-0 w-full h-full">
-                    <div className="absolute top-0 right-0 w-px h-full bg-white/5 transform rotate-45 origin-top"></div>
-                    <div className="absolute top-0 right-0 w-full h-px bg-white/5 transform -rotate-45 origin-right"></div>
+                {/* Diagonal Lines - Constrained to circle */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="absolute top-0 left-1/2 w-px h-full bg-white/5 transform -translate-x-1/2 rotate-45 origin-top"></div>
+                    <div className="absolute top-0 left-1/2 w-px h-full bg-white/5 transform -translate-x-1/2 -rotate-45 origin-top"></div>
                   </div>
                 </div>
               </div>
