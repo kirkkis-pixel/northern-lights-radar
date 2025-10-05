@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import RegionalNavigation from '@/components/RegionalNavigation';
 import SSRCitiesSection from '@/components/SSRCitiesSection';
+import AnimatedRadar from '@/components/AnimatedRadar';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -74,6 +75,9 @@ export default function HomePage() {
           
         </div>
       </div>
+      
+      {/* Animated Radar Section */}
+      <AnimatedRadar />
       
       {/* Filtered Cities Section */}
         <SSRCitiesSection />
