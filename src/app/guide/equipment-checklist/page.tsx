@@ -58,7 +58,7 @@ export default function EquipmentChecklistPage() {
 
         {/* Clothing Section */}
         <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Essential Clothing</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -111,7 +111,7 @@ export default function EquipmentChecklistPage() {
 
         {/* Photography Equipment */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Photography Equipment</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -194,7 +194,7 @@ export default function EquipmentChecklistPage() {
 
         {/* Comfort & Safety Items */}
         <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Comfort & Safety Items</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -250,7 +250,7 @@ export default function EquipmentChecklistPage() {
 
         {/* Optional Equipment */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Optional Equipment</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -332,7 +332,7 @@ export default function EquipmentChecklistPage() {
 
         {/* Packing Tips */}
         <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Packing Tips</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -436,20 +436,45 @@ export default function EquipmentChecklistPage() {
               </div>
             </div>
             
-            {/* Call to Action */}
-            <div className="text-center mt-16">
-              <Link
+        {/* Call to Action */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-4xl mx-auto px-8 text-center">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Ready to Hunt</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
+              Ready with Your Equipment?
+            </h2>
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+              Now that you have your equipment checklist, learn what to wear and start planning your aurora adventure.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link 
                 href="/guide/what-to-wear"
-                className="inline-flex items-center px-12 py-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-2xl text-white font-light text-lg hover:from-cyan-500/30 hover:to-blue-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
               >
-                Learn What to Wear
-                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                What to Wear
+              </Link>
+              <Link 
+                href="/guide/safety-tips"
+                className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                Safety Tips
               </Link>
             </div>
           </div>
         </div>
+
+        {/* Footer */}
+        <footer className="bg-slate-900 py-16">
+          <div className="max-w-4xl mx-auto px-8">
+            <div className="text-center text-white/40 text-sm font-light">
+              <p>Data from NOAA SWPC (OVATION), Open-Meteo. Times in local timezone.</p>
+              <p className="mt-2">Real-time aurora forecasts for Lapland destinations.</p>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );

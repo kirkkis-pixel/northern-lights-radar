@@ -58,7 +58,7 @@ export default function PerfectLocationsPage() {
 
         {/* Finland Locations */}
         <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Finnish Lapland</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -120,7 +120,7 @@ export default function PerfectLocationsPage() {
 
         {/* Sweden Locations */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Swedish Lapland</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export default function PerfectLocationsPage() {
 
         {/* Norway Locations */}
         <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Norwegian Lapland</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -244,7 +244,7 @@ export default function PerfectLocationsPage() {
 
         {/* Tips Section */}
         <div className="py-24 bg-gradient-to-b from-black to-slate-900">
-          <div className="max-w-6xl mx-auto px-12">
+          <div className="max-w-4xl mx-auto px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-thin text-white mb-6">Location Selection Tips</h2>
               <p className="text-lg text-white/60 font-light max-w-3xl mx-auto">
@@ -347,21 +347,45 @@ export default function PerfectLocationsPage() {
                 </div>
               </div>
             </div>
+        {/* Call to Action */}
+        <div className="py-24 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-4xl mx-auto px-8 text-center">
+            <div className="inline-block px-8 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
+              <span className="text-sm font-light text-white/70 tracking-[0.3em] uppercase">Ready to Hunt</span>
+            </div>
+            <h2 className="text-5xl font-thin text-white mb-8">
+              Ready to Explore Perfect Locations?
+            </h2>
+            <p className="text-xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+              Now that you know the best locations, learn how to see the aurora and start planning your adventure.
+            </p>
             
-            {/* Call to Action */}
-            <div className="text-center mt-16">
-              <Link
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link 
                 href="/guide/how-to-see-the-northern-lights"
-                className="inline-flex items-center px-12 py-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-2xl text-white font-light text-lg hover:from-cyan-500/30 hover:to-blue-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
               >
-                Learn How to See the Aurora
-                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                Complete Aurora Guide
+              </Link>
+              <Link 
+                href="/guide/photography-tips"
+                className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                Photography Tips
               </Link>
             </div>
           </div>
         </div>
+
+        {/* Footer */}
+        <footer className="bg-slate-900 py-16">
+          <div className="max-w-4xl mx-auto px-8">
+            <div className="text-center text-white/40 text-sm font-light">
+              <p>Data from NOAA SWPC (OVATION), Open-Meteo. Times in local timezone.</p>
+              <p className="mt-2">Real-time aurora forecasts for Lapland destinations.</p>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );
